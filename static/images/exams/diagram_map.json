@@ -1,0 +1,248 @@
+{
+  "29219": {
+    "question_id": "29219",
+    "source": "docx",
+    "content_hash": "a605a225",
+    "diagrams": [
+      {
+        "filename": "29219_diag1.png",
+        "width": 322,
+        "height": 730,
+        "format": "png",
+        "source": "image1.png",
+        "path": "images/exams/29219/29219_diag1.png"
+      }
+    ]
+  },
+  "25938": {
+    "question_id": "25938",
+    "source": "docx",
+    "content_hash": "5ec34781",
+    "diagrams": [
+      {
+        "filename": "25938_diag1.jpg",
+        "width": 377,
+        "height": 522,
+        "format": "jpeg",
+        "source": "image1.jpeg",
+        "path": "images/exams/25938/25938_diag1.jpg"
+      }
+    ]
+  },
+  "34676": {
+    "question_id": "34676",
+    "source": "docx",
+    "content_hash": "9a970aeb",
+    "diagrams": [
+      {
+        "filename": "34676_diag1.png",
+        "width": 541,
+        "height": 61,
+        "format": "png",
+        "source": "image1.png",
+        "path": "images/exams/34676/34676_diag1.png"
+      },
+      {
+        "filename": "34676_diag2.png",
+        "width": 1388,
+        "height": 158,
+        "format": "png",
+        "source": "image2.png",
+        "path": "images/exams/34676/34676_diag2.png"
+      }
+    ]
+  },
+  "35762": {
+    "question_id": "35762",
+    "pdf": "35762.pdf",
+    "content_hash": "d651863c",
+    "diagrams": [
+      {
+        "filename": "35762_p1.png",
+        "page": 1,
+        "width": 1241,
+        "height": 1754,
+        "path": "static/images/exams/35762/35762_p1.png"
+      },
+      {
+        "filename": "35762_p1_emb1.png",
+        "page": 1,
+        "width": 227,
+        "height": 36,
+        "is_embedded": true,
+        "path": "static/images/exams/35762/35762_p1_emb1.png"
+      },
+      {
+        "filename": "35762_p1_emb2.png",
+        "page": 1,
+        "width": 227,
+        "height": 36,
+        "is_embedded": true,
+        "path": "static/images/exams/35762/35762_p1_emb2.png"
+      },
+      {
+        "filename": "35762_p1_emb3.png",
+        "page": 1,
+        "width": 181,
+        "height": 27,
+        "is_embedded": true,
+        "path": "static/images/exams/35762/35762_p1_emb3.png"
+      },
+      {
+        "filename": "35762_p1_emb4.png",
+        "page": 1,
+        "width": 227,
+        "height": 36,
+        "is_embedded": true,
+        "path": "static/images/exams/35762/35762_p1_emb4.png"
+      },
+      {
+        "filename": "35762_p1_emb5.png",
+        "page": 1,
+        "width": 101,
+        "height": 57,
+        "is_embedded": true,
+        "path": "static/images/exams/35762/35762_p1_emb5.png"
+      },
+      {
+        "filename": "35762_p1_emb6.png",
+        "page": 1,
+        "width": 47,
+        "height": 30,
+        "is_embedded": true,
+        "path": "static/images/exams/35762/35762_p1_emb6.png"
+      },
+      {
+        "filename": "35762_p1_emb7.png",
+        "page": 1,
+        "width": 61,
+        "height": 30,
+        "is_embedded": true,
+        "path": "static/images/exams/35762/35762_p1_emb7.png"
+      },
+      {
+        "filename": "35762_p1_diag1.png",
+        "page": 1,
+        "width": 758,
+        "height": 179,
+        "is_subregion": true,
+        "path": "static/images/exams/35762/35762_p1_diag1.png"
+      },
+      {
+        "filename": "35762_p1_diag2.png",
+        "page": 1,
+        "width": 232,
+        "height": 374,
+        "is_subregion": true,
+        "path": "static/images/exams/35762/35762_p1_diag2.png"
+      }
+    ]
+  },
+  "30381": {
+    "question_id": "30381",
+    "source": "docx",
+    "content_hash": "ad6c1836",
+    "diagrams": [
+      {
+        "filename": "30381_diag1.png",
+        "width": 556,
+        "height": 469,
+        "format": "png",
+        "source": "image1.png",
+        "path": "images/exams/30381/30381_diag1.png"
+      }
+    ]
+  },
+  "30798": {
+    "question_id": "30798",
+    "source": "docx",
+    "content_hash": "dea78e66",
+    "diagrams": [
+      {
+        "filename": "30798_diag1.png",
+        "width": 219,
+        "height": 112,
+        "format": "png",
+        "source": "image1.png",
+        "path": "images/exams/30798/30798_diag1.png"
+      }
+    ]
+  },
+  "31115": {
+    "question_id": "31115",
+    "source": "docx",
+    "content_hash": "7d828110",
+    "diagrams": [
+      {
+        "filename": "31115_diag1.png",
+        "width": 500,
+        "height": 426,
+        "format": "png",
+        "source": "image1.png",
+        "path": "images/exams/31115/31115_diag1.png"
+      }
+    ]
+  },
+  "33173": {
+    "question_id": "33173",
+    "source": "docx",
+    "content_hash": "bc13a6ee",
+    "diagrams": [
+      {
+        "filename": "33173_diag1.png",
+        "width": 247,
+        "height": 190,
+        "format": "png",
+        "source": "image1.png",
+        "path": "images/exams/33173/33173_diag1.png"
+      },
+      {
+        "filename": "33173_diag2.png",
+        "width": 207,
+        "height": 180,
+        "format": "png",
+        "source": "image2.png",
+        "path": "images/exams/33173/33173_diag2.png"
+      },
+      {
+        "filename": "33173_diag3.png",
+        "width": 255,
+        "height": 240,
+        "format": "png",
+        "source": "image3.png",
+        "path": "images/exams/33173/33173_diag3.png"
+      },
+      {
+        "filename": "33173_diag4.png",
+        "width": 197,
+        "height": 218,
+        "format": "png",
+        "source": "image4.png",
+        "path": "images/exams/33173/33173_diag4.png"
+      },
+      {
+        "filename": "33173_diag5.png",
+        "width": 357,
+        "height": 78,
+        "format": "png",
+        "source": "image5.png",
+        "path": "images/exams/33173/33173_diag5.png"
+      }
+    ]
+  },
+  "34678": {
+    "question_id": "34678",
+    "source": "docx",
+    "content_hash": "2e30e6a6",
+    "diagrams": [
+      {
+        "filename": "34678_diag6.png",
+        "width": 323,
+        "height": 307,
+        "format": "png",
+        "source": "image6.png",
+        "path": "images/exams/34678/34678_diag6.png"
+      }
+    ]
+  }
+}

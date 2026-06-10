@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Πανελλήνιες Πληροφορική • AI Tutor</title>
+    <style>
+        :root {
+            --bg: #0f1a2e; --surface: #152236; --surface2: #1a2a42;
+            --border: #243550; --text: #e8ecf1; --text2: #8ea4ba;
+            --accent: #14b8a6; --accent-glow: #0d9488;
+            --green: #22c55e; --amber: #f59e0b; --red: #ef4444; --purple: #8b5cf6;
+            --radius: 14px; --gap: 16px;
+            --code-bg: #0a1220; --code-text: #c9d1d9;
+            --code-kw: #f472b6; --code-num: #67e8f9; --code-str: #86efac;
+            --code-op: #fcd34d; --code-cm: #8b949e;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; line-height: 1.7; }
+        .app { max-width: 1400px; margin: 0 auto; padding: 20px var(--gap); }
+        .session-layout { display: flex; gap: var(--gap); align-items: flex-start; }
+        .col-left { flex: 1; min-width: 0; position: sticky; top: 20px; max-height: calc(100vh - 40px); overflow-y: auto; }
+        .col-right { flex: 0 0 44%; min-width: 340px; display: flex; flex-direction: column; gap: var(--gap); }
+        @media (max-width: 800px) { .session-layout { flex-direction: column; } .col-left { position: static; max-height: none; } .col-right { flex: auto; min-width: 0; } }
+        :root.light { --bg: #faf9f7; --surface: #ffffff; --surface2: #f0ede8; --border: #e0dcd4; --text: #1a1a2e; --text2: #6b7280; --accent: #0d9488; --code-bg: #f0ede8; --code-text: #1e293b; }
+        .header { text-align: center; padding: 20px 0 16px; border-bottom: 1px solid var(--border); margin-bottom: 20px; position: relative; }
+        .header h1 { font-size: 1.8rem; font-weight: 800; background: linear-gradient(135deg, var(--accent), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .header .sub { color: var(--text2); font-size: 0.85rem; margin-top: 4px; }
+        .dark-toggle { position: absolute; top: 16px; right: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 4px 10px; font-size: 0.85rem; cursor: pointer; color: var(--text2); }
+        .dark-toggle:hover { border-color: var(--accent); color: var(--accent); }
+        .stats-bar { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
+        .stat { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 6px 14px; font-size: 0.8rem; color: var(--text2); display: flex; align-items: center; gap: 5px; }
+        .stat .val { color: var(--text); font-weight: 700; }
+        .stat.live { border-color: var(--green); color: var(--green); }
+        .q-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; margin-bottom: var(--gap); }
+        .q-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; align-items: center; }
+        .badge { padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; }
+        .badge-p { background: var(--accent); color: #fff; }
+        .badge-y { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+        .badge-pts { background: #064e3b; color: var(--green); }
+        .badge-t { background: #2d1b69; color: var(--purple); }
+        .q-body { font-size: 0.9rem; line-height: 1.9; padding: 18px; background: var(--surface2); border-radius: 10px; border: 1px solid var(--border); }
+        .sec-header { font-weight: 800; color: var(--accent); font-size: 1.1rem; margin: 20px 0 10px; padding-bottom: 6px; border-bottom: 2px solid var(--accent); }
+        .sec-header:first-child { margin-top: 0; }
+        .subq { margin: 14px 0 8px; padding: 10px 14px; background: var(--surface); border-radius: 8px; border-left: 3px solid var(--accent); }
+        .subq-num { font-weight: 800; color: var(--accent); margin-right: 6px; }
+        .points-chip { display: inline-block; background: linear-gradient(135deg, #064e3b, #065f46); color: var(--green); font-weight: 700; font-size: 0.78rem; padding: 4px 12px; border-radius: 12px; margin: 6px 0; }
+        .text-content { margin: 6px 0; }
+        .code-card { margin: 14px 0; border-radius: 10px; overflow: hidden; border: 1px solid #30363d; background: var(--code-bg); }
+        .code-card-header { padding: 8px 14px; background: #161b22; border-bottom: 1px solid #30363d; font-size: 0.78rem; font-weight: 700; color: var(--accent); }
+        .code-body table { width: 100%; border-collapse: collapse; font-family: 'SF Mono','Menlo','Monaco','Courier New',monospace; font-size: 0.8rem; line-height: 1.8; }
+        .code-body td { padding: 1px 12px; white-space: pre; }
+        .code-body td.ln { width: 44px; text-align: right; color: var(--code-cm); user-select: none; border-right: 1px solid #30363d; background: #0d1117; }
+        .code-body td.lc { color: var(--code-text); }
+        .kw { color: var(--code-kw); font-weight: 600; }
+        .num { color: var(--code-num); }
+        .str { color: var(--code-str); }
+        .op { color: var(--code-op); }
+        .match-table { width: 100%; border-collapse: collapse; margin: 14px 0; background: var(--surface); border-radius: 8px; overflow: hidden; font-size: 0.84rem; }
+        .match-table thead th { background: var(--accent); color: #fff; padding: 10px 14px; text-align: left; font-weight: 700; font-size: 0.78rem; }
+        .match-table tbody td { padding: 10px 14px; border-top: 1px solid var(--border); vertical-align: top; font-family: 'SF Mono','Menlo',monospace; font-size: 0.78rem; }
+        .gap-table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 0.84rem; }
+        .gap-table td { padding: 8px 12px; border: 1px solid var(--border); background: var(--surface); }
+        .gap-blank { background: #2d1b69; color: var(--purple); font-weight: 700; padding: 1px 6px; border-radius: 4px; }
+        .generic-table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 0.84rem; }
+        .generic-table td { padding: 8px 12px; border: 1px solid var(--border); background: var(--surface); }
+        .diagram-gallery { margin: 14px 0; }
+        .diagram-item { margin-bottom: 12px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+        .diagram-item img { display: block; max-width: 100%; height: auto; cursor: pointer; }
+        .diagram-label { padding: 6px 12px; font-size: 0.72rem; color: var(--text2); background: var(--surface2); border-top: 1px solid var(--border); }
+        .chat { display: flex; flex-direction: column; gap: var(--gap); }
+        .messages { display: flex; flex-direction: column; gap: 8px; max-height: 35vh; overflow-y: auto; padding-right: 4px; }
+        .msg { max-width: 85%; padding: 10px 14px; border-radius: var(--radius); font-size: 0.85rem; line-height: 1.55; animation: fade .3s ease; }
+        @keyframes fade { from{opacity:0;transform:translateY(4px)} to{opacity:1;transform:translateY(0)} }
+        .msg.user { align-self: flex-end; background: var(--accent); color: #fff; }
+        .msg.ai { align-self: flex-start; background: var(--surface); border: 1px solid var(--border); }
+        .msg.sol { align-self: flex-start; background: #052e16; border: 2px solid var(--green); color: #d1fae5; max-width: 100%; line-height: 1.7; }
+        .msg.eval { align-self: flex-start; background: var(--surface); border: 1px solid var(--border); max-width: 90%; }
+        .eval-status { font-weight: 800; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 6px; padding: 4px 10px; border-radius: 6px; display: inline-block; }
+        .eval-ok { background: #064e3b; color: var(--green); }
+        .eval-warn { background: #451a03; color: var(--amber); }
+        .eval-err { background: #450a0a; color: var(--red); }
+        .eval-critique { line-height: 1.6; margin-bottom: 8px; }
+        .eval-hint { font-size: 0.82rem; color: var(--accent); margin-top: 6px; }
+        .typing { align-self: flex-start; color: var(--text2); font-size: 0.8rem; padding: 4px 12px; animation: pulse 1.2s ease infinite; }
+        @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+        .input-row { display: flex; gap: 8px; margin-top: 8px; }
+        .input-row textarea { flex: 1; padding: 10px 14px; border-radius: var(--radius); border: 1.5px solid var(--border); background: var(--surface); color: var(--text); font-size: 0.9rem; outline: none; resize: vertical; min-height: 60px; max-height: 400px; font-family: inherit; }
+        .input-row textarea:focus { border-color: var(--accent); }
+        .input-row button { padding: 10px 20px; border-radius: var(--radius); border: none; background: linear-gradient(135deg, var(--accent), var(--accent-glow)); color: #fff; font-weight: 700; cursor: pointer; white-space: nowrap; }
+        .quick-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; justify-content: center; }
+        .qbtn { padding: 5px 12px; border-radius: 18px; border: 1px solid var(--border); background: var(--surface); color: var(--text2); font-size: 0.74rem; font-weight: 600; cursor: pointer; }
+        .qbtn:hover { border-color: var(--accent); color: var(--accent); }
+        .start { text-align: center; padding: 60px 20px; }
+        .start .icon { font-size: 3.5rem; margin-bottom: 12px; }
+        .start h2 { font-size: 1.4rem; margin-bottom: 8px; }
+        .start p { color: var(--text2); margin-bottom: 24px; max-width: 480px; margin-left: auto; margin-right: auto; font-size: 0.9rem; }
+        .start-btn { padding: 14px 48px; border-radius: var(--radius); border: none; background: linear-gradient(135deg, var(--accent), var(--purple)); color: #fff; font-size: 1.05rem; font-weight: 700; cursor: pointer; box-shadow: 0 4px 20px rgba(20,184,166,0.2); }
+        .start-btn:hover { transform: scale(1.04); box-shadow: 0 6px 28px rgba(20,184,166,0.35); }
+        .start-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+        .hint-box { background: var(--surface2); border: 1px dashed var(--amber); border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 0.82rem; color: var(--amber); }
+        .diagram-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 9999; align-items: center; justify-content: center; }
+        .diagram-modal img { max-width: 95vw; max-height: 95vh; border-radius: 10px; box-shadow: 0 8px 30px rgba(0,0,0,0.5); }
+        .diagram-modal .close { position: absolute; top: 16px; right: 24px; color: #fff; font-size: 2rem; cursor: pointer; z-index: 10000; }
+
+        /* ── Sub-Question Progress Tracker ─────────────── */
+        .sq-tracker { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; margin-bottom: var(--gap); }
+        .sq-tracker-header { font-weight: 700; font-size: 0.82rem; color: var(--accent); margin-bottom: 10px; }
+        .sq-list { display: flex; flex-direction: column; gap: 6px; }
+        .sq-item { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 8px; cursor: pointer; border: 1px solid var(--border); background: var(--surface2); transition: all .15s; font-size: 0.8rem; font-weight: 600; }
+        .sq-item:hover { border-color: var(--accent); }
+        .sq-item.active { border-color: var(--accent); background: rgba(20,184,166,0.08); color: var(--accent); }
+        .sq-item.done { border-color: var(--green); background: #052e16; color: var(--green); cursor: default; }
+        .sq-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--border); flex-shrink: 0; }
+        .sq-item.active .sq-dot { background: var(--accent); box-shadow: 0 0 6px var(--accent); }
+        .sq-item.done .sq-dot { background: var(--green); }
+        .sq-label { flex: 1; }
+        .sq-status { font-size: 0.7rem; color: var(--text2); }
+        .sq-item.active .sq-status { color: var(--accent); }
+        .sq-item.done .sq-status { color: var(--green); }
+        .sq-tracker-footer { margin-top: 10px; text-align: center; }
+        .sq-done-btn { padding: 6px 16px; border-radius: 18px; border: 1px solid var(--green); background: transparent; color: var(--green); font-size: 0.76rem; font-weight: 700; cursor: pointer; }
+        .sq-done-btn:hover { background: var(--green); color: #000; }
+
+        /* ── Chips ──────────────────────────────────────── */
+        .chips-row { display: flex; gap: 6px; overflow-x: auto; padding: 4px 0 6px; }
+        .chip { flex-shrink: 0; padding: 5px 12px; border-radius: 16px; border: 1px solid var(--border); background: var(--surface); color: var(--text2); font-size: 0.74rem; font-weight: 600; cursor: pointer; white-space: nowrap; }
+        .chip:hover { border-color: var(--accent); color: var(--accent); }
+
+        @media (max-width: 600px) { .header h1 { font-size: 1.3rem; } .msg { max-width: 94%; } .input-row { flex-direction: column; } }
+    </style>
+</head>
+<body>
+<div class="app" id="app">
+    <div class="header">
+        <button class="dark-toggle" onclick="toggleDark()" id="dark-btn">🌙 Σκούρο</button>
+        <h1>Πανελλαδικές AI Tutor</h1>
+        <div class="sub" id="subj-label">Πληροφορική • Θέματα 2 & 4</div>
+    </div>
+    <div id="start-screen" class="start">
+        <div class="icon">🧠</div>
+        <h2>Έτοιμος για εξάσκηση;</h2>
+        <p>Θέματα υψηλής πιθανότητας βασισμένα σε στατιστική ανάλυση. <b>Γράψε την απάντησή σου</b>, πάρε feedback, και δες τη λύση βήμα-βήμα.</p>
+        <button class="start-btn" id="btn-start" onclick="start()">🚀 Έναρξη</button>
+    </div>
+    <div id="session" style="display:none">
+        <div class="stats-bar">
+            <div class="stat" id="st-ai"></div>
+            <div class="stat">🆔 <span id="st-qid">—</span></div>
+            <div class="stat">✅ <span class="val" id="st-done">0</span></div>
+            <div class="stat">📚 <span class="val" id="st-left">155</span></div>
+            <div class="stat">⭐ <span class="val" id="st-pts">0</span></div>
+        </div>
+        <div class="session-layout">
+            <div class="col-left">
+                <div class="q-card">
+                    <div class="q-meta" id="q-meta"></div>
+                    <div class="q-body" id="q-body"></div>
+                </div>
+            </div>
+            <div class="col-right">
+                <!-- Sub-Question Progress Tracker -->
+                <div class="sq-tracker" id="sq-tracker">
+                    <div class="sq-tracker-header">📋 Πρόοδος Ερωτήματος</div>
+                    <div class="sq-list" id="sq-list"></div>
+                    <div class="sq-tracker-footer" id="sq-footer"></div>
+                </div>
+                <!-- Quick chips -->
+                <div class="chips-row">
+                    <span class="chip" id="chip-help" onclick="quickChip('Δεν ξέρω πώς να ξεκινήσω')">😰 Δεν ξέρω πώς να ξεκινήσω</span>
+                    <span class="chip" onclick="quickChip('Δείξε μου μια παρόμοια άσκηση')">📋 Παρόμοια άσκηση</span>
+                    <span class="chip" onclick="quickChip('Βρες το λάθος μου')">🔎 Βρες το λάθος</span>
+                </div>
+                <div class="chat">
+                    <div class="messages" id="messages"></div>
+                    <div class="typing" id="typing" style="display:none">🤔 Το AI σκέφτεται...</div>
+                </div>
+                <div class="input-row">
+                    <textarea id="input" placeholder="Γράψε την απάντηση..." rows="3"></textarea>
+                    <button id="btn-send" onclick="send()">📤</button>
+                </div>
+                <div class="quick-actions">
+                    <button class="qbtn" onclick="currentHint()">💡 Hint</button>
+                    <button class="qbtn" id="btn-prev" onclick="back()" disabled>⬅ Πίσω</button>
+                    <button class="qbtn" onclick="quick('next')">⏭ Επόμενο</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="diagram-modal" id="dmodal" onclick="this.style.display='none'">
+    <span class="close" onclick="document.getElementById('dmodal').style.display='none'">&times;</span>
+    <img id="dimg" src="" onclick="event.stopPropagation()">
+</div>
+
+<script>
+let sid = null, loading = false, q = null;
+
+function toggleDark() {
+    const r = document.documentElement;
+    const btn = document.getElementById('dark-btn');
+    if (r.classList.contains('light')) {
+        r.classList.remove('light'); btn.textContent = '🌙 Σκούρο';
+        localStorage.setItem('theme', 'dark');
+    } else {
+        r.classList.add('light'); btn.textContent = '☀️ Φωτεινό';
+        localStorage.setItem('theme', 'light');
+    }
+}
+(function initTheme() {
+    if (localStorage.getItem('theme') === 'light') {
+        document.documentElement.classList.add('light');
+        document.getElementById('dark-btn').textContent = '☀️ Φωτεινό';
+    }
+})();
+
+function openDiagramModal(src) { document.getElementById('dimg').src = src; document.getElementById('dmodal').style.display = 'flex'; }
+document.addEventListener('keydown', e => { if(e.key === 'Escape') document.getElementById('dmodal').style.display = 'none'; });
+const E = s => { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; };
+async function api(url, body) { const r = await fetch(url, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}); return r.json(); }
+
+async function start() {
+    document.getElementById('btn-start').disabled = true;
+    try {
+        const d = await api('/api/session/start', {});
+        sid = d.session_id; q = d.question;
+        document.getElementById('st-ai').innerHTML = d.has_ai ? '🤖 <span>AI ενεργό</span>' : '📝 <span>Αυτόνομη</span>';
+        document.getElementById('st-ai').className = d.has_ai ? 'stat live' : 'stat';
+        document.getElementById('start-screen').style.display = 'none';
+        document.getElementById('session').style.display = 'block';
+        renderQuestion(q);
+        updateStats({completed:0, total_points:0, remaining:155});
+        addMsg('system', '📝 Γράψε την απάντησή σου ή ξεκίνα με ερωτήσεις.');
+    } catch(e) { alert('Σφάλμα: ' + e.message); document.getElementById('btn-start').disabled = false; }
+}
+
+function renderQuestion(qq) {
+    document.getElementById('q-meta').innerHTML =
+        `<span class="badge badge-p">${qq.part}</span>
+         <span class="badge badge-y">${qq.year}</span>
+         <span class="badge badge-pts">${qq.points} μονάδες</span>
+         <span class="badge badge-t">${qq.type || 'άσκηση'}</span>`;
+    document.getElementById('q-body').innerHTML = qq.question_html || `<div class="text-content">${E(qq.question_text || '')}</div>`;
+    document.getElementById('st-qid').textContent = qq.id || '—';
+    document.getElementById('input').focus();
+    setTimeout(buildSubquestionTracker, 100);
+}
+
+async function send() {
+    const inp = document.getElementById('input'), msg = inp.value.trim();
+    if (!msg || loading || !sid) return;
+    inp.value = ''; inp.disabled = true;
+    document.getElementById('btn-send').disabled = true;
+    loading = true;
+    addMsg('user', msg);
+    document.getElementById('typing').style.display = 'block';
+    try {
+        const d = await api('/api/chat', {session_id:sid, message:msg});
+        document.getElementById('typing').style.display = 'none';
+        if (d.end_session) { addMsg('system', d.reply); end(); return; }
+        if (d.next_question) { addMsg('system','⏭ Επόμενο θέμα...'); await next(); return; }
+        if (d.is_solution) { addSolution(d.answer_html || d.reply || ''); }
+        else if (d.evaluation) { renderEvaluation(d.evaluation); }
+        else if (d.reply) { addMsg(d.no_ai ? 'system' : 'ai', d.reply); }
+    } catch(e) { document.getElementById('typing').style.display = 'none'; addMsg('system','⚠ Σφάλμα: '+e.message); }
+    finally { inp.disabled = false; document.getElementById('btn-send').disabled = false; inp.focus(); loading = false; }
+}
+
+function addSolution(htmlOrText) {
+    const c = document.getElementById('messages');
+    const div = document.createElement('div'); div.className = 'msg sol';
+    div.innerHTML = htmlOrText;
+    c.appendChild(div); c.scrollTop = c.scrollHeight;
+}
+
+function renderEvaluation(ev) {
+    const c = document.getElementById('messages');
+    const d = document.createElement('div'); d.className = 'msg eval';
+    const icons = {correct:'✅', partially_correct:'⚠️', incorrect:'❌'};
+    const labels = {correct:'ΣΩΣΤΟ!', partially_correct:'ΜΕΡΙΚΩΣ ΣΩΣΤΟ', incorrect:'ΛΑΘΟΣ'};
+    const cls = {correct:'eval-ok', partially_correct:'eval-warn', incorrect:'eval-err'};
+    d.innerHTML = `<div class="eval-status ${cls[ev.status]||'eval-err'}">${icons[ev.status]||'?'} ${labels[ev.status]||''}</div>
+        <div class="eval-critique">${E(ev.critique||'')}</div>
+        <div class="eval-hint">💡 ${E(ev.hint||'')}</div>`;
+    c.appendChild(d); c.scrollTop = c.scrollHeight;
+}
+
+function addMsg(role, text) {
+    const c = document.getElementById('messages');
+    const d = document.createElement('div'); d.className = `msg ${role}`;
+    d.innerHTML = role === 'user' ? E(String(text)).replace(/\n/g,'<br>') : String(text).replace(/\n/g,'<br>');
+    c.appendChild(d); c.scrollTop = c.scrollHeight;
+}
+
+function quick(a) { document.getElementById('input').value = a; send(); }
+function quickChip(msg) { document.getElementById('input').value = msg + ': '; document.getElementById('input').focus(); }
+
+// ── Adaptive chip labels ─────────────────────────────
+function updateChipLabels() {
+    const chip = document.getElementById('chip-help');
+    if (!chip) return;
+    const totalHints = hintState.hintCount || 0;
+    if (totalHints === 0) {
+        chip.textContent = '😰 Δεν ξέρω πώς να ξεκινήσω';
+        chip.setAttribute('onclick', 'quickChip(\'Δεν ξέρω πώς να ξεκινήσω\')');
+    } else if (totalHints <= 2) {
+        chip.textContent = '🤔 Χρειάζομαι περισσότερη βοήθεια';
+        chip.setAttribute('onclick', 'quickChip(\'Χρειάζομαι περισσότερη βοήθεια\')');
+    } else {
+        chip.textContent = '📋 Δείξε μου μια παρόμοια άσκηση';
+        chip.setAttribute('onclick', 'quickChip(\'Δείξε μου μια παρόμοια άσκηση\')');
+    }
+}
+
+// ── Sub-Question Progress Tracker ─────────────────────
+let sqList = [];
+let activeSqIdx = 0;
+
+function buildSubquestionTracker() {
+    const body = document.getElementById('q-body');
+    const subqs = body.querySelectorAll('.subq');
+    sqList = [];
+    subqs.forEach(sq => {
+        const num = sq.querySelector('.subq-num')?.textContent || '?';
+        sqList.push({ number: num, done: false });
+    });
+    if (sqList.length === 0) sqList.push({ number: '?', done: false });
+    activeSqIdx = 0;
+    renderTracker();
+}
+
+function renderTracker() {
+    const list = document.getElementById('sq-list');
+    const footer = document.getElementById('sq-footer');
+    let html = '';
+    sqList.forEach((sq, i) => {
+        let cls = 'sq-item';
+        if (sq.done) cls += ' done';
+        else if (i === activeSqIdx) cls += ' active';
+        const status = sq.done ? '✅' : (i === activeSqIdx ? '📍 Ενεργό' : '');
+        html += `<div class="${cls}" onclick="selectSubq(${i})">
+            <div class="sq-dot"></div>
+            <span class="sq-label">Υποερώτημα ${sq.number}</span>
+            <span class="sq-status">${status}</span>
+        </div>`;
+    });
+    list.innerHTML = html;
+    if (activeSqIdx < sqList.length && !sqList[activeSqIdx].done) {
+        footer.innerHTML = `<button class="sq-done-btn" onclick="markSubqDone()">✅ Ολοκλήρωσα το ${sqList[activeSqIdx].number}</button>`;
+    } else if (sqList.every(s => s.done)) {
+        footer.innerHTML = '<div style="color:var(--green);font-size:0.8rem">🎉 Όλα τα υποερωτήματα ολοκληρώθηκαν!</div>';
+    } else {
+        footer.innerHTML = '';
+    }
+}
+
+function selectSubq(i) {
+    if (sqList[i].done) return;
+    activeSqIdx = i;
+    renderTracker();
+}
+
+function markSubqDone() {
+    if (activeSqIdx >= sqList.length) return;
+    sqList[activeSqIdx].done = true;
+    let next = activeSqIdx + 1;
+    while (next < sqList.length && sqList[next].done) next++;
+    if (next < sqList.length) activeSqIdx = next;
+    renderTracker();
+    hintState = { subqIdx: activeSqIdx, hintCount: 0, totalSubqs: sqList.length };
+    if (sqList.every(s => s.done)) {
+        addMsg('system', '✅ Ολοκλήρωσες όλα τα υποερωτήματα. Πάμε στο επόμενο θέμα!');
+    }
+}
+
+// ── Hint system ────────────────────────────────────────
+let hintState = { subqIdx: 0, hintCount: 0, totalSubqs: 1 };
+
+async function currentHint() {
+    if (!sid || loading) return;
+    loading = true;
+    document.getElementById('typing').style.display = 'block';
+    hintState = { subqIdx: activeSqIdx, hintCount: hintState.hintCount || 0, totalSubqs: sqList.length };
+    try {
+        const d = await api('/api/session/hint', {session_id:sid, hint_state: hintState});
+        document.getElementById('typing').style.display = 'none';
+        if (d.error) { addMsg('system', d.error); loading = false; return; }
+        hintState = d.hint_state || hintState;
+        if (d.html) {
+            addMsg('sol', d.html + '<br><br>✋ <i>Κατάλαβες; Γράψε "ναι" ή ρώτησέ με!</i>');
+        } else if (d.reply) {
+            addMsg('ai', d.reply);
+        }
+        if (d.all_done || d.is_full_answer) {
+            if (activeSqIdx < sqList.length) {
+                sqList[activeSqIdx].done = true;
+                let next = activeSqIdx + 1;
+                while (next < sqList.length && sqList[next].done) next++;
+                if (next < sqList.length) activeSqIdx = next;
+            }
+            renderTracker();
+            updateChipLabels();
+        }
+        updateChipLabels();
+    } catch(e) { document.getElementById('typing').style.display = 'none'; addMsg('system','⚠ Σφάλμα'); }
+    finally { loading = false; document.getElementById('input').focus(); }
+}
+
+async function next() {
+    if (!sid) return;
+    document.getElementById('messages').innerHTML = '';
+    try {
+        const d = await api('/api/session/next', {session_id:sid});
+        if (d.session_complete) { addMsg('system', d.reply); end(); return; }
+        q = d.question; renderQuestion(q); updateStats(d.stats);
+        addMsg('system', `📌 ${q.part} (${q.year}) — ${q.points} μονάδες`);
+        document.getElementById('btn-prev').disabled = false;
+    } catch(e) { addMsg('system','⚠ Σφάλμα'); }
+}
+
+async function back() {
+    if (!sid || loading) return;
+    loading = true; document.getElementById('messages').innerHTML = '';
+    try {
+        const d = await api('/api/session/previous', {session_id:sid});
+        if (d.error) { addMsg('system', d.error); loading = false; return; }
+        q = d.question; renderQuestion(q); updateStats(d.stats);
+        addMsg('system', `⬅ ${q.part} (${q.year})`);
+        document.getElementById('btn-prev').disabled = !d.has_previous;
+    } catch(e) { addMsg('system','⚠ Σφάλμα'); }
+    finally { loading = false; document.getElementById('input').focus(); }
+}
+
+function updateStats(s) {
+    if(s) {
+        document.getElementById('st-done').textContent = s.completed || 0;
+        document.getElementById('st-pts').textContent = s.total_points || 0;
+        document.getElementById('st-left').textContent = s.remaining || 0;
+    }
+}
+
+function end() {
+    document.getElementById('input').disabled = true;
+    document.getElementById('btn-send').disabled = true;
+    setTimeout(() => {
+        sid = null;
+        document.getElementById('start-screen').style.display = 'block';
+        document.getElementById('session').style.display = 'none';
+        document.getElementById('messages').innerHTML = '';
+        document.getElementById('btn-start').disabled = false;
+    }, 1500);
+}
+
+document.getElementById('input').addEventListener('keydown', e => {
+    if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) { e.preventDefault(); send(); }
+});
+</script>
+</body>
+</html>
