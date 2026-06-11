@@ -66,9 +66,21 @@ sessions = {}  # session_id → {messages, seen_ids, current_question, ...}
 def load_data():
     """Load questions and compute priorities once on startup."""
     global exam_data, ranked, details, trend_context
+    # Debug: show what path we're trying
+    print(f"Looking for questions at: {QUESTIONS_FILE}")
+    print(f"  Base dir: {BASE_DIR}")
+    print(f"  Exists: {os.path.exists(QUESTIONS_FILE)}")
+    
     if not os.path.exists(QUESTIONS_FILE):
-        print(f"ERROR: {QUESTIONS_FILE} not found. Run build_questions.py first.")
-        sys.exit(1)
+        print(f"ERROR: {QUESTIONS_FILE} not found.")
+        # Don't sys.exit in production — initialize empty and print the actual files
+        import glob
+        candidates = glob.glob(os.path.join(BASE_DIR, "**", "*.json"), recursive=True)
+        print(f"  Found JSON files: {candidates[:10]}")
+        exam_data = []
+        ranked = []
+        return
+    
     with open(QUESTIONS_FILE, encoding="utf-8") as f:
         exam_data = json.load(f)
     ranked_priorities, details = calculate_topic_priorities(exam_data)

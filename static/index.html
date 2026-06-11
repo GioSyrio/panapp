@@ -166,11 +166,7 @@
                     <div class="sq-tracker-footer" id="sq-footer"></div>
                 </div>
                 <!-- Quick chips -->
-                <div class="chips-row">
-                    <span class="chip" id="chip-help" onclick="quickChip('Δεν ξέρω πώς να ξεκινήσω')">😰 Δεν ξέρω πώς να ξεκινήσω</span>
-                    <span class="chip" onclick="quickChip('Δείξε μου μια παρόμοια άσκηση')">📋 Παρόμοια άσκηση</span>
-                    <span class="chip" onclick="quickChip('Βρες το λάθος μου')">🔎 Βρες το λάθος</span>
-                </div>
+
                 <div class="chat">
                     <div class="messages" id="messages"></div>
                     <div class="typing" id="typing" style="display:none">🤔 Το AI σκέφτεται...</div>
@@ -296,14 +292,7 @@ function quick(a) { document.getElementById('input').value = a; send(); }
 function quickChip(msg) { document.getElementById('input').value = msg + ': '; document.getElementById('input').focus(); }
 
 // ── Adaptive chip labels ─────────────────────────────
-function updateChipLabels() {
-    const chip = document.getElementById('chip-help');
-    if (!chip) return;
-    const totalHints = hintState.hintCount || 0;
-    if (totalHints === 0) {
-        chip.textContent = '😰 Δεν ξέρω πώς να ξεκινήσω';
-        chip.setAttribute('onclick', 'quickChip(\'Δεν ξέρω πώς να ξεκινήσω\')');
-    } else if (totalHints <= 2) {
+ else if (totalHints <= 2) {
         chip.textContent = '🤔 Χρειάζομαι περισσότερη βοήθεια';
         chip.setAttribute('onclick', 'quickChip(\'Χρειάζομαι περισσότερη βοήθεια\')');
     } else {
@@ -399,9 +388,7 @@ async function currentHint() {
                 if (next < sqList.length) activeSqIdx = next;
             }
             renderTracker();
-            updateChipLabels();
         }
-        updateChipLabels();
     } catch(e) { document.getElementById('typing').style.display = 'none'; addMsg('system','⚠ Σφάλμα'); }
     finally { loading = false; document.getElementById('input').focus(); }
 }
