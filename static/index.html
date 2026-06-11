@@ -291,17 +291,7 @@ function addMsg(role, text) {
 function quick(a) { document.getElementById('input').value = a; send(); }
 function quickChip(msg) { document.getElementById('input').value = msg + ': '; document.getElementById('input').focus(); }
 
-// ── Adaptive chip labels ─────────────────────────────
- else if (totalHints <= 2) {
-        chip.textContent = '🤔 Χρειάζομαι περισσότερη βοήθεια';
-        chip.setAttribute('onclick', 'quickChip(\'Χρειάζομαι περισσότερη βοήθεια\')');
-    } else {
-        chip.textContent = '📋 Δείξε μου μια παρόμοια άσκηση';
-        chip.setAttribute('onclick', 'quickChip(\'Δείξε μου μια παρόμοια άσκηση\')');
-    }
-}
-
-// ── Sub-Question Progress Tracker ─────────────────────
+// ── Sub-Question// ── Sub-Question Progress Tracker ─────────────────────
 let sqList = [];
 let activeSqIdx = 0;
 
