@@ -836,6 +836,11 @@ def health():
     })
 
 
+# ── Initialize on import ──────────────────────────────────────────────────
+# (runs under both gunicorn and `python app.py`)
+load_data()
+init_deepseek()
+
 # ── Main ─────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
@@ -844,9 +849,6 @@ if __name__ == "__main__":
     parser.add_argument("--port", type=int, default=5050, help="Server port")
     parser.add_argument("--debug", action="store_true", help="Debug mode")
     args = parser.parse_args()
-
-    load_data()
-    init_deepseek()
 
     print(f"  Server: http://localhost:{args.port}")
     print(f"  DeepSeek: {'✓' if deepseek_client else '✗ (set DEEPSEEK_API_KEY)'}")
