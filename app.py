@@ -203,25 +203,54 @@ def call_deepseek_with_retry(fn, *args, max_retries=1, **kwargs):
 def index():
     return send_from_directory(STATIC_DIR, "index.html")
 
+# ── Subject config loader ──────────────────────────────────────────────────
+import json as _json
+def load_subject_config(subject_id="informatics"):
+    cfg_path = os.path.join(BASE_DIR, "subjects", f"{subject_id}.json")
+    if not os.path.exists(cfg_path):
+        cfg_path = os.path.join(BASE_DIR, "subjects", "informatics.json")
+    with open(cfg_path, encoding="utf-8") as f:
+        return _json.load(f)
+
 @app.route("/api/session/start", methods=["POST"])
 def start_session():
     sid = str(uuid.uuid4())
     cleanup_sessions()
+    body = request.get_json(force=True) or {}
+    subject_id = body.get("subject", "informatics")
+    subject_cfg = load_subject_config(subject_id)
+    parts = subject_cfg.get("parts", ["Θέμα 2"])
+    data_dir = os.path.join(BASE_DIR, subject_cfg.get("data", {}).get("data_dir", "data/trapeza_data_1_3_218"))
+    qfile = os.path.join(data_dir, subject_cfg.get("data", {}).get("source_file", "questions_classified.json"))
+    if os.path.exists(qfile):
+        with open(qfile, encoding="utf-8") as f:
+            global exam_data, ranked, details, trend_context
+            exam_data = _json.load(f)
+            ranked_priorities, details = calculate_topic_priorities(exam_data)
+            ranked = [(t, s) for t, s in ranked_priorities if t not in ("ΠΛΗΡΟΦΟΡΙΚΗ:", "ΑΕΠΠ:", "", "ΜΑΘΗΜΑΤΙΚΑ:", "ΑΛΓΕΒΡΑ:")]
+            trend_context = build_trend_context(ranked, details, top_n=5)
     if not exam_data:
         return jsonify({"error": "Δεν φορτώθηκαν τα δεδομένα. Δοκίμασε αργότερα."}), 500
     question, tag = None, None
     for tg, _ in ranked[:15]:
         for q in exam_data:
-            if q["part"] == "Θέμα 2" and tg in q.get("conceptual_tags", []):
+            if q["part"] in parts and tg in q.get("conceptual_tags", []):
                 question, tag = q, tg; break
         if question: break
     if not question:
         import random
-        candidates = [q for q in exam_data if q["part"] == "Θέμα 2"]
+        candidates = [q for q in exam_data if q["part"] in parts]
         question, tag = random.choice(candidates) if candidates else (None, None)
     if not question:
         return jsonify({"error": "Δεν βρέθηκαν ερωτήσεις."}), 500
-    sp = (GREEK_TUTOR_SYSTEM_PROMPT + "\n" +
+    try:
+        subj_prompts = _load_subject_prompts(subject_id)
+        tutor_prompt = subj_prompts.GREEK_TUTOR_SYSTEM_PROMPT
+        eval_prompt = subj_prompts.EVALUATION_SYSTEM_PROMPT
+    except:
+        tutor_prompt = GREEK_TUTOR_SYSTEM_PROMPT
+        eval_prompt = EVALUATION_SYSTEM_PROMPT
+    sp = (tutor_prompt + "\n" +
           f"Θέμα: {question['part']} — {question.get('points',0)} μονάδες\n" +
           f"Έτος: {question.get('year','')}\n" +
           trend_context)
@@ -230,11 +259,11 @@ def start_session():
         "current_question": question, "current_tag": tag,
         "completed_count": 0, "total_points": 0,
         "started_at": datetime.now(timezone.utc).isoformat(), "history": [],
+        "subject_id": subject_id,
     }
-    logger.info(f"Session started: {sid[:8]}")
+    logger.info(f"Session started: {sid[:8]} [{subject_id}]")
     return jsonify({"session_id": sid, "question": format_exam_question(question, tag),
-                    "has_ai": deepseek_client is not None})
-
+                    "has_ai": deepseek_client is not None, "subject": subject_cfg})
 @app.route("/api/chat", methods=["POST"])
 def chat():
     body = request.get_json(force=True) or {}
