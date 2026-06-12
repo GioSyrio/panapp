@@ -32,12 +32,16 @@ except ImportError:
     logger.warning("openai package not installed")
 
 from predictor import calculate_topic_priorities, CURRENT_YEAR
-from prompts import (
-    GREEK_TUTOR_SYSTEM_PROMPT, EVALUATION_SYSTEM_PROMPT,
-    PREDICTION_SYSTEM_PROMPT, CORRECT_ANSWER_PROMPT,
-    PARTIAL_ANSWER_PROMPT, INCORRECT_ANSWER_PROMPT,
-    COMMON_PANHELLENIC_TRAPS, build_trend_context,
-)
+from prompt_loader import load_prompts as _load_subject_prompts
+_prompts = _load_subject_prompts("informatics")
+GREEK_TUTOR_SYSTEM_PROMPT = _prompts.GREEK_TUTOR_SYSTEM_PROMPT
+EVALUATION_SYSTEM_PROMPT = _prompts.EVALUATION_SYSTEM_PROMPT
+PREDICTION_SYSTEM_PROMPT = _prompts.PREDICTION_SYSTEM_PROMPT
+CORRECT_ANSWER_PROMPT = _prompts.CORRECT_ANSWER_PROMPT
+PARTIAL_ANSWER_PROMPT = _prompts.PARTIAL_ANSWER_PROMPT
+INCORRECT_ANSWER_PROMPT = _prompts.INCORRECT_ANSWER_PROMPT
+COMMON_PANHELLENIC_TRAPS = _prompts.COMMON_PANHELLENIC_TRAPS
+build_trend_context = _prompts.build_trend_context
 
 from dotenv import load_dotenv
 load_dotenv()
