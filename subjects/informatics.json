@@ -1,0 +1,48 @@
+{
+  "id": "informatics",
+  "name": "Πληροφορική",
+  "icon": "🧮",
+  "parts": ["Θέμα 2", "Θέμα 4"],
+  "points_range": [10, 25],
+  "exam_duration_minutes": 180,
+
+  "prompt_file": "prompts/informatics.py",
+
+  "section_types": [
+    "section_header",
+    "sub_question",
+    "points",
+    "text",
+    "algorithm_block",
+    "code_block",
+    "matching_table",
+    "gap_fill_table",
+    "table",
+    "diagram"
+  ],
+
+  "ui": {
+    "app_title": "Πανελλαδικές AI Tutor",
+    "header_subtitle": "Πληροφορική • Θέματα 2 & 4",
+    "input_placeholder": "Γράψε τη σκέψη σου ή ρώτα κάτι...",
+    "start_title": "Έτοιμος για εξάσκηση;",
+    "start_description": "Θέματα υψηλής πιθανότητας βασισμένα σε στατιστική ανάλυση. Γράψε την απάντησή σου, πάρε feedback, και δες τη λύση βήμα-βήμα.",
+    "welcome_message": "Γράψε την απάντησή σου ή ξεκίνα με ερωτήσεις."
+  },
+
+  "hints": {
+    "labels": ["Θυμήσου", "Βήμα-Βήμα", "Σκαλωσιά"],
+    "max_hints_per_subq": 3
+  },
+
+  "evaluation": {
+    "prompt_file": "prompts/informatics.py",
+    "statuses": ["correct", "partially_correct", "incorrect"]
+  },
+
+  "data": {
+    "source_file": "questions_classified.json",
+    "built_file": "questions_v2.json",
+    "data_dir": "data/trapeza_data_1_3_218"
+  }
+}
