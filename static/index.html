@@ -440,6 +440,11 @@ function end() {
 document.getElementById('input').addEventListener('keydown', e => {
     if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) { e.preventDefault(); send(); }
 });
+
+const renderMath = () => { try { renderMathInElement(document.getElementById('messages'), { delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}], throwOnError: false }); } catch(e) {} };
+const _a2 = addMsg; addMsg = function(r,t) { _a2(r,t); setTimeout(renderMath, 50); };
+const _s2 = addSolution; addSolution = function(h) { _s2(h); setTimeout(renderMath, 50); };
+const _e2 = renderEvaluation; renderEvaluation = function(ev) { _e2(ev); setTimeout(renderMath, 50); };
 </script>
 </body>
 </html>
