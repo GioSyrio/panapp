@@ -28,5 +28,11 @@ playwright*.zip
 # Backups
 *.backup
 
-# Sensitive data (optional — commit data/ if needed)
-# data/
+# Large data — don't push attachments (DOCX, PDF, ZIP)
+data/trapeza_data_1_3_218/attachments/
+data/trapeza_data_1_3_218/data.json
+data/trapeza_data_1_3_218/fix_progress.json
+data/trapeza_data_1_3_218/items_raw.json
+data/trapeza_data_1_3_218/questions.json
+data/trapeza_data_1_3_218/tree_data.json
+data/trapeza_data_1_3_218/questions.json.backup
