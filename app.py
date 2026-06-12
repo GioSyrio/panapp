@@ -47,7 +47,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_DIR = os.path.join(BASE_DIR, "data", "trapeza_data_1_3_218")
+DATA_DIR = os.path.join(BASE_DIR, "data", "subjects", "informatics")
 QUESTIONS_FILE = os.path.join(DATA_DIR, "questions_classified.json")
 QUESTIONS_V2_FILE = os.path.join(DATA_DIR, "questions_v2.json")
 STATIC_DIR = os.path.join(BASE_DIR, "static")
