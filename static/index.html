@@ -102,8 +102,6 @@
         .diagram-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 9999; align-items: center; justify-content: center; }
         .diagram-modal img { max-width: 95vw; max-height: 95vh; border-radius: 10px; box-shadow: 0 8px 30px rgba(0,0,0,0.5); }
         .diagram-modal .close { position: absolute; top: 16px; right: 24px; color: #fff; font-size: 2rem; cursor: pointer; z-index: 10000; }
-
-        /* ── Sub-Question Progress Tracker ─────────────── */
         .sq-tracker { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; margin-bottom: var(--gap); }
         .sq-tracker-header { font-weight: 700; font-size: 0.82rem; color: var(--accent); margin-bottom: 10px; }
         .sq-list { display: flex; flex-direction: column; gap: 6px; }
@@ -121,12 +119,6 @@
         .sq-tracker-footer { margin-top: 10px; text-align: center; }
         .sq-done-btn { padding: 6px 16px; border-radius: 18px; border: 1px solid var(--green); background: transparent; color: var(--green); font-size: 0.76rem; font-weight: 700; cursor: pointer; }
         .sq-done-btn:hover { background: var(--green); color: #000; }
-
-        /* ── Chips ──────────────────────────────────────── */
-        .chips-row { display: flex; gap: 6px; overflow-x: auto; padding: 4px 0 6px; }
-        .chip { flex-shrink: 0; padding: 5px 12px; border-radius: 16px; border: 1px solid var(--border); background: var(--surface); color: var(--text2); font-size: 0.74rem; font-weight: 600; cursor: pointer; white-space: nowrap; }
-        .chip:hover { border-color: var(--accent); color: var(--accent); }
-
         @media (max-width: 600px) { .header h1 { font-size: 1.3rem; } .msg { max-width: 94%; } .input-row { flex-direction: column; } }
     </style>
 </head>
@@ -159,24 +151,23 @@
                 </div>
             </div>
             <div class="col-right">
-                <!-- Sub-Question Progress Tracker -->
                 <div class="sq-tracker" id="sq-tracker">
                     <div class="sq-tracker-header">📋 Πρόοδος Ερωτήματος</div>
                     <div class="sq-list" id="sq-list"></div>
                     <div class="sq-tracker-footer" id="sq-footer"></div>
                 </div>
-                <!-- Quick chips -->
-
                 <div class="chat">
                     <div class="messages" id="messages"></div>
                     <div class="typing" id="typing" style="display:none">🤔 Το AI σκέφτεται...</div>
                 </div>
                 <div class="input-row">
-                    <textarea id="input" placeholder="Γράψε την απάντηση..." rows="3"></textarea>
+                    <textarea id="input" placeholder="Γράψε τη σκέψη σου ή ρώτα κάτι..." rows="3"></textarea>
                     <button id="btn-send" onclick="send()">📤</button>
                 </div>
                 <div class="quick-actions">
-                    <button class="qbtn" onclick="currentHint()">💡 Hint</button>
+                    <button class="qbtn" onclick="currentHint()">💡 Υπόδειξη</button>
+                    <span class="qbtn" id="chip-help" onclick="quickChip('Δεν ξέρω πώς να ξεκινήσω')">😰 Δάσκαλε βοήθα!</span>
+                    <button class="qbtn" onclick="quick('Δείξε μου μια παρόμοια άσκηση')">📋 Παρόμοια</button>
                     <button class="qbtn" id="btn-prev" onclick="back()" disabled>⬅ Πίσω</button>
                     <button class="qbtn" onclick="quick('next')">⏭ Επόμενο</button>
                 </div>
@@ -291,7 +282,22 @@ function addMsg(role, text) {
 function quick(a) { document.getElementById('input').value = a; send(); }
 function quickChip(msg) { document.getElementById('input').value = msg + ': '; document.getElementById('input').focus(); }
 
-// ── Sub-Question// ── Sub-Question Progress Tracker ─────────────────────
+function updateChipLabels() {
+    const chip = document.getElementById('chip-help');
+    if (!chip) return;
+    const totalHints = hintState.hintCount || 0;
+    if (totalHints === 0) {
+        chip.textContent = '😰 Δάσκαλε βοήθα!';
+        chip.setAttribute('onclick', "quickChip('Δεν ξέρω πώς να ξεκινήσω')");
+    } else if (totalHints <= 2) {
+        chip.textContent = '🤔 Θέλω κι άλλη βοήθεια';
+        chip.setAttribute('onclick', "quickChip('Χρειάζομαι περισσότερη βοήθεια')");
+    } else {
+        chip.textContent = '🧠 Πώς το σκέφτεσαι;';
+        chip.setAttribute('onclick', "quickChip('Δείξε μου πώς σκέφτεσαι βήμα-βήμα, σαν δάσκαλος που λύνει την άσκηση')");
+    }
+}
+
 let sqList = [];
 let activeSqIdx = 0;
 
@@ -336,6 +342,8 @@ function renderTracker() {
 function selectSubq(i) {
     if (sqList[i].done) return;
     activeSqIdx = i;
+    hintState = { subqIdx: i, hintCount: 0, totalSubqs: sqList.length };
+    updateChipLabels();
     renderTracker();
 }
 
@@ -347,12 +355,12 @@ function markSubqDone() {
     if (next < sqList.length) activeSqIdx = next;
     renderTracker();
     hintState = { subqIdx: activeSqIdx, hintCount: 0, totalSubqs: sqList.length };
+    updateChipLabels();
     if (sqList.every(s => s.done)) {
         addMsg('system', '✅ Ολοκλήρωσες όλα τα υποερωτήματα. Πάμε στο επόμενο θέμα!');
     }
 }
 
-// ── Hint system ────────────────────────────────────────
 let hintState = { subqIdx: 0, hintCount: 0, totalSubqs: 1 };
 
 async function currentHint() {
@@ -370,6 +378,7 @@ async function currentHint() {
         } else if (d.reply) {
             addMsg('ai', d.reply);
         }
+        updateChipLabels();
         if (d.all_done || d.is_full_answer) {
             if (activeSqIdx < sqList.length) {
                 sqList[activeSqIdx].done = true;

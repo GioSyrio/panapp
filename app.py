@@ -260,7 +260,12 @@ def chat():
 
     if not is_answer:
         try:
-            ms = sess["messages"].copy(); ms[-1] = {"role":"user","content":msg}
+            # Inject active sub-question context into chat prompt
+            subq_ctx = ""
+            active_subq = body.get("active_subq", {})
+            if active_subq and active_subq.get("number"):
+                subq_ctx = f"\n\n[Ενεργό υποερώτημα: {active_subq.get('number')}. {active_subq.get('content', '')}]"
+            ms = sess["messages"].copy(); ms[-1] = {"role":"user","content":msg + subq_ctx}
             resp = call_deepseek_with_retry(deepseek_client.chat.completions.create,
                                             model="deepseek-chat", messages=ms, temperature=0.4, max_tokens=500)
             reply = strip_reasoning(resp.choices[0].message.content or "Συγνώμη, κάτι πήγε στραβά.")
@@ -279,7 +284,7 @@ def chat():
     try:
         q = sess["current_question"]
         em = [{"role":"system","content":EVALUATION_SYSTEM_PROMPT},
-              {"role":"user","content": f"Ερώτηση: {q.get('question_text','')[:2000]}\n\nΑπάντηση μαθητή: {msg}"}]
+              {"role":"user","content": f"Ερώτηση: {q.get('question_text','')[:2000]}\n\nΑπάντηση μαθητή: {msg}{subq_ctx}"}]
         resp = call_deepseek_with_retry(deepseek_client.chat.completions.create,
                                         model="deepseek-chat", messages=em, temperature=0.1, max_tokens=600,
                                         response_format={"type":"json_object"})
@@ -354,6 +359,24 @@ def _get_subquestions(qid):
     v2 = _load_v2_data().get(str(qid),{})
     return [{"number":s["number"],"content":s.get("content","")} for s in v2.get("sections",[]) if s["type"]=="sub_question"]
 
+def _filter_answer_for_subq(full_answer, subq_number, subq_content):
+    """Use LLM to extract only the answer portion relevant to a specific sub-question."""
+    if not deepseek_client or not full_answer:
+        return full_answer
+    clean_answer = re.sub(r'<[^>]+>', ' ', full_answer)[:3000]
+    try:
+        resp = call_deepseek_with_retry(deepseek_client.chat.completions.create,
+            model="deepseek-chat",
+            messages=[{"role":"system","content":"Είσαι βοηθός. Από το πλήρες κείμενο απάντησης, επέστρεψε ΜΟΝΟ το τμήμα που αντιστοιχεί στο συγκεκριμένο υποερώτημα. Κράτα τη φυσική γλώσσα, μην προσθέσεις τίποτα δικό σου."},
+                      {"role":"user","content":f"Πλήρης απάντηση:\n{clean_answer}\n\nΥποερώτημα: {subq_number}\nΕκφώνηση: {subq_content}\n\nΕπέστρεψε μόνο την απάντηση για το υποερώτημα {subq_number}, αυτολεξεί όπως είναι στο κείμενο:"}],
+            temperature=0.1, max_tokens=500)
+        filtered = strip_reasoning(resp.choices[0].message.content or "")
+        if filtered and len(filtered) > 15:
+            return filtered.replace('\n', '<br>')
+    except Exception as e:
+        logger.warning(f"Answer filtering failed for subq {subq_number}: {e}")
+    return full_answer  # fallback
+
 def _handle_hint(sess):
     qid = str(sess["current_question"]["id"])
     v2 = _load_v2_data().get(qid,{})
@@ -366,11 +389,15 @@ def _handle_hint(sess):
     ht = hints[si]["hints"][hc]["hint_text"] if si < len(hints) and hc < len(hints[si].get("hints",[])) else None
     if not ht:
         hs["subqIdx"]=si+1; hs["hintCount"]=0; sess["hint_state"]=hs
-        return jsonify({"html":v2.get("answer_html",""),"hint_state":hs,"is_full_answer":True,"reply":f"📚 Υποερώτημα {sn} — Πλήρης λύση."})
+        full_answer = v2.get("answer_html","")
+        filtered = _filter_answer_for_subq(full_answer, sn, sqs[si].get("content","")) if deepseek_client else full_answer
+        return jsonify({"html": filtered or full_answer, "hint_state":hs,"is_full_answer":True,"reply":f"📚 Υποερώτημα {sn} — Πλήρης λύση."})
     hc+=1; hs["hintCount"]=hc; sess["hint_state"]=hs
     if hc >= 4:
         hs["subqIdx"]=si+1; hs["hintCount"]=0; sess["hint_state"]=hs
-        return jsonify({"html":v2.get("answer_html",""),"hint_state":hs,"is_full_answer":True,"reply":f"📚 Υποερώτημα {sn} — Πλήρης λύση."})
+        full_answer = v2.get("answer_html","")
+        filtered = _filter_answer_for_subq(full_answer, sn, sqs[si].get("content","")) if deepseek_client else full_answer
+        return jsonify({"html": filtered or full_answer, "hint_state":hs,"is_full_answer":True,"reply":f"📚 Υποερώτημα {sn} — Πλήρης λύση."})
     return jsonify({"html":f'<div class="hint-box"><b>Υποερώτημα {sn}</b><br><br>{ht}</div>',"hint_state":hs,"subq_num":sn,"level":hc})
 
 @app.route("/api/session/hint", methods=["POST"])

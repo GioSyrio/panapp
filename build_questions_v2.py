@@ -223,6 +223,59 @@ def extract_answer_steps(docx_path):
         if code_lines: steps.append({"label": "Code", "text": "", "code_lines": code_lines})
     return steps
 
+def build_answer_by_subq(docx_path, subq_numbers):
+    """Extract per-sub-question answers from the answer DOCX.
+    subq_numbers are from the question (e.g., ['2.1','2.2'])."""
+    steps = extract_answer_steps(docx_path)
+    if not steps or not subq_numbers:
+        return []
+    answers = []
+    current_subq = None
+    current_steps = []
+    for step in steps:
+        label = step.get("label", "").strip(".) ")
+        found = None
+        for sq_num in subq_numbers:
+            sq_clean = sq_num.replace(".", "")
+            if label == sq_num or label == sq_clean or label.startswith(sq_clean):
+                found = sq_num
+                break
+        if found:
+            if current_subq and current_steps:
+                answers.append({"number": current_subq, "steps": current_steps})
+            current_subq = found
+            current_steps = [step]
+        elif current_subq:
+            current_steps.append(step)
+        else:
+            if subq_numbers:
+                current_subq = subq_numbers[0]
+                current_steps = [step]
+    if current_subq and current_steps:
+        answers.append({"number": current_subq, "steps": current_steps})
+
+    result = []
+    for ans in answers:
+        html_parts = []
+        for i, step in enumerate(ans["steps"]):
+            lbl = step["label"] or f"{i+1}."
+            html_parts.append('<div class="sol-step">')
+            html_parts.append(f'<div class="sol-step-label">{e(lbl)}</div>')
+            if step.get("code_lines"):
+                html_parts.append('<div class="code-body" style="margin-top:4px"><table>')
+                for j, l in enumerate(step["code_lines"]):
+                    html_parts.append(f'<tr><td class="ln">{j+1}</td><td class="lc">{hl(l)}</td></tr>')
+                html_parts.append('</table></div>')
+            else:
+                html_parts.append(f'<div class="sol-step-text">{e(step["text"])}</div>')
+            html_parts.append('</div>')
+        result.append({
+            "number": ans["number"],
+            "html": '\n'.join(html_parts),
+            "text": ' '.join(s["text"] for s in ans["steps"])
+        })
+    return result
+
 def render_answer_html(ans_text, docx_path):
     steps = extract_answer_steps(docx_path)
     if not steps: return f'<div class="sol-text">{e(ans_text)}</div>'
@@ -333,6 +386,9 @@ def main():
         q_html = render_q_html(sections)
         ans_text = q.get("answer_text","")
         ans_html = render_answer_html(ans_text, apath)
+        # Build per-sub-question answer slices
+        subq_numbers = [s["number"] for s in sections if s["type"] == "sub_question"]
+        answer_by_subq = build_answer_by_subq(apath, subq_numbers) if subq_numbers else []
         entry = prev_v2.get(str(qid), {})
         entry.update({
             "id": qid, "year": q.get("year"), "part": q.get("part"),
@@ -340,6 +396,7 @@ def main():
             "conceptual_tags": q.get("conceptual_tags",[]),
             "sections": sections, "question_html": q_html,
             "answer_html": ans_html, "answer_text": ans_text,
+            "answer_by_subq": answer_by_subq,
         })
         output.append(entry); processed += 1; print("✓")
     output.sort(key=lambda e: (-(e["year"] or 0), e["part"], e["id"]))
