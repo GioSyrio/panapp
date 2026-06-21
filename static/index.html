@@ -182,6 +182,13 @@
 
 <script>
 let sid = null, loading = false, q = null;
+let currentSubject = 'informatics';
+
+function selectSubject(subj, el) {
+    currentSubject = subj;
+    document.querySelectorAll('.subj-opt').forEach(b => b.classList.remove('active'));
+    el.classList.add('active');
+}
 
 function toggleDark() {
     const r = document.documentElement;
@@ -209,7 +216,7 @@ async function api(url, body) { const r = await fetch(url, {method:'POST',header
 async function start() {
     document.getElementById('btn-start').disabled = true;
     try {
-        const d = await api('/api/session/start', {});
+        const d = await api('/api/session/start', {subject: currentSubject});
         sid = d.session_id; q = d.question;
         document.getElementById('st-ai').innerHTML = d.has_ai ? '🤖 <span>AI ενεργό</span>' : '📝 <span>Αυτόνομη</span>';
         document.getElementById('st-ai').className = d.has_ai ? 'stat live' : 'stat';

@@ -36,3 +36,8 @@ data/trapeza_data_1_3_218/items_raw.json
 data/trapeza_data_1_3_218/questions.json
 data/trapeza_data_1_3_218/tree_data.json
 data/trapeza_data_1_3_218/questions.json.backup
+# Math raw PDFs (101MB) — don't push
+data/subjects/mathematics/raw/
+
+# Scraper output folders
+trapeza_data_1_3_17/
