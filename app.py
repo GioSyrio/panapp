@@ -119,7 +119,7 @@ def init_deepseek():
     deepseek_client = OpenAI(api_key=api_key, base_url="https://api.deepseek.com")
     logger.info("DeepSeek client ready")
 
-def format_exam_question(question, tag=None):
+def format_exam_question(question, tag=None, subject_id="informatics"):
     result = {
         "id": question["id"], "part": question["part"], "year": question["year"],
         "points": question["points"], "focus_tag": tag,
@@ -127,7 +127,7 @@ def format_exam_question(question, tag=None):
         "question_text": question["question_text"],
         "tags": question.get("conceptual_tags", [])[:6],
     }
-    v2_data = _load_v2_data()
+    v2_data = _load_v2_data(subject_id)
     if str(question["id"]) in v2_data:
         result["question_html"] = v2_data[str(question["id"])].get("question_html", "")
         result["answer_html"] = v2_data[str(question["id"])].get("answer_html", "")
@@ -138,15 +138,19 @@ def format_exam_question(question, tag=None):
         result["diagram_urls"] = []
     return result
 
-_v2_cache = None
-def _load_v2_data():
-    global _v2_cache
-    if _v2_cache is not None: return _v2_cache
-    v2_file = os.path.join(DATA_DIR, "questions_v2.json")
+_v2_cache = {}
+def _load_v2_data(subject_id="informatics"):
+    if subject_id in _v2_cache and _v2_cache[subject_id]:
+        return _v2_cache[subject_id]
+    subject_cfg = load_subject_config(subject_id)
+    data_dir = os.path.join(BASE_DIR, subject_cfg.get("data", {}).get("data_dir", "data/subjects/informatics"))
+    v2_file = os.path.join(data_dir, "questions_v2.json")
+    result = {}
     if os.path.exists(v2_file):
-        with open(v2_file, encoding="utf-8") as f: _v2_cache = {str(q["id"]): q for q in json.load(f)}
-    else: _v2_cache = {}
-    return _v2_cache
+        with open(v2_file, encoding="utf-8") as f:
+            result = {str(q["id"]): q for q in json.load(f)}
+    _v2_cache[subject_id] = result
+    return result
 
 _diagram_map_cache = None
 def _load_diagram_map():
@@ -240,7 +244,8 @@ def start_session():
     if not question:
         import random
         candidates = [q for q in exam_data if q["part"] in parts]
-        question, tag = random.choice(candidates) if candidates else (None, None)
+        question = random.choice(candidates) if candidates else None
+        tag = None
     if not question:
         return jsonify({"error": "Δεν βρέθηκαν ερωτήσεις."}), 500
     try:
@@ -262,7 +267,7 @@ def start_session():
         "subject_id": subject_id,
     }
     logger.info(f"Session started: {sid[:8]} [{subject_id}]")
-    return jsonify({"session_id": sid, "question": format_exam_question(question, tag),
+    return jsonify({"session_id": sid, "question": format_exam_question(question, tag, subject_id),
                     "has_ai": deepseek_client is not None, "subject": subject_cfg})
 @app.route("/api/chat", methods=["POST"])
 def chat():
@@ -279,7 +284,7 @@ def chat():
     if cmd in {"exit", "quit", "έξοδος"}:
         return jsonify({"reply": "Η συνεδρία τερματίστηκε. Καλή επιτυχία! 🎓", "end_session": True})
     if cmd in {"λύση", "λυση", "solution", "απάντηση", "απαντηση"}:
-        v2 = _load_v2_data().get(str(sess["current_question"]["id"]), {})
+        v2 = _load_v2_data(sess.get("subject_id", "informatics")).get(str(sess["current_question"]["id"]), {})
         return jsonify({"is_solution": True, "answer_html": v2.get("llm_solution_html") or v2.get("answer_html") or sess["current_question"].get("answer_text", "")})
     if cmd in {"next", "επόμενο", "επομενο", "skip"}:
         return jsonify({"reply": None, "next_question": True})
@@ -344,17 +349,24 @@ def next_question():
     if sid not in sessions:
         return jsonify({"error":"Ξεκίνα νέα συνεδρία."}),400
     s = sessions[sid]
-    s.setdefault("history",[]).append({"question":format_exam_question(s["current_question"]),"messages":list(s["messages"])})
+    s.setdefault("history",[]).append({"question":format_exam_question(s["current_question"], subject_id=s.get("subject_id","informatics")),"messages":list(s["messages"])})
     s["completed_count"]+=1; s["total_points"]+=s["current_question"]["points"]
-    q,_ = None,None
     import random
-    for part in (["Θέμα 4","Θέμα 2"] if s["completed_count"]%2 else ["Θέμα 2","Θέμα 4"]):
-        candidates = [x for x in exam_data if x["part"]==part and x["id"] not in s["seen_ids"]]
-        if candidates: q = random.choice(candidates); break
+    subj_id = s.get("subject_id", "informatics")
+    subject_cfg = load_subject_config(subj_id)
+    parts = subject_cfg.get("parts", ["Θέμα 2", "Θέμα 4"])
+    candidates = [x for x in exam_data if x["part"] in parts and x["id"] not in s["seen_ids"]]
+    q = random.choice(candidates) if candidates else None
     if not q: return jsonify({"reply":"Δεν υπάρχουν άλλα θέματα! 🎓","session_complete":True})
     s["seen_ids"].add(q["id"]); s["current_question"]=q
+    try:
+        subj_p = _load_subject_prompts(subj_id)
+        tutor = subj_p.GREEK_TUTOR_SYSTEM_PROMPT
+    except:
+        tutor = GREEK_TUTOR_SYSTEM_PROMPT
+    s["messages"]=[{"role":"system","content":(tutor+"\n"+f"Θέμα: {q['part']}\n"+trend_context)}]
     s["messages"]=[{"role":"system","content":(GREEK_TUTOR_SYSTEM_PROMPT+"\n"+f"Θέμα: {q['part']}\n"+trend_context)}]
-    return jsonify({"question":format_exam_question(q),"stats":{"completed":s["completed_count"],"total_points":s["total_points"],"remaining":len(exam_data)-len(s["seen_ids"])}})
+    return jsonify({"question":format_exam_question(q, subject_id=s.get("subject_id","informatics")),"stats":{"completed":s["completed_count"],"total_points":s["total_points"],"remaining":len(exam_data)-len(s["seen_ids"])}})
 
 @app.route("/api/session/previous", methods=["POST"])
 def previous():
@@ -369,7 +381,7 @@ def previous():
     s["current_question"]=pq; s["messages"]=p["messages"]
     s["completed_count"]=max(0,s["completed_count"]-1)
     s["total_points"]=max(0,s["total_points"]-pq.get("points",0))
-    return jsonify({"question":format_exam_question(pq),"stats":{"completed":s["completed_count"],"total_points":s["total_points"],"remaining":len(exam_data)-len(s["seen_ids"])},"has_previous":len(h)>0})
+    return jsonify({"question":format_exam_question(pq, subject_id=s.get("subject_id","informatics")),"stats":{"completed":s["completed_count"],"total_points":s["total_points"],"remaining":len(exam_data)-len(s["seen_ids"])},"has_previous":len(h)>0})
 
 @app.route("/api/session/stats", methods=["POST"])
 def stats():
@@ -388,8 +400,8 @@ def health():
     return jsonify({"status":"ok","questions_loaded":len(exam_data) if exam_data else 0,"deepseek_ready":deepseek_client is not None,"sessions":len(sessions)})
 
 # ── Hints
-def _get_subquestions(qid):
-    v2 = _load_v2_data().get(str(qid),{})
+def _get_subquestions(qid, subject_id="informatics"):
+    v2 = _load_v2_data(subject_id).get(str(qid),{})
     return [{"number":s["number"],"content":s.get("content","")} for s in v2.get("sections",[]) if s["type"]=="sub_question"]
 
 def _filter_answer_for_subq(full_answer, subq_number, subq_content):
@@ -412,8 +424,9 @@ def _filter_answer_for_subq(full_answer, subq_number, subq_content):
 
 def _handle_hint(sess):
     qid = str(sess["current_question"]["id"])
-    v2 = _load_v2_data().get(qid,{})
-    sqs = _get_subquestions(qid) or [{"number":"?","content":""}]
+    subj = sess.get("subject_id", "informatics")
+    v2 = _load_v2_data(subj).get(qid,{})
+    sqs = _get_subquestions(qid, subj) or [{"number":"?","content":""}]
     hs = sess.get("hint_state",{"subqIdx":0,"hintCount":0,"totalSubqs":len(sqs)})
     si, hc = hs.get("subqIdx",0), hs.get("hintCount",0)
     if si >= len(sqs): return jsonify({"all_done":True,"hint_state":hs,"reply":"✅ Ολοκλήρωσες όλα τα υποερωτήματα!"})

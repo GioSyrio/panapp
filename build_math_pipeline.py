@@ -108,7 +108,7 @@ def extract_answer_sections(docx_path):
     
     return steps, full_text.strip()
 
-def render_q_html(sections):
+def render_q_html(sections, qid=None):
     """Render math sections to HTML."""
     html = []
     for s in sections:
@@ -124,7 +124,14 @@ def render_q_html(sections):
             # Preserve LaTeX delimiters for KaTeX
             html.append(f'<div class="equation-display">{e(s["content"])}</div>')
         elif t == "text":
-            html.append(f'<p class="text-content">{e(s["content"])}</p>')
+            content = e(s["content"])
+            # Inject formula images for this question
+            img_dir = os.path.join(BASE_DIR, "static", "images", "math_formulas", str(qid))
+            if qid and os.path.isdir(img_dir):
+                for fname in sorted(os.listdir(img_dir)):
+                    url = f"images/math_formulas/{qid}/{fname}"
+                    content += f'<br><img src="{url}" class="formula-img" alt="formula" style="max-width:100%;margin:8px 0;">'
+            html.append(f'<p class="text-content">{content}</p>')
         elif t == "matching_table":
             cols = s["columns"]; html.append('<table class="match-table"><thead><tr>')
             for c in cols: html.append(f'<th>{e(c["header"])}</th>')
@@ -194,7 +201,7 @@ def main():
         try:
             doc_q = Document(qpath)
             sections = extract_q_sections(doc_q)
-            q_html = render_q_html(sections)
+            q_html = render_q_html(sections, qid)
 
             ans_steps, ans_text = extract_answer_sections(apath)
             ans_html = render_answer_html(ans_steps) if ans_steps else f'<div class="sol-text">{e(ans_text)}</div>'
