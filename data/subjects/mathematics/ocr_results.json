@@ -1,0 +1,5654 @@
+{
+  "23196/image1.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 916,
+    "height": 872
+  },
+  "23196/image2.png": {
+    "latex": "$$f(x) = e^x - 1, x \\in \\mathbb{R}$$",
+    "type": "formula",
+    "width": 122,
+    "height": 24
+  },
+  "23196/image2_ink.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 337,
+    "height": 61
+  },
+  "23196/image3.png": {
+    "latex": "$$\\mathbf{f}^{-1}$$",
+    "type": "formula",
+    "width": 79,
+    "height": 70
+  },
+  "23196/image4.png": {
+    "latex": "$$\\mathbf{f}^{-1}$$",
+    "type": "formula",
+    "width": 79,
+    "height": 70
+  },
+  "23197/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 130,
+    "height": 25
+  },
+  "23197/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 98,
+    "height": 32
+  },
+  "23197/image3.png": {
+    "latex": "$$C_f$$",
+    "type": "formula",
+    "width": 56,
+    "height": 68
+  },
+  "23198/image1.png": {
+    "latex": "$$f(x) = \\sqrt{x} - 1, x \\quad 0$$",
+    "type": "formula",
+    "width": 123,
+    "height": 27
+  },
+  "23198/image2.png": {
+    "latex": "$$\\mathbf{f}^{-1}$$",
+    "type": "formula",
+    "width": 79,
+    "height": 70
+  },
+  "23198/image3.png": {
+    "latex": "$$f^{-1}(x) = (x+1)^2, x - 1$$",
+    "type": "formula",
+    "width": 146,
+    "height": 25
+  },
+  "23198/image4.png": {
+    "latex": "$$f, f^{-1}$$",
+    "type": "formula",
+    "width": 91,
+    "height": 52
+  },
+  "23199/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 103,
+    "height": 24
+  },
+  "23199/image10.png": {
+    "latex": "$$\\frac{1}{x+1} < f^2(x+1) - f^2(x) < \\frac{1}{x}$$",
+    "type": "formula",
+    "width": 169,
+    "height": 43
+  },
+  "23199/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 93,
+    "height": 40
+  },
+  "23199/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 100,
+    "height": 48
+  },
+  "23199/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 95,
+    "height": 38
+  },
+  "23199/image5.png": {
+    "latex": "$$g(x) = f^2(x) - \\ln x, x > 1$$",
+    "type": "formula",
+    "width": 146,
+    "height": 25
+  },
+  "23199/image6.png": {
+    "latex": "$$f(x) = \\sqrt{\\ln x}, x > 1$$",
+    "type": "formula",
+    "width": 115,
+    "height": 27
+  },
+  "23199/image7.png": {
+    "latex": "$$A(-e, 0)$$",
+    "type": "formula",
+    "width": 95,
+    "height": 33
+  },
+  "23199/image8.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 94,
+    "height": 42
+  },
+  "23199/image9.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 93,
+    "height": 40
+  },
+  "23200/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 28
+  },
+  "23200/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 82,
+    "height": 70
+  },
+  "23200/image3.png": {
+    "latex": "$$\\text{A}(1, \\ln 2)$$",
+    "type": "formula",
+    "width": 97,
+    "height": 34
+  },
+  "23200/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 109,
+    "height": 25
+  },
+  "23200/image5.png": {
+    "latex": "$$f\\left(e^{x^{-1}} + \\ln x\\right) = \\ln 2$$",
+    "type": "formula",
+    "width": 121,
+    "height": 34
+  },
+  "23200/image6.png": {
+    "latex": "$$g(x) = f(x) + (3 - \\ln 2)x - 3, x \\in \\mathbb{R}$$",
+    "type": "formula",
+    "width": 205,
+    "height": 28
+  },
+  "23209/image1.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 1920,
+    "height": 1080
+  },
+  "23209/image2.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 1920,
+    "height": 1080
+  },
+  "23215/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 98,
+    "height": 29
+  },
+  "23215/image10.png": {
+    "latex": "$$f$$",
+    "type": "formula",
+    "width": 57,
+    "height": 76
+  },
+  "23215/image11.png": {
+    "latex": "$$f$$",
+    "type": "formula",
+    "width": 57,
+    "height": 76
+  },
+  "23215/image12.png": {
+    "latex": "$x'x$",
+    "type": "formula",
+    "width": 81,
+    "height": 60
+  },
+  "23215/image13.png": {
+    "latex": "$$x_o \\in (0,2)$$",
+    "type": "formula",
+    "width": 97,
+    "height": 33
+  },
+  "23215/image14.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 59,
+    "height": 69
+  },
+  "23215/image15.png": {
+    "latex": "$$g'(x) = -f(x)$$",
+    "type": "formula",
+    "width": 100,
+    "height": 25
+  },
+  "23215/image16.png": {
+    "latex": "$$x_o$$",
+    "type": "formula",
+    "width": 57,
+    "height": 56
+  },
+  "23215/image2.png": {
+    "latex": "$$f'(x) \\neq 0$$",
+    "type": "formula",
+    "width": 98,
+    "height": 35
+  },
+  "23215/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 93,
+    "height": 37
+  },
+  "23215/image4.png": {
+    "latex": "$$f$$",
+    "type": "formula",
+    "width": 57,
+    "height": 76
+  },
+  "23215/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 71,
+    "height": 82
+  },
+  "23215/image6.png": {
+    "latex": "$$f(0) = -1$$",
+    "type": "formula",
+    "width": 98,
+    "height": 31
+  },
+  "23215/image7.png": {
+    "latex": "$$f(2)=1$$",
+    "type": "formula",
+    "width": 97,
+    "height": 35
+  },
+  "23215/image8.png": {
+    "latex": "$$f$$",
+    "type": "formula",
+    "width": 57,
+    "height": 76
+  },
+  "23215/image9.png": {
+    "latex": "$$y = x$$",
+    "type": "formula",
+    "width": 91,
+    "height": 36
+  },
+  "23216/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "23216/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 73,
+    "height": 73
+  },
+  "23216/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 40
+  },
+  "23216/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 94,
+    "height": 43
+  },
+  "23216/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "23216/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 58
+  },
+  "23216/image7.png": {
+    "latex": "$$\\left| C_f \\right|$$",
+    "type": "formula",
+    "width": 70,
+    "height": 73
+  },
+  "23216/image8.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 82,
+    "height": 61
+  },
+  "23216/image9.png": {
+    "latex": "$$f(\\ln x) > 0$$",
+    "type": "formula",
+    "width": 100,
+    "height": 31
+  },
+  "23217/image1.png": {
+    "latex": "$$f(x) = \\ln(x - 1)$$",
+    "type": "formula",
+    "width": 109,
+    "height": 25
+  },
+  "23217/image2.png": {
+    "latex": "$$g(x) = \\frac{1}{x-1}$$",
+    "type": "formula",
+    "width": 97,
+    "height": 52
+  },
+  "23217/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 46
+  },
+  "23217/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 46
+  },
+  "23217/image5.png": {
+    "latex": "$$f \\cdot g$$",
+    "type": "formula",
+    "width": 91,
+    "height": 55
+  },
+  "23217/image6.png": {
+    "latex": "$$\\lim_{x \\to 1} (f(x) \\cdot g(x))$$",
+    "type": "formula",
+    "width": 109,
+    "height": 31
+  },
+  "23218/image1.png": {
+    "latex": "$$P(x) = x^3 + 3x^2 - \\lambda x + 1$$",
+    "type": "formula",
+    "width": 157,
+    "height": 25
+  },
+  "23218/image10.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 85,
+    "height": 67
+  },
+  "23218/image11.png": {
+    "latex": "$$C_{P}$$",
+    "type": "formula",
+    "width": 73,
+    "height": 70
+  },
+  "23218/image12.png": {
+    "latex": "$$\\text{E}_1$$",
+    "type": "formula",
+    "width": 58,
+    "height": 70
+  },
+  "23218/image13.png": {
+    "latex": "$$x = x_1, x = -1$$",
+    "type": "formula",
+    "width": 100,
+    "height": 25
+  },
+  "23218/image14.png": {
+    "latex": "$$\\mathrm{E}_2$$",
+    "type": "formula",
+    "width": 70,
+    "height": 70
+  },
+  "23218/image15.png": {
+    "latex": "$$x = x_2, x = -1$$",
+    "type": "formula",
+    "width": 100,
+    "height": 25
+  },
+  "23218/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 37
+  },
+  "23218/image3.png": {
+    "latex": "$$P(x)$$",
+    "type": "formula",
+    "width": 88,
+    "height": 49
+  },
+  "23218/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 37
+  },
+  "23218/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 76,
+    "height": 70
+  },
+  "23218/image6.png": {
+    "latex": "$$\\lambda$$",
+    "type": "formula",
+    "width": 58,
+    "height": 70
+  },
+  "23218/image7.png": {
+    "latex": "$$\\text{K}(-1,\\lambda+3)$$",
+    "type": "formula",
+    "width": 97,
+    "height": 28
+  },
+  "23218/image8.png": {
+    "latex": "$$x_1, x_2$$",
+    "type": "formula",
+    "width": 91,
+    "height": 43
+  },
+  "23218/image9.png": {
+    "latex": "$$x_1 < -1 < x_2$$",
+    "type": "formula",
+    "width": 97,
+    "height": 31
+  },
+  "23219/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 31
+  },
+  "23219/image2.png": {
+    "latex": "$$f(1) = f'(1) = 2$$",
+    "type": "formula",
+    "width": 109,
+    "height": 25
+  },
+  "23219/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 70,
+    "height": 73
+  },
+  "23219/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 37
+  },
+  "23219/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 31
+  },
+  "23219/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 94,
+    "height": 37
+  },
+  "23219/image7.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 43
+  },
+  "23219/image8.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 103,
+    "height": 55
+  },
+  "23219/image9.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 103,
+    "height": 55
+  },
+  "23311/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 61,
+    "height": 91
+  },
+  "23311/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 34,
+    "height": 88
+  },
+  "23311/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 34,
+    "height": 88
+  },
+  "23375/image1.png": {
+    "latex": "$$f(x) = \\ln\\left(\\sqrt{x^2 + 1} - x\\right)$$",
+    "type": "formula",
+    "width": 142,
+    "height": 40
+  },
+  "23375/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 90,
+    "height": 38
+  },
+  "23375/image3.png": {
+    "latex": "$$f'(x) = -\\frac{1}{\\sqrt{x^2+1}}$$",
+    "type": "formula",
+    "width": 109,
+    "height": 49
+  },
+  "23375/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 34,
+    "height": 68
+  },
+  "23375/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 64,
+    "height": 74
+  },
+  "23375/image6.png": {
+    "latex": "$$f^{-1}(x + f(x)) > x, x \\in \\mathbf{R}$$",
+    "type": "formula",
+    "width": 161,
+    "height": 32
+  },
+  "23376/image1.png": {
+    "latex": "$$f(x) = \\sqrt{x^2 + 1} - x, x \\in \\mathbb{R}$$",
+    "type": "formula",
+    "width": 166,
+    "height": 28
+  },
+  "23376/image10.png": {
+    "latex": "$$h(x-1)+h\\left(\\ln \\frac{1}{x}\\right)=0, x>0$$",
+    "type": "formula",
+    "width": 187,
+    "height": 49
+  },
+  "23376/image2.png": {
+    "latex": "$$g(x) = \\ln x$$",
+    "type": "formula",
+    "width": 100,
+    "height": 37
+  },
+  "23376/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 100,
+    "height": 37
+  },
+  "23376/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 37,
+    "height": 67
+  },
+  "23376/image5.png": {
+    "latex": "$$x'x$$",
+    "type": "formula",
+    "width": 82,
+    "height": 61
+  },
+  "23376/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 88,
+    "height": 37
+  },
+  "23376/image7.png": {
+    "latex": "$$h = g \\circ f$$",
+    "type": "formula",
+    "width": 94,
+    "height": 34
+  },
+  "23376/image8.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 49,
+    "height": 73
+  },
+  "23376/image9.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 49,
+    "height": 73
+  },
+  "23530/image1.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 1920,
+    "height": 1080
+  },
+  "23530/image2.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 1920,
+    "height": 1080
+  },
+  "23642/image1.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 249,
+    "height": 424
+  },
+  "23642/image2.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 227,
+    "height": 402
+  },
+  "23642/image3.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 229,
+    "height": 417
+  },
+  "23937/image1.png": {
+    "latex": "$$f(x) = x^3 + x - 1, \\ x \\in \\mathbb{R}.$$",
+    "type": "formula",
+    "width": 160,
+    "height": 31
+  },
+  "23937/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 37,
+    "height": 67
+  },
+  "23937/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 100,
+    "height": 40
+  },
+  "23955/image1.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 1385,
+    "height": 779
+  },
+  "23955/image2.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 1385,
+    "height": 779
+  },
+  "24130/image1.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 1607,
+    "height": 1244
+  },
+  "24131/image1.png": {
+    "latex": "$$f$$",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "24131/image10.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 100,
+    "height": 58
+  },
+  "24131/image11.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 58
+  },
+  "24131/image12.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 1773,
+    "height": 1127
+  },
+  "24131/image2.png": {
+    "latex": "$$f(x) = \\frac{\\sqrt{x} - 1}{\\sqrt{x} + 2}, \\quad x \\neq 0.$$",
+    "type": "formula",
+    "width": 151,
+    "height": 49
+  },
+  "24131/image3.png": {
+    "latex": "$$f$$",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "24131/image4.png": {
+    "latex": "$$f$$",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "24131/image5.png": {
+    "latex": "$$C_1, C_2$$",
+    "type": "formula",
+    "width": 91,
+    "height": 46
+  },
+  "24131/image6.png": {
+    "latex": "$$f$$",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "24131/image7.png": {
+    "latex": "$$f^{-1}$$",
+    "type": "formula",
+    "width": 82,
+    "height": 76
+  },
+  "24131/image8.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 109,
+    "height": 58
+  },
+  "24131/image9.png": {
+    "latex": "$$f$$",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "24275/image1.png": {
+    "latex": "$$f(x) = -x + 1 + \\frac{1}{e^x}, x \\in \\mathbb{R}$$",
+    "type": "formula",
+    "width": 163,
+    "height": 43
+  },
+  "24275/image10.png": {
+    "latex": "$$x = 1, x = \\rho$$",
+    "type": "formula",
+    "width": 100,
+    "height": 28
+  },
+  "24275/image11.png": {
+    "latex": "$$\\mathrm{E}(\\Omega) = - \\frac{\\left( \\rho-1 \\right)^2}{2} - \\left( \\rho-1 \\right) + e^{-1}$$",
+    "type": "formula",
+    "width": 214,
+    "height": 49
+  },
+  "24275/image2.png": {
+    "latex": "$$y = -x + 1$$",
+    "type": "formula",
+    "width": 97,
+    "height": 28
+  },
+  "24275/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 37,
+    "height": 67
+  },
+  "24275/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 82,
+    "height": 40
+  },
+  "24275/image5.png": {
+    "latex": "$$f(x) = 0$$",
+    "type": "formula",
+    "width": 94,
+    "height": 43
+  },
+  "24275/image6.png": {
+    "latex": "$$\\rho$$",
+    "type": "formula",
+    "width": 64,
+    "height": 73
+  },
+  "24275/image7.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 46,
+    "height": 73
+  },
+  "24275/image8.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 67,
+    "height": 73
+  },
+  "24275/image9.png": {
+    "latex": "$$x'x$$",
+    "type": "formula",
+    "width": 82,
+    "height": 61
+  },
+  "24283/image1.png": {
+    "latex": "$$f(x) = \\left\\{ \\begin{array}{ll} x^2 - 3, & ax \\in [-1, 2] \\\\ x - 1, & av \\in (2, 5] \\end{array} \\right.$$",
+    "type": "formula",
+    "width": 202,
+    "height": 58
+  },
+  "24283/image2.png": {
+    "latex": "$$|f|$$",
+    "type": "formula",
+    "width": 37,
+    "height": 67
+  },
+  "24283/image3.png": {
+    "latex": "$$x_0 = 2$$",
+    "type": "formula",
+    "width": 97,
+    "height": 46
+  },
+  "24283/image4.png": {
+    "latex": "$$[ -1, 5 ]$$",
+    "type": "formula",
+    "width": 97,
+    "height": 52
+  },
+  "24703/image1.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 1920,
+    "height": 1080
+  },
+  "24703/image2.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 1920,
+    "height": 1080
+  },
+  "24755/image1.png": {
+    "latex": "$$f(x) = \\begin{cases}",
+    "type": "formula",
+    "width": 166,
+    "height": 72
+  },
+  "24755/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 70,
+    "height": 71
+  },
+  "24755/image3.png": {
+    "latex": "$$\\alpha = 0$$",
+    "type": "formula",
+    "width": 90,
+    "height": 36
+  },
+  "24755/image4.png": {
+    "latex": "$$f'(0) = 0$$",
+    "type": "formula",
+    "width": 97,
+    "height": 35
+  },
+  "24755/image5.png": {
+    "latex": "$$\\left| C_f \\right|$$",
+    "type": "formula",
+    "width": 69,
+    "height": 75
+  },
+  "24755/image6.png": {
+    "latex": "$$\\overline{(0,f(0))}$$",
+    "type": "formula",
+    "width": 97,
+    "height": 34
+  },
+  "24756/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 31
+  },
+  "24756/image2.png": {
+    "latex": "$$f(0) = 0$$",
+    "type": "formula",
+    "width": 97,
+    "height": 37
+  },
+  "24756/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 103,
+    "height": 49
+  },
+  "24756/image4.png": {
+    "latex": "$$f'(0) = 2$$",
+    "type": "formula",
+    "width": 97,
+    "height": 34
+  },
+  "24756/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 43
+  },
+  "24756/image6.png": {
+    "latex": "$$\\lim_{x \\to 0} \\frac{f(x)}{\\eta \\mu x}$$",
+    "type": "formula",
+    "width": 97,
+    "height": 70
+  },
+  "24757/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "24757/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 73,
+    "height": 73
+  },
+  "24757/image3.png": {
+    "latex": "$$\\left| C_f \\right|$$",
+    "type": "formula",
+    "width": 70,
+    "height": 73
+  },
+  "24757/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 91,
+    "height": 43
+  },
+  "24757/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 82,
+    "height": 61
+  },
+  "24757/image6.png": {
+    "latex": "$$45^{\\circ}$$",
+    "type": "formula",
+    "width": 82,
+    "height": 52
+  },
+  "24757/image7.png": {
+    "latex": "$$f'(0) = 1$$",
+    "type": "formula",
+    "width": 97,
+    "height": 37
+  },
+  "24757/image8.png": {
+    "latex": "$$\\lim_{x \\to 0} \\frac{f(x)-1}{x}=1$$",
+    "type": "formula",
+    "width": 106,
+    "height": 43
+  },
+  "24758/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 31
+  },
+  "24758/image10.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 100,
+    "height": 31
+  },
+  "24758/image11.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "24758/image12.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 151,
+    "height": 52
+  },
+  "24758/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 133,
+    "height": 25
+  },
+  "24758/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 37
+  },
+  "24758/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 94,
+    "height": 37
+  },
+  "24758/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 70
+  },
+  "24758/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 85,
+    "height": 43
+  },
+  "24758/image7.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 91,
+    "height": 34
+  },
+  "24758/image8.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 115,
+    "height": 25
+  },
+  "24758/image9.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 37
+  },
+  "24759/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 31
+  },
+  "24759/image10.png": {
+    "latex": "$$f' \\left( \\frac{1}{2} \\right) = 0$$",
+    "type": "formula",
+    "width": 97,
+    "height": 61
+  },
+  "24759/image11.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "24759/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 109,
+    "height": 25
+  },
+  "24759/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 94,
+    "height": 37
+  },
+  "24759/image4.png": {
+    "latex": "$$\\lim_{x \\to +\\infty} \\frac{f(x)}{x}$$",
+    "type": "formula",
+    "width": 97,
+    "height": 61
+  },
+  "24759/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "24759/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 100,
+    "height": 61
+  },
+  "24759/image7.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 94,
+    "height": 37
+  },
+  "24759/image8.png": {
+    "latex": "$$f(1) = 1$$",
+    "type": "formula",
+    "width": 97,
+    "height": 37
+  },
+  "24759/image9.png": {
+    "latex": "$$f\\left(\\frac{1}{2}\\right)=\\frac{3}{4}$$",
+    "type": "formula",
+    "width": 100,
+    "height": 61
+  },
+  "24760/image1.png": {
+    "latex": "$$f(x) = e^x - \\ln x - \\lambda x, x > 0$$",
+    "type": "formula",
+    "width": 178,
+    "height": 25
+  },
+  "24760/image10.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 58
+  },
+  "24760/image11.png": {
+    "latex": "$$e^{x_o} \\left(1-x_o\\right)+1-\\ln x_o$$",
+    "type": "formula",
+    "width": 133,
+    "height": 28
+  },
+  "24760/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 37
+  },
+  "24760/image3.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 794,
+    "height": 1123
+  },
+  "24760/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "24760/image5.png": {
+    "latex": "$$x_o \\in(1,e)$$",
+    "type": "formula",
+    "width": 97,
+    "height": 34
+  },
+  "24760/image6.png": {
+    "latex": "$$f'(x_o) = 0$$",
+    "type": "formula",
+    "width": 97,
+    "height": 31
+  },
+  "24760/image7.png": {
+    "latex": "$$\\left| f^{\\prime} \\right|$$",
+    "type": "formula",
+    "width": 73,
+    "height": 82
+  },
+  "24760/image8.png": {
+    "latex": "$$[1,e]$$",
+    "type": "formula",
+    "width": 91,
+    "height": 55
+  },
+  "24760/image9.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "24761/image1.png": {
+    "latex": "$$f(x) = \\left\\{ \\begin{array}{c} 2023 - \\frac{\\eta \\mu x}{x}, \\quad x \\neq 0 \\\\ \\alpha, \\quad x = 0 \\end{array} \\right.$$",
+    "type": "formula",
+    "width": 193,
+    "height": 73
+  },
+  "24761/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 73,
+    "height": 73
+  },
+  "24761/image3.png": {
+    "latex": "$$\\alpha = 2022$$",
+    "type": "formula",
+    "width": 97,
+    "height": 28
+  },
+  "24761/image4.png": {
+    "latex": "$$\\lim_{x \\to +\\infty} f(x)$$",
+    "type": "formula",
+    "width": 97,
+    "height": 43
+  },
+  "24761/image5.png": {
+    "latex": "$$f(x) = 2022$$",
+    "type": "formula",
+    "width": 94,
+    "height": 25
+  },
+  "24767/image1.png": {
+    "latex": "$$f(x) = \\frac{1}{e^x + 1}, x \\in \\mathbb{R}$$",
+    "type": "formula",
+    "width": 127,
+    "height": 43
+  },
+  "24767/image2.png": {
+    "latex": "$$\\mathbf{f}^{-1}$$",
+    "type": "formula",
+    "width": 82,
+    "height": 73
+  },
+  "24768/image1.png": {
+    "latex": "$$f(x) = x^2 - x + 1$$",
+    "type": "formula",
+    "width": 100,
+    "height": 25
+  },
+  "24768/image2.png": {
+    "latex": "$$g(x) = \\sqrt{4x - 3}$$",
+    "type": "formula",
+    "width": 103,
+    "height": 31
+  },
+  "24768/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 91,
+    "height": 37
+  },
+  "24768/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 73
+  },
+  "24768/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 37
+  },
+  "24768/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 103,
+    "height": 28
+  },
+  "24768/image7.png": {
+    "latex": "$$\\lim_{x \\to 0} \\frac{h(x) - 1}{\\sqrt{x+1}-1}$$",
+    "type": "formula",
+    "width": 103,
+    "height": 49
+  },
+  "24769/image1.png": {
+    "latex": "$$f(x) = \\ln(x+1) - \\frac{x}{x+1}, x > -1$$",
+    "type": "formula",
+    "width": 187,
+    "height": 40
+  },
+  "24769/image2.png": {
+    "latex": "$$F(1) = \\ln 2$$",
+    "type": "formula",
+    "width": 97,
+    "height": 34
+  },
+  "24769/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 91,
+    "height": 31
+  },
+  "24769/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 100,
+    "height": 46
+  },
+  "24769/image5.png": {
+    "latex": "$$[0, +\\infty)$$",
+    "type": "formula",
+    "width": 97,
+    "height": 37
+  },
+  "24769/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 94,
+    "height": 46
+  },
+  "24769/image7.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 91,
+    "height": 40
+  },
+  "24769/image8.png": {
+    "latex": "$$\\frac{2F(x)-1}{x} \\ln 4-1$$",
+    "type": "formula",
+    "width": 118,
+    "height": 43
+  },
+  "24770/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 186,
+    "height": 33
+  },
+  "24770/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 96,
+    "height": 38
+  },
+  "24770/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 92,
+    "height": 39
+  },
+  "24770/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 132,
+    "height": 33
+  },
+  "24770/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 100,
+    "height": 61
+  },
+  "24771/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 98,
+    "height": 27
+  },
+  "24771/image10.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 33
+  },
+  "24771/image11.png": {
+    "latex": "$$A(\\alpha, 0)$$",
+    "type": "formula",
+    "width": 95,
+    "height": 38
+  },
+  "24771/image12.png": {
+    "latex": "$$\\text{E}(a)$$",
+    "type": "formula",
+    "width": 85,
+    "height": 55
+  },
+  "24771/image13.png": {
+    "latex": "$$\\text{E}(\\alpha) = \\frac{2\\alpha}{\\alpha^2 + 1}, \\alpha > 0$$",
+    "type": "formula",
+    "width": 128,
+    "height": 43
+  },
+  "24771/image14.png": {
+    "latex": "$$\\mathrm{F}(1) = \\ln 2$$",
+    "type": "formula",
+    "width": 97,
+    "height": 38
+  },
+  "24771/image15.png": {
+    "latex": "$$\\int_{0}^{1} F(x) dx = \\ln \\sqrt{2}$$",
+    "type": "formula",
+    "width": 113,
+    "height": 60
+  },
+  "24771/image2.png": {
+    "latex": "$$f(0) = 1$$",
+    "type": "formula",
+    "width": 95,
+    "height": 37
+  },
+  "24771/image3.png": {
+    "latex": "$ (x^2 + 1)f'(x) + \\frac{2x}{x^2 + 1} = 0 $",
+    "type": "formula",
+    "width": 151,
+    "height": 43
+  },
+  "24771/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 93,
+    "height": 37
+  },
+  "24771/image5.png": {
+    "latex": "$$f(x) = \\frac{1}{x^2 + 1}, x \\in \\mathbb{R}$$",
+    "type": "formula",
+    "width": 126,
+    "height": 43
+  },
+  "24771/image6.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 456,
+    "height": 171
+  },
+  "24771/image7.png": {
+    "latex": "$$C_f$$",
+    "type": "formula",
+    "width": 56,
+    "height": 68
+  },
+  "24771/image8.png": {
+    "latex": "$$C_f$$",
+    "type": "formula",
+    "width": 56,
+    "height": 68
+  },
+  "24771/image9.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 82,
+    "height": 70
+  },
+  "24991/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 118,
+    "height": 25
+  },
+  "24991/image2.png": {
+    "latex": "$$f(x) = -2\\ln x + 1, \\ x > 0$$",
+    "type": "formula",
+    "width": 169,
+    "height": 25
+  },
+  "24991/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "24991/image4.png": {
+    "latex": "$$f^{-1}$$",
+    "type": "formula",
+    "width": 79,
+    "height": 73
+  },
+  "24991/image5.png": {
+    "latex": "$$g(x) = 1 - \\ln x^2$$",
+    "type": "formula",
+    "width": 103,
+    "height": 25
+  },
+  "24991/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 91,
+    "height": 55
+  },
+  "24991/image7.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 64,
+    "height": 70
+  },
+  "24991/image8.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 94,
+    "height": 43
+  },
+  "25234/image1.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 1920,
+    "height": 1080
+  },
+  "25234/image2.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 1920,
+    "height": 1080
+  },
+  "25235/image1.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 1920,
+    "height": 1080
+  },
+  "25235/image2.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 1920,
+    "height": 1080
+  },
+  "25257/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 355,
+    "height": 333
+  },
+  "25257/image10.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 74,
+    "height": 61
+  },
+  "25257/image11.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 84,
+    "height": 45
+  },
+  "25257/image12.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 96,
+    "height": 29
+  },
+  "25257/image13.png": {
+    "latex": "$$\\mathrm{E} = \\mathrm{E}\\left(x\\right)$$",
+    "type": "formula",
+    "width": 98,
+    "height": 40
+  },
+  "25257/image14.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 66,
+    "height": 74
+  },
+  "25257/image15.png": {
+    "latex": "$$\\text{E}(x) = \\begin{cases} x^2, & \\text{αν } x \\in \\left(0, \\frac{4}{5}\\right) \\\\ \\frac{8}{5}x - \\frac{16}{25",
+    "type": "formula",
+    "width": 211,
+    "height": 98
+  },
+  "25257/image16.png": {
+    "latex": "$$\\mathbf{m}^2$$",
+    "type": "formula",
+    "width": 80,
+    "height": 70
+  },
+  "25257/image17.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 66,
+    "height": 74
+  },
+  "25257/image18.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 73,
+    "height": 64
+  },
+  "25257/image19.png": {
+    "latex": "$$x = \\frac{4}{5} \\text{ m}$$",
+    "type": "formula",
+    "width": 95,
+    "height": 66
+  },
+  "25257/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 94,
+    "height": 33
+  },
+  "25257/image20.png": {
+    "latex": "$$\\mathrm{E}' \\left( \\frac{4}{5} \\right) = \\frac{8}{5} \\mathrm{m}^2 / \\mathrm{m}$$",
+    "type": "formula",
+    "width": 123,
+    "height": 49
+  },
+  "25257/image21.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 66,
+    "height": 74
+  },
+  "25257/image22.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 36,
+    "height": 67
+  },
+  "25257/image23.png": {
+    "latex": "$$x = \\frac{4}{5} m$$",
+    "type": "formula",
+    "width": 97,
+    "height": 57
+  },
+  "25257/image24.png": {
+    "latex": "$$x'(t) = 0.08 \\text{ m/s}$$",
+    "type": "formula",
+    "width": 122,
+    "height": 29
+  },
+  "25257/image25.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 91,
+    "height": 40
+  },
+  "25257/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 92,
+    "height": 38
+  },
+  "25257/image4.png": {
+    "latex": "$$\\text{AP} = 0,8$$",
+    "type": "formula",
+    "width": 98,
+    "height": 30
+  },
+  "25257/image5.png": {
+    "latex": "$$\\text{BE} = 1,6$$",
+    "type": "formula",
+    "width": 96,
+    "height": 30
+  },
+  "25257/image6.png": {
+    "latex": "$$\\mathrm{AM} = x \\mathrm{m}$$",
+    "type": "formula",
+    "width": 99,
+    "height": 25
+  },
+  "25257/image7.png": {
+    "latex": "$$\\mathbf{B}\\Gamma = 1$$",
+    "type": "formula",
+    "width": 95,
+    "height": 31
+  },
+  "25257/image8.png": {
+    "latex": "$$\\text{ΚΛ}$$",
+    "type": "formula",
+    "width": 87,
+    "height": 47
+  },
+  "25257/image9.png": {
+    "latex": "$$\\text{HZ}$$",
+    "type": "formula",
+    "width": 87,
+    "height": 49
+  },
+  "25259/image1.png": {
+    "latex": "$$f : \\mathbf{R} \\to \\mathbf{R}$$",
+    "type": "formula",
+    "width": 95,
+    "height": 29
+  },
+  "25259/image10.png": {
+    "latex": "$$f'(x) \\quad 0$$",
+    "type": "formula",
+    "width": 94,
+    "height": 40
+  },
+  "25259/image11.png": {
+    "latex": "$x \\in [0,1]$",
+    "type": "formula",
+    "width": 99,
+    "height": 44
+  },
+  "25259/image12.png": {
+    "latex": "$$\\text{ΘΕΜΑ 4} \\quad \\Deltaίνεται η παραγωγίσιμη συνάρτηση, \\text{ που είναι τέτοια,} \\text{ώστε:} \\quad \\eta(\\mathbf{x}) = \\mathbf",
+    "type": "formula",
+    "width": 66,
+    "height": 74
+  },
+  "25259/image13.png": {
+    "latex": "$$f',$$",
+    "type": "formula",
+    "width": 71,
+    "height": 75
+  },
+  "25259/image14.png": {
+    "latex": "$$x'x$$",
+    "type": "formula",
+    "width": 82,
+    "height": 60
+  },
+  "25259/image15.png": {
+    "latex": "$$x=1$$",
+    "type": "formula",
+    "width": 92,
+    "height": 38
+  },
+  "25259/image2.png": {
+    "latex": "$$f$$",
+    "type": "formula",
+    "width": 34,
+    "height": 68
+  },
+  "25259/image3.png": {
+    "latex": "$$\\varepsilon : y = \\frac{1}{4}$$",
+    "type": "formula",
+    "width": 96,
+    "height": 66
+  },
+  "25259/image4.png": {
+    "latex": "$$x_0 = 0$$",
+    "type": "formula",
+    "width": 93,
+    "height": 43
+  },
+  "25259/image5.png": {
+    "latex": "$$f(1) = 1$$",
+    "type": "formula",
+    "width": 94,
+    "height": 44
+  },
+  "25259/image6.png": {
+    "latex": "$$f(0) = \\frac{1}{4}$$",
+    "type": "formula",
+    "width": 95,
+    "height": 61
+  },
+  "25259/image7.png": {
+    "latex": "$$\\left| f'(0) = 0 \\right|$$",
+    "type": "formula",
+    "width": 94,
+    "height": 40
+  },
+  "25259/image8.png": {
+    "latex": "$$\\lim_{x \\to 0} \\frac{4f(x) - 1}{\\eta u x \\cdot f(x)} = 0.$$",
+    "type": "formula",
+    "width": 124,
+    "height": 53
+  },
+  "25259/image9.png": {
+    "latex": "$$f$$",
+    "type": "formula",
+    "width": 34,
+    "height": 68
+  },
+  "25745/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 103,
+    "height": 25
+  },
+  "25745/image2.png": {
+    "latex": "$$f(1)=1$$",
+    "type": "formula",
+    "width": 97,
+    "height": 37
+  },
+  "25745/image3.png": {
+    "latex": "$$f'(1) = 0$$",
+    "type": "formula",
+    "width": 97,
+    "height": 37
+  },
+  "25745/image4.png": {
+    "latex": "$$f(0) = f\\left(2\\right)$$",
+    "type": "formula",
+    "width": 97,
+    "height": 34
+  },
+  "25745/image5.png": {
+    "latex": "$$\\left(f'(x)\\right)^2 + f(x) \\cdot f''(x) < 0$$",
+    "type": "formula",
+    "width": 175,
+    "height": 25
+  },
+  "25745/image6.png": {
+    "latex": "$$x \\in(0,2)$$",
+    "type": "formula",
+    "width": 97,
+    "height": 34
+  },
+  "25745/image7.png": {
+    "latex": "$$f(x) \\neq 0$$",
+    "type": "formula",
+    "width": 97,
+    "height": 37
+  },
+  "25745/image8.png": {
+    "latex": "$$f(x) > 0$$",
+    "type": "formula",
+    "width": 97,
+    "height": 37
+  },
+  "25745/image9.png": {
+    "latex": "$$f$$",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "25746/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 98,
+    "height": 29
+  },
+  "25746/image10.png": {
+    "latex": "$$f(x) < 0$$",
+    "type": "formula",
+    "width": 97,
+    "height": 34
+  },
+  "25746/image11.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 90,
+    "height": 38
+  },
+  "25746/image12.png": {
+    "latex": "$$f(|\\eta \\mu x|+1) = f(|x|+1)$$",
+    "type": "formula",
+    "width": 153,
+    "height": 30
+  },
+  "25746/image13.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 66,
+    "height": 74
+  },
+  "25746/image14.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 57,
+    "height": 76
+  },
+  "25746/image15.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 81,
+    "height": 60
+  },
+  "25746/image16.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 90,
+    "height": 38
+  },
+  "25746/image17.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 89,
+    "height": 41
+  },
+  "25746/image18.png": {
+    "latex": "$$\\mathrm{E} < f(1)$$",
+    "type": "formula",
+    "width": 98,
+    "height": 34
+  },
+  "25746/image2.png": {
+    "latex": "$$f'(x) > f(x)$$",
+    "type": "formula",
+    "width": 100,
+    "height": 28
+  },
+  "25746/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 93,
+    "height": 37
+  },
+  "25746/image4.png": {
+    "latex": "$$f(0) = 0$$",
+    "type": "formula",
+    "width": 97,
+    "height": 34
+  },
+  "25746/image5.png": {
+    "latex": "$$g(x) = e^{-x} f(x)$$",
+    "type": "formula",
+    "width": 104,
+    "height": 24
+  },
+  "25746/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 59,
+    "height": 69
+  },
+  "25746/image7.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 70,
+    "height": 71
+  },
+  "25746/image8.png": {
+    "latex": "$$f(x) > 0$$",
+    "type": "formula",
+    "width": 97,
+    "height": 34
+  },
+  "25746/image9.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 90,
+    "height": 38
+  },
+  "25747/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 100,
+    "height": 26
+  },
+  "25747/image10.png": {
+    "latex": "$$\\left| \\int_{0}^{2} f(x) dx \\right|",
+    "type": "formula",
+    "width": 100,
+    "height": 77
+  },
+  "25747/image2.png": {
+    "latex": "$$f(1) = 1$$",
+    "type": "formula",
+    "width": 96,
+    "height": 36
+  },
+  "25747/image3.png": {
+    "latex": "$$f(x)\\cdot f'(x)=-x+1$$",
+    "type": "formula",
+    "width": 134,
+    "height": 25
+  },
+  "25747/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 33
+  },
+  "25747/image5.png": {
+    "latex": "$$f^2(x) = -x^2 + 2x$$",
+    "type": "formula",
+    "width": 118,
+    "height": 26
+  },
+  "25747/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 33
+  },
+  "25747/image7.png": {
+    "latex": "$$f(x) = \\sqrt{-x^2 + 2x}$$",
+    "type": "formula",
+    "width": 123,
+    "height": 30
+  },
+  "25747/image8.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 33
+  },
+  "25747/image9.png": {
+    "latex": "$$f$$",
+    "type": "formula",
+    "width": 57,
+    "height": 76
+  },
+  "25748/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 57,
+    "height": 76
+  },
+  "25748/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 70,
+    "height": 71
+  },
+  "25748/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 101,
+    "height": 24
+  },
+  "25748/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 81,
+    "height": 39
+  },
+  "25748/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 98,
+    "height": 59
+  },
+  "25748/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 106,
+    "height": 31
+  },
+  "25748/image7.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 41
+  },
+  "25748/image8.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 112,
+    "height": 47
+  },
+  "25749/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 57,
+    "height": 76
+  },
+  "25749/image2.png": {
+    "latex": "$$D_f = [0,2) \\cup (2,3) \\cup (3,5]$$",
+    "type": "formula",
+    "width": 172,
+    "height": 27
+  },
+  "25749/image3.png": {
+    "latex": "$$[0,1]$$",
+    "type": "formula",
+    "width": 90,
+    "height": 52
+  },
+  "25749/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 96,
+    "height": 43
+  },
+  "25749/image5.png": {
+    "latex": "$$\\lim_{x \\to 4} \\frac{1}{f(x)}$$",
+    "type": "formula",
+    "width": 98,
+    "height": 68
+  },
+  "25749/image6.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 711,
+    "height": 553
+  },
+  "25757/image1.png": {
+    "latex": "$$f(x) = \\begin{cases} (1-x)\\eta\\mu^2\\left(\\frac{1}{1-x}\\right), & \\text{αν } 0 \\leq x < 1 \\\\ 0, & \\text{αν } x = 1 \\end",
+    "type": "formula",
+    "width": 262,
+    "height": 70
+  },
+  "25757/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 37,
+    "height": 67
+  },
+  "25757/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 100,
+    "height": 46
+  },
+  "25757/image4.png": {
+    "latex": "$$0 \\leq f(x) \\leq 1 - x$$",
+    "type": "formula",
+    "width": 109,
+    "height": 31
+  },
+  "25757/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 67,
+    "height": 73
+  },
+  "25757/image6.png": {
+    "latex": "$$x'x$$",
+    "type": "formula",
+    "width": 82,
+    "height": 61
+  },
+  "25757/image7.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 100,
+    "height": 25
+  },
+  "25757/image8.png": {
+    "latex": "$$\\mathrm{E} < \\frac{1}{2}$$",
+    "type": "formula",
+    "width": 88,
+    "height": 88
+  },
+  "25761/image1.png": {
+    "latex": "$$f(x) = x(\\ln x - 1) + 1, x > 0$$",
+    "type": "formula",
+    "width": 163,
+    "height": 25
+  },
+  "25761/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 25
+  },
+  "25762/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 139,
+    "height": 55
+  },
+  "25762/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 94,
+    "height": 46
+  },
+  "25762/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 94,
+    "height": 46
+  },
+  "25762/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 37
+  },
+  "25762/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 40
+  },
+  "25764/image1.png": {
+    "latex": "$$f(x) = \\begin{cases} \\ln(x+1), & x < 0 \\\\ x^3, & x < 0 \\end{cases}$$",
+    "type": "formula",
+    "width": 139,
+    "height": 58
+  },
+  "25764/image2.png": {
+    "latex": "$$x_o = 0$$",
+    "type": "formula",
+    "width": 94,
+    "height": 46
+  },
+  "25764/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 73,
+    "height": 73
+  },
+  "25765/image1.png": {
+    "latex": "$$f(x) = 2\\ln x + x, x > 0$$",
+    "type": "formula",
+    "width": 130,
+    "height": 25
+  },
+  "25765/image10.png": {
+    "latex": "$$x = -1, x = 1$$",
+    "type": "formula",
+    "width": 100,
+    "height": 25
+  },
+  "25765/image2.png": {
+    "latex": "$$\\mathbf{f}^{-1}$$",
+    "type": "formula",
+    "width": 82,
+    "height": 73
+  },
+  "25765/image3.png": {
+    "latex": "$$f^{-1}(x) > x$$",
+    "type": "formula",
+    "width": 97,
+    "height": 37
+  },
+  "25765/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 31
+  },
+  "25765/image5.png": {
+    "latex": "$$g(x) = e^{f(|x|)}$$",
+    "type": "formula",
+    "width": 97,
+    "height": 34
+  },
+  "25765/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 91,
+    "height": 40
+  },
+  "25765/image7.png": {
+    "latex": "$$g(x) = x^2 e^{|x|}, x \\in \\mathbb{R}$$",
+    "type": "formula",
+    "width": 121,
+    "height": 25
+  },
+  "25765/image8.png": {
+    "latex": "$$\\text{C}_{\\text{g}}$$",
+    "type": "formula",
+    "width": 58,
+    "height": 73
+  },
+  "25765/image9.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 82,
+    "height": 64
+  },
+  "25766/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 73,
+    "height": 73
+  },
+  "25766/image10.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 794,
+    "height": 1123
+  },
+  "25766/image11.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 52,
+    "height": 67
+  },
+  "25766/image12.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 61,
+    "height": 61
+  },
+  "25766/image13.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 52,
+    "height": 67
+  },
+  "25766/image14.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 794,
+    "height": 1123
+  },
+  "25766/image15.png": {
+    "latex": "$$\\lim_{x \\to +\\infty} f(x) = -\\infty$$",
+    "type": "formula",
+    "width": 103,
+    "height": 34
+  },
+  "25766/image16.png": {
+    "latex": "$$|f(0) = 1|$$",
+    "type": "formula",
+    "width": 97,
+    "height": 40
+  },
+  "25766/image17.png": {
+    "latex": "$$|f(2) = 5|$$",
+    "type": "formula",
+    "width": 94,
+    "height": 40
+  },
+  "25766/image18.png": {
+    "latex": "$$f(x) = |x^2 - 4| + 5$$",
+    "type": "formula",
+    "width": 109,
+    "height": 25
+  },
+  "25766/image19.png": {
+    "latex": "$$\\int_{-1}^{1} xf(x)dx = 0$$",
+    "type": "formula",
+    "width": 103,
+    "height": 67
+  },
+  "25766/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 67
+  },
+  "25766/image3.png": {
+    "latex": "$$\\begin{array}{c}",
+    "type": "formula",
+    "width": 82,
+    "height": 34
+  },
+  "25766/image4.png": {
+    "latex": "$$-2$$",
+    "type": "formula",
+    "width": 82,
+    "height": 58
+  },
+  "25766/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 52,
+    "height": 67
+  },
+  "25766/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 82,
+    "height": 40
+  },
+  "25766/image7.png": {
+    "latex": "$$f'(x)$$",
+    "type": "formula",
+    "width": 91,
+    "height": 58
+  },
+  "25766/image8.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 61,
+    "height": 61
+  },
+  "25766/image9.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 52,
+    "height": 67
+  },
+  "26366/image1.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 1104,
+    "height": 1160
+  },
+  "26630/image1.png": {
+    "latex": "$$f$$",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "26630/image2.png": {
+    "latex": "$$f$$",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "26630/image3.png": {
+    "latex": "$$f$$",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "26631/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "26631/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "26631/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 145,
+    "height": 52
+  },
+  "26633/image1.png": {
+    "latex": "$$x$$",
+    "type": "formula",
+    "width": 58,
+    "height": 58
+  },
+  "26633/image2.png": {
+    "latex": "$$x$$",
+    "type": "formula",
+    "width": 58,
+    "height": 58
+  },
+  "26633/image3.png": {
+    "latex": "$$\\text{E}(x) = 200x - \\frac{1}{2}x^2$$",
+    "type": "formula",
+    "width": 127,
+    "height": 43
+  },
+  "26633/image4.png": {
+    "latex": "$$0 < x < 400$$",
+    "type": "formula",
+    "width": 100,
+    "height": 25
+  },
+  "26633/image5.png": {
+    "latex": "$$\\mathrm{E}(x)$$",
+    "type": "formula",
+    "width": 88,
+    "height": 49
+  },
+  "26633/image6.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 844,
+    "height": 421
+  },
+  "26707/image1.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 1132,
+    "height": 1128
+  },
+  "26712/image1.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 1104,
+    "height": 1160
+  },
+  "26736/image1.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 1232,
+    "height": 1624
+  },
+  "27031/image1.png": {
+    "latex": "$$y = -\\frac{1}{3}x^3$$$$A(a,-\\frac{a^3}{3})$$$$B=M$$ $$\\Delta \\eta = A \\kappa \\tau \\eta$$",
+    "type": "formula",
+    "width": 161,
+    "height": 225
+  },
+  "27092/image1.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 1296,
+    "height": 1368
+  },
+  "27277/image1.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 976,
+    "height": 860
+  },
+  "27315/image1.png": {
+    "latex": "$$f(x) = \\left\\{ \\begin{array}{ll} \\frac{x^2 - 4}{x - 2}, & a v x < 2 \\\\ a x^2 - 4, & a v x > 2 \\end{array} \\right.$$",
+    "type": "formula",
+    "width": 175,
+    "height": 106
+  },
+  "27315/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 37,
+    "height": 67
+  },
+  "27318/image1.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 756,
+    "height": 411
+  },
+  "27408/image1.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 741,
+    "height": 810
+  },
+  "27650/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 349,
+    "height": 343
+  },
+  "27667/image1.png": {
+    "latex": "$$f(x) = e^x + \\frac{x^2}{2} + 2023, x \\in \\mathbf{R}$$",
+    "type": "formula",
+    "width": 184,
+    "height": 46
+  },
+  "27667/image10.png": {
+    "latex": "$$g(x) = \\alpha x - f(x)$$",
+    "type": "formula",
+    "width": 121,
+    "height": 31
+  },
+  "27667/image11.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 88,
+    "height": 37
+  },
+  "27667/image12.png": {
+    "latex": "$$\\rho ff(\\rho)-(\\rho)$$",
+    "type": "formula",
+    "width": 103,
+    "height": 31
+  },
+  "27667/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 37,
+    "height": 67
+  },
+  "27667/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 64,
+    "height": 76
+  },
+  "27667/image4.png": {
+    "latex": "$$f'$$",
+    "type": "formula",
+    "width": 55,
+    "height": 73
+  },
+  "27667/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 64,
+    "height": 76
+  },
+  "27667/image6.png": {
+    "latex": "$$|\\alpha|$$",
+    "type": "formula",
+    "width": 67,
+    "height": 58
+  },
+  "27667/image7.png": {
+    "latex": "$$e^x + x = \\alpha$$",
+    "type": "formula",
+    "width": 97,
+    "height": 28
+  },
+  "27667/image8.png": {
+    "latex": "$$\\rho$$",
+    "type": "formula",
+    "width": 64,
+    "height": 73
+  },
+  "27667/image9.png": {
+    "latex": "$$|\\alpha|$$",
+    "type": "formula",
+    "width": 67,
+    "height": 58
+  },
+  "27668/image1.png": {
+    "latex": "$$f(x) = (x-3)(x-\\lambda)(x-1), x \\in \\mathbb{R}$$",
+    "type": "formula",
+    "width": 229,
+    "height": 31
+  },
+  "27668/image2.png": {
+    "latex": "$$1 < \\lambda < 3$$",
+    "type": "formula",
+    "width": 97,
+    "height": 31
+  },
+  "27668/image3.png": {
+    "latex": "$$|f'(x) = 0|$$",
+    "type": "formula",
+    "width": 94,
+    "height": 40
+  },
+  "27668/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 64,
+    "height": 76
+  },
+  "27668/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 37,
+    "height": 67
+  },
+  "27668/image6.png": {
+    "latex": "$$f(x) = -f(4-x)$$",
+    "type": "formula",
+    "width": 118,
+    "height": 31
+  },
+  "27668/image7.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 88,
+    "height": 37
+  },
+  "27668/image8.png": {
+    "latex": "$$\\int_{1}^{3} f(x)dx$$",
+    "type": "formula",
+    "width": 100,
+    "height": 52
+  },
+  "28299/image1.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 2500,
+    "height": 943
+  },
+  "28300/image1.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 2500,
+    "height": 942
+  },
+  "28304/image1.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 2500,
+    "height": 981
+  },
+  "28337/image1.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 2500,
+    "height": 1002
+  },
+  "28342/image1.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 2500,
+    "height": 985
+  },
+  "28532/image1.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 1920,
+    "height": 1080
+  },
+  "28534/image1.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 1920,
+    "height": 1080
+  },
+  "28685/image1.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 387,
+    "height": 415
+  },
+  "29130/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 130,
+    "height": 28
+  },
+  "29130/image10.png": {
+    "latex": "$$C_g$$",
+    "type": "formula",
+    "width": 58,
+    "height": 73
+  },
+  "29130/image11.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 82,
+    "height": 40
+  },
+  "29130/image12.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 46
+  },
+  "29130/image13.png": {
+    "latex": "$$C_g$$",
+    "type": "formula",
+    "width": 58,
+    "height": 73
+  },
+  "29130/image14.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 46
+  },
+  "29130/image15.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 67
+  },
+  "29130/image16.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 37,
+    "height": 67
+  },
+  "29130/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 91,
+    "height": 40
+  },
+  "29130/image3.png": {
+    "latex": "$$C_{f}$$",
+    "type": "formula",
+    "width": 58,
+    "height": 70
+  },
+  "29130/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 103,
+    "height": 52
+  },
+  "29130/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 91,
+    "height": 40
+  },
+  "29130/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 100,
+    "height": 31
+  },
+  "29130/image7.png": {
+    "latex": "$$g(x) - x = \\ln\\left(1 + \\frac{1}{e^x}\\right)$$",
+    "type": "formula",
+    "width": 145,
+    "height": 49
+  },
+  "29130/image8.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 88,
+    "height": 37
+  },
+  "29130/image9.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 91,
+    "height": 40
+  },
+  "29149/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 116,
+    "height": 30
+  },
+  "29149/image10.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 34,
+    "height": 68
+  },
+  "29149/image11.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 562,
+    "height": 532
+  },
+  "29149/image2.png": {
+    "latex": "$$g(x) = e^{\\frac{x}{96}} + e^{-\\frac{x}{96}}$$",
+    "type": "formula",
+    "width": 119,
+    "height": 38
+  },
+  "29149/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 56,
+    "height": 68
+  },
+  "29149/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 92,
+    "height": 37
+  },
+  "29149/image5.png": {
+    "latex": "$$f(x) = 2\\alpha \\left[ g(96) - g(x) \\right]$$",
+    "type": "formula",
+    "width": 168,
+    "height": 32
+  },
+  "29149/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 101,
+    "height": 33
+  },
+  "29149/image7.png": {
+    "latex": "$$f(x) > 0$$",
+    "type": "formula",
+    "width": 94,
+    "height": 42
+  },
+  "29149/image8.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 101,
+    "height": 32
+  },
+  "29149/image9.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 69,
+    "height": 56
+  },
+  "29150/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 136,
+    "height": 31
+  },
+  "29150/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 40,
+    "height": 67
+  },
+  "29150/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 82,
+    "height": 61
+  },
+  "29150/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 52,
+    "height": 67
+  },
+  "29150/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 49,
+    "height": 67
+  },
+  "29150/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 52,
+    "height": 67
+  },
+  "29150/image7.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 46,
+    "height": 73
+  },
+  "29150/image8.png": {
+    "latex": "$$\\frac{5}{3}$$",
+    "type": "formula",
+    "width": 34,
+    "height": 88
+  },
+  "29549/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 95,
+    "height": 29
+  },
+  "29549/image2.png": {
+    "latex": "$$ff(0) = (0) = 0$$",
+    "type": "formula",
+    "width": 110,
+    "height": 29
+  },
+  "29549/image3.png": {
+    "latex": "$$\\int_{0}^{x} \\left( f(x) + f''(x) \\right)\\eta \\mu xdx = 0$$",
+    "type": "formula",
+    "width": 188,
+    "height": 36
+  },
+  "29549/image4.png": {
+    "latex": "$$\\int_{0}^{1} f'(x) \\eta dx = -\\int_{0}^{1} f'(x) \\alpha v x dx$$",
+    "type": "formula",
+    "width": 235,
+    "height": 36
+  },
+  "29549/image5.png": {
+    "latex": "$$|f(\\pi) = 0|$$",
+    "type": "formula",
+    "width": 94,
+    "height": 40
+  },
+  "29549/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 93,
+    "height": 55
+  },
+  "29830/image1.png": {
+    "latex": "$$f(x) = \\sqrt{9 - x^2}$$",
+    "type": "formula",
+    "width": 105,
+    "height": 30
+  },
+  "29830/image2.png": {
+    "latex": "$$g(x) = \\frac{\\sqrt{4 - x^2}}{x}$$",
+    "type": "formula",
+    "width": 107,
+    "height": 50
+  },
+  "29830/image3.png": {
+    "latex": "$$f$$",
+    "type": "formula",
+    "width": 57,
+    "height": 76
+  },
+  "29830/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 59,
+    "height": 69
+  },
+  "29830/image5.png": {
+    "latex": "$$f \\cdot g$$",
+    "type": "formula",
+    "width": 90,
+    "height": 52
+  },
+  "29830/image6.png": {
+    "latex": "$$\\frac{f}{g}$$",
+    "type": "formula",
+    "width": 39,
+    "height": 92
+  },
+  "29832/image1.png": {
+    "latex": "$$f(x) = \\frac{e^x + 1}{e^x - 1}$$",
+    "type": "formula",
+    "width": 100,
+    "height": 46
+  },
+  "29832/image2.png": {
+    "latex": "$$g(x) = \\ln \\frac{1-x}{1+x}$$",
+    "type": "formula",
+    "width": 100,
+    "height": 43
+  },
+  "29832/image3.png": {
+    "latex": "$$f$$",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "29832/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 79,
+    "height": 67
+  },
+  "29832/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 70
+  },
+  "29832/image6.png": {
+    "latex": "$$f \\circ g$$",
+    "type": "formula",
+    "width": 88,
+    "height": 49
+  },
+  "29832/image7.png": {
+    "latex": "$$(f \\circ g)(x)$$",
+    "type": "formula",
+    "width": 97,
+    "height": 31
+  },
+  "29834/image1.png": {
+    "latex": "$$f(x) = \\sqrt{9x^2 + 16} - \\frac{5}{2}\\ln(8x+1)$$",
+    "type": "formula",
+    "width": 205,
+    "height": 43
+  },
+  "29834/image2.png": {
+    "latex": "$$f$$",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "29834/image3.png": {
+    "latex": "$$f(0) > 0$$",
+    "type": "formula",
+    "width": 97,
+    "height": 37
+  },
+  "29834/image4.png": {
+    "latex": "$$f(1) < 0$$",
+    "type": "formula",
+    "width": 97,
+    "height": 37
+  },
+  "29834/image5.png": {
+    "latex": "$$f(x) = 0$$",
+    "type": "formula",
+    "width": 97,
+    "height": 37
+  },
+  "29834/image6.png": {
+    "latex": "$$\\langle 0,1 \\rangle$$",
+    "type": "formula",
+    "width": 88,
+    "height": 49
+  },
+  "29835/image1.png": {
+    "latex": "$$f(x) = \\sqrt{x+1} - 1$$",
+    "type": "formula",
+    "width": 115,
+    "height": 31
+  },
+  "29835/image2.png": {
+    "latex": "$$g(x) = 2 - x$$",
+    "type": "formula",
+    "width": 97,
+    "height": 28
+  },
+  "29835/image3.png": {
+    "latex": "$$f$$",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "29835/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 70
+  },
+  "29835/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 31
+  },
+  "29835/image6.png": {
+    "latex": "$$(f \\circ g)(x) = \\sqrt{3-x} - 1$$",
+    "type": "formula",
+    "width": 151,
+    "height": 31
+  },
+  "29835/image7.png": {
+    "latex": "$$\\varphi(x) = (f \\circ g)(x)$$",
+    "type": "formula",
+    "width": 115,
+    "height": 25
+  },
+  "29837/image1.png": {
+    "latex": "$$f(x) = \\frac{1}{1-x}$$",
+    "type": "formula",
+    "width": 101,
+    "height": 50
+  },
+  "29837/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 90,
+    "height": 40
+  },
+  "29837/image3.png": {
+    "latex": "$$f$$",
+    "type": "formula",
+    "width": 57,
+    "height": 76
+  },
+  "29837/image4.png": {
+    "latex": "$$f \\circ f$$",
+    "type": "formula",
+    "width": 90,
+    "height": 47
+  },
+  "29837/image5.png": {
+    "latex": "$$f^{-1}$$",
+    "type": "formula",
+    "width": 86,
+    "height": 74
+  },
+  "29837/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 164,
+    "height": 43
+  },
+  "29837/image7.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 101,
+    "height": 34
+  },
+  "29837/image8.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 100,
+    "height": 77
+  },
+  "29838/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 98,
+    "height": 29
+  },
+  "29838/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 91,
+    "height": 38
+  },
+  "29838/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 176,
+    "height": 43
+  },
+  "29838/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 120,
+    "height": 43
+  },
+  "29838/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 101,
+    "height": 31
+  },
+  "29838/image6.png": {
+    "latex": "$$f(0) = 0$$",
+    "type": "formula",
+    "width": 97,
+    "height": 34
+  },
+  "29838/image7.png": {
+    "latex": "$$f(x) = 0$$",
+    "type": "formula",
+    "width": 97,
+    "height": 34
+  },
+  "29838/image8.png": {
+    "latex": "$$\\left( \\frac{1}{\\pi}, +\\infty \\right)$$",
+    "type": "formula",
+    "width": 96,
+    "height": 71
+  },
+  "31527/image1.png": {
+    "latex": "$$f(x) = x^4 + 3x^2 - 8, x \\in \\mathbb{R}$$",
+    "type": "formula",
+    "width": 158,
+    "height": 25
+  },
+  "31527/image2.png": {
+    "latex": "$$C_f$$",
+    "type": "formula",
+    "width": 56,
+    "height": 68
+  },
+  "31527/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 98,
+    "height": 33
+  },
+  "31527/image4.png": {
+    "latex": "$$C_f$$",
+    "type": "formula",
+    "width": 56,
+    "height": 68
+  },
+  "31528/image1.png": {
+    "latex": "$$f(x) = \\ln\\left(1 - e^{-x}\\right)$$",
+    "type": "formula",
+    "width": 111,
+    "height": 33
+  },
+  "31528/image2.png": {
+    "latex": "$$\\mathbf{f}^{-1}$$",
+    "type": "formula",
+    "width": 79,
+    "height": 70
+  },
+  "31530/image1.png": {
+    "latex": "$$f(x) = x^3 + 5x - 2, x \\in \\mathbb{R}$$",
+    "type": "formula",
+    "width": 151,
+    "height": 25
+  },
+  "31530/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 61
+  },
+  "31530/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 61
+  },
+  "31530/image4.png": {
+    "latex": "$$\\lim_{x \\to 0} \\frac{f(x_0 + \\theta)x^3 + 2x - 5}{f(x_0 - \\theta)x - 5}$$",
+    "type": "formula",
+    "width": 151,
+    "height": 49
+  },
+  "31530/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 61
+  },
+  "31530/image6.png": {
+    "latex": "$$C_f$$",
+    "type": "formula",
+    "width": 58,
+    "height": 67
+  },
+  "31530/image7.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 40
+  },
+  "31530/image8.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 94,
+    "height": 43
+  },
+  "31530/image9.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 91,
+    "height": 37
+  },
+  "31533/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 127,
+    "height": 43
+  },
+  "31533/image10.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 94,
+    "height": 40
+  },
+  "31533/image11.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 324,
+    "height": 258
+  },
+  "31533/image12.png": {
+    "latex": "$$\\mathrm{E}(\\Omega_1), \\mathrm{E}(\\Omega_2)$$",
+    "type": "formula",
+    "width": 100,
+    "height": 31
+  },
+  "31533/image13.png": {
+    "latex": "$$\\mathrm{E}(\\Omega_1) = \\mathrm{E}(\\Omega_2)$$",
+    "type": "formula",
+    "width": 100,
+    "height": 31
+  },
+  "31533/image2.png": {
+    "latex": "$$C_f$$",
+    "type": "formula",
+    "width": 58,
+    "height": 67
+  },
+  "31533/image3.png": {
+    "latex": "$$C_f$$",
+    "type": "formula",
+    "width": 58,
+    "height": 67
+  },
+  "31533/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 151,
+    "height": 25
+  },
+  "31533/image5.png": {
+    "latex": "$$x_1 x_2 = -4$$",
+    "type": "formula",
+    "width": 100,
+    "height": 34
+  },
+  "31533/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 82,
+    "height": 64
+  },
+  "31533/image7.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 794,
+    "height": 1123
+  },
+  "31533/image8.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 91,
+    "height": 46
+  },
+  "31533/image9.png": {
+    "latex": "$$C_f$$",
+    "type": "formula",
+    "width": 58,
+    "height": 67
+  },
+  "31534/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 301,
+    "height": 228
+  },
+  "31534/image10.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 91,
+    "height": 40
+  },
+  "31534/image11.png": {
+    "latex": "$$\\mathbf{X} = \\pi$$",
+    "type": "formula",
+    "width": 91,
+    "height": 34
+  },
+  "31534/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 40
+  },
+  "31534/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 28
+  },
+  "31534/image4.png": {
+    "latex": "$$f'(x) = -\\frac{1}{2}x^2 + 2x, x \\in \\mathbb{R}$$",
+    "type": "formula",
+    "width": 157,
+    "height": 43
+  },
+  "31534/image5.png": {
+    "latex": "$$f(x) = -\\frac{1}{6}x^3 + x^2 + 1$$",
+    "type": "formula",
+    "width": 133,
+    "height": 43
+  },
+  "31534/image6.png": {
+    "latex": "$$g(x) = x^2 + x + 1 - \\eta \\mu x$$",
+    "type": "formula",
+    "width": 139,
+    "height": 25
+  },
+  "31534/image7.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 91,
+    "height": 37
+  },
+  "31534/image8.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 91,
+    "height": 40
+  },
+  "31534/image9.png": {
+    "latex": "$$C_f, C_g$$",
+    "type": "formula",
+    "width": 94,
+    "height": 49
+  },
+  "31547/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 31
+  },
+  "31547/image2.png": {
+    "latex": "$$f(x) = \\frac{3 - 2x}{(x-2)^2}$$",
+    "type": "formula",
+    "width": 109,
+    "height": 49
+  },
+  "31547/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 91,
+    "height": 37
+  },
+  "31547/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "31547/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 91,
+    "height": 37
+  },
+  "31548/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 31
+  },
+  "31548/image2.png": {
+    "latex": "$$\\left| f(x) - 2x \\right| \\leq (x-1)^2$$",
+    "type": "formula",
+    "width": 133,
+    "height": 31
+  },
+  "31548/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 94,
+    "height": 37
+  },
+  "31548/image4.png": {
+    "latex": "$$f(1)=2$$",
+    "type": "formula",
+    "width": 97,
+    "height": 37
+  },
+  "31548/image5.png": {
+    "latex": "$$\\lim_{x \\to 1} f(x) = 2$$",
+    "type": "formula",
+    "width": 100,
+    "height": 37
+  },
+  "31548/image6.png": {
+    "latex": "$$f$$",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "31549/image1.png": {
+    "latex": "$$f(x) = \\frac{\\ln x}{x}$$",
+    "type": "formula",
+    "width": 97,
+    "height": 55
+  },
+  "31549/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 91,
+    "height": 37
+  },
+  "31549/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "31549/image4.png": {
+    "latex": "$$2022^{2023} > 2023^{2022}$$",
+    "type": "formula",
+    "width": 127,
+    "height": 25
+  },
+  "31549/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "31549/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 100,
+    "height": 28
+  },
+  "31549/image7.png": {
+    "latex": "$$[2022, 2023]$$",
+    "type": "formula",
+    "width": 103,
+    "height": 28
+  },
+  "31549/image8.png": {
+    "latex": "$$2f(2022) < f(2021) + f(2023)$$",
+    "type": "formula",
+    "width": 211,
+    "height": 25
+  },
+  "31549/image9.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 34
+  },
+  "31550/image1.png": {
+    "latex": "$$f(x) = e^x - \\ln x$$",
+    "type": "formula",
+    "width": 106,
+    "height": 25
+  },
+  "31550/image2.png": {
+    "latex": "$$f$$",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "31550/image3.png": {
+    "latex": "$x_o \\in (\\frac{1}{2}, 1)$",
+    "type": "formula",
+    "width": 97,
+    "height": 61
+  },
+  "31550/image4.png": {
+    "latex": "$$\\frac{1}{x_o} + x_o$$",
+    "type": "formula",
+    "width": 97,
+    "height": 88
+  },
+  "31550/image5.png": {
+    "latex": "$$f(x)=2$$",
+    "type": "formula",
+    "width": 97,
+    "height": 37
+  },
+  "31551/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 247,
+    "height": 73
+  },
+  "31551/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 139,
+    "height": 25
+  },
+  "31551/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 31
+  },
+  "31551/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 49,
+    "height": 73
+  },
+  "31551/image5.png": {
+    "latex": "$$[-\\pi, \\pi]$$",
+    "type": "formula",
+    "width": 97,
+    "height": 37
+  },
+  "31551/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "31551/image7.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 31
+  },
+  "31551/image8.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 103,
+    "height": 58
+  },
+  "31680/image1.png": {
+    "latex": "$$3,1$$",
+    "type": "formula",
+    "width": 88,
+    "height": 58
+  },
+  "31680/image10.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 61
+  },
+  "31680/image11.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 43,
+    "height": 73
+  },
+  "31680/image12.png": {
+    "latex": "$$1,02$$",
+    "type": "formula",
+    "width": 88,
+    "height": 46
+  },
+  "31680/image13.png": {
+    "latex": "$$L'(x) = \\sqrt{\\frac{x^2}{x^2 + 2,25}} - \\frac{\\sqrt{\\frac{(1,7-x)^2}{(1,7-x)^2 + \\alpha^2}}}{\\sqrt{\\frac{(",
+    "type": "formula",
+    "width": 244,
+    "height": 61
+  },
+  "31680/image14.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 61
+  },
+  "31680/image15.png": {
+    "latex": "$$|\\alpha = 1|$$",
+    "type": "formula",
+    "width": 91,
+    "height": 40
+  },
+  "31680/image16.png": {
+    "latex": "$$L''(x) > 0$$",
+    "type": "formula",
+    "width": 97,
+    "height": 40
+  },
+  "31680/image17.png": {
+    "latex": "$$\\lim_{x \\to 1,02} \\frac{1}{L'(x)}$$",
+    "type": "formula",
+    "width": 97,
+    "height": 61
+  },
+  "31680/image2.png": {
+    "latex": "$$1,7$$",
+    "type": "formula",
+    "width": 82,
+    "height": 58
+  },
+  "31680/image3.png": {
+    "latex": "$$\\Delta B = x$$",
+    "type": "formula",
+    "width": 94,
+    "height": 31
+  },
+  "31680/image4.png": {
+    "latex": "$$\\Delta E = 1,7$$",
+    "type": "formula",
+    "width": 97,
+    "height": 31
+  },
+  "31680/image5.png": {
+    "latex": "$$\\mathbf{A}\\Delta = 1,5$$",
+    "type": "formula",
+    "width": 97,
+    "height": 31
+  },
+  "31680/image6.png": {
+    "latex": "$$\\Gamma \\mathrm{E} = \\alpha$$",
+    "type": "formula",
+    "width": 94,
+    "height": 34
+  },
+  "31680/image7.png": {
+    "latex": "$$L = \\text{AB} + \\text{BΓ}$$",
+    "type": "formula",
+    "width": 100,
+    "height": 25
+  },
+  "31680/image8.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 231,
+    "height": 305
+  },
+  "31680/image9.png": {
+    "latex": "$$L = L(x) = \\sqrt{x^2 + 2.25} + \\sqrt{(1.7 - x)^2 + \\alpha^2}$$",
+    "type": "formula",
+    "width": 259,
+    "height": 37
+  },
+  "31743/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 31
+  },
+  "31743/image10.png": {
+    "latex": "$$\\varphi(0) < 0$$",
+    "type": "formula",
+    "width": 97,
+    "height": 37
+  },
+  "31743/image11.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 55
+  },
+  "31743/image12.png": {
+    "latex": "$$\\varphi(x) = 0$$",
+    "type": "formula",
+    "width": 97,
+    "height": 37
+  },
+  "31743/image13.png": {
+    "latex": "$$\\left(0, \\frac{\\pi}{2}\\right)$$",
+    "type": "formula",
+    "width": 94,
+    "height": 76
+  },
+  "31743/image2.png": {
+    "latex": "$$f(x) = x\\eta \\mu x + 4$$",
+    "type": "formula",
+    "width": 115,
+    "height": 25
+  },
+  "31743/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 94,
+    "height": 37
+  },
+  "31743/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "31743/image5.png": {
+    "latex": "$$f'(0)$$",
+    "type": "formula",
+    "width": 94,
+    "height": 49
+  },
+  "31743/image6.png": {
+    "latex": "$$f' \\left( \\frac{\\pi}{2} \\right)$$",
+    "type": "formula",
+    "width": 97,
+    "height": 82
+  },
+  "31743/image7.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 64,
+    "height": 73
+  },
+  "31743/image8.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 112,
+    "height": 40
+  },
+  "31743/image9.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 94,
+    "height": 37
+  },
+  "31746/image1.png": {
+    "latex": "$$f(x) = (x^2 - 4x + 6)e^x$$",
+    "type": "formula",
+    "width": 147,
+    "height": 26
+  },
+  "31746/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 93,
+    "height": 37
+  },
+  "31746/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 57,
+    "height": 76
+  },
+  "31746/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 95,
+    "height": 34
+  },
+  "31746/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 101,
+    "height": 26
+  },
+  "31746/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 93,
+    "height": 37
+  },
+  "32225/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 112,
+    "height": 30
+  },
+  "32225/image10.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 98,
+    "height": 42
+  },
+  "32225/image11.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 99,
+    "height": 35
+  },
+  "32225/image12.png": {
+    "latex": "$$f(x) = x\\left(\\sqrt{x+1} - 1\\right), \\quad x \\quad -1$$",
+    "type": "formula",
+    "width": 187,
+    "height": 37
+  },
+  "32225/image13.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 34,
+    "height": 68
+  },
+  "32225/image14.png": {
+    "latex": "$$h(x) = f(x+1) - f(x), x \\in (-1, +\\infty)$$",
+    "type": "formula",
+    "width": 238,
+    "height": 29
+  },
+  "32225/image15.png": {
+    "latex": "$$\\int_{2023}^{2024} (f(x+1) - f(x))dx < \\int_{2023}^{2024} (f(x+2) - f(x+1))dx$$",
+    "type": "formula",
+    "width": 356,
+    "height": 37
+  },
+  "32225/image2.png": {
+    "latex": "$$\\left(f(x)+x\\right)^2=x^2(x+1)$$",
+    "type": "formula",
+    "width": 155,
+    "height": 34
+  },
+  "32225/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 100,
+    "height": 34
+  },
+  "32225/image4.png": {
+    "latex": "$$|f(1) > -1$$",
+    "type": "formula",
+    "width": 96,
+    "height": 39
+  },
+  "32225/image5.png": {
+    "latex": "$$f\\left(-\\frac{1}{2}\\right)<\\frac{1}{2}$$",
+    "type": "formula",
+    "width": 97,
+    "height": 58
+  },
+  "32225/image6.png": {
+    "latex": "$$g(x) = f(x) + x$$",
+    "type": "formula",
+    "width": 109,
+    "height": 29
+  },
+  "32225/image7.png": {
+    "latex": "$$g(x) = 0$$",
+    "type": "formula",
+    "width": 98,
+    "height": 42
+  },
+  "32225/image8.png": {
+    "latex": "$$g(x)<0$$",
+    "type": "formula",
+    "width": 99,
+    "height": 42
+  },
+  "32225/image9.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 99,
+    "height": 37
+  },
+  "32524/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 109,
+    "height": 31
+  },
+  "32524/image2.png": {
+    "latex": "$$g(x) = \\frac{e}{x} - \\ln x$$",
+    "type": "formula",
+    "width": 100,
+    "height": 40
+  },
+  "32524/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 67
+  },
+  "32524/image4.png": {
+    "latex": "$$e(1-x) = x\\ln x$$",
+    "type": "formula",
+    "width": 106,
+    "height": 28
+  },
+  "32524/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 91,
+    "height": 37
+  },
+  "32524/image6.png": {
+    "latex": "$$f(x) = \\frac{x^2 + x}{e - x\\ln x - ex}$$",
+    "type": "formula",
+    "width": 133,
+    "height": 43
+  },
+  "32524/image7.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 37,
+    "height": 67
+  },
+  "32524/image8.png": {
+    "latex": "$$\\lim_{x \\to 1^+} f(x) = -\\infty$$",
+    "type": "formula",
+    "width": 103,
+    "height": 37
+  },
+  "32693/image1.png": {
+    "latex": "$$C_1$$",
+    "type": "formula",
+    "width": 58,
+    "height": 70
+  },
+  "32693/image2.png": {
+    "latex": "$$\\left| C_2 \\right|$$",
+    "type": "formula",
+    "width": 67,
+    "height": 70
+  },
+  "32693/image3.png": {
+    "latex": "$$C_3$$",
+    "type": "formula",
+    "width": 64,
+    "height": 73
+  },
+  "32693/image4.png": {
+    "latex": "$$f$$",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "32693/image5.png": {
+    "latex": "$$|f'|$$",
+    "type": "formula",
+    "width": 79,
+    "height": 67
+  },
+  "32693/image6.png": {
+    "latex": "$$F$$",
+    "type": "formula",
+    "width": 73,
+    "height": 70
+  },
+  "32693/image7.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 73,
+    "height": 73
+  },
+  "32693/image8.png": {
+    "latex": "$$f(x) = 4x^3 - 2x$$",
+    "type": "formula",
+    "width": 106,
+    "height": 25
+  },
+  "32693/image9.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 1470,
+    "height": 1359
+  },
+  "32694/image1.png": {
+    "latex": "$$C_1$$",
+    "type": "formula",
+    "width": 58,
+    "height": 70
+  },
+  "32694/image10.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 82,
+    "height": 34
+  },
+  "32694/image11.png": {
+    "latex": "$$|x_1|$$",
+    "type": "formula",
+    "width": 49,
+    "height": 55
+  },
+  "32694/image12.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 46,
+    "height": 67
+  },
+  "32694/image13.png": {
+    "latex": "$$x_2$$",
+    "type": "formula",
+    "width": 58,
+    "height": 55
+  },
+  "32694/image14.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 82,
+    "height": 40
+  },
+  "32694/image15.png": {
+    "latex": "$$F' = f$$",
+    "type": "formula",
+    "width": 91,
+    "height": 37
+  },
+  "32694/image2.png": {
+    "latex": "$$\\left| C_2 \\right|$$",
+    "type": "formula",
+    "width": 67,
+    "height": 70
+  },
+  "32694/image3.png": {
+    "latex": "$$C_3$$",
+    "type": "formula",
+    "width": 64,
+    "height": 73
+  },
+  "32694/image4.png": {
+    "latex": "$$f$$",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "32694/image5.png": {
+    "latex": "$$|f'|$$",
+    "type": "formula",
+    "width": 79,
+    "height": 67
+  },
+  "32694/image6.png": {
+    "latex": "$$F$$",
+    "type": "formula",
+    "width": 73,
+    "height": 70
+  },
+  "32694/image7.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 73,
+    "height": 73
+  },
+  "32694/image8.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 1504,
+    "height": 1329
+  },
+  "32694/image9.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 58
+  },
+  "32695/image1.png": {
+    "latex": "$$f$$",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "32695/image10.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 58
+  },
+  "32695/image11.png": {
+    "latex": "$$[0,1)$$",
+    "type": "formula",
+    "width": 91,
+    "height": 55
+  },
+  "32695/image12.png": {
+    "latex": "$$\\left| C_f \\right|$$: ΘΕΜΑ 2                             Δίνεται η συνάρτηση  με πεδίο ορισμού το , σύνολο τιμών το  και τύπο .                              Δίνεται επίσης η συνάρ",
+    "type": "formula",
+    "width": 70,
+    "height": 73
+  },
+  "32695/image13.png": {
+    "latex": "$$\\left| C_g \\right|$$: ΘΕΜΑ 2: Δίνεται η συνάρτηση  με πεδίο ορισμού το , σύνολο τιμών το  και τύπο . Με δεδομένο ότι η συν",
+    "type": "formula",
+    "width": 67,
+    "height": 73
+  },
+  "32695/image14.png": {
+    "latex": "$$f$$",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "32695/image2.png": {
+    "latex": "$$[0, +\\infty)$$",
+    "type": "formula",
+    "width": 94,
+    "height": 37
+  },
+  "32695/image3.png": {
+    "latex": "$$[-\\frac{1}{2}, 1)$$",
+    "type": "formula",
+    "width": 94,
+    "height": 76
+  },
+  "32695/image4.png": {
+    "latex": "$$f(x) = 1 - \\frac{3}{\\sqrt{x} + 2}$$",
+    "type": "formula",
+    "width": 121,
+    "height": 49
+  },
+  "32695/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 70
+  },
+  "32695/image6.png": {
+    "latex": "$$g(x) = \\left( \\frac{1 + 2x}{1 - x} \\right)^2$$",
+    "type": "formula",
+    "width": 115,
+    "height": 52
+  },
+  "32695/image7.png": {
+    "latex": "$$f$$",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "32695/image8.png": {
+    "latex": "$$f(x) < 0$$",
+    "type": "formula",
+    "width": 97,
+    "height": 37
+  },
+  "32695/image9.png": {
+    "latex": "$$g(x) > 0$$",
+    "type": "formula",
+    "width": 97,
+    "height": 37
+  },
+  "32799/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 100,
+    "height": 31
+  },
+  "32799/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 91,
+    "height": 46
+  },
+  "32799/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 55,
+    "height": 73
+  },
+  "32799/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 121,
+    "height": 31
+  },
+  "32799/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 46
+  },
+  "32799/image6.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 638,
+    "height": 815
+  },
+  "32799/image7.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 100,
+    "height": 34
+  },
+  "32799/image8.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 100,
+    "height": 40
+  },
+  "32799/image9.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 37,
+    "height": 67
+  },
+  "32800/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 34
+  },
+  "32800/image10.png": {
+    "latex": "$$\\int_{1}^{9} f(x)dx$$",
+    "type": "formula",
+    "width": 100,
+    "height": 52
+  },
+  "32800/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 37,
+    "height": 67
+  },
+  "32800/image3.png": {
+    "latex": "$$x'x$$",
+    "type": "formula",
+    "width": 82,
+    "height": 61
+  },
+  "32800/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 100,
+    "height": 46
+  },
+  "32800/image5.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 760,
+    "height": 433
+  },
+  "32800/image6.png": {
+    "latex": "$$\\left( \\int_{7}^{9} f(x) dx \\right)^{2}=16$$",
+    "type": "formula",
+    "width": 121,
+    "height": 43
+  },
+  "32800/image7.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 28
+  },
+  "32800/image8.png": {
+    "latex": "$$\\int_{7}^{9} f(x)dx = 4$$",
+    "type": "formula",
+    "width": 103,
+    "height": 37
+  },
+  "32800/image9.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 100,
+    "height": 46
+  },
+  "33388/image1.png": {
+    "latex": "$$f(x) = 2x + \\eta\\mu x$$",
+    "type": "formula",
+    "width": 116,
+    "height": 29
+  },
+  "33388/image10.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 99,
+    "height": 34
+  },
+  "33388/image11.png": {
+    "latex": "$$\\alpha < \\beta$$",
+    "type": "formula",
+    "width": 94,
+    "height": 44
+  },
+  "33388/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 93,
+    "height": 37
+  },
+  "33388/image3.png": {
+    "latex": "$$f$$",
+    "type": "formula",
+    "width": 57,
+    "height": 76
+  },
+  "33388/image4.png": {
+    "latex": "$$\\left| C_f \\right|$$",
+    "type": "formula",
+    "width": 69,
+    "height": 75
+  },
+  "33388/image5.png": {
+    "latex": "$$\\mathrm{A}\\left(\\frac{\\pi}{2}, \\pi + 1\\right)$$",
+    "type": "formula",
+    "width": 100,
+    "height": 53
+  },
+  "33388/image6.png": {
+    "latex": "$$y = 2x + 1$$",
+    "type": "formula",
+    "width": 99,
+    "height": 32
+  },
+  "33388/image7.png": {
+    "latex": "$$\\left| f'(x) \\right| \\leq 3$$",
+    "type": "formula",
+    "width": 97,
+    "height": 40
+  },
+  "33388/image8.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 93,
+    "height": 37
+  },
+  "33388/image9.png": {
+    "latex": "$$\\left| f(\\beta) - f(\\alpha) \\right| \\leq 3 |\\beta - \\alpha|$$",
+    "type": "formula",
+    "width": 166,
+    "height": 32
+  },
+  "33577/image1.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 1522,
+    "height": 626
+  },
+  "33577/image2.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 1522,
+    "height": 626
+  },
+  "33588/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "33588/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 73,
+    "height": 73
+  },
+  "33588/image3.png": {
+    "latex": "$$\\Omega_1, \\Omega_2, \\Omega_3$$",
+    "type": "formula",
+    "width": 97,
+    "height": 31
+  },
+  "33588/image4.png": {
+    "latex": "$$\\mathrm{E}(\\Omega_1) = \\mathrm{E}(\\Omega_2) = \\mathrm{E}(\\Omega_3) = \\frac{4}{3}$$",
+    "type": "formula",
+    "width": 187,
+    "height": 43
+  },
+  "33588/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 103,
+    "height": 79
+  },
+  "33588/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 103,
+    "height": 79
+  },
+  "33588/image7.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 103,
+    "height": 79
+  },
+  "33588/image8.png": {
+    "latex": "$$\\int_{0}^{2023} f(x)dx - \\int_{4}^{2023} f(x)dx$$",
+    "type": "formula",
+    "width": 157,
+    "height": 52
+  },
+  "33588/image9.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 679,
+    "height": 565
+  },
+  "33593/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "33593/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 73,
+    "height": 73
+  },
+  "33593/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 103,
+    "height": 61
+  },
+  "33593/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 103,
+    "height": 61
+  },
+  "33593/image5.png": {
+    "latex": "$$\\int_{1}^{7} f(x)dx = 10$$",
+    "type": "formula",
+    "width": 103,
+    "height": 55
+  },
+  "33593/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 103,
+    "height": 79
+  },
+  "33593/image7.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 103,
+    "height": 79
+  },
+  "33593/image8.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 103,
+    "height": 79
+  },
+  "33593/image9.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 103,
+    "height": 55
+  },
+  "33596/image1.png": {
+    "latex": "$$f(x) = \\ln x$$",
+    "type": "formula",
+    "width": 99,
+    "height": 29
+  },
+  "33596/image10.png": {
+    "latex": "$$d(x) = \\sqrt{x^2 + \\ln^2 x - 4\\ln x + 4}$$",
+    "type": "formula",
+    "width": 194,
+    "height": 30
+  },
+  "33596/image11.png": {
+    "latex": "$$x_o^2 + \\ln x_o - 2 = 0$$",
+    "type": "formula",
+    "width": 114,
+    "height": 28
+  },
+  "33596/image12.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 83,
+    "height": 51
+  },
+  "33596/image13.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 98,
+    "height": 34
+  },
+  "33596/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 96,
+    "height": 38
+  },
+  "33596/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 32
+  },
+  "33596/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 90,
+    "height": 38
+  },
+  "33596/image5.png": {
+    "latex": "$$\\left| C_f \\right|$$",
+    "type": "formula",
+    "width": 69,
+    "height": 75
+  },
+  "33596/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 99,
+    "height": 29
+  },
+  "33596/image7.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 95,
+    "height": 44
+  },
+  "33596/image8.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 75,
+    "height": 70
+  },
+  "33596/image9.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 85,
+    "height": 45
+  },
+  "33598/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 57,
+    "height": 76
+  },
+  "33598/image10.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 125,
+    "height": 52
+  },
+  "33598/image11.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 91,
+    "height": 46
+  },
+  "33598/image12.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 728,
+    "height": 646
+  },
+  "33598/image2.png": {
+    "latex": "$$[0,1]$$",
+    "type": "formula",
+    "width": 90,
+    "height": 52
+  },
+  "33598/image3.png": {
+    "latex": "$$ (0,0) $$",
+    "type": "formula",
+    "width": 90,
+    "height": 48
+  },
+  "33598/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 86,
+    "height": 54
+  },
+  "33598/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 84,
+    "height": 73
+  },
+  "33598/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 91,
+    "height": 49
+  },
+  "33598/image7.png": {
+    "latex": "$$f^{-1}$$",
+    "type": "formula",
+    "width": 86,
+    "height": 74
+  },
+  "33598/image8.png": {
+    "latex": "$$\\int_{0}^{1} f(x) dx < \\frac{1}{2}$$",
+    "type": "formula",
+    "width": 103,
+    "height": 57
+  },
+  "33598/image9.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 168,
+    "height": 52
+  },
+  "33632/image1.png": {
+    "latex": "$$f(x) = \\begin{cases} e^x, & x \\leq 0 \\\\ -x^2 + 1, & x > 0 \\end{cases}$$",
+    "type": "formula",
+    "width": 139,
+    "height": 58
+  },
+  "33632/image2.png": {
+    "latex": "$$x_o = 0$$",
+    "type": "formula",
+    "width": 94,
+    "height": 46
+  },
+  "33632/image3.png": {
+    "latex": "$$\\mathrm{A}(0, f(0))$$",
+    "type": "formula",
+    "width": 97,
+    "height": 31
+  },
+  "33633/image1.png": {
+    "latex": "$$f(x) = \\ln x + 3x + 2, x > 0$$",
+    "type": "formula",
+    "width": 151,
+    "height": 25
+  },
+  "33633/image2.png": {
+    "latex": "$$f(x) + 2023 = 0$$",
+    "type": "formula",
+    "width": 103,
+    "height": 25
+  },
+  "33634/image1.png": {
+    "latex": "$$I = \\frac{\\pi}{2} \\int_0^{\\frac{\\pi}{2}} \\eta t^2 x dx$$",
+    "type": "formula",
+    "width": 103,
+    "height": 61
+  },
+  "33634/image10.png": {
+    "latex": "$$\\left| C_f \\right|$$",
+    "type": "formula",
+    "width": 70,
+    "height": 73
+  },
+  "33634/image11.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 94,
+    "height": 37
+  },
+  "33634/image12.png": {
+    "latex": "$$\\text{A}(\\frac{\\pi}{2}, \\frac{\\pi}{2})$$",
+    "type": "formula",
+    "width": 97,
+    "height": 55
+  },
+  "33634/image13.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 100,
+    "height": 28
+  },
+  "33634/image14.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 67,
+    "height": 70
+  },
+  "33634/image15.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 76,
+    "height": 70
+  },
+  "33634/image16.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 85,
+    "height": 61
+  },
+  "33634/image17.png": {
+    "latex": "$$y = \\frac{\\pi}{2}$$",
+    "type": "formula",
+    "width": 97,
+    "height": 79
+  },
+  "33634/image18.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 61,
+    "height": 67
+  },
+  "33634/image19.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 710,
+    "height": 488
+  },
+  "33634/image2.png": {
+    "latex": "$$J = \\frac{\\pi}{2} \\int_{0}^{\\frac{\\pi}{2}} \\sigma v^2 x dx$$",
+    "type": "formula",
+    "width": 115,
+    "height": 64
+  },
+  "33634/image3.png": {
+    "latex": "$$I + J = \\frac{\\pi^2}{4}$$",
+    "type": "formula",
+    "width": 100,
+    "height": 58
+  },
+  "33634/image4.png": {
+    "latex": "$$u = \\frac{\\pi}{2} - x$$",
+    "type": "formula",
+    "width": 97,
+    "height": 55
+  },
+  "33634/image5.png": {
+    "latex": "$$I = J$$",
+    "type": "formula",
+    "width": 94,
+    "height": 37
+  },
+  "33634/image6.png": {
+    "latex": "$$I = J = \\frac{\\pi^2}{8}$$",
+    "type": "formula",
+    "width": 97,
+    "height": 58
+  },
+  "33634/image7.png": {
+    "latex": "$$\\left| C_f \\right|$$",
+    "type": "formula",
+    "width": 70,
+    "height": 73
+  },
+  "33634/image8.png": {
+    "latex": "$$f(x) = \\frac{\\pi}{2} \\eta \\mu^2 x$$",
+    "type": "formula",
+    "width": 100,
+    "height": 40
+  },
+  "33634/image9.png": {
+    "latex": "$$\\left[ 0, \\frac{\\pi}{2} \\right]$$",
+    "type": "formula",
+    "width": 91,
+    "height": 94
+  },
+  "33642/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 79,
+    "height": 37
+  },
+  "33642/image10.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 61
+  },
+  "33642/image11.png": {
+    "latex": "$$e^{-1} < m < 2$$",
+    "type": "formula",
+    "width": 97,
+    "height": 31
+  },
+  "33642/image2.png": {
+    "latex": "$$|f(0) = 1|$$",
+    "type": "formula",
+    "width": 97,
+    "height": 40
+  },
+  "33642/image3.png": {
+    "latex": "$$f(x) + 2x = f'(x) + x^2$$",
+    "type": "formula",
+    "width": 127,
+    "height": 25
+  },
+  "33642/image4.png": {
+    "latex": "$$g(x) = f(x) - x^2$$",
+    "type": "formula",
+    "width": 103,
+    "height": 25
+  },
+  "33642/image5.png": {
+    "latex": "$$g'(x) = g(x)$$",
+    "type": "formula",
+    "width": 100,
+    "height": 34
+  },
+  "33642/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 91,
+    "height": 37
+  },
+  "33642/image7.png": {
+    "latex": "$$f(x) = e^x + x^2, x \\in \\mathbb{R}$$",
+    "type": "formula",
+    "width": 127,
+    "height": 25
+  },
+  "33642/image8.png": {
+    "latex": "$$M(x_o, f(x_o)), x_o \\in (-1, 0)$$",
+    "type": "formula",
+    "width": 157,
+    "height": 25
+  },
+  "33642/image9.png": {
+    "latex": "$$C_f$$",
+    "type": "formula",
+    "width": 58,
+    "height": 67
+  },
+  "33648/image1.png": {
+    "latex": "$$f(x) = \\ln^2 x \\kappa a_1 g(x) = \\ln x$$",
+    "type": "formula",
+    "width": 160,
+    "height": 25
+  },
+  "33648/image2.png": {
+    "latex": "$$ (0, +\\infty) $$",
+    "type": "formula",
+    "width": 96,
+    "height": 36
+  },
+  "33648/image3.png": {
+    "latex": "$$C_f$$",
+    "type": "formula",
+    "width": 56,
+    "height": 68
+  },
+  "33648/image4.png": {
+    "latex": "$$C_f, C_g$$",
+    "type": "formula",
+    "width": 93,
+    "height": 48
+  },
+  "33648/image5.png": {
+    "latex": "$$C_f, C_g$$",
+    "type": "formula",
+    "width": 93,
+    "height": 48
+  },
+  "33648/image6.png": {
+    "latex": "$$x = a, 1 < a < e$$",
+    "type": "formula",
+    "width": 102,
+    "height": 22
+  },
+  "33816/image1.png": {
+    "latex": "$$f(x) = e^x$$",
+    "type": "formula",
+    "width": 97,
+    "height": 37
+  },
+  "33816/image2.png": {
+    "latex": "$$g(x) = x^2 - x + 2$$",
+    "type": "formula",
+    "width": 115,
+    "height": 28
+  },
+  "33816/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "33816/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 49
+  },
+  "33816/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 34
+  },
+  "33816/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 70
+  },
+  "33816/image7.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 94,
+    "height": 52
+  },
+  "33816/image8.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 70
+  },
+  "33816/image9.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 1540,
+    "height": 834
+  },
+  "33994/image1.png": {
+    "latex": "$$f : \\mathbf{R} \\rightarrow \\mathbf{R}$$",
+    "type": "formula",
+    "width": 95,
+    "height": 29
+  },
+  "33994/image10.png": {
+    "latex": "$$\\big(0,g(0)\\big)$$",
+    "type": "formula",
+    "width": 98,
+    "height": 45
+  },
+  "33994/image2.png": {
+    "latex": "$$\\lim_{x \\to 0} \\left( \\frac{f(x)}{\\eta \\mu x} \\right) = 0$$",
+    "type": "formula",
+    "width": 102,
+    "height": 56
+  },
+  "33994/image3.png": {
+    "latex": "$$f(0) = 0$$",
+    "type": "formula",
+    "width": 93,
+    "height": 42
+  },
+  "33994/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 34,
+    "height": 68
+  },
+  "33994/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 93,
+    "height": 43
+  },
+  "33994/image6.png": {
+    "latex": "$$\\left| f'(0) = 0 \\right|$$",
+    "type": "formula",
+    "width": 94,
+    "height": 40
+  },
+  "33994/image7.png": {
+    "latex": "$$g(x) = f(x) \\cdot \\eta \\mu x$$",
+    "type": "formula",
+    "width": 120,
+    "height": 29
+  },
+  "33994/image8.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 90,
+    "height": 38
+  },
+  "33994/image9.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 56,
+    "height": 68
+  },
+  "33995/image1.png": {
+    "latex": "$$f : \\mathbf{R} \\rightarrow \\mathbf{R}$$",
+    "type": "formula",
+    "width": 95,
+    "height": 29
+  },
+  "33995/image2.png": {
+    "latex": "$$f(x) = x - \\frac{x-1}{x^2+1}$$",
+    "type": "formula",
+    "width": 114,
+    "height": 43
+  },
+  "33995/image3.png": {
+    "latex": "$$\\varepsilon : y = x$$",
+    "type": "formula",
+    "width": 95,
+    "height": 29
+  },
+  "33995/image4.png": {
+    "latex": "$$C_f$$",
+    "type": "formula",
+    "width": 58,
+    "height": 69
+  },
+  "33995/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 81,
+    "height": 39
+  },
+  "33995/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 34,
+    "height": 68
+  },
+  "33995/image7.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 34,
+    "height": 68
+  },
+  "33995/image8.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 94,
+    "height": 33
+  },
+  "33998/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 91,
+    "height": 40
+  },
+  "33998/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 37,
+    "height": 67
+  },
+  "33998/image3.png": {
+    "latex": "$$g(t)$$",
+    "type": "formula",
+    "width": 91,
+    "height": 64
+  },
+  "33998/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 118,
+    "height": 52
+  },
+  "33998/image5.png": {
+    "latex": "$$g'(t) = 5 \\cdot \\left(\\frac{4}{5}\\right)^t \\cdot \\ln \\frac{4}{5}$$",
+    "type": "formula",
+    "width": 136,
+    "height": 52
+  },
+  "33998/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 91,
+    "height": 40
+  },
+  "33998/image7.png": {
+    "latex": "$$g(t) = 5 \\cdot \\left( \\frac{4}{5} \\right)^t$$",
+    "type": "formula",
+    "width": 103,
+    "height": 52
+  },
+  "33998/image8.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 37
+  },
+  "33999/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 106,
+    "height": 31
+  },
+  "33999/image2.png": {
+    "latex": "$$\\frac{1}{x} \\leq f(x) \\leq 1 + \\frac{1}{x}$$",
+    "type": "formula",
+    "width": 109,
+    "height": 43
+  },
+  "33999/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 100,
+    "height": 37
+  },
+  "33999/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 103,
+    "height": 37
+  },
+  "33999/image5.png": {
+    "latex": "$$(x+1)f'(x)\\cdot \\ln(x+1)=-f(x)$$",
+    "type": "formula",
+    "width": 205,
+    "height": 31
+  },
+  "33999/image6.png": {
+    "latex": "$$g(x) = f(x) \\cdot \\ln(x+1), x > 0$$",
+    "type": "formula",
+    "width": 190,
+    "height": 31
+  },
+  "33999/image7.png": {
+    "latex": "$$\\frac{\\ln(x+1)}{x} \\leq g(x) \\leq \\ln(x+1) + \\frac{\\ln(x+1)}{x}$$",
+    "type": "formula",
+    "width": 247,
+    "height": 49
+  },
+  "33999/image8.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 37,
+    "height": 67
+  },
+  "34024/image1.png": {
+    "latex": "$$f(x) = \\frac{1}{e^{2x}}$$",
+    "type": "formula",
+    "width": 94,
+    "height": 43
+  },
+  "34024/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "34024/image3.png": {
+    "latex": "$$y=3$$",
+    "type": "formula",
+    "width": 91,
+    "height": 49
+  },
+  "34024/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "34025/image1.png": {
+    "latex": "$$f(x) = \\frac{1}{\\ln x}$$",
+    "type": "formula",
+    "width": 97,
+    "height": 52
+  },
+  "34025/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 100,
+    "height": 37
+  },
+  "34025/image3.png": {
+    "latex": "$$f'(x) < 0$$",
+    "type": "formula",
+    "width": 100,
+    "height": 37
+  },
+  "34025/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 100,
+    "height": 37
+  },
+  "34025/image5.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 794,
+    "height": 1123
+  },
+  "34025/image6.png": {
+    "latex": "$$f$$",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "34026/image1.png": {
+    "latex": "$$f(x) = 1 - 2 \\ln x$$",
+    "type": "formula",
+    "width": 112,
+    "height": 31
+  },
+  "34026/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 91,
+    "height": 37
+  },
+  "34026/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "34026/image4.png": {
+    "latex": "$$g(x) = \\frac{\\ln x}{x^2}$$",
+    "type": "formula",
+    "width": 97,
+    "height": 55
+  },
+  "34026/image5.png": {
+    "latex": "$$g\\left(e^{\\frac{1}{2}}\\right)=\\frac{1}{2e}$$",
+    "type": "formula",
+    "width": 100,
+    "height": 64
+  },
+  "34026/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 70
+  },
+  "34151/image1.png": {
+    "latex": "$$C_1$$",
+    "type": "formula",
+    "width": 58,
+    "height": 70
+  },
+  "34151/image10.png": {
+    "latex": "$$x'x$$",
+    "type": "formula",
+    "width": 82,
+    "height": 61
+  },
+  "34151/image11.png": {
+    "latex": "$$\\left| \\frac{1}{2}, 1 \\right|$$",
+    "type": "formula",
+    "width": 64,
+    "height": 88
+  },
+  "34151/image12.png": {
+    "latex": "$$f(x) = 4x^3 - 6x^2 + 2x$$",
+    "type": "formula",
+    "width": 145,
+    "height": 25
+  },
+  "34151/image13.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 1349,
+    "height": 1482
+  },
+  "34151/image2.png": {
+    "latex": "$$\\left| C_2 \\right|$$",
+    "type": "formula",
+    "width": 67,
+    "height": 70
+  },
+  "34151/image3.png": {
+    "latex": "$$C_3$$",
+    "type": "formula",
+    "width": 64,
+    "height": 73
+  },
+  "34151/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 76
+  },
+  "34151/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 79,
+    "height": 67
+  },
+  "34151/image6.png": {
+    "latex": "$$F$$",
+    "type": "formula",
+    "width": 73,
+    "height": 70
+  },
+  "34151/image7.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 73,
+    "height": 73
+  },
+  "34151/image8.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 85,
+    "height": 61
+  },
+  "34151/image9.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 34,
+    "height": 73
+  },
+  "34437/image1.png": {
+    "latex": "$$f(x) = \\ln x + 2x$$",
+    "type": "formula",
+    "width": 110,
+    "height": 24
+  },
+  "34437/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 90,
+    "height": 38
+  },
+  "34437/image3.png": {
+    "latex": "$$g(x) = e^{x+2}$$",
+    "type": "formula",
+    "width": 98,
+    "height": 32
+  },
+  "34437/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 93,
+    "height": 37
+  },
+  "34437/image5.png": {
+    "latex": "$$f \\circ g$$",
+    "type": "formula",
+    "width": 90,
+    "height": 48
+  },
+  "34437/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 59,
+    "height": 69
+  },
+  "34438/image1.png": {
+    "latex": "$$f(x) = 2x^3 - 15x^2 + 24x$$",
+    "type": "formula",
+    "width": 161,
+    "height": 26
+  },
+  "34438/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 93,
+    "height": 37
+  },
+  "34438/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 57,
+    "height": 76
+  },
+  "34438/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 32
+  },
+  "34438/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 99,
+    "height": 32
+  },
+  "34439/image1.png": {
+    "latex": "$$f(x) = \\frac{1}{x-1}, x \\neq 1$$",
+    "type": "formula",
+    "width": 122,
+    "height": 43
+  },
+  "34439/image2.png": {
+    "latex": "$$g(x) = \\frac{1}{e^x}$$",
+    "type": "formula",
+    "width": 99,
+    "height": 59
+  },
+  "34439/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 93,
+    "height": 37
+  },
+  "34439/image4.png": {
+    "latex": "$$h(x) = (f \\circ g)(x)$$",
+    "type": "formula",
+    "width": 115,
+    "height": 24
+  },
+  "34439/image5.png": {
+    "latex": "$$h(x) = \\frac{e^x}{1-e^x}, \\ x \\in \\mathbb{R}^*$$",
+    "type": "formula",
+    "width": 142,
+    "height": 43
+  },
+  "34439/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 46,
+    "height": 68
+  },
+  "34439/image7.png": {
+    "latex": "$$\\lim_{x \\to +\\infty} h(x)$$",
+    "type": "formula",
+    "width": 97,
+    "height": 43
+  },
+  "34440/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 94,
+    "height": 43
+  },
+  "34440/image10.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 67,
+    "height": 73
+  },
+  "34440/image11.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 37
+  },
+  "34440/image12.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 91,
+    "height": 49
+  },
+  "34440/image13.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 88,
+    "height": 49
+  },
+  "34440/image14.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 91,
+    "height": 58
+  },
+  "34440/image15.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 97,
+    "height": 37
+  },
+  "34440/image16.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 644,
+    "height": 760
+  },
+  "34440/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 82,
+    "height": 55
+  },
+  "34440/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 82,
+    "height": 67
+  },
+  "34440/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 103,
+    "height": 25
+  },
+  "34440/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 103,
+    "height": 25
+  },
+  "34440/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 58
+  },
+  "34440/image7.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 58,
+    "height": 58
+  },
+  "34440/image8.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 103,
+    "height": 46
+  },
+  "34440/image9.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 91,
+    "height": 37
+  },
+  "34441/image1.png": {
+    "latex": "$$x$$",
+    "type": "formula",
+    "width": 58,
+    "height": 58
+  },
+  "34441/image2.png": {
+    "latex": "$$\\text{K}(x) = 20x + \\frac{2000}{x} + 1220$$",
+    "type": "formula",
+    "width": 175,
+    "height": 43
+  },
+  "34441/image3.png": {
+    "latex": "$$x > 0$$",
+    "type": "formula",
+    "width": 91,
+    "height": 37
+  },
+  "35244/image1.png": {
+    "latex": "$$f(x) = \\varepsilon x - 1, x \\in \\left[0, \\frac{\\pi}{2}\\right]$$",
+    "type": "formula",
+    "width": 171,
+    "height": 48
+  },
+  "35244/image2.png": {
+    "latex": "$$\\eta \\mu x = (1+x) \\sigma v v x$$",
+    "type": "formula",
+    "width": 130,
+    "height": 29
+  },
+  "35244/image3.png": {
+    "latex": "$$\\left( \\frac{\\pi}{4}, \\frac{\\pi}{2} \\right)$$",
+    "type": "formula",
+    "width": 93,
+    "height": 80
+  },
+  "35244/image4.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 34,
+    "height": 68
+  },
+  "35244/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 98,
+    "height": 65
+  },
+  "35244/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 34,
+    "height": 68
+  },
+  "35244/image7.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 92,
+    "height": 38
+  },
+  "35244/image8.png": {
+    "latex": "$$x = \\frac{\\pi}{3}$$",
+    "type": "formula",
+    "width": 93,
+    "height": 81
+  },
+  "35244/image9.png": {
+    "latex": "$$x'x$$",
+    "type": "formula",
+    "width": 82,
+    "height": 60
+  },
+  "35245/image1.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 94,
+    "height": 28
+  },
+  "35245/image2.png": {
+    "latex": "$$f'(x) = \\frac{1}{\\sqrt{\\left(x^2 + 1\\right)^3}}, x \\in \\mathbb{R}$$",
+    "type": "formula",
+    "width": 169,
+    "height": 61
+  },
+  "35245/image3.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 37,
+    "height": 67
+  },
+  "35245/image4.png": {
+    "latex": "$$|f'(x) \\leq 1|$$",
+    "type": "formula",
+    "width": 94,
+    "height": 40
+  },
+  "35245/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 88,
+    "height": 37
+  },
+  "35245/image6.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 91,
+    "height": 40
+  },
+  "35245/image7.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 157,
+    "height": 31
+  },
+  "35602/image1.png": {
+    "latex": "$$f(x) = \\frac{x^2 - 2x}{x - 1}$$",
+    "type": "formula",
+    "width": 105,
+    "height": 46
+  },
+  "35602/image2.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 90,
+    "height": 40
+  },
+  "35602/image3.png": {
+    "latex": "$$y = x - 1$$",
+    "type": "formula",
+    "width": 96,
+    "height": 34
+  },
+  "35602/image4.png": {
+    "latex": "$$f$$",
+    "type": "formula",
+    "width": 57,
+    "height": 76
+  },
+  "35602/image5.png": {
+    "latex": "",
+    "type": "formula",
+    "width": 89,
+    "height": 41
+  },
+  "35602/image6.png": {
+    "latex": "$$f$$",
+    "type": "formula",
+    "width": 57,
+    "height": 76
+  },
+  "36787/image1.png": {
+    "latex": "",
+    "type": "graph",
+    "width": 2500,
+    "height": 1137
+  }
+}
