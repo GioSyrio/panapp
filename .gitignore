@@ -41,3 +41,7 @@ data/subjects/mathematics/raw/
 
 # Scraper output folders
 trapeza_data_1_3_17/
+
+# WMF formula files — keep PNGs only
+static/images/math_formulas/**/*.wmf
+static/images/math_formulas/**/*.emf

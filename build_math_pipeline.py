@@ -125,12 +125,13 @@ def render_q_html(sections, qid=None):
             html.append(f'<div class="equation-display">{e(s["content"])}</div>')
         elif t == "text":
             content = e(s["content"])
-            # Inject formula images for this question
-            img_dir = os.path.join(BASE_DIR, "static", "images", "math_formulas", str(qid))
-            if qid and os.path.isdir(img_dir):
-                for fname in sorted(os.listdir(img_dir)):
-                    url = f"images/math_formulas/{qid}/{fname}"
-                    content += f'<br><img src="{url}" class="formula-img" alt="formula" style="max-width:100%;margin:8px 0;">'
+            # Inject formula images (PNG/SVG only — skip WMF/EMF)
+            formula_dir = os.path.join(BASE_DIR, "static", "images", "math_formulas", str(qid))
+            if qid and os.path.isdir(formula_dir):
+                for fname in sorted(os.listdir(formula_dir)):
+                    if fname.lower().endswith(('.png', '.jpg', '.jpeg', '.svg')):
+                        url = f"images/math_formulas/{qid}/{fname}"
+                        content += f'<br><img src="{url}" class="formula-img" alt="formula" style="max-width:100%;margin:8px 0;">'
             html.append(f'<p class="text-content">{content}</p>')
         elif t == "matching_table":
             cols = s["columns"]; html.append('<table class="match-table"><thead><tr>')
