@@ -1,0 +1,293 @@
+{
+  "subject": "mathematics",
+  "total_questions": 202,
+  "questions_with_graphs": 56,
+  "needs_diagram": 1,
+  "has_diagram": 55,
+  "pending": [
+    {
+      "id": 27318,
+      "part": "Θέμα Β",
+      "points": 10,
+      "year": 2022,
+      "expected_path": "static/images/math_diagrams/27318.png"
+    }
+  ],
+  "completed": [
+    {
+      "id": 26712,
+      "url": "static/images/math_diagrams/26712.png",
+      "part": "Θέμα Β"
+    },
+    {
+      "id": 28300,
+      "url": "static/images/math_diagrams/28300.png",
+      "part": "Θέμα Β"
+    },
+    {
+      "id": 28304,
+      "url": "static/images/math_diagrams/28304.png",
+      "part": "Θέμα Β"
+    },
+    {
+      "id": 23210,
+      "url": "static/images/math_diagrams/23210.png",
+      "part": "Θέμα Δ"
+    },
+    {
+      "id": 24771,
+      "url": "static/images/math_diagrams/24771.png",
+      "part": "Θέμα Δ"
+    },
+    {
+      "id": 28870,
+      "url": "static/images/math_diagrams/28870.png",
+      "part": "Θέμα Δ"
+    },
+    {
+      "id": 36842,
+      "url": "static/images/math_diagrams/36842.png",
+      "part": "Θέμα Β"
+    },
+    {
+      "id": 31533,
+      "url": "static/images/math_diagrams/31533.png",
+      "part": "Θέμα Δ"
+    },
+    {
+      "id": 31680,
+      "url": "static/images/math_diagrams/31680.png",
+      "part": "Θέμα Δ"
+    },
+    {
+      "id": 33577,
+      "url": "static/images/math_diagrams/33577.png",
+      "part": "Θέμα Δ"
+    },
+    {
+      "id": 34151,
+      "url": "static/images/math_diagrams/34151.png",
+      "part": "Θέμα Δ"
+    },
+    {
+      "id": 23196,
+      "url": "static/images/math_diagrams/23196.png",
+      "part": "Θέμα Β"
+    },
+    {
+      "id": 23209,
+      "url": "static/images/math_diagrams/23209.png",
+      "part": "Θέμα Β"
+    },
+    {
+      "id": 23314,
+      "url": "static/images/math_diagrams/23314.png",
+      "part": "Θέμα Β"
+    },
+    {
+      "id": 23530,
+      "url": "static/images/math_diagrams/23530.png",
+      "part": "Θέμα Β"
+    },
+    {
+      "id": 23642,
+      "url": "static/images/math_diagrams/23642.png",
+      "part": "Θέμα Β"
+    },
+    {
+      "id": 24130,
+      "url": "static/images/math_diagrams/24130.png",
+      "part": "Θέμα Β"
+    },
+    {
+      "id": 24703,
+      "url": "static/images/math_diagrams/24703.png",
+      "part": "Θέμα Β"
+    },
+    {
+      "id": 25234,
+      "url": "static/images/math_diagrams/25234.png",
+      "part": "Θέμα Β"
+    },
+    {
+      "id": 25749,
+      "url": "static/images/math_diagrams/25749.png",
+      "part": "Θέμα Β"
+    },
+    {
+      "id": 26366,
+      "url": "static/images/math_diagrams/26366.png",
+      "part": "Θέμα Β"
+    },
+    {
+      "id": 26603,
+      "url": "static/images/math_diagrams/26603.png",
+      "part": "Θέμα Β"
+    },
+    {
+      "id": 23955,
+      "url": "static/images/math_diagrams/23955.png",
+      "part": "Θέμα Δ"
+    },
+    {
+      "id": 24131,
+      "url": "static/images/math_diagrams/24131.png",
+      "part": "Θέμα Δ"
+    },
+    {
+      "id": 25235,
+      "url": "static/images/math_diagrams/25235.png",
+      "part": "Θέμα Δ"
+    },
+    {
+      "id": 25257,
+      "url": "static/images/math_diagrams/25257.png",
+      "part": "Θέμα Δ"
+    },
+    {
+      "id": 26633,
+      "url": "static/images/math_diagrams/26633.png",
+      "part": "Θέμα Δ"
+    },
+    {
+      "id": 26707,
+      "url": "static/images/math_diagrams/26707.png",
+      "part": "Θέμα Β"
+    },
+    {
+      "id": 26736,
+      "url": "static/images/math_diagrams/26736.png",
+      "part": "Θέμα Β"
+    },
+    {
+      "id": 27277,
+      "url": "static/images/math_diagrams/27277.png",
+      "part": "Θέμα Β"
+    },
+    {
+      "id": 28299,
+      "url": "static/images/math_diagrams/28299.png",
+      "part": "Θέμα Β"
+    },
+    {
+      "id": 27031,
+      "url": "static/images/math_diagrams/27031.png",
+      "part": "Θέμα Δ"
+    },
+    {
+      "id": 27092,
+      "url": "static/images/math_diagrams/27092.png",
+      "part": "Θέμα Δ"
+    },
+    {
+      "id": 27320,
+      "url": "static/images/math_diagrams/27320.png",
+      "part": "Θέμα Δ"
+    },
+    {
+      "id": 27408,
+      "url": "static/images/math_diagrams/27408.png",
+      "part": "Θέμα Δ"
+    },
+    {
+      "id": 28337,
+      "url": "static/images/math_diagrams/28337.png",
+      "part": "Θέμα Δ"
+    },
+    {
+      "id": 28342,
+      "url": "static/images/math_diagrams/28342.png",
+      "part": "Θέμα Δ"
+    },
+    {
+      "id": 28534,
+      "url": "static/images/math_diagrams/28534.png",
+      "part": "Θέμα Δ"
+    },
+    {
+      "id": 29149,
+      "url": "static/images/math_diagrams/29149.png",
+      "part": "Θέμα Δ"
+    },
+    {
+      "id": 29644,
+      "url": "static/images/math_diagrams/29644.png",
+      "part": "Θέμα Δ"
+    },
+    {
+      "id": 32694,
+      "url": "static/images/math_diagrams/32694.png",
+      "part": "Θέμα Β"
+    },
+    {
+      "id": 32799,
+      "url": "static/images/math_diagrams/32799.png",
+      "part": "Θέμα Β"
+    },
+    {
+      "id": 32800,
+      "url": "static/images/math_diagrams/32800.png",
+      "part": "Θέμα Β"
+    },
+    {
+      "id": 33588,
+      "url": "static/images/math_diagrams/33588.png",
+      "part": "Θέμα Β"
+    },
+    {
+      "id": 33816,
+      "url": "static/images/math_diagrams/33816.png",
+      "part": "Θέμα Β"
+    },
+    {
+      "id": 36837,
+      "url": "static/images/math_diagrams/36837.png",
+      "part": "Θέμα Β"
+    },
+    {
+      "id": 36839,
+      "url": "static/images/math_diagrams/36839.png",
+      "part": "Θέμα Β"
+    },
+    {
+      "id": 36840,
+      "url": "static/images/math_diagrams/36840.png",
+      "part": "Θέμα Β"
+    },
+    {
+      "id": 32693,
+      "url": "static/images/math_diagrams/32693.png",
+      "part": "Θέμα Γ"
+    },
+    {
+      "id": 31534,
+      "url": "static/images/math_diagrams/31534.png",
+      "part": "Θέμα Δ"
+    },
+    {
+      "id": 33598,
+      "url": "static/images/math_diagrams/33598.png",
+      "part": "Θέμα Δ"
+    },
+    {
+      "id": 33634,
+      "url": "static/images/math_diagrams/33634.png",
+      "part": "Θέμα Δ"
+    },
+    {
+      "id": 34440,
+      "url": "static/images/math_diagrams/34440.png",
+      "part": "Θέμα Δ"
+    },
+    {
+      "id": 35302,
+      "url": "static/images/math_diagrams/35302.png",
+      "part": "Θέμα Δ"
+    },
+    {
+      "id": 36787,
+      "url": "static/images/math_diagrams/36787.png",
+      "part": "Θέμα Δ"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "23196/image1.png": {
-    "latex": "",
+    "latex": "$$f(x) = e^x - 1, x \\in \\mathbb{R}$$",
     "type": "graph",
     "width": 916,
     "height": 872
@@ -168,13 +168,13 @@
     "height": 28
   },
   "23209/image1.png": {
-    "latex": "",
+    "latex": "$$x = 0 \\text{ (t)} + A\\nu(t < f_1)$$",
     "type": "graph",
     "width": 1920,
     "height": 1080
   },
   "23209/image2.png": {
-    "latex": "",
+    "latex": "$$x = 0 \\text{ (t)} + A\\nu(t < f_1)$$",
     "type": "graph",
     "width": 1920,
     "height": 1080
@@ -624,31 +624,31 @@
     "height": 73
   },
   "23530/image1.png": {
-    "latex": "",
+    "latex": "$$f(x) = x + e^{-x}$$",
     "type": "graph",
     "width": 1920,
     "height": 1080
   },
   "23530/image2.png": {
-    "latex": "",
+    "latex": "$$f(x) = x + e^{-x}$$",
     "type": "graph",
     "width": 1920,
     "height": 1080
   },
   "23642/image1.png": {
-    "latex": "",
+    "latex": "$$y = \\text{exponential function}$$",
     "type": "graph",
     "width": 249,
     "height": 424
   },
   "23642/image2.png": {
-    "latex": "",
+    "latex": "$$\\sigma x + \\mu a = 2$$",
     "type": "graph",
     "width": 227,
     "height": 402
   },
   "23642/image3.png": {
-    "latex": "",
+    "latex": "$$\\text{(σχημα 3)}$$",
     "type": "graph",
     "width": 229,
     "height": 417
@@ -672,13 +672,13 @@
     "height": 40
   },
   "23955/image1.png": {
-    "latex": "",
+    "latex": "$$f(x) = \\frac{1}{1+x^2}$$",
     "type": "graph",
     "width": 1385,
     "height": 779
   },
   "23955/image2.png": {
-    "latex": "",
+    "latex": "$$f(x) = \\frac{1}{1+x^2}$$",
     "type": "graph",
     "width": 1385,
     "height": 779
@@ -852,13 +852,13 @@
     "height": 52
   },
   "24703/image1.png": {
-    "latex": "",
+    "latex": "$$f(x) = \\sqrt{1-x}$$",
     "type": "graph",
     "width": 1920,
     "height": 1080
   },
   "24703/image2.png": {
-    "latex": "",
+    "latex": "$$f(x) = \\sqrt{1-x}$$",
     "type": "graph",
     "width": 1920,
     "height": 1080
@@ -1146,7 +1146,7 @@
     "height": 37
   },
   "24760/image3.png": {
-    "latex": "",
+    "latex": "$$e - \\lambda = e^x - 1 - \\lambda e$$",
     "type": "graph",
     "width": 794,
     "height": 1123
@@ -1416,7 +1416,7 @@
     "height": 43
   },
   "24771/image6.png": {
-    "latex": "",
+    "latex": "$$\\int_{0}^{1} F(x) dx = \\ln \\sqrt{2}$$",
     "type": "graph",
     "width": 456,
     "height": 171
@@ -1488,25 +1488,25 @@
     "height": 43
   },
   "25234/image1.png": {
-    "latex": "",
+    "latex": "$$b = -0.5$$",
     "type": "graph",
     "width": 1920,
     "height": 1080
   },
   "25234/image2.png": {
-    "latex": "",
+    "latex": "$$b = -0.5$$",
     "type": "graph",
     "width": 1920,
     "height": 1080
   },
   "25235/image1.png": {
-    "latex": "",
+    "latex": "$$f(x) = \\sigma v\\nu(x),$$",
     "type": "graph",
     "width": 1920,
     "height": 1080
   },
   "25235/image2.png": {
-    "latex": "",
+    "latex": "$$f(x) = \\sigma v\\nu(x),$$",
     "type": "graph",
     "width": 1920,
     "height": 1080
@@ -2052,7 +2052,7 @@
     "height": 68
   },
   "25749/image6.png": {
-    "latex": "",
+    "latex": "$$D_f = [0,2) \\cup (2,3) \\cup (3,5]$$",
     "type": "graph",
     "width": 711,
     "height": 553
@@ -2232,7 +2232,7 @@
     "height": 73
   },
   "25766/image10.png": {
-    "latex": "",
+    "latex": "$$\\lim_{x \\to +\\infty} f(x) = -\\infty$$",
     "type": "graph",
     "width": 794,
     "height": 1123
@@ -2256,7 +2256,7 @@
     "height": 67
   },
   "25766/image14.png": {
-    "latex": "",
+    "latex": "$$\\lim_{x \\to +\\infty} f(x) = -\\infty$$",
     "type": "graph",
     "width": 794,
     "height": 1123
@@ -2340,7 +2340,7 @@
     "height": 67
   },
   "26366/image1.png": {
-    "latex": "",
+    "latex": "$$\\theta = 2$$",
     "type": "graph",
     "width": 1104,
     "height": 1160
@@ -2412,13 +2412,13 @@
     "height": 49
   },
   "26633/image6.png": {
-    "latex": "",
+    "latex": "$$x$$",
     "type": "graph",
     "width": 844,
     "height": 421
   },
   "26707/image1.png": {
-    "latex": "",
+    "latex": "$$\\theta = \\frac{1}{2} \\tan \\alpha$$",
     "type": "graph",
     "width": 1132,
     "height": 1128
@@ -2430,7 +2430,7 @@
     "height": 1160
   },
   "26736/image1.png": {
-    "latex": "",
+    "latex": "$$v = -x^2 + 4$$",
     "type": "graph",
     "width": 1232,
     "height": 1624
@@ -2442,7 +2442,7 @@
     "height": 225
   },
   "27092/image1.png": {
-    "latex": "",
+    "latex": "$$\\theta = 4$$",
     "type": "graph",
     "width": 1296,
     "height": 1368
@@ -2466,13 +2466,13 @@
     "height": 67
   },
   "27318/image1.png": {
-    "latex": "",
+    "latex": "$$\\begin{array}{l}",
     "type": "graph",
     "width": 756,
     "height": 411
   },
   "27408/image1.png": {
-    "latex": "",
+    "latex": "$$\\Theta E = 4$$",
     "type": "graph",
     "width": 741,
     "height": 810
@@ -2628,25 +2628,25 @@
     "height": 1002
   },
   "28342/image1.png": {
-    "latex": "",
+    "latex": "$$\\theta = \\frac{1}{2} \\cos^2 \\alpha$$$$\\theta = \\frac{1}{2} \\cos^2 \\alpha$$$$\\theta = \\frac{1}{2} \\cos^2 \\",
     "type": "graph",
     "width": 2500,
     "height": 985
   },
   "28532/image1.png": {
-    "latex": "",
+    "latex": "$$a = 5.7$$",
     "type": "graph",
     "width": 1920,
     "height": 1080
   },
   "28534/image1.png": {
-    "latex": "",
+    "latex": "$$a = 3$$",
     "type": "graph",
     "width": 1920,
     "height": 1080
   },
   "28685/image1.png": {
-    "latex": "",
+    "latex": "$$y = e^x$$",
     "type": "graph",
     "width": 387,
     "height": 415
@@ -2760,7 +2760,7 @@
     "height": 68
   },
   "29149/image11.png": {
-    "latex": "",
+    "latex": "$$g(x) = e^{\\frac{x}{96}} + e^{-\\frac{x}{96}}$$",
     "type": "graph",
     "width": 562,
     "height": 532
@@ -3300,7 +3300,7 @@
     "height": 64
   },
   "31533/image7.png": {
-    "latex": "",
+    "latex": "$$x=1, x=\\alpha, \\alpha>1$$",
     "type": "graph",
     "width": 794,
     "height": 1123
@@ -3984,7 +3984,7 @@
     "height": 25
   },
   "32693/image9.png": {
-    "latex": "",
+    "latex": "$$|f'| = \\sqrt{16x^2 + 8x - 4}$$",
     "type": "graph",
     "width": 1470,
     "height": 1359
@@ -4068,7 +4068,7 @@
     "height": 73
   },
   "32694/image8.png": {
-    "latex": "",
+    "latex": "$$|x_1| = |0| = x_2 = \\infty + F' = f$$",
     "type": "graph",
     "width": 1504,
     "height": 1329
@@ -4194,7 +4194,7 @@
     "height": 46
   },
   "32799/image6.png": {
-    "latex": "",
+    "latex": "$$y=2 \\quad \\Gamma(0,2)$$",
     "type": "graph",
     "width": 638,
     "height": 815
@@ -4248,7 +4248,7 @@
     "height": 46
   },
   "32800/image5.png": {
-    "latex": "",
+    "latex": "$$\\int_{7}^{9} f(x)dx = 4$$",
     "type": "graph",
     "width": 760,
     "height": 433
@@ -4344,13 +4344,13 @@
     "height": 32
   },
   "33577/image1.png": {
-    "latex": "",
+    "latex": "$$\\sum O = P$$",
     "type": "graph",
     "width": 1522,
     "height": 626
   },
   "33577/image2.png": {
-    "latex": "",
+    "latex": "$$\\sum O = P$$",
     "type": "graph",
     "width": 1522,
     "height": 626
@@ -4404,7 +4404,7 @@
     "height": 52
   },
   "33588/image9.png": {
-    "latex": "",
+    "latex": "$$\\int\\limits_{0}^{1} f(x)dx = \\int\\limits_{0}^{3} f(x)dx = \\int\\limits_{0}^{4} f(x)dx = \\frac{4}{3}$$",
     "type": "graph",
     "width": 679,
     "height": 565
@@ -4560,7 +4560,7 @@
     "height": 46
   },
   "33598/image12.png": {
-    "latex": "",
+    "latex": "$$\\mathrm{E}(\\Omega) = \\int_{0}^{1} f^{-1}(x) dx$$$$[0,1] \\quad (0,0) \\quad (1,1) \\quad y y^{\\prime} \\quad y=",
     "type": "graph",
     "width": 728,
     "height": 646
@@ -4704,7 +4704,7 @@
     "height": 67
   },
   "33634/image19.png": {
-    "latex": "",
+    "latex": "$$I = \\frac{\\pi}{2} \\int_0^{\\frac{\\pi}{2}} \\eta t^2 x dx$$",
     "type": "graph",
     "width": 710,
     "height": 488
@@ -4908,7 +4908,7 @@
     "height": 70
   },
   "33816/image9.png": {
-    "latex": "",
+    "latex": "$$f(x) = e^x \\quad g(x) = x^2 - x + 2$$",
     "type": "graph",
     "width": 1540,
     "height": 834
@@ -5166,7 +5166,7 @@
     "height": 37
   },
   "34025/image5.png": {
-    "latex": "",
+    "latex": "$$f(x) = \\frac{1}{\\ln x}$$",
     "type": "graph",
     "width": 794,
     "height": 1123
@@ -5238,7 +5238,7 @@
     "height": 25
   },
   "34151/image13.png": {
-    "latex": "",
+    "latex": "$$\\left| C_2 \\right| \\quad C_1$$",
     "type": "graph",
     "width": 1349,
     "height": 1482
@@ -5646,9 +5646,897 @@
     "height": 76
   },
   "36787/image1.png": {
-    "latex": "",
+    "latex": "$$y=f(x)$$",
     "type": "graph",
     "width": 2500,
     "height": 1137
+  },
+  "27082/image9.png": {
+    "latex": "μονάδες",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "27082/image7.png": {
+    "latex": "μονάδες",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "26183/image8.png": {
+    "latex": "μονάδες",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "26183/image7.png": {
+    "latex": "μονάδες",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "26183/image10.png": {
+    "latex": "μονάδες",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "27320/image10.png": {
+    "latex": "μ)",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "27320/image6.png": {
+    "latex": "μ)",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "32390/image12.png": {
+    "latex": "μονά",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "32390/image13.png": {
+    "latex": "μονάδες",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "36837/image6.png": {
+    "latex": "5 4 3 2 1 0 1 2 3 4 5",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "36838/image1.png": {
+    "latex": "\\int_{1}^{3} f(x) dx = 6",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "36838/image2.png": {
+    "latex": "\\int_{1}^{8} f(x) dx = 29",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "36838/image3.png": {
+    "latex": "\\int_{3}^{5} f(x) dx = 8",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "36838/image4.png": {
+    "latex": "\\int_{1}^{5} g(x) dx = -6",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "23314/image1.png": {
+    "latex": "\\lim_{x \\to 0} f(x)",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "23314/image2.png": {
+    "latex": "\\lim_{x \\to -2^+} f(x)",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "23314/image3.png": {
+    "latex": "\\lim_{x \\to -2^-} f(x)",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "23641/image1.png": {
+    "latex": "$\\lim_{x \\to +\\infty} \\left( \\left[ f(\\alpha^2 - \\alpha) - f(0) \\right] x \\right) = -\\infty",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "23641/image2.png": {
+    "latex": "f: \\mathbb{R} \\rightarrow \\mathbb{R}",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "23641/image3.png": {
+    "latex": "\\alpha^2 < \\alpha",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "24569/image1.png": {
+    "latex": "f(x) = \\sqrt{1 - \\sqrt{1-x}}",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "24569/image2.png": {
+    "latex": "x \\in [0,1]",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "25124/image1.png": {
+    "latex": "$\\Delta \\mathrm{ivεται} \\eta \\text{ συναρτηση: } f(x)=-x^3, \\quad x \\in [-\\infty, 0].",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "25124/image2.png": {
+    "latex": "$\\alpha) \\text{ Να αποδείξετε ότι η } f \\text{ είναι γνησίως φθίνουσα.} \\quad (\\mathrm{Mováδες} \\ 9)",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "25124/image3.png": {
+    "latex": "$\\beta) \\text{ Να αποδείξετε ότι η } f \\text{ αντιστρέφεται και να βρείτε το πεδίο ορισμού της αντίστροφης συναρτησης.} \\quad (\\mathrm{Mováδες} \\ 9)",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "25124/image4.png": {
+    "latex": "$\\gamma) \\text{ Να βρείτε τον τύπο της αντιστρόφης συναρτησης } f^{-1}. \\quad (\\mathrm{Mováδες} \\ 7)",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "25124/image5.png": {
+    "latex": "f(x)=-x^3, \\quad x \\in [-\\infty, 0]",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "25124/image6.png": {
+    "latex": "\\quad (\\mathrm{Mováδες} \\ 9)",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "26603/image1.png": {
+    "latex": "$\\alpha) \\text{ Nα βρείτε το πεδίο ορισμού και το σύνολο τιμών της συνάρτησης f.} \\quad (\\text{Μονάδες 10})",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "26603/image2.png": {
+    "latex": "$\\beta) \\text{ Να προσδιορίσετε τον τύπο της συνάρτησης f.} \\quad (\\text{Μονάδες 10})",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "26603/image3.png": {
+    "latex": "$\\gamma) \\text{ Ποιες είναι οι συντεταγμένες του σημείου Γ;} \\quad (\\text{Μονάδες 5})",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "26637/image1.png": {
+    "latex": "$\\Delta lvovtau \\alpha \\sigmaυναρτήσεις f(x)=\\sqrt{x} και g(x)=lnx .",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "26637/image2.png": {
+    "latex": "f \\cdot g",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "26637/image3.png": {
+    "latex": "\\frac{f}{g}",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "26637/image4.png": {
+    "latex": "(\\beta)",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "27084/image1.png": {
+    "latex": "$f(x) = x + \\frac{1}{x}, \\quad x \\in (0, +\\infty)",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "28302/image1.png": {
+    "latex": "$\\alpha) \\text{ Na } \\beta\\text{ρείτε την τιμή } |_{\\text{gof}}|(0).",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "28302/image2.png": {
+    "latex": "$\\beta) \\text{ Na } \\beta\\text{ρείτε την παράγωγο } g'(-2).",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "28302/image3.png": {
+    "latex": "$\\gamma) \\text{ Na } \\beta\\text{ρείτε την παράγωγο της } \\text{gof} \\text{ στο } x_0=0.",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "28302/image4.png": {
+    "latex": "$\\delta) \\text{ Na } \\beta\\text{ρείτε την εξίσωση της εφαρπομένης της γραφικής παραστασης της } \\text{gof} \\text{ στο σημείο με τετμημένη } x_0=0.",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "28477/image1.png": {
+    "latex": "$\\lim_{x \\to 0} \\frac{[gof](x) - \\eta \\mu^2 x - 4}{x}",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "28684/image1.png": {
+    "latex": "$\\lim_{x \\to 0} f(x) = \\kappa, \\mu \\in \\mathbb{R}.",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "28684/image2.png": {
+    "latex": "$xf(x) \\leq \\eta \\mu 2 x \\quad y \\in \\mathbb{R}, \\tau \\text{ote}",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "28684/image3.png": {
+    "latex": "$\\frac{\\lim x \\mu 2 x}{x} = 2",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "28684/image4.png": {
+    "latex": "$\\beta) \\quad \\kappa = 2.",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "28684/image5.png": {
+    "latex": "$\\gamma) \\quad f(0).",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "28684/image6.png": {
+    "latex": "$\\delta) \\quad \\left| f(x) \\cdot \\frac{\\varepsilon \\varphi x}{x} \\right| = -f(x) \\cdot \\frac{\\varepsilon \\varphi x}{x} \\quad \\text{kovτά στο 0}\"",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "28684/image7.png": {
+    "latex": "$\\eta \\in \\mathbb{R}, \\tau \\text{ote}",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "28684/image8.png": {
+    "latex": "\\delta )",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "28684/image9.png": {
+    "latex": "\\eta \\in \\mathbb{R}, \\tau \\text{ote}",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "23210/image1.png": {
+    "latex": "$\\lim_{x \\to -\\infty} f(x) = +\\infty, \\quad \\lim_{x \\to +\\infty} f(x) = -\\infty,",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "23210/image2.png": {
+    "latex": "$\\tau a, \\beta \\text{ είναι οι τετμημένες των μοναδικών δύο σημείων στα οποία τέμνει τον άξονα } x' x \\text{ η γραφική παράσταση της παραγώγου } f'(x).",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "23210/image3.png": {
+    "latex": "$f(a) < 0, \\quad f(\\beta) > 0.",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "23210/image4.png": {
+    "latex": "$\\eta \\text{ γραφική παράσταση της } f'(x) \\text{ παραουσιάζει ολικό ακρότεато στη θέση } x_0.",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "23210/image5.png": {
+    "latex": "x \\in R",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "23210/image6.png": {
+    "latex": "f[x+1]-f(x) \\leq 2",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "23531/image1.png": {
+    "latex": "$\\lim_{x \\to x_0} \\frac{f(x)^{2023}}{f(x) - f\\left(x_0\\right)}.",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "23957/image1.png": {
+    "latex": "$\\Delta \\mathrm{v} \\varepsilon \\tau \\alpha \\eta \\sigma u v \\acute{\\alpha} \\rho \\tau \\eta \\sigma f(x)=e^{\\ln^2 x}, \\quad x>0",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "23957/image2.png": {
+    "latex": "$a) \\mathrm{N}a \\alpha \\pi o \\delta \\epsilon \\iota \\xi \\tau \\varepsilon \\textit{ότι} \\eta f \\varepsilon \\mathrm{v} \\mathrm{i} \\mathrm{u} \\pi a \\rho \\gamma \\omega \\gamma \\iota \\sigma \\mu \\eta \\sigma \\mathrm{o} \\tau(0,+\\infty) \\mu \\varepsilon f'(x)=2 \\frac{\\ln x}{x} f(x).",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "23957/image3.png": {
+    "latex": "$\\beta) \\mathrm{N}a \\alpha \\pi o \\delta \\epsilon \\iota \\xi \\tau \\varepsilon \\textit{ότι} \\eta f \\varepsilon \\mathrm{x} \\mathrm{e} \\chi \\mathrm{e} \\mathrm{i} \\mathrm{o} \\lambda \\mathrm{k} \\mathrm{o} \\varepsilon \\lambda \\acute{\\alpha} \\chi \\mathrm{i} \\sigma \\eta \\sigma \\mathrm{i} \\mathrm{o} \\tau \\mu \\varepsilon 1.",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "23957/image4.png": {
+    "latex": "$\\gamma) \\mathrm{N}a \\uparrow \\pi o \\lambda \\omega \\gamma \\iota \\sigma \\tau \\eta \\sigma \\mathrm{o} \\tau \\alpha \\lambda \\acute{\\alpha} \\chi \\rho \\omega \\mu \\alpha I=\\int_{1}^{e}\\frac{2\\cdot\\ln x\\cdot f(x)+x e^{x}}{x(f(x)+e^{x})} dx.",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "24579/image1.png": {
+    "latex": "f : (0, +\\infty) \\to \\mathbb{R}, με τύπο",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "24579/image2.png": {
+    "latex": "f(x)=2\\ln x-x",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "24579/image3.png": {
+    "latex": "f(x)=\\kappa",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "24579/image4.png": {
+    "latex": "\\kappa \\in \\mathbb{R}",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "24587/image1.png": {
+    "latex": "f : (0, +\\infty) \\rightarrow \\mathbb{R} , με τύπο",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "24587/image2.png": {
+    "latex": "f(x)=2\\ln x-x",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "24587/image3.png": {
+    "latex": "\\varepsilon: y=x",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "24587/image4.png": {
+    "latex": "M\\left( x_{0}, y_{0} \\right)",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "24587/image5.png": {
+    "latex": "d(M, \\varepsilon)=\\sqrt{2} \\left| x_{0}-\\ln x_{0} \\right|",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "25147/image1.png": {
+    "latex": "$\\Delta \\dot{v}ov\\tau i oi \\sigma uva\\rho t \\eta s e; f(x)=e^{-x}, g(x)=f(x)\\cdot \\eta x, x\\in[0,2\\pi].",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "25147/image2.png": {
+    "latex": "$\\beta) Na αποδείξετε ότι οι γραφικές παραστάσεις των συναρτήσεων",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "25147/image3.png": {
+    "latex": "$\\gamma) Na υπολογίστε το εμβαδόν του χωρίου που ορίζεται από τον άξова",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "25147/image4.png": {
+    "latex": "$\\delta) Na υπολογίστε το εμβαδόν του χωρίου που ορίζεται από τον άξова",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "26184/image1.png": {
+    "latex": "$\\Delta \\mathrm{lvεται} \\eta \\sigmaυνάρτηση f(x)=\\frac{\\ln x}{\\sqrt{x}}, x>0.",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "26184/image2.png": {
+    "latex": "$\\beta) \\text{ Να αποδείξετε ότι η γραφική παράσταση της } f \\text{ έχει ολικό μέγιστο για } x=e^2.",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "26184/image3.png": {
+    "latex": "$\\gamma) \\text{ Να υπολογίστε το ολοκλήρωμα } I=\\int_{1}^{e^{2}} f(x) dx.",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "26184/image4.png": {
+    "latex": "f(x)=\\frac{\\ln x}{\\sqrt{x}}, x>0",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "26640/image1.png": {
+    "latex": "$\\Delta \\mathrm{v}etai \\eta \\sigmaυνάρτηση f(x)=e^{2x}+x^3+2x",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "26640/image2.png": {
+    "latex": "\\eta \\sigmaυνάρτηση f αντιστρέφεται και να αποδείξετε ότι έχει σύνολο τιμών το",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "26640/image3.png": {
+    "latex": "\\eta \\epsilonξίσωση f^{-1}(x)=0",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "27321/image1.png": {
+    "latex": "y=f(x)=ax e^{-\\beta x}",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "27321/image2.png": {
+    "latex": "x \\in (0, +\\infty)",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "27321/image3.png": {
+    "latex": "\\alpha, \\beta",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "27321/image4.png": {
+    "latex": "\\beta \\in (0, 1)",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "27321/image5.png": {
+    "latex": "a \\in (1, +\\infty)",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "27322/image1.png": {
+    "latex": "I = \\int_{0}^{1} (E - T(t)) \\cdot \\ln(T(t)) dt",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "27322/image2.png": {
+    "latex": "\\frac{2e^3 - 3e^4}{k}",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "27455/image1.png": {
+    "latex": "\\lim_{x \\to x_0} f(x) > \\lim_{x \\to x_0} g(x)",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "28314/image1.png": {
+    "latex": "$\\Delta \\mathrm{i}v \\varepsilon \\tau \\alpha \\eta \\sigma u v \\varepsilon \\chi \\nacute{\\mathrm{c}} \\sigma u v \\mathrm{a} \\rho \\tau \\eta \\sigma f:[1, +\\infty) \\to \\mathbb{R} \\mu \\varepsilon f(x)=\\begin{cases} e^{\\frac{1}{\\lambda x+1}}, & \\& x>1 \\\\ 0, & \\& x=1 \\end{cases}, \\lambda \\in \\mathbb{R}.",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "28314/image2.png": {
+    "latex": "\\lambda=-1",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "28340/image1.png": {
+    "latex": "$\\textcircled{1}. \\quad \\text{το πεδίο ορισμού των συνάρτησεων } fog \\text{ και } gof,",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "28340/image2.png": {
+    "latex": "$\\textcircled{2}. \\quad τις παραγωγούμενες } fog'(2) \\text{ και } (gof)'(-1).",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "28340/image3.png": {
+    "latex": "$\\gamma). \\quad Να αποδείξετε ότι η εφαπτομένη της",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "28476/image1.png": {
+    "latex": "$\\lim_{x \\to 1} \\frac{f(x)(x-1)}{lnx} = 0 \\quad και",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "28476/image2.png": {
+    "latex": "$f'(x) = \\sqrt{x^2+1} \\quad για κάθε x \\in \\mathbb{R}.",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "31643/image1.png": {
+    "latex": "$\\Delta \\mathrm{v} \\varepsilon \\tau \\alpha \\eta \\sigma u v \\acute{\\alpha} \\rho \\tau \\eta \\sigma f(x)=x^{4}-3 x^{3}-x^{2}+9 x, \\quad x \\in[1, 2].",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "31643/image2.png": {
+    "latex": "$\\beta) \\mathrm{N}a \\alpha \\pi o \\delta \\epsilon i \\xi e t e \\textit{ότι} \\eta \\varepsilon \\iota \\omega \\sigma \\eta 4 x^{3}-9 x^{2}-2 x+9 \\mathrm{~ éχει ~ μία, τουλάχιστον, } \\rho \\mathrm{ì} \\zeta a \\mathrm{~ στο} \\delta i \\alpha \\sigma \\eta \\mu a",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "35170/image1.png": {
+    "latex": "$\\Delta \\dot{v} v o n t a i o i \\sigma u v a r \\tau \\eta \\sigma e i c f k a i g \\omega \\sigma t e:",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "35170/image2.png": {
+    "latex": "$f(x) = \\ln(1+ e^x) k a i g(x) = 2\\ln x .",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "35171/image1.png": {
+    "latex": "g^{-1}(x) = e^{\\frac{x}{2}}, \\mu x \\in \\mathbb{R}.",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "35172/image1.png": {
+    "latex": "$\\Delta \\mathrm{v} \\varepsilon \\tau \\alpha \\eta \\sigma u v \\dot{\\alpha} \\rho \\tau \\eta \\sigma n f \\mu \\varepsilon f(x) = \\ln(1 + x^2).",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "36839/image1.png": {
+    "latex": "$\\alpha) \\text{ Na βρείτε το πεδίο ορισμού κάθε μίας από τις συναρτήσεις και } h.",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "36839/image2.png": {
+    "latex": "$\\beta) \\text{ Να εξετάσετε για ποια ή ποιες από τις παραπάνω συναρτήσεις;}",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "36839/image3.png": {
+    "latex": "\\text{Iσχύουν οι προιθοθέσεις του θεωρήματος Bolzano στο πεδίο ορισμού τους.}",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "36839/image4.png": {
+    "latex": "$\\text{(Μονάδες 10)}",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "36839/image5.png": {
+    "latex": "\\text{Παίρνουν την τιμή 0 σε ένα εσωτερικό σημείο του πεδίου ορισμού τους.}",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "36839/image6.png": {
+    "latex": "$\\text{(Μονάδες 09)}",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "36849/image1.png": {
+    "latex": "$\\Delta \\mathrm{i}v \\varepsilon \\tau a i \\eta \\sigma u v \\dot{\\alpha} r \\pi \\eta \\sigma n f \\mu \\varepsilon f(x) = \\begin{cases} x^2, & \\alpha v x \\leq 0 \\\\ 1 - \\sigma u v x, & \\alpha v x > 0 \\end{cases}",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "36851/image1.png": {
+    "latex": "$\\Delta \\mathrm{i}v\\text{e}ta\\mathrm{i} \\eta \\sigma u\\nu\\acute{\\alpha}\\rho\\tau\\eta\\sigma f \\mu\\epsilon f(x) = \\begin{cases} -5x^2 - 3x + 1, & \\alpha v x \\leq 0 \\\\ x^2 - 3x + 1, & \\alpha v x > 0 \\end{cases}",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "36851/image2.png": {
+    "latex": "$x_0 \\in (-1,1) \\quad \\gamma a t o \\sigma o i o \\iota \\sigma x \\dot{\\upsilon} e i f'(x_0) = 0.",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "31148/image1.png": {
+    "latex": "$\\beta) \\text{ Θεωρούμε τα σημεία } B(x, f(x)) \\text{ και } \\Gamma(x, g(x)) \\text{ με } x > 0.",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "31148/image2.png": {
+    "latex": "$B \\text{ προς τον } \\alpha'x \\text{ τέμνει τον ημιάξονα } Oy \\text{ στο σημείο } \\Delta, \\text{ ενώ η παράλληλη ευθεία από το } \\Gamma \\text{ προς τον } \\alpha'x \\text{ τέ姆νει τον ημιάξονα } Oy \\text{ στο σημείο } Z.",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "31148/image3.png": {
+    "latex": "$\\text{(i)} \\text{ Να αποδείξτε ότι το εμβαδόν του ορθογωνίου } B\\Gamma Z\\Delta \\text{ είναι } E(x) = \\frac{x^3}{e^x}, x > 0.",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "31148/image4.png": {
+    "latex": "$\\text{(ii)} \\text{ Να βρείτε για ποια τιμή του } x, \\text{ το εμβαδόν } E(x) \\gammaίνεται μέγιστο.",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "31148/image5.png": {
+    "latex": "$\\gamma) \\text{ Να αποδείξτε ότι το εμβαδόν που ορίζεται από την γραφική παράσταση της συναρτησης } h(x) = \\frac{f(x)-g(x)}{x}, \\text{ τον άξονα } x'x \\text{ καθώς και τις ευθείες με εξισώσεις } x=\\ln 2 \\text{ και } x=1, \\text{ είναι }\\ln\\sqrt{2e}-\\frac{2}{e} \\tauεραγωνικές μονάδες.",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "31149/image1.png": {
+    "latex": "$\\ln\\left(\\frac{1+\\frac{1}{x}}\\right) = \\frac{\\ln(1+x)}{x^2}",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "31149/image2.png": {
+    "latex": "$\\ln(1+f(x)) - \\ln(f(x)) > f^2(x) \\cdot f(\\ln 2).",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "31792/image1.png": {
+    "latex": "$\\theta E M A 4",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "31792/image2.png": {
+    "latex": "\\theta εωρωρούμε τη συνάρτηση .",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "31792/image3.png": {
+    "latex": "a) \\text{ Να αποδείξετε ότι η } f \\text{ είναι συνεχής, αλλά μη παραγωγίσιμη στο } x_0 = 1.",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "31792/image4.png": {
+    "latex": "\\beta) \\text{ Να βρείτε τα κρίσιμα σημεία της } f.",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "31792/image5.png": {
+    "latex": "\\gamma) \\Deltaίνεται η συνάρτηση . Να υπολογίστε το εμβαδόν του χωρίου που ορίζεται από τις γραφικές παραστάσεις των συναρτήσεων",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "33578/image1.png": {
+    "latex": "$\\alpha) \\text{ Na αποδείξετε ότι για κάθε } x \\in [0, \\pi] \\text{ ισχύει } e^x + \\eta x \\geq 1.",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "33578/image2.png": {
+    "latex": "$\\beta) \\text{ Na αποδείξετε ότι η συνάρτηση } H(x)=x-\\ln\\left(e^x+\\eta x\\right), \\quad x \\in [0, \\pi], \\text{ είναι μια αρχική (παράγουσα) της συνάρτησης , .}",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "33578/image3.png": {
+    "latex": "$\\gamma) \\text{ Na αποδείξετε ότι } \\int_{0}^{\\pi} x f(x) dx = \\frac{\\pi}{e^x}.",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "33578/image4.png": {
+    "latex": "$\\delta) \\text{ Να αποδείξετε ότι } \\int_{1}^{e} \\frac{1}{\\left(e^x+\\eta x\\right)\\cdot x} dx < 1.",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "33578/image5.png": {
+    "latex": "$\\beta) \\text{ Να αποδείξετε ότι η συνάρτηση , , είναι μια αρχική (παράγουσα) της συνάρτησης , .}",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "33578/image6.png": {
+    "latex": "$\\gamma) \\text{ Να αποδείξετε ότι } \\int_{0}^{\\pi} x f(x) dx = \\frac{\\pi}{e^x}.",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "34565/image1.png": {
+    "latex": "c \\in (\\alpha, \\beta)",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "34565/image2.png": {
+    "latex": "cf'(c)-f(c)-\\lambda a+f(a)=0",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "34565/image3.png": {
+    "latex": "f'(c) \\neq \\lambda",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "34565/image4.png": {
+    "latex": "\\frac{f(\\alpha)}{f(\\beta)}=e^2",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "34565/image5.png": {
+    "latex": "$I = \\int_{\\sqrt{\\alpha-1}}^{\\sqrt{\\beta-1}} x \\cdot f'(x^2+1) dx",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "34566/image1.png": {
+    "latex": "\\alpha, \\beta",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "34566/image2.png": {
+    "latex": "x \\in (a, b]",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "34566/image3.png": {
+    "latex": "\\frac{G(x)-G(a)}{x-a} < f(a)",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "36814/image1.png": {
+    "latex": "$K[x] = 8x + \\frac{3200}{x}, x > 0",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "36815/image1.png": {
+    "latex": "$f^2(x) + x^2 = 4 \\quad y \\in [-2, 2]",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "36815/image2.png": {
+    "latex": "A(0,2), \\tau_{\\text{tote}} \\vee \\beta_{\\text{tote}}",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "36815/image3.png": {
+    "latex": "B(-1,\\sqrt{3}), \\eta \\tau_{\\text{tau}}\\nu_{\\text{tou}} y \\alpha\\xi\\vec{\\varepsilon} \\mu\\theta\\mu 2 \\mu\\nu\\delta\\epsilon",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "36815/image4.png": {
+    "latex": "\\delta) \\ Eva \\ kivητό \\ κινείται \\ κατά \\ μήκος \\ της \\ καμπύλης \\ της f. \\ Kaθώς \\ περνάει από το σημείο",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "36815/image5.png": {
+    "latex": "\\delta) \\ Να βρείτε τον ρυθμό μεταβολής της τετμημένης",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "36816/image1.png": {
+    "latex": "$\\alpha) \\text{ Να βρείτε το } f(0).",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "36816/image2.png": {
+    "latex": "$\\beta) \\text{ Να βρείτε τον τύπο της } f.",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "36816/image3.png": {
+    "latex": "$\\gamma) \\text{ Να αποδείξετε ότι η } f \\text{ είναι γνησίως φθίνουσα.}",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "36816/image4.png": {
+    "latex": "$\\delta) \\text{ Να αποδείξετε ότι:}",
+    "type": "formula",
+    "width": 0,
+    "height": 0
+  },
+  "36816/image5.png": {
+    "latex": "$\\frac{\\sqrt{2}}{6} \\leq \\int_{\\frac{\\pi}{6}}^{\\frac{\\pi}{4}} f(x) dx \\leq \\frac{1}{4}",
+    "type": "formula",
+    "width": 0,
+    "height": 0
   }
 }
