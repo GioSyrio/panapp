@@ -12,6 +12,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+from prompt_loader import load_prompts as _load_subject_prompts
 
 def load_subject_config(subject_id):
     cfg_path = os.path.join(BASE_DIR, "subjects", f"{subject_id}.json")
