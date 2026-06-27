@@ -41,6 +41,7 @@ data/trapeza_data_1_3_218/questions.json.backup
 data/subjects/mathematics/raw/
 data/subjects/informatics/raw/
 data/subjects/*/raw/
+data/subjects/*/raw.zip
 
 # Raw data files (downloadable from API anytime)
 data/subjects/*/items_raw.json
