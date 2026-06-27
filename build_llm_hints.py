@@ -90,8 +90,29 @@ def main():
     progress_file = os.path.join(data_dir, "llm_hints_progress.json")
 
     # Load prompts
-    hint_prompt = MATH_HINT_PROMPT if subject_id == "mathematics" else INFORMATICS_HINT_PROMPT
-    system_prompt = "Είσαι καθηγητής Μαθηματικών. Μιλάς μόνο Ελληνικά. Δίνεις συνοπτική βοήθεια, όχι λύσεις." if subject_id == "mathematics" else "You are a Greek Informatics teacher. Answer ONLY in Greek. Return valid JSON."
+# Load subject-specific prompts
+    prompts = _load_subject_prompts(subject_id)
+    system_prompt = "You are a Greek tutor. Answer ONLY in Greek. Return valid JSON."
+    
+    # All subjects use generic prompt that references LaTeX
+    hint_prompt = """Είσαι ένας υπομονετικός καθηγητής που βοηθά μαθητή για τις Πανελλήνιες.
+Δώσε μια σύντομη βοήθεια (ΟΧΙ την πλήρη λύση) στα Ελληνικά.
+
+ΚΡΙΣΙΜΟ: ΟΛΕΣ οι μαθηματικές/επιστημονικές εκφράσεις ΠΡΕΠΕΙ να είναι σε LaTeX μέσα σε $...$.
+
+Επίπεδο {level}:
+- Επίπεδο 1: Υπενθύμισε το σχετικό θεώρημα, ορισμό ή κανόνα
+- Επίπεδο 2: Υπόδειξε το πρώτο βήμα επίλυσης
+- Επίπεδο 3: Δώσε τη γενική μεθοδολογία χωρίς αριθμητικά αποτελέσματα
+
+Ερώτηση (υποερώτημα {subq_num}):
+{subq_text}
+
+Ενδεικτική απάντηση (για δική σου γνώση, ΜΗΝ την αποκαλύψεις):
+{answer_text}
+
+Επέστρεψε ΜΟΝΟ JSON: {{"hint_text": "..."}}
+"""
 
     client = init_client()
     with open(v2_file, encoding="utf-8") as f:
