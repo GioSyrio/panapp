@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
 Panhellenic AI Tutor — Flask Backend
+Multi-subject support: informatics, mathematics
 """
 import json, os, sys, re, uuid, hashlib, time, logging
 from datetime import datetime, timezone
@@ -21,7 +22,7 @@ logger.handlers = [handler]
 logger.setLevel(_logging.INFO)
 
 # ── Session cleanup
-SESSION_TIMEOUT = 30 * 60  # 30 minutes
+SESSION_TIMEOUT = 30 * 60
 LAST_CLEANUP = time.time()
 
 try:
@@ -33,15 +34,31 @@ except ImportError:
 
 from predictor import calculate_topic_priorities, CURRENT_YEAR
 from prompt_loader import load_prompts as _load_subject_prompts
-_prompts = _load_subject_prompts("informatics")
-GREEK_TUTOR_SYSTEM_PROMPT = _prompts.GREEK_TUTOR_SYSTEM_PROMPT
-EVALUATION_SYSTEM_PROMPT = _prompts.EVALUATION_SYSTEM_PROMPT
-PREDICTION_SYSTEM_PROMPT = _prompts.PREDICTION_SYSTEM_PROMPT
-CORRECT_ANSWER_PROMPT = _prompts.CORRECT_ANSWER_PROMPT
-PARTIAL_ANSWER_PROMPT = _prompts.PARTIAL_ANSWER_PROMPT
-INCORRECT_ANSWER_PROMPT = _prompts.INCORRECT_ANSWER_PROMPT
-COMMON_PANHELLENIC_TRAPS = _prompts.COMMON_PANHELLENIC_TRAPS
-build_trend_context = _prompts.build_trend_context
+
+# ── Fallback defaults (informatics) ─────────────────────────────────────────
+_default_prompts = _load_subject_prompts("informatics")
+build_trend_context = _default_prompts.build_trend_context
+PREDICTION_SYSTEM_PROMPT = _default_prompts.PREDICTION_SYSTEM_PROMPT
+
+# ── Per-session prompt resolution ──────────────────────────────────────────
+_subject_prompts_cache = {}
+def get_prompts(subject_id):
+    """Get resolved prompts for a subject (cached)."""
+    if subject_id not in _subject_prompts_cache:
+        _subject_prompts_cache[subject_id] = _load_subject_prompts(subject_id)
+    return _subject_prompts_cache[subject_id]
+
+# ── Answer detection keywords ──────────────────────────────────────────────
+MATH_ANSWER_KW = ['lim', 'int', 'frac', 'sqrt', 'sum', 'prod', 'infty',
+                 'alpha', 'beta', 'gamma', 'delta', 'theta', 'lambda',
+                 'derive', 'παράγωγ', 'ολοκλήρω', 'όριο', 'συνεχ',
+                 'μονοτον', 'ακρότατ', 'εμβαδ', 'εξίσωση', 'συνάρτηση',
+                 'απόδειξ', 'θεώρη', 'πίνακα', 'πίνακ', 'σύνολο',
+                 'πραγματικ', 'φθίνουσα', 'αύξουσα', 'bolzano', 'rolle',
+                 'πρόσημο', 'κυρτ', 'καμπ', 'ασύμπτωτ', 'τύπο']
+CODE_ANSWER_KW = ['←','<-','τότε','επανάλαβε','διάβασε','γράψε','εμφάνισε',
+                  'mod','div','τέλος_επανάληψης','τέλος_αν','μέχρις_ότου',
+                  'περίπτωση','επίλεξε','αρχή_επανάληψης']
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -61,11 +78,9 @@ _response_cache = {}
 MAX_CACHE_SIZE = 200
 
 def cleanup_sessions():
-    """Remove stale sessions older than SESSION_TIMEOUT."""
     global LAST_CLEANUP
     now = time.time()
-    if now - LAST_CLEANUP < 300:
-        return
+    if now - LAST_CLEANUP < 300: return
     LAST_CLEANUP = now
     expired = []
     for sid, sess in sessions.items():
@@ -73,26 +88,18 @@ def cleanup_sessions():
         if started:
             try:
                 age = (datetime.now(timezone.utc) - datetime.fromisoformat(started)).total_seconds()
-                if age > SESSION_TIMEOUT:
-                    expired.append(sid)
+                if age > SESSION_TIMEOUT: expired.append(sid)
             except: pass
-    for sid in expired:
-        del sessions[sid]
-    if expired:
-        logger.info(f"Cleaned {len(expired)} expired sessions")
+    for sid in expired: del sessions[sid]
+    if expired: logger.info(f"Cleaned {len(expired)} expired sessions")
 
 @app.before_request
 def before_request():
     cleanup_sessions()
 
-class AIError(Exception):
-    pass
-
-class APIError(AIError):
-    pass
-
-class ValidationError(AIError):
-    pass
+class AIError(Exception): pass
+class APIError(AIError): pass
+class ValidationError(AIError): pass
 
 def load_data():
     global exam_data, ranked, details, trend_context
@@ -202,12 +209,20 @@ def call_deepseek_with_retry(fn, *args, max_retries=1, **kwargs):
                 continue
             raise APIError(HELPFUL_ERRORS.get(category, HELPFUL_ERRORS["default"]))
 
+def _is_student_answer(msg, subject_id):
+    """Detect if the message is a student answer submission."""
+    if len(msg) > 100 and '\n' in msg:
+        return True
+    if subject_id == "mathematics":
+        return any(k in msg.lower() for k in MATH_ANSWER_KW)
+    else:
+        return any(k in msg.lower() for k in CODE_ANSWER_KW)
+
 # ── Routes
 @app.route("/")
 def index():
     return send_from_directory(STATIC_DIR, "index.html")
 
-# ── Subject config loader ──────────────────────────────────────────────────
 import json as _json
 def load_subject_config(subject_id="informatics"):
     cfg_path = os.path.join(BASE_DIR, "subjects", f"{subject_id}.json")
@@ -248,27 +263,35 @@ def start_session():
         tag = None
     if not question:
         return jsonify({"error": "Δεν βρέθηκαν ερωτήσεις."}), 500
-    try:
-        subj_prompts = _load_subject_prompts(subject_id)
-        tutor_prompt = subj_prompts.GREEK_TUTOR_SYSTEM_PROMPT
-        eval_prompt = subj_prompts.EVALUATION_SYSTEM_PROMPT
-    except:
-        tutor_prompt = GREEK_TUTOR_SYSTEM_PROMPT
-        eval_prompt = EVALUATION_SYSTEM_PROMPT
-    sp = (tutor_prompt + "\n" +
-          f"Θέμα: {question['part']} — {question.get('points',0)} μονάδες\n" +
-          f"Έτος: {question.get('year','')}\n" +
+    # ── Load subject-specific prompts ──
+    prompts = get_prompts(subject_id)
+    tutor_prompt = prompts.GREEK_TUTOR_SYSTEM_PROMPT
+    eval_prompt = prompts.EVALUATION_SYSTEM_PROMPT
+    # Get question text (stripped of HTML)
+    q_v2 = _load_v2_data(subject_id).get(str(question['id']), {})
+    q_html = q_v2.get("question_html", question.get("question_text", ""))
+    q_text = re.sub(r'<[^>]+>', ' ', q_html)[:3000].strip()
+    q_text = re.sub(r'\s+', ' ', q_text)
+
+    sp = (tutor_prompt + "\n\n" +
+          "📋 ΤΡΕΧΟΥΣΑ ΑΣΚΗΣΗ:\n" +
+          q_text + "\n\n" +
+          f"Θέμα: {question['part']} — {question.get('points',0)} μονάδες, Έτος: {question.get('year','')}\n" +
+          f"Έννοιες: {', '.join(question.get('conceptual_tags', [])[:5])}\n" +
           trend_context)
     sessions[sid] = {
-        "messages": [{"role": "system", "content": sp}], "seen_ids": {question["id"]},
+        "messages": [{"role": "system", "content": sp}],
+        "seen_ids": {question["id"]},
         "current_question": question, "current_tag": tag,
         "completed_count": 0, "total_points": 0,
         "started_at": datetime.now(timezone.utc).isoformat(), "history": [],
         "subject_id": subject_id,
+        "eval_prompt": eval_prompt,  # stored for evaluation use
     }
     logger.info(f"Session started: {sid[:8]} [{subject_id}]")
     return jsonify({"session_id": sid, "question": format_exam_question(question, tag, subject_id),
                     "has_ai": deepseek_client is not None, "subject": subject_cfg})
+
 @app.route("/api/chat", methods=["POST"])
 def chat():
     body = request.get_json(force=True) or {}
@@ -279,12 +302,13 @@ def chat():
     if not msg:
         return jsonify({"reply": None})
     sess = sessions[sid]
+    subj_id = sess.get("subject_id", "informatics")
     sess["messages"].append({"role": "user", "content": msg})
     cmd = msg.lower()
     if cmd in {"exit", "quit", "έξοδος"}:
         return jsonify({"reply": "Η συνεδρία τερματίστηκε. Καλή επιτυχία! 🎓", "end_session": True})
     if cmd in {"λύση", "λυση", "solution", "απάντηση", "απαντηση"}:
-        v2 = _load_v2_data(sess.get("subject_id", "informatics")).get(str(sess["current_question"]["id"]), {})
+        v2 = _load_v2_data(subj_id).get(str(sess["current_question"]["id"]), {})
         return jsonify({"is_solution": True, "answer_html": v2.get("llm_solution_html") or v2.get("answer_html") or sess["current_question"].get("answer_text", "")})
     if cmd in {"next", "επόμενο", "επομενο", "skip"}:
         return jsonify({"reply": None, "next_question": True})
@@ -293,21 +317,34 @@ def chat():
     if not deepseek_client:
         return jsonify({"reply": "Το AI είναι προσωρινά μη διαθέσιμο. Χρησιμοποίησε το Hint ή πήγαινε στο επόμενο θέμα.", "no_ai": True})
 
-    code_kw = ['←','<-','τότε','επανάλαβε','διάβασε','γράψε','εμφάνισε','mod','div','τέλος_επανάληψης','τέλος_αν','μέχρις_ότου','περίπτωση','επίλεξε','αρχή_επανάληψης']
-    is_answer = any(k in msg.lower() for k in code_kw) or (len(msg) > 150 and '\n' in msg)
+    # ── Detect if this is an answer submission ──
+    is_answer = _is_student_answer(msg, subj_id)
+
+    # Build sub-question context (shared between both branches)
+    subq_ctx = ""
+    active_subq = body.get("active_subq", {})
+    if active_subq and active_subq.get("number"):
+        subq_ctx = f"\n\n[Ενεργό υποερώτημα: {active_subq.get('number')}. {active_subq.get('content', '')}]"
+
+    # ── Inject hint awareness if student recently used hints ──
+    hint_ctx = ""
+    hs = sess.get("hint_state", {})
+    if hs and hs.get("question_id") == str(sess["current_question"]["id"]):
+        hc = hs.get("hintCount", 0)
+        if hc > 0:
+            sqs = _get_subquestions(str(sess["current_question"]["id"]), subj_id)
+            subq_num = sqs[hs.get("subqIdx", 0)]["number"] if hs.get("subqIdx", 0) < len(sqs) else "?"
+            hint_ctx = f"\n\n[O μαθητής μόλις είδε το hint #{hc} για το υποερώτημα {subq_num}. Αξιοποίησε το στην απάντησή σου.]"
 
     if not is_answer:
+        # ── Conversational mode ──
         try:
-            # Inject active sub-question context into chat prompt
-            subq_ctx = ""
-            active_subq = body.get("active_subq", {})
-            if active_subq and active_subq.get("number"):
-                subq_ctx = f"\n\n[Ενεργό υποερώτημα: {active_subq.get('number')}. {active_subq.get('content', '')}]"
-            ms = sess["messages"].copy(); ms[-1] = {"role":"user","content":msg + subq_ctx}
+            ms = sess["messages"].copy()
+            ms[-1] = {"role": "user", "content": msg + subq_ctx + hint_ctx}
             resp = call_deepseek_with_retry(deepseek_client.chat.completions.create,
                                             model="deepseek-chat", messages=ms, temperature=0.4, max_tokens=500)
             reply = strip_reasoning(resp.choices[0].message.content or "Συγνώμη, κάτι πήγε στραβά.")
-            sess["messages"].append({"role":"assistant","content":reply})
+            sess["messages"].append({"role": "assistant", "content": reply})
             return jsonify({"reply": reply, "conversational": True})
         except APIError as e:
             return jsonify({"reply": str(e), "error": True})
@@ -315,171 +352,212 @@ def chat():
             logger.error(f"Chat error: {e}")
             return jsonify({"reply": "Κάτι πήγε στραβά. Δοκίμασε ξανά σε λίγο.", "error": True})
 
+    # ── Evaluation mode ──
     key = _cache_key(sess)
     if key and key in _response_cache:
         logger.info(f"Cache hit {sid[:8]}")
         return jsonify({"evaluation": _response_cache[key], "cached": True})
     try:
         q = sess["current_question"]
-        em = [{"role":"system","content":EVALUATION_SYSTEM_PROMPT},
-              {"role":"user","content": f"Ερώτηση: {q.get('question_text','')[:2000]}\n\nΑπάντηση μαθητή: {msg}{subq_ctx}"}]
+        eval_prompt = sess.get("eval_prompt",
+            get_prompts(subj_id).EVALUATION_SYSTEM_PROMPT)
+        em = [{"role": "system", "content": eval_prompt},
+              {"role": "user", "content": f"Ερώτηση: {q.get('question_text','')[:2000]}\n\nΑπάντηση μαθητή: {msg}{subq_ctx}{hint_ctx}"}]
         resp = call_deepseek_with_retry(deepseek_client.chat.completions.create,
                                         model="deepseek-chat", messages=em, temperature=0.1, max_tokens=600,
-                                        response_format={"type":"json_object"})
+                                        response_format={"type": "json_object"})
         raw = strip_reasoning(resp.choices[0].message.content or "{}")
         try: ev = json.loads(raw)
         except:
             m = re.search(r'\{.*\}', raw, re.DOTALL)
-            ev = json.loads(m.group(0)) if m else {"status":"info","critique":raw[:300],"hint":"Δοκίμασε ξανά."}
+            ev = json.loads(m.group(0)) if m else {"status": "info", "critique": raw[:300], "hint": "Δοκίμασε ξανά."}
         if key:
             if len(_response_cache) >= MAX_CACHE_SIZE: del _response_cache[next(iter(_response_cache))]
             _response_cache[key] = ev
-        sess["messages"].append({"role":"assistant","content":json.dumps(ev, ensure_ascii=False)})
+        sess["messages"].append({"role": "assistant", "content": json.dumps(ev, ensure_ascii=False)})
         return jsonify({"evaluation": ev, "cached": False})
     except APIError as e:
-        return jsonify({"evaluation":{"status":"info","critique":str(e),"hint":"Δοκίμασε ξανά."}})
+        return jsonify({"evaluation": {"status": "info", "critique": str(e), "hint": "Δοκίμασε ξανά."}})
     except Exception as e:
         logger.error(f"Eval error: {e}")
-        return jsonify({"evaluation":{"status":"info","critique":"Σφάλμα αξιολόγησης.","hint":"Δοκίμασε ξανά."}})
+        return jsonify({"evaluation": {"status": "info", "critique": "Σφάλμα αξιολόγησης.", "hint": "Δοκίμασε ξανά."}})
 
 @app.route("/api/session/next", methods=["POST"])
 def next_question():
     body = request.get_json(force=True) or {}
-    sid = body.get("session_id","")
+    sid = body.get("session_id", "")
     if sid not in sessions:
-        return jsonify({"error":"Ξεκίνα νέα συνεδρία."}),400
+        return jsonify({"error": "Ξεκίνα νέα συνεδρία."}), 400
     s = sessions[sid]
-    s.setdefault("history",[]).append({"question":format_exam_question(s["current_question"], subject_id=s.get("subject_id","informatics")),"messages":list(s["messages"])})
-    s["completed_count"]+=1; s["total_points"]+=s["current_question"]["points"]
+    s.setdefault("history", []).append({
+        "question": format_exam_question(s["current_question"], subject_id=s.get("subject_id", "informatics")),
+        "messages": list(s["messages"])
+    })
+    s["completed_count"] += 1
+    s["total_points"] += s["current_question"]["points"]
     import random
     subj_id = s.get("subject_id", "informatics")
     subject_cfg = load_subject_config(subj_id)
     parts = subject_cfg.get("parts", ["Θέμα 2", "Θέμα 4"])
     candidates = [x for x in exam_data if x["part"] in parts and x["id"] not in s["seen_ids"]]
     q = random.choice(candidates) if candidates else None
-    if not q: return jsonify({"reply":"Δεν υπάρχουν άλλα θέματα! 🎓","session_complete":True})
-    s["seen_ids"].add(q["id"]); s["current_question"]=q
-    try:
-        subj_p = _load_subject_prompts(subj_id)
-        tutor = subj_p.GREEK_TUTOR_SYSTEM_PROMPT
-    except:
-        tutor = GREEK_TUTOR_SYSTEM_PROMPT
-    s["messages"]=[{"role":"system","content":(tutor+"\n"+f"Θέμα: {q['part']}\n"+trend_context)}]
-    s["messages"]=[{"role":"system","content":(GREEK_TUTOR_SYSTEM_PROMPT+"\n"+f"Θέμα: {q['part']}\n"+trend_context)}]
-    return jsonify({"question":format_exam_question(q, subject_id=s.get("subject_id","informatics")),"stats":{"completed":s["completed_count"],"total_points":s["total_points"],"remaining":len(exam_data)-len(s["seen_ids"])}})
+    if not q:
+        return jsonify({"reply": "Δεν υπάρχουν άλλα θέματα! 🎓", "session_complete": True})
+    s["seen_ids"].add(q["id"])
+    s["current_question"] = q
+    # ── Load subject-specific prompts for the new question ──
+    prompts = get_prompts(subj_id)
+    tutor = prompts.GREEK_TUTOR_SYSTEM_PROMPT
+    eval_prompt = prompts.EVALUATION_SYSTEM_PROMPT
+    s["eval_prompt"] = eval_prompt
+    q_v2 = _load_v2_data(subj_id).get(str(q['id']), {})
+    q_html = q_v2.get("question_html", q.get("question_text", ""))
+    q_text = re.sub(r'<[^>]+>', ' ', q_html)[:3000].strip()
+    q_text = re.sub(r'\s+', ' ', q_text)
+
+    s["messages"] = [{"role": "system", "content": (
+        tutor + "\n\n" +
+        "📋 ΤΡΕΧΟΥΣΑ ΑΣΚΗΣΗ:\n" +
+        q_text + "\n\n" +
+        f"Θέμα: {q['part']} — {q.get('points', 0)} μονάδες, Έτος: {q.get('year', '')}\n" +
+        f"Έννοιες: {', '.join(q.get('conceptual_tags', [])[:5])}\n" +
+        trend_context
+    )}]
+    # Reset hint state for new question
+    s["hint_state"] = {"subqIdx": 0, "hintCount": 0, "totalSubqs": len(_get_subquestions(str(q["id"]), subj_id)) or 1}
+    return jsonify({
+        "question": format_exam_question(q, subject_id=subj_id),
+        "stats": {"completed": s["completed_count"], "total_points": s["total_points"],
+                  "remaining": len(exam_data) - len(s["seen_ids"])}
+    })
 
 @app.route("/api/session/previous", methods=["POST"])
 def previous():
     body = request.get_json(force=True) or {}
-    sid = body.get("session_id","")
-    if sid not in sessions: return jsonify({"error":"Ξεκίνα νέα συνεδρία."}),400
-    s = sessions[sid]; h = s.get("history",[])
-    if not h: return jsonify({"error":"Δεν υπάρχει προηγούμενο θέμα."}),400
+    sid = body.get("session_id", "")
+    if sid not in sessions: return jsonify({"error": "Έληξε."}), 400
+    s = sessions[sid]; h = s.get("history", [])
+    if not h: return jsonify({"error": "Δεν υπάρχει προηγούμενο."}), 400
     p = h.pop()
-    pq = next((x for x in exam_data if x["id"]==p["question"]["id"]),None)
-    if not pq: return jsonify({"error":"Το προηγούμενο θέμα δεν βρέθηκε."}),500
-    s["current_question"]=pq; s["messages"]=p["messages"]
-    s["completed_count"]=max(0,s["completed_count"]-1)
-    s["total_points"]=max(0,s["total_points"]-pq.get("points",0))
-    return jsonify({"question":format_exam_question(pq, subject_id=s.get("subject_id","informatics")),"stats":{"completed":s["completed_count"],"total_points":s["total_points"],"remaining":len(exam_data)-len(s["seen_ids"])},"has_previous":len(h)>0})
+    pq = next((x for x in exam_data if x["id"] == p["question"]["id"]), None)
+    if not pq: return jsonify({"error": "Δεν βρέθηκε."}), 500
+    s["current_question"] = pq; s["messages"] = p["messages"]
+    s["completed_count"] = max(0, s["completed_count"] - 1)
+    s["total_points"] = max(0, s["total_points"] - pq.get("points", 0))
+    return jsonify({
+        "question": format_exam_question(pq, subject_id=s.get("subject_id", "informatics")),
+        "stats": {"completed": s["completed_count"], "total_points": s["total_points"],
+                  "remaining": len(exam_data) - len(s["seen_ids"])},
+        "has_previous": len(h) > 0
+    })
 
 @app.route("/api/session/stats", methods=["POST"])
 def stats():
     body = request.get_json(force=True) or {}
-    sid = body.get("session_id","")
-    if sid not in sessions: return jsonify({"error":"Έληξε."}),400
+    sid = body.get("session_id", "")
+    if sid not in sessions: return jsonify({"error": "Έληξε."}), 400
     s = sessions[sid]
-    return jsonify({"completed":s["completed_count"],"total_points":s["total_points"],"remaining":len(exam_data)-len(s["seen_ids"])})
+    return jsonify({"completed": s["completed_count"], "total_points": s["total_points"],
+                    "remaining": len(exam_data) - len(s["seen_ids"])})
 
 @app.route("/api/topics")
 def topics():
-    return jsonify({"topics":[{"topic":t,"priority":round(s,2)} for t,s in ranked[:10]],"total_topics":len(ranked)})
+    return jsonify({"topics": [{"topic": t, "priority": round(s, 2)} for t, s in ranked[:10]],
+                    "total_topics": len(ranked)})
 
 @app.route("/health")
 def health():
-    return jsonify({"status":"ok","questions_loaded":len(exam_data) if exam_data else 0,"deepseek_ready":deepseek_client is not None,"sessions":len(sessions)})
+    return jsonify({"status": "ok", "questions_loaded": len(exam_data) if exam_data else 0,
+                    "deepseek_ready": deepseek_client is not None, "sessions": len(sessions)})
 
-# ── Hints
+# ── Hints ───────────────────────────────────────────────────────────────────
 def _get_subquestions(qid, subject_id="informatics"):
-    v2 = _load_v2_data(subject_id).get(str(qid),{})
-    return [{"number":s["number"],"content":s.get("content","")} for s in v2.get("sections",[]) if s["type"]=="sub_question"]
+    v2 = _load_v2_data(subject_id).get(str(qid), {})
+    return [{"number": s["number"], "content": s.get("content", "")}
+            for s in v2.get("sections", []) if s["type"] == "sub_question"]
 
 def _filter_answer_for_subq(full_answer, subq_number, subq_content):
-    """Use LLM to extract only the answer portion relevant to a specific sub-question."""
-    if not deepseek_client or not full_answer:
-        return full_answer
+    if not deepseek_client or not full_answer: return full_answer
     clean_answer = re.sub(r'<[^>]+>', ' ', full_answer)[:3000]
     try:
         resp = call_deepseek_with_retry(deepseek_client.chat.completions.create,
             model="deepseek-chat",
-            messages=[{"role":"system","content":"Είσαι βοηθός. Από το πλήρες κείμενο απάντησης, επέστρεψε ΜΟΝΟ το τμήμα που αντιστοιχεί στο συγκεκριμένο υποερώτημα. Κράτα τη φυσική γλώσσα, μην προσθέσεις τίποτα δικό σου."},
-                      {"role":"user","content":f"Πλήρης απάντηση:\n{clean_answer}\n\nΥποερώτημα: {subq_number}\nΕκφώνηση: {subq_content}\n\nΕπέστρεψε μόνο την απάντηση για το υποερώτημα {subq_number}, αυτολεξεί όπως είναι στο κείμενο:"}],
+            messages=[{"role": "system", "content": "Είσαι βοηθός. Επέστρεψε ΜΟΝΟ το τμήμα της απάντησης που αφορά το συγκεκριμένο υποερώτημα. Κράτα τη φυσική γλώσσα."},
+                      {"role": "user", "content": f"Πλήρης: {clean_answer}\nΥποερώτημα: {subq_number}\nΕκφώνηση: {subq_content}\nΑπάντηση μόνο για {subq_number}:"}],
             temperature=0.1, max_tokens=500)
         filtered = strip_reasoning(resp.choices[0].message.content or "")
-        if filtered and len(filtered) > 15:
-            return filtered.replace('\n', '<br>')
-    except Exception as e:
-        logger.warning(f"Answer filtering failed for subq {subq_number}: {e}")
-    return full_answer  # fallback
+        if filtered and len(filtered) > 15: return filtered.replace('\n', '<br>')
+    except: pass
+    return full_answer
 
 def _handle_hint(sess):
     qid = str(sess["current_question"]["id"])
     subj = sess.get("subject_id", "informatics")
-    v2 = _load_v2_data(subj).get(qid,{})
-    sqs = _get_subquestions(qid, subj) or [{"number":"?","content":""}]
-    hs = sess.get("hint_state",{"subqIdx":0,"hintCount":0,"totalSubqs":len(sqs)})
-    si, hc = hs.get("subqIdx",0), hs.get("hintCount",0)
-    if si >= len(sqs): return jsonify({"all_done":True,"hint_state":hs,"reply":"✅ Ολοκλήρωσες όλα τα υποερωτήματα!"})
+    v2 = _load_v2_data(subj).get(qid, {})
+    sqs = _get_subquestions(qid, subj) or [{"number": "?", "content": ""}]
+    hs = sess.get("hint_state", {"subqIdx": 0, "hintCount": 0, "totalSubqs": len(sqs)})
+    si, hc = hs.get("subqIdx", 0), hs.get("hintCount", 0)
+    if si >= len(sqs):
+        return jsonify({"all_done": True, "hint_state": hs, "reply": "✅ Ολοκλήρωσες όλα τα υποερωτήματα!"})
     sn = sqs[si]["number"]
-    hints = v2.get("hints",[])
-    ht = hints[si]["hints"][hc]["hint_text"] if si < len(hints) and hc < len(hints[si].get("hints",[])) else None
+    hints = v2.get("hints", [])
+    ht = hints[si]["hints"][hc]["hint_text"] if si < len(hints) and hc < len(hints[si].get("hints", [])) else None
     if not ht:
-        hs["subqIdx"]=si+1; hs["hintCount"]=0; sess["hint_state"]=hs
-        full_answer = v2.get("answer_html","")
-        filtered = _filter_answer_for_subq(full_answer, sn, sqs[si].get("content","")) if deepseek_client else full_answer
-        return jsonify({"html": filtered or full_answer, "hint_state":hs,"is_full_answer":True,"reply":f"📚 Υποερώτημα {sn} — Πλήρης λύση."})
-    hc+=1; hs["hintCount"]=hc; sess["hint_state"]=hs
+        hs["subqIdx"] = si + 1; hs["hintCount"] = 0; sess["hint_state"] = hs
+        fa = v2.get("answer_html", "")
+        filtered = _filter_answer_for_subq(fa, sn, sqs[si].get("content", "")) if deepseek_client else fa
+        return jsonify({"html": filtered or fa, "hint_state": hs, "is_full_answer": True,
+                        "reply": f"📚 Υποερώτημα {sn} — Πλήρης λύση."})
+    hc += 1; hs["hintCount"] = hc; sess["hint_state"] = hs
     if hc >= 4:
-        hs["subqIdx"]=si+1; hs["hintCount"]=0; sess["hint_state"]=hs
-        full_answer = v2.get("answer_html","")
-        filtered = _filter_answer_for_subq(full_answer, sn, sqs[si].get("content","")) if deepseek_client else full_answer
-        return jsonify({"html": filtered or full_answer, "hint_state":hs,"is_full_answer":True,"reply":f"📚 Υποερώτημα {sn} — Πλήρης λύση."})
-    return jsonify({"html":f'<div class="hint-box"><b>Υποερώτημα {sn}</b><br><br>{ht}</div>',"hint_state":hs,"subq_num":sn,"level":hc})
+        hs["subqIdx"] = si + 1; hs["hintCount"] = 0; sess["hint_state"] = hs
+        fa = v2.get("answer_html", "")
+        filtered = _filter_answer_for_subq(fa, sn, sqs[si].get("content", "")) if deepseek_client else fa
+        return jsonify({"html": filtered or fa, "hint_state": hs, "is_full_answer": True,
+                        "reply": f"📚 Υποερώτημα {sn} — Πλήρης λύση."})
+    return jsonify({"html": f'<div class="hint-box"><b>Υποερώτημα {sn}</b><br><br>{ht}</div>',
+                    "hint_state": hs, "subq_num": sn, "level": hc})
 
 @app.route("/api/session/hint", methods=["POST"])
-def hint():
+def hint_route():
     body = request.get_json(force=True) or {}
-    sid = body.get("session_id","")
-    if sid not in sessions: return jsonify({"error":"Έληξε η συνεδρία. Ξεκίνα νέα."}),400
+    sid = body.get("session_id", "")
+    if sid not in sessions: return jsonify({"error": "Έληξε."}), 400
     sess = sessions[sid]
-    ch = body.get("hint_state",{})
-    sh = sess.get("hint_state",{})
+    ch = body.get("hint_state", {})
+    sh = sess.get("hint_state", {})
     if ch:
-        sh["subqIdx"] = ch.get("subqIdx", sh.get("subqIdx",0))
-        sh["hintCount"] = ch.get("hintCount", sh.get("hintCount",0))
-    if sh.get("question_id") != str(sess["current_question"]["id"]):
-        sh = {"subqIdx":0,"hintCount":0,"totalSubqs":len(_get_subquestions(str(sess["current_question"]["id"]))) or 1,"question_id":str(sess["current_question"]["id"])}
+        sh["subqIdx"] = ch.get("subqIdx", sh.get("subqIdx", 0))
+        sh["hintCount"] = ch.get("hintCount", sh.get("hintCount", 0))
+    qid = str(sess["current_question"]["id"])
+    if sh.get("question_id") != qid:
+        sh = {"subqIdx": 0, "hintCount": 0,
+              "totalSubqs": len(_get_subquestions(qid)) or 1,
+              "question_id": qid}
     sess["hint_state"] = sh
     return jsonify(_handle_hint(sess).get_json())
 
 @app.route("/stream_chat", methods=["POST"])
 def stream():
     body = request.get_json(force=True) or {}
-    sid, msg = body.get("session_id",""), body.get("message","").strip()
-    if sid not in sessions: return jsonify({"error":"Έληξε."}),400
-    sess = sessions[sid]; sess["messages"].append({"role":"user","content":msg})
+    sid, msg = body.get("session_id", ""), body.get("message", "").strip()
+    if sid not in sessions: return jsonify({"error": "Έληξε."}), 400
+    sess = sessions[sid]; sess["messages"].append({"role": "user", "content": msg})
     def gen():
         full = ""
         try:
-            for c in deepseek_client.chat.completions.create(model="deepseek-chat",messages=sess["messages"].copy(),temperature=0.2,max_tokens=500,stream=True):
+            for c in deepseek_client.chat.completions.create(
+                    model="deepseek-chat", messages=sess["messages"].copy(),
+                    temperature=0.2, max_tokens=500, stream=True):
                 if c.choices and c.choices[0].delta.content:
-                    t=c.choices[0].delta.content; full+=t
-                    yield f"data: {json.dumps({'token':t})}\n\n"
-            yield f"data: {json.dumps({'done':True,'full_reply':full})}\n\n"
-            sess["messages"].append({"role":"assistant","content":full})
+                    t = c.choices[0].delta.content; full += t
+                    yield f"data: {json.dumps({'token': t})}\n\n"
+            yield f"data: {json.dumps({'done': True, 'full_reply': full})}\n\n"
+            sess["messages"].append({"role": "assistant", "content": full})
         except Exception as e:
-            yield f"data: {json.dumps({'error':str(e)})}\n\n"
-    return Response(stream_with_context(gen()),mimetype="text/event-stream",headers={"Cache-Control":"no-cache","X-Accel-Buffering":"no"})
+            yield f"data: {json.dumps({'error': str(e)})}\n\n"
+    return Response(stream_with_context(gen()), mimetype="text/event-stream",
+                    headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"})
 
 # ── Startup
 load_data()
@@ -488,6 +566,8 @@ logger.info(f"App ready — {len(exam_data)} questions")
 
 if __name__ == "__main__":
     import argparse
-    p = argparse.ArgumentParser(); p.add_argument("--port",type=int,default=5050); p.add_argument("--debug",action="store_true")
+    p = argparse.ArgumentParser()
+    p.add_argument("--port", type=int, default=5050)
+    p.add_argument("--debug", action="store_true")
     a = p.parse_args()
-    app.run(host="0.0.0.0",port=a.port,debug=a.debug)
+    app.run(host="0.0.0.0", port=a.port, debug=a.debug)

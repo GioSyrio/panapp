@@ -36,8 +36,18 @@ data/trapeza_data_1_3_218/items_raw.json
 data/trapeza_data_1_3_218/questions.json
 data/trapeza_data_1_3_218/tree_data.json
 data/trapeza_data_1_3_218/questions.json.backup
-# Math raw PDFs (101MB) — don't push
+
+# All raw files for ALL subjects (PDFs, DOCs, ZIPs — huge, downloadable)
 data/subjects/mathematics/raw/
+data/subjects/informatics/raw/
+data/subjects/*/raw/
+
+# Raw data files (downloadable from API anytime)
+data/subjects/*/items_raw.json
+data/subjects/*/tree_data.json
+
+# Math diagram PNGs (extracted from PDFs — local only)
+static/images/math_diagrams/
 
 # Scraper output folders
 trapeza_data_1_3_17/

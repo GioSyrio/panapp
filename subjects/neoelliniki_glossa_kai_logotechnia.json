@@ -1,0 +1,37 @@
+{
+  "id": "neoelliniki_glossa_kai_logotechnia",
+  "name": "Νεοελληνική Γλώσσα και Λογοτεχνία",
+  "icon": "📚",
+  "parts": [
+    "Θέμα Α",
+    "Θέμα Β",
+    "Θέμα Γ",
+    "Θέμα Δ"
+  ],
+  "points_range": [
+    10,
+    25
+  ],
+  "exam_duration_minutes": 180,
+  "prompt_file": "prompts/neoelliniki_glossa_kai_logotechnia.py",
+  "track": "stem",
+  "section_types": [
+    "section_header",
+    "sub_question",
+    "points",
+    "text",
+    "diagram",
+    "table"
+  ],
+  "ui": {
+    "app_title": "Πανελλαδικές AI Tutor",
+    "header_subtitle": "Νεοελληνική Γλώσσα και Λογοτεχνία • Θέματα",
+    "input_placeholder": "Γράψε τη σκέψη σου ή ρώτα κάτι...",
+    "start_title": "Έτοιμος για εξάσκηση;",
+    "start_description": "Θέματα υψηλής πιθανότητας βασισμένα σε στατιστική ανάλυση."
+  },
+  "data": {
+    "data_dir": "data/subjects/neoelliniki_glossa_kai_logotechnia",
+    "source_file": "items_raw.json"
+  }
+}
