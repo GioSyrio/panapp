@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build questions_v2.json for Physics from DOCX files"""
+"""Build questions_v2.json for Physics from DOCX files — preserves hints"""
 import json, os, re, html as _html
 from docx import Document
 
@@ -25,34 +25,38 @@ for q in v2:
         t = p.text.strip()
         if not t: continue
         
-        # Section header
         if re.match(r'^ΘΕΜΑ\s+[Α-Δ]', t):
             html.append(f'<div class="sec-header">{esc(t)}</div>')
-        # Points
         elif re.match(r'^Μονάδες\s+\d+', t):
             m = re.search(r'Μονάδες\s+(\d+)', t)
             html.append(f'<div class="points-chip">⭐ {m.group(1)} μονάδες</div>')
-        # Sub-question (4.1, 4.2, β), etc)
-        elif re.match(r'^(\d+\.\d+|[α-ωΑ-Ω])\)', t):
-            m = re.match(r'^((\d+\.\d+|[α-ωΑ-Ω]))\)\s*(.*)', t)
+        elif re.match(r'^(\d+\.\d+|[α-ωΑ-Ω])[\s\)\.]', t):
+            m = re.match(r'^((\d+\.\d+|[α-ωΑ-Ω]))[\s\)\.]*\s*(.*)', t)
             if m:
                 num = m.group(1)
                 text = m.group(3)
                 html.append(f'<div class="subq"><span class="subq-num">{esc(num)})</span> <span class="subq-text">{esc(text)}</span></div>')
-            else:
-                html.append(f'<p class="text-content">{esc(t)}</p>')
-        # Description text
         else:
             html.append(f'<p class="text-content">{esc(t)}</p>')
     
     q["question_html"] = "\n".join(html)
     q["question_html_parts"] = html
+    
+    # Ensure required fields exist
+    if not q.get("question_text"):
+        text = re.sub(r'<[^>]+>', ' ', q["question_html"])
+        q["question_text"] = re.sub(r'\s+', ' ', text).strip()[:3000]
+    try: q["year"] = int(q.get("year", 0))
+    except: q["year"] = 2022
+    if not q.get("points"):
+        pts = re.findall(r'⭐ (\d+) μονάδες', q["question_html"])
+        q["points"] = sum(int(p) for p in pts) if pts else 25
+    
     rebuilt += 1
 
 with open(V2_FILE, "w", encoding="utf-8") as f:
     json.dump(v2, f, ensure_ascii=False, indent=2)
 
-print(f"Rebuilt {rebuilt}/{len(v2)} questions")
-# Verify
 q0 = v2[0]
-print(q0.get("question_html","")[:400])
+classes = set(re.findall(r'class="([^"]+)"', q0.get("question_html","")))
+print(f"Rebuilt {rebuilt}/{len(v2)}, hints intact: {bool(q0.get('hints'))}, classes: {classes}")
