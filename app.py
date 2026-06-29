@@ -214,7 +214,14 @@ def _is_student_answer(msg, subject_id):
     if len(msg) > 100 and '\n' in msg:
         return True
     if subject_id == "mathematics":
-        return any(k in msg.lower() for k in MATH_ANSWER_KW)
+        # Math keywords OR short math expressions (operators/symbols)
+        if any(k in msg.lower() for k in MATH_ANSWER_KW):
+            return True
+        # Detect math expressions: contains =, +, -, ^, fractions, numbers + x
+        stripped = msg.strip().replace(' ', '')
+        if len(stripped) <= 50 and re.search(r'[\+\-\*/^=√∫∑∏]|\\frac|\\lim|\\int|\\sum|\\\\sqrt|[0-9]+[xXyYzZ]|[xXyYzZ]\^|[xXyYzZ]\d', stripped):
+            return True
+        return False
     else:
         return any(k in msg.lower() for k in CODE_ANSWER_KW)
 
@@ -340,7 +347,15 @@ def chat():
         # ── Conversational mode ──
         try:
             ms = sess["messages"].copy()
-            ms[-1] = {"role": "user", "content": msg + subq_ctx + hint_ctx}
+            # Inject fact-check context if student looks like they gave a math answer
+            fact_check = ""
+            if subj_id == "mathematics" and _is_student_answer(msg, subj_id):
+                # The message was flagged as conversational but looks like math — add guardrail
+                qhtml = _load_v2_data(subj_id).get(str(sess["current_question"]["id"]), {}).get("answer_html", "")
+                if qhtml:
+                    plain_ans = re.sub(r'<[^>]+>', ' ', qhtml)[:500].strip()
+                    fact_check = f"\n\n[ΠΡΟΣΟΧΗ: Ο μαθητής έγραψε μια μαθηματική απάντηση. Αν είναι ΛΑΘΟΣ, οδήγησέ τον στη σωστή κατεύθυνση. Μην πεις 'Σωστά!' αν δεν είναι. Σχετική λύση: {plain_ans}]"
+            ms[-1] = {"role": "user", "content": msg + subq_ctx + hint_ctx + fact_check}
             resp = call_deepseek_with_retry(deepseek_client.chat.completions.create,
                                             model="deepseek-chat", messages=ms, temperature=0.4, max_tokens=500)
             reply = strip_reasoning(resp.choices[0].message.content or "Συγνώμη, κάτι πήγε στραβά.")
