@@ -503,6 +503,11 @@ def guidelines():
     cfg = load_subject_config(subject_id)
     data_dir = os.path.join(BASE_DIR, cfg.get("data", {}).get("data_dir", "data/subjects/mathematics"))
     gfile = os.path.join(data_dir, "sos_guidelines.json")
+    # Fallback: also check subject-specific directory
+    if not os.path.exists(gfile):
+        gfile2 = os.path.join(BASE_DIR, "data", "subjects", subject_id, "sos_guidelines.json")
+        if os.path.exists(gfile2):
+            gfile = gfile2
     if not os.path.exists(gfile):
         return jsonify({"available": False, "message": "Δεν έχει δημιουργηθεί ακόμα ο οδηγός SOS για αυτό το μάθημα."})
     with open(gfile, encoding="utf-8") as f:
