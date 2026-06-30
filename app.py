@@ -219,13 +219,17 @@ def call_deepseek_with_retry(fn, *args, max_retries=1, **kwargs):
 
 def _is_student_answer(msg, subject_id):
     """Detect if the message is a student answer submission."""
+    # Question marks → conversational, not answer
+    if '?' in msg or ';' in msg:
+        return False
+    # Greek question/help words → conversational
+    if any(qw in msg.lower() for qw in ['πώς', 'πως', 'τι ', 'γιατί', 'γιατι', 'πότε', 'ποτε', 'μπορείς', 'μπορεις', 'βοήθα', 'βοηθα', 'δεν ξέρω', 'δεν ξερω', 'δεν καταλαβαίν', 'δεν καταλαβαιν', 'εξήγησ', 'εξηγησ']):
+        return False
     if len(msg) > 100 and '\n' in msg:
         return True
     if subject_id == "mathematics":
-        # Math keywords OR short math expressions (operators/symbols)
         if any(k in msg.lower() for k in MATH_ANSWER_KW):
             return True
-        # Detect math expressions: contains =, +, -, ^, fractions, numbers + x
         stripped = msg.strip().replace(' ', '')
         if len(stripped) <= 50 and re.search(r'[\+\-\*/^=√∫∑∏]|\\frac|\\lim|\\int|\\sum|\\\\sqrt|[0-9]+[xXyYzZ]|[xXyYzZ]\^|[xXyYzZ]\d', stripped):
             return True
@@ -265,10 +269,14 @@ def start_session():
             trend_context = build_trend_context(ranked, details, top_n=5)
     if not exam_data:
         return jsonify({"error": "Δεν φορτώθηκαν τα δεδομένα. Δοκίμασε αργότερα."}), 500
+    # Support topic-based filtering
+    filter_topic = body.get("topic", "").strip()
     question, tag = None, None
     for tg, _ in ranked[:15]:
         for q in exam_data:
             if q["part"] in parts and tg in q.get("conceptual_tags", []):
+                if filter_topic and filter_topic not in tg and filter_topic not in str(q.get("conceptual_tags", [])):
+                    continue
                 question, tag = q, tg; break
         if question: break
     if not question:
@@ -488,6 +496,18 @@ def stats():
 def topics():
     return jsonify({"topics": [{"topic": t, "priority": round(s, 2)} for t, s in ranked[:10]],
                     "total_topics": len(ranked)})
+
+@app.route("/api/guidelines")
+def guidelines():
+    subject_id = request.args.get("subject", "mathematics")
+    cfg = load_subject_config(subject_id)
+    data_dir = os.path.join(BASE_DIR, cfg.get("data", {}).get("data_dir", "data/subjects/mathematics"))
+    gfile = os.path.join(data_dir, "sos_guidelines.json")
+    if not os.path.exists(gfile):
+        return jsonify({"available": False, "message": "Δεν έχει δημιουργηθεί ακόμα ο οδηγός SOS για αυτό το μάθημα."})
+    with open(gfile, encoding="utf-8") as f:
+        data = json.load(f)
+    return jsonify({"available": True, "guidelines": data})
 
 @app.route("/health")
 def health():

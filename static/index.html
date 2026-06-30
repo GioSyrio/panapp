@@ -127,6 +127,20 @@
         .sq-done-btn { padding: 6px 16px; border-radius: 18px; border: 1px solid var(--green); background: transparent; color: var(--green); font-size: 0.76rem; font-weight: 700; cursor: pointer; }
         .sq-done-btn:hover { background: var(--green); color: #000; }
         .equation-display { margin: 14px 0; padding: 14px 18px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow-x: auto; text-align: center; font-size: 1rem; }
+        /* Cheatsheet */
+        .cheatsheet { max-width: 1000px; margin: 0 auto; padding: 30px 20px; }
+        .cheatsheet h2 { font-size: 1.3rem; margin-bottom: 8px; }
+        .cheatsheet .cs-layout { display: flex; gap: 20px; margin-top: 20px; }
+        .cheatsheet .cs-nav { flex: 0 0 240px; display: flex; flex-direction: column; gap: 4px; max-height: 60vh; overflow-y: auto; }
+        .cheatsheet .cs-nav-item { padding: 10px 14px; border-radius: 8px; cursor: pointer; font-size: 0.82rem; font-weight: 600; color: var(--text2); border: 1px solid transparent; transition: all 0.2s; }
+        .cheatsheet .cs-nav-item:hover { background: var(--surface); border-color: var(--border); color: var(--text); }
+        .cheatsheet .cs-nav-item.active { background: var(--surface); border-color: var(--accent); color: var(--accent); }
+        .cheatsheet .cs-content { flex: 1; min-width: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; max-height: 60vh; overflow-y: auto; }
+        .cheatsheet .cs-section { margin-bottom: 20px; }
+        .cheatsheet .cs-section h3 { font-size: 0.95rem; font-weight: 800; margin-bottom: 10px; color: var(--accent); }
+        .cheatsheet .cs-item { padding: 6px 0; font-size: 0.85rem; line-height: 1.6; }
+        .cheatsheet .cs-btn-row { margin-top: 24px; text-align: center; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        @media (max-width: 700px) { .cheatsheet .cs-layout { flex-direction: column; } .cheatsheet .cs-nav { flex: auto; max-height: none; flex-direction: row; flex-wrap: wrap; gap: 6px; } }
         @media (max-width: 600px) { .header h1 { font-size: 1.3rem; } .msg { max-width: 94%; } .input-row { flex-direction: column; } }
     </style>
 </head>
@@ -161,12 +175,33 @@
                 </button>
             </div>
         </div>
-        <button class="start-btn" id="btn-start" onclick="start()">🚀 Έναρξη</button>
+        <button class="start-btn" id="btn-start" onclick="loadCheatsheet()">🚀 Έναρξη</button>
+    </div>
+    <div id="cheatsheet" style="display:none" class="cheatsheet">
+        <div style="text-align:center;margin-bottom:16px;">
+            <h2 id="cs-title">📚 Οδηγός SOS</h2>
+            <p style="color:var(--text2);font-size:0.85rem;" id="cs-subtitle"></p>
+        </div>
+        <div class="cs-layout">
+            <div class="cs-nav" id="cs-nav"></div>
+            <div class="cs-content" id="cs-content">
+                <div id="cs-loading" style="text-align:center;padding:40px;color:var(--text2);">⏳ Φόρτωση οδηγού...</div>
+                <div id="cs-empty" style="display:none;text-align:center;padding:40px;color:var(--text2);">
+                    📭 Δεν υπάρχει ακόμα οδηγός SOS για αυτό το μάθημα.<br><br>
+                    <button class="start-btn" onclick="start()" style="font-size:0.9rem;padding:10px 30px;">🚀 Έναρξη Εξάσκησης</button>
+                </div>
+                <div id="cs-sections" style="display:none;"></div>
+                <div class="cs-btn-row" id="cs-buttons" style="display:none;">
+                    <button class="start-btn" onclick="start()" style="font-size:0.9rem;padding:10px 30px;">🚀 Έναρξη Εξάσκησης</button>
+                    <button class="qbtn" onclick="skipCheatsheet()">Παράβλεψη →</button>
+                </div>
+            </div>
+        </div>
     </div>
     <div id="session" style="display:none">
         <div class="stats-bar">
             <div class="stat" id="st-ai"></div>
-            <div class="stat">🆔 <span id="st-qid">—</span></div>
+            <div class="stat">🆔 <span id="st-qid">—</span> <span style="cursor:pointer;font-size:0.7rem;" onclick="copyQid()" title="Αντιγραφή κωδικού">📋</span></div>
             <div class="stat">✅ <span class="val" id="st-done">0</span></div>
             <div class="stat">📚 <span class="val" id="st-left">155</span></div>
             <div class="stat">⭐ <span class="val" id="st-pts">0</span></div>
@@ -217,7 +252,6 @@ function selectSubject(subj, el) {
     currentSubject = subj;
     document.querySelectorAll('.subj-opt').forEach(function(b) { b.classList.remove('active'); });
     el.classList.add('active');
-    // Update header label
     var labels = {informatics:'Πληροφορική • Θέματα 2 & 4', mathematics:'Μαθηματικά • Θέματα Α-Δ', fysiki_prosanatolismoy:'Φυσική • Θέματα Α-Δ'};
     document.getElementById('subj-label').textContent = labels[subj] || subj;
     try { localStorage.setItem('panapp_subject', subj); } catch(e) {}
@@ -288,7 +322,13 @@ async function send() {
         document.getElementById('typing').style.display = 'none';
         if (d.end_session) { addMsg('system', d.reply); end(); return; }
         if (d.next_question) { addMsg('system','⏭ Επόμενο θέμα...'); await next(); return; }
-        if (d.is_solution) { addSolution(d.answer_html || d.reply || ''); }
+        if (d.is_solution) {
+            if (d.answer_html && d.answer_html.length > 30) {
+                addSolution(d.answer_html);
+            } else {
+                addMsg('system', '📭 Η λύση δεν είναι διαθέσιμη ακόμα για αυτή την άσκηση. Ρώτα το AI να σε βοηθήσει!');
+            }
+        }
         else if (d.evaluation) { renderEvaluation(d.evaluation); }
         else if (d.reply) { addMsg(d.no_ai ? 'system' : 'ai', d.reply); }
     } catch(e) { document.getElementById('typing').style.display = 'none'; addMsg('system','⚠ Σφάλμα: '+e.message); }
@@ -484,6 +524,13 @@ function updateStats(s) {
 }
 
 function end() {
+    // Show session summary
+    var done = parseInt(document.getElementById('st-done').textContent) || 0;
+    var pts = parseInt(document.getElementById('st-pts').textContent) || 0;
+    var msg = done > 0 
+        ? '📊 Σύνοψη: Ολοκλήρωσες ' + done + ' θέματα με ' + pts + ' μονάδες. Συνέχισε έτσι! 🎓'
+        : '👋 Η συνεδρία τερματίστηκε. Καλή επιτυχία!';
+    addMsg('system', msg);
     // Clear persisted progress on intentional end
     try { localStorage.removeItem('panapp_progress'); } catch(e) {}
     document.getElementById('input').disabled = true;
@@ -494,7 +541,134 @@ function end() {
         document.getElementById('session').style.display = 'none';
         document.getElementById('messages').innerHTML = '';
         document.getElementById('btn-start').disabled = false;
-    }, 1500);
+    }, 2500);
+}
+
+// Copy question ID to clipboard
+function copyQid() {
+    var qid = document.getElementById('st-qid').textContent;
+    if (qid && qid !== '—') {
+        navigator.clipboard.writeText(qid).then(function() {
+            var el = document.getElementById('st-qid');
+            var orig = el.textContent;
+            el.textContent = '✓ Αντιγράφηκε!';
+            setTimeout(function() { el.textContent = orig; }, 1500);
+        }).catch(function() {});
+    }
+}
+
+// Cheatsheet loading
+var csData = null;
+async function loadCheatsheet() {
+    document.getElementById('start-screen').style.display = 'none';
+    document.getElementById('cheatsheet').style.display = 'block';
+    document.getElementById('cs-title').textContent = '📚 Οδηγός SOS — ' + (currentSubject === 'mathematics' ? 'Μαθηματικά Προσανατολισμού' : currentSubject);
+    document.getElementById('cs-loading').style.display = 'block';
+    document.getElementById('cs-empty').style.display = 'none';
+    document.getElementById('cs-sections').style.display = 'none';
+    document.getElementById('cs-buttons').style.display = 'none';
+    try {
+        var r = await fetch('/api/guidelines?subject=' + currentSubject);
+        var g = await r.json();
+        if (!g.available || !g.guidelines || !g.guidelines.chapters || g.guidelines.chapters.length === 0) {
+            document.getElementById('cs-loading').style.display = 'none';
+            document.getElementById('cs-empty').style.display = 'block';
+            return;
+        }
+        csData = g.guidelines;
+        document.getElementById('cs-subtitle').textContent = csData.generated_at ? 'Ενημερώθηκε: ' + csData.generated_at : '';
+        renderCheatsheetNav();
+        if (csData.chapters.length > 0) selectCheatsheetChapter(0);
+        document.getElementById('cs-loading').style.display = 'none';
+        document.getElementById('cs-sections').style.display = 'block';
+        document.getElementById('cs-buttons').style.display = 'flex';
+    } catch(e) {
+        document.getElementById('cs-loading').style.display = 'none';
+        document.getElementById('cs-empty').style.display = 'block';
+    }
+}
+function renderCheatsheetNav() {
+    var nav = document.getElementById('cs-nav');
+    var html = '';
+    csData.chapters.forEach(function(ch, i) {
+        html += '<div class="cs-nav-item" onclick="selectCheatsheetChapter(' + i + ')" id="cs-nav-' + i + '">' + ch.id + ' ' + ch.title + '</div>';
+    });
+    // Global sections
+    var globalSections = [];
+    if (csData.general_tips && csData.general_tips.length > 0) globalSections.push({id: -1, label: '⭐ Γενικές Συμβουλές'});
+    if (csData.graph_tips && csData.graph_tips.length > 0) globalSections.push({id: -2, label: '📐 f\', f\'\' & Γραφική'});
+    if (csData.key_theorems && csData.key_theorems.length > 0) globalSections.push({id: -3, label: '📖 Θεωρήματα SOS'});
+    if (csData.top_tools && csData.top_tools.length > 0) globalSections.push({id: -4, label: '🛠 Top Εργαλεία'});
+    if (csData.exam_strategy) globalSections.push({id: -5, label: '📝 Στρατηγική'});
+    globalSections.forEach(function(gs) {
+        html += '<div class="cs-nav-item" onclick="selectCheatsheetChapter(' + gs.id + ')" id="cs-nav-' + gs.id + '" style="margin-top:8px;border-top:1px solid var(--border);padding-top:14px;">' + gs.label + '</div>';
+    });
+    nav.innerHTML = html;
+}
+function selectCheatsheetChapter(idx) {
+    var items = document.querySelectorAll('.cs-nav-item');
+    for (var i = 0; i < items.length; i++) items[i].classList.remove('active');
+    var target = document.getElementById('cs-nav-' + idx);
+    if (target) target.classList.add('active');
+    var content = document.getElementById('cs-sections');
+    var html = '';
+
+    if (idx === -1) {
+        html += '<div class="cs-section"><h3>⭐ Γενικές Συμβουλές SOS</h3>';
+        csData.general_tips.forEach(function(t) { html += '<div class="cs-item">💡 ' + t + '</div>'; });
+        html += '</div>';
+    } else if (idx === -2) {
+        html += '<div class="cs-section"><h3>📐 Πώς τα f\' και f\'\' δείχνουν τη γραφική παράσταση</h3>';
+        csData.graph_tips.forEach(function(t) { html += '<div class="cs-item">' + t + '</div>'; });
+        html += '</div>';
+    } else if (idx === -3) {
+        html += '<div class="cs-section"><h3>📖 Θεωρήματα SOS — Πότε χρησιμοποιείται το καθένα</h3>';
+        csData.key_theorems.forEach(function(t) { html += '<div class="cs-item">📌 ' + t + '</div>'; });
+        html += '</div>';
+    } else if (idx === -4) {
+        html += '<div class="cs-section"><h3>🛠 Top Εργαλεία — Αυτά που λύνουν το 80% των θεμάτων</h3>';
+        csData.top_tools.forEach(function(t) { html += '<div class="cs-item">🔧 ' + t + '</div>'; });
+        html += '</div>';
+    } else if (idx === -5) {
+        html += '<div class="cs-section"><h3>📝 Στρατηγική Εξέτασης</h3>';
+        html += '<div class="cs-item">' + csData.exam_strategy + '</div>';
+        html += '</div>';
+    } else {
+        var ch = csData.chapters[idx];
+        html += '<div class="cs-section"><h3>' + ch.id + ' — ' + ch.title + '</h3>';
+        html += '<div style="color:var(--text2);font-size:0.75rem;margin-bottom:16px;">' + ch.question_count + ' θέματα</div>';
+        if (ch.thema_b_tools) {
+            html += '<div class="cs-item" style="background:var(--surface2);padding:8px 12px;border-radius:8px;margin-bottom:12px;">🎯 <b>Θέμα Β:</b> ' + ch.thema_b_tools + '</div>';
+        }
+        if (ch.thema_cd_tools) {
+            html += '<div class="cs-item" style="background:var(--surface2);padding:8px 12px;border-radius:8px;margin-bottom:12px;">🎯 <b>Θέμα Γ/Δ:</b> ' + ch.thema_cd_tools + '</div>';
+        }
+        if (ch.key_concepts && ch.key_concepts.length > 0) {
+            html += '<h3>🔑 SOS Έννοιες</h3>';
+            ch.key_concepts.forEach(function(c) { html += '<div class="cs-item">' + c + '</div>'; });
+        }
+        if (ch.traps && ch.traps.length > 0) {
+            html += '<h3>⚠️ Παγίδες που Πονάνε</h3>';
+            ch.traps.forEach(function(t) { html += '<div class="cs-item">' + t + '</div>'; });
+        }
+        if (ch.patterns && ch.patterns.length > 0) {
+            html += '<h3>📝 SOS Μοτίβο</h3>';
+            ch.patterns.forEach(function(p) { html += '<div class="cs-item">' + p + '</div>'; });
+        }
+        if (ch.must_know) {
+            html += '<h3>💡 Το Απόλυτο Takeaway</h3>';
+            html += '<div class="cs-item" style="font-weight:700;color:var(--accent);">' + ch.must_know + '</div>';
+        }
+        html += '</div>';
+    }
+    content.innerHTML = html;
+    setTimeout(function() {
+        try { if (typeof renderMathInElement === 'function') renderMathInElement(content, { delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}], throwOnError: false }); } catch(e) {}
+    }, 100);
+}
+function skipCheatsheet() {
+    document.getElementById('cheatsheet').style.display = 'none';
+    start();
 }
 
 // Restore previous subject and progress on page load
