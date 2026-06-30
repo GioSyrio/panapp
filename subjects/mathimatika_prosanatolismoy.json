@@ -13,7 +13,7 @@
     25
   ],
   "exam_duration_minutes": 180,
-  "prompt_file": "prompts/mathimatika_prosanatolismoy.py",
+  "prompt_file": "prompts/mathematics.py",
   "track": "stem",
   "section_types": [
     "section_header",
@@ -31,7 +31,8 @@
     "start_description": "Θέματα υψηλής πιθανότητας βασισμένα σε στατιστική ανάλυση."
   },
   "data": {
-    "data_dir": "data/subjects/mathimatika_prosanatolismoy",
-    "source_file": "items_raw.json"
+    "data_dir": "data/subjects/mathematics",
+    "source_file": "questions_classified.json",
+    "built_file": "questions_v2.json"
   }
 }

@@ -196,6 +196,7 @@
                     <button class="qbtn" onclick="currentHint()">💡 Υπόδειξη</button>
                     <span class="qbtn" id="chip-help" onclick="quickChip('Δεν ξέρω πώς να ξεκινήσω')">😰 Δάσκαλε βοήθα!</span>
                     <button class="qbtn" onclick="quick('Δείξε μου μια παρόμοια άσκηση')">📋 Παρόμοια</button>
+                    <button class="qbtn" onclick="openGraph()">📈 Γράφημα</button>
                     <button class="qbtn" id="btn-prev" onclick="back()" disabled>⬅ Πίσω</button>
                     <button class="qbtn" onclick="quick('next')">⏭ Επόμενο</button>
                 </div>
@@ -216,6 +217,10 @@ function selectSubject(subj, el) {
     currentSubject = subj;
     document.querySelectorAll('.subj-opt').forEach(function(b) { b.classList.remove('active'); });
     el.classList.add('active');
+    // Update header label
+    var labels = {informatics:'Πληροφορική • Θέματα 2 & 4', mathematics:'Μαθηματικά • Θέματα Α-Δ', fysiki_prosanatolismoy:'Φυσική • Θέματα Α-Δ'};
+    document.getElementById('subj-label').textContent = labels[subj] || subj;
+    try { localStorage.setItem('panapp_subject', subj); } catch(e) {}
 }
 
 function toggleDark() {
@@ -251,7 +256,7 @@ async function start() {
         document.getElementById('start-screen').style.display = 'none';
         document.getElementById('session').style.display = 'block';
         renderQuestion(q);
-        updateStats({completed:0, total_points:0, remaining:155});
+        updateStats({completed:0, total_points:0, remaining: d.total_questions || 0});
         addMsg('system', '📝 Γράψε την απάντησή σου ή ξεκίνα με ερωτήσεις.');
     } catch(e) { alert('Σφάλμα: ' + e.message); document.getElementById('btn-start').disabled = false; }
 }
@@ -278,7 +283,8 @@ async function send() {
     addMsg('user', msg);
     document.getElementById('typing').style.display = 'block';
     try {
-        const d = await api('/api/chat', {session_id:sid, message:msg});
+        const activeSubq = sqList && activeSqIdx < sqList.length && sqList[activeSqIdx] ? {number: sqList[activeSqIdx].number, content: q && q.sub_questions && q.sub_questions[activeSqIdx] ? q.sub_questions[activeSqIdx].content : ''} : {};
+        const d = await api('/api/chat', {session_id:sid, message:msg, active_subq: activeSubq});
         document.getElementById('typing').style.display = 'none';
         if (d.end_session) { addMsg('system', d.reply); end(); return; }
         if (d.next_question) { addMsg('system','⏭ Επόμενο θέμα...'); await next(); return; }
@@ -302,10 +308,16 @@ function renderEvaluation(ev) {
     const icons = {correct:'✅', partially_correct:'⚠️', incorrect:'❌'};
     const labels = {correct:'ΣΩΣΤΟ!', partially_correct:'ΜΕΡΙΚΩΣ ΣΩΣΤΟ', incorrect:'ΛΑΘΟΣ'};
     const cls = {correct:'eval-ok', partially_correct:'eval-warn', incorrect:'eval-err'};
+    // Preserve $...$ for KaTeX while still HTML-escaping other content
+    const safeMath = (s) => {
+        const parts = s.split(/(\$[^$]+\$)/g);
+        return parts.map(p => p.startsWith('$') && p.endsWith('$') ? p : E(p)).join('');
+    };
     d.innerHTML = `<div class="eval-status ${cls[ev.status]||'eval-err'}">${icons[ev.status]||'?'} ${labels[ev.status]||''}</div>
-        <div class="eval-critique">${E(ev.critique||'')}</div>
-        <div class="eval-hint">💡 ${E(ev.hint||'')}</div>`;
+        <div class="eval-critique">${safeMath(ev.critique||'')}</div>
+        <div class="eval-hint">💡 ${safeMath(ev.hint||'')}</div>`;
     c.appendChild(d); c.scrollTop = c.scrollHeight;
+    try { if (typeof renderMathInElement === 'function') { try { renderMathInElement(d, { delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}], throwOnError: false }); } catch(ke) { /* KaTeX failed silently */ } } } catch(e) {}
 }
 
 function addMsg(role, text) {
@@ -338,15 +350,21 @@ let sqList = [];
 let activeSqIdx = 0;
 
 function buildSubquestionTracker() {
-    const body = document.getElementById('q-body');
-    const subqs = body.querySelectorAll('.subq');
-    sqList = [];
-    subqs.forEach(sq => {
-        const num = sq.querySelector('.subq-num')?.textContent || '?';
-        sqList.push({ number: num, done: false });
-    });
-    if (sqList.length === 0) sqList.push({ number: '?', done: false });
+    // Prefer data from API; fall back to DOM scraping
+    if (q && q.sub_questions && q.sub_questions.length > 0) {
+        sqList = q.sub_questions.map(function(sq) { return { number: sq.number, done: false }; });
+    } else {
+        const body = document.getElementById('q-body');
+        const subqs = body.querySelectorAll('.subq');
+        sqList = [];
+        subqs.forEach(function(sq) {
+            const num = sq.querySelector('.subq-num')?.textContent || '?';
+            sqList.push({ number: num, done: false });
+        });
+        if (sqList.length === 0) sqList.push({ number: '?', done: false });
+    }
     activeSqIdx = 0;
+    hintState = { subqIdx: 0, hintCount: 0, totalSubqs: sqList.length };
     renderTracker();
 }
 
@@ -381,6 +399,8 @@ function selectSubq(i) {
     hintState = { subqIdx: i, hintCount: 0, totalSubqs: sqList.length };
     updateChipLabels();
     renderTracker();
+    // Sync hint state to backend so hints are served for correct sub-question
+    if (sid) api('/api/session/hint', {session_id: sid, hint_state: hintState}).catch(function(){});
 }
 
 function markSubqDone() {
@@ -458,10 +478,14 @@ function updateStats(s) {
         document.getElementById('st-done').textContent = s.completed || 0;
         document.getElementById('st-pts').textContent = s.total_points || 0;
         document.getElementById('st-left').textContent = s.remaining || 0;
+        // Persist progress
+        try { localStorage.setItem('panapp_progress', JSON.stringify({completed:s.completed||0, total_points:s.total_points||0, subject:currentSubject, ts:Date.now()})); } catch(e) {}
     }
 }
 
 function end() {
+    // Clear persisted progress on intentional end
+    try { localStorage.removeItem('panapp_progress'); } catch(e) {}
     document.getElementById('input').disabled = true;
     document.getElementById('btn-send').disabled = true;
     setTimeout(() => {
@@ -473,11 +497,56 @@ function end() {
     }, 1500);
 }
 
+// Restore previous subject and progress on page load
+(function() {
+    try {
+        var savedSubj = localStorage.getItem('panapp_subject');
+        if (savedSubj) {
+            currentSubject = savedSubj;
+            var el = document.querySelector('[data-subject=\"' + savedSubj + '\"]');
+            if (el) selectSubject(savedSubj, el);
+        }
+    } catch(e) {}
+})();
+
+// Session timeout warning (25min — 5min before 30min expiry)
+var _sessionStart = Date.now();
+setInterval(function() {
+    if (!sid) return;
+    var elapsed = (Date.now() - _sessionStart) / 60000;
+    if (elapsed > 25 && elapsed < 30) {
+        var msg = document.getElementById('messages');
+        if (!document.getElementById('timeout-warn')) {
+            var warn = document.createElement('div');
+            warn.id = 'timeout-warn';
+            warn.className = 'msg system';
+            warn.style.cssText = 'background:#451a03;color:var(--amber);border:1px solid var(--amber);align-self:center;text-align:center;';
+            warn.textContent = '⏰ Η συνεδρία λήγει σε λίγα λεπτά. Ολοκλήρωσε την άσκησή σου!';
+            msg.appendChild(warn);
+            msg.scrollTop = msg.scrollHeight;
+        }
+    }
+}, 60000);
+
+// Desmos graph button — open function in new tab
+function openGraph() {
+    if (!q || !q.question_html) return;
+    // Extract f(x)=... from question
+    var match = q.question_html.match(/f\(x\)\s*=\s*\$?([^\$<]+?)\$?[,.<]/);
+    if (!match) match = q.question_html.match(/(?:Δίνεται|Θεωρούμε).*?f\(x\)\s*=\s*\$?([^\$<]+?)\$?/);
+    if (match) {
+        var fx = match[1].replace(/\\\\/g,'\\').replace(/\\,/g,',').trim();
+        window.open('https://www.desmos.com/calculator?lang=el&expression=' + encodeURIComponent('f(x)=' + fx), '_blank');
+    } else {
+        addMsg('system', '📈 Δεν βρέθηκε τύπος συνάρτησης για γράφημα. Δοκίμασε στο https://www.desmos.com/calculator?lang=el');
+    }
+}
+
 document.getElementById('input').addEventListener('keydown', e => {
     if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) { e.preventDefault(); send(); }
 });
 
-const renderMath = () => { try { ['messages','q-body'].forEach(function(id) { var el = document.getElementById(id); if (el) renderMathInElement(el, { delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}], throwOnError: false }); }); } catch(e) {} };
+const renderMath = () => { try { ['messages','q-body'].forEach(function(id) { var el = document.getElementById(id); if (el) { try { renderMathInElement(el, { delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}], throwOnError: false }); } catch(ke) {} } }); } catch(e) {} };
 const _a2 = addMsg; addMsg = function(r,t) { _a2(r,t); setTimeout(renderMath, 50); };
 const _s2 = addSolution; addSolution = function(h) { _s2(h); setTimeout(renderMath, 50); };
 const _e2 = renderEvaluation; renderEvaluation = function(ev) { _e2(ev); setTimeout(renderMath, 50); };

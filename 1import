@@ -1,0 +1,16 @@
+{"ts":"2026-06-21T18:54:15","level":"INFO","msg":"Loaded 155 questions, 54 topics"}
+{"ts":"2026-06-21T18:54:15","level":"INFO","msg":"Loaded 155 questions, 54 topics"}
+{"ts":"2026-06-21T18:54:15","level":"INFO","msg":"Loaded 155 questions, 54 topics"}
+{"ts":"2026-06-21T18:54:15","level":"INFO","msg":"Loaded 155 questions, 54 topics"}
+{"ts":"2026-06-21T18:54:15","level":"INFO","msg":"DeepSeek client ready"}
+{"ts":"2026-06-21T18:54:15","level":"INFO","msg":"DeepSeek client ready"}
+{"ts":"2026-06-21T18:54:15","level":"INFO","msg":"DeepSeek client ready"}
+{"ts":"2026-06-21T18:54:15","level":"INFO","msg":"App ready — 155 questions"}
+{"ts":"2026-06-21T18:54:15","level":"INFO","msg":"DeepSeek client ready"}
+{"ts":"2026-06-21T18:54:15","level":"INFO","msg":"App ready — 155 questions"}
+{"ts":"2026-06-21T18:54:15","level":"INFO","msg":"App ready — 155 questions"}
+{"ts":"2026-06-21T18:54:15","level":"INFO","msg":"App ready — 155 questions"}
+usage: app.py [-h] [--port PORT] [--debug]
+usage: app.py [-h] [--port PORT] [--debug]
+app.py: error: unrecognized arguments: json
+app.py: error: unrecognized arguments: json

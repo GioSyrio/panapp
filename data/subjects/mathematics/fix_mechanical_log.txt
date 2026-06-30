@@ -1,0 +1,41 @@
+Mechanical fixes — 34 qs
+
+  consec_pts: 24
+  text_as_subq: 8
+  corrupt_ocr: 5
+
+Questions:
+  Q23217: consec_pts (10→8)
+  Q23314: consec_pts (11→10)
+  Q23642: consec_pts (10→9)
+  Q28302: corrupt_ocr (6→6)
+  Q28684: corrupt_ocr (13→13)
+  Q23215: consec_pts+text_as_subq (14→12)
+  Q23218: consec_pts (10→9)
+  Q23219: consec_pts (10→9)
+  Q23312: consec_pts (9→8)
+  Q23376: consec_pts (13→12)
+  Q24131: consec_pts (12→11)
+  Q24587: text_as_subq (11→11)
+  Q24759: consec_pts (12→11)
+  Q25745: consec_pts (11→10)
+  Q25766: text_as_subq (16→16)
+  Q26633: text_as_subq (11→11)
+  Q27031: consec_pts (12→10)
+  Q28685: consec_pts (8→7)
+  Q29149: consec_pts (9→8)
+  Q31547: consec_pts (8→7)
+  Q32694: text_as_subq (11→11)
+  Q33588: consec_pts (11→9)
+  Q34024: consec_pts (8→7)
+  Q34025: text_as_subq (10→10)
+  Q36839: corrupt_ocr (5→5)
+  Q34026: consec_pts+text_as_subq (10→7)
+  Q31148: consec_pts (11→10)
+  Q31533: consec_pts (11→10)
+  Q31792: corrupt_ocr (8→8)
+  Q33388: consec_pts+text_as_subq (12→9)
+  Q33596: consec_pts (10→9)
+  Q33634: consec_pts (10→9)
+  Q33648: consec_pts (12→10)
+  Q36816: corrupt_ocr (9→9)

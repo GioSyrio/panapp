@@ -138,6 +138,14 @@ def format_exam_question(question, tag=None, subject_id="informatics"):
     if str(question["id"]) in v2_data:
         result["question_html"] = v2_data[str(question["id"])].get("question_html", "")
         result["answer_html"] = v2_data[str(question["id"])].get("answer_html", "")
+        # Include sub-questions for tracker (from sections data)
+        result["sub_questions"] = [
+            {"number": s["number"], "content": s.get("content", "")}
+            for s in v2_data[str(question["id"])].get("sections", [])
+            if s["type"] == "sub_question"
+        ]
+    else:
+        result["sub_questions"] = []
     dm = _load_diagram_map()
     if str(question["id"]) in dm:
         result["diagram_urls"] = [{"path": d["path"].replace("static/", "", 1), "width": d.get("width"), "height": d.get("height"), "page": d.get("page", 1)} for d in dm[str(question["id"])].get("diagrams", [])]
@@ -297,7 +305,8 @@ def start_session():
     }
     logger.info(f"Session started: {sid[:8]} [{subject_id}]")
     return jsonify({"session_id": sid, "question": format_exam_question(question, tag, subject_id),
-                    "has_ai": deepseek_client is not None, "subject": subject_cfg})
+                    "has_ai": deepseek_client is not None, "subject": subject_cfg,
+                    "total_questions": len(exam_data)})
 
 @app.route("/api/chat", methods=["POST"])
 def chat():
