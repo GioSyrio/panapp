@@ -165,7 +165,7 @@
                     <span class="subj-name">Πληροφορική</span>
                     <span class="subj-desc">ΑΕΠΠ • Θέματα 2 & 4</span>
                 </button>
-                <button class="subj-opt" data-subject="mathematics" onclick="selectSubject('mathematics',this)">
+                <button class="subj-opt" data-subject="mathematics_prosanatolismoy" onclick="selectSubject('mathematics_prosanatolismoy',this)">
                     <span class="subj-icon">📐</span>
                     <span class="subj-name">Μαθηματικά</span>
                     <span class="subj-desc">Προσανατολισμός • Θέματα Α-Δ</span>
@@ -254,7 +254,7 @@ function selectSubject(subj, el) {
     currentSubject = subj;
     document.querySelectorAll('.subj-opt').forEach(function(b) { b.classList.remove('active'); });
     el.classList.add('active');
-    var labels = {informatics:'Πληροφορική • Θέματα 2 & 4', mathematics:'Μαθηματικά • Θέματα Α-Δ', fysiki_prosanatolismoy:'Φυσική • Θέματα Α-Δ'};
+    var labels = {informatics:'Πληροφορική • Θέματα 2 & 4', mathematics_prosanatolismoy:'Μαθηματικά • Θέματα Α-Δ', fysiki_prosanatolismoy:'Φυσική • Θέματα Α-Δ'};
     document.getElementById('subj-label').textContent = labels[subj] || subj;
     try { localStorage.setItem('panapp_subject', subj); } catch(e) {}
 }
@@ -646,7 +646,7 @@ var csData = null;
 async function loadCheatsheet() {
     document.getElementById('start-screen').style.display = 'none';
     document.getElementById('cheatsheet').style.display = 'block';
-    document.getElementById('cs-title').textContent = '📚 Οδηγός SOS — ' + (currentSubject === 'mathematics' ? 'Μαθηματικά Προσανατολισμού' : currentSubject);
+    document.getElementById('cs-title').textContent = '📚 Οδηγός SOS — ' + (currentSubject === 'mathematics_prosanatolismoy' ? 'Μαθηματικά Προσανατολισμού' : currentSubject);
     document.getElementById('cs-loading').style.display = 'block';
     document.getElementById('cs-empty').style.display = 'none';
     document.getElementById('cs-sections').style.display = 'none';

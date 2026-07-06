@@ -26,6 +26,7 @@ Thumbs.db
 playwright*.zip
 
 # Backups
+*.bak
 *.backup
 
 # Large data — don't push attachments (DOCX, PDF, ZIP)
@@ -52,6 +53,13 @@ static/images/math_diagrams/
 
 # Scraper output folders
 trapeza_data_1_3_17/
+
+# Old informatics data path (untracked, preserved locally)
+data/trapeza_data_1_3_218/
+
+# Log files in subject data dirs
+data/subjects/*/*log.txt
+data/subjects/*/formula_fill_log.txt
 
 # WMF formula files — keep PNGs only
 static/images/math_formulas/**/*.wmf

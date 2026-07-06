@@ -227,7 +227,7 @@ def _is_student_answer(msg, subject_id):
         return False
     if len(msg) > 100 and '\n' in msg:
         return True
-    if subject_id == "mathematics":
+    if subject_id in ("mathematics_prosanatolismoy", "mathematics"):
         if any(k in msg.lower() for k in MATH_ANSWER_KW):
             return True
         stripped = msg.strip().replace(' ', '')
@@ -366,7 +366,7 @@ def chat():
             ms = sess["messages"].copy()
             # Inject fact-check context if student looks like they gave a math answer
             fact_check = ""
-            if subj_id == "mathematics" and _is_student_answer(msg, subj_id):
+            if subj_id in ("mathematics_prosanatolismoy", "mathematics") and _is_student_answer(msg, subj_id):
                 # The message was flagged as conversational but looks like math — add guardrail
                 qhtml = _load_v2_data(subj_id).get(str(sess["current_question"]["id"]), {}).get("answer_html", "")
                 if qhtml:
@@ -542,9 +542,9 @@ def jump_question():
 
 @app.route("/api/guidelines")
 def guidelines():
-    subject_id = request.args.get("subject", "mathematics")
+    subject_id = request.args.get("subject", "mathematics_prosanatolismoy")
     cfg = load_subject_config(subject_id)
-    data_dir = os.path.join(BASE_DIR, cfg.get("data", {}).get("data_dir", "data/subjects/mathematics"))
+    data_dir = os.path.join(BASE_DIR, cfg.get("data", {}).get("data_dir", "data/subjects/mathematics_prosanatolismoy"))
     gfile = os.path.join(data_dir, "sos_guidelines.json")
     # Fallback: also check subject-specific directory
     if not os.path.exists(gfile):

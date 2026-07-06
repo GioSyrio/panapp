@@ -119,7 +119,7 @@ def main():
         print(f"ERROR: {v2_file} not found"); return
 
     v2 = json.load(open(v2_file, encoding="utf-8"))
-    is_math = args.subject in ("mathematics", "mathimatika_prosanatolismoy")
+    is_math = args.subject in ("mathematics_prosanatolismoy", "mathematics")
 
     # Group by chapter — adapted for different subject tag formats
     chapters = defaultdict(list)
@@ -146,8 +146,8 @@ def main():
 
     print(f"Found {len(merged)} groups in {args.subject} ({len(v2)} questions)")
 
-    subject_name = {"mathematics": "Μαθηματικά Προσανατολισμού",
-                    "mathimatika_prosanatolismoy": "Μαθηματικά Προσανατολισμού",
+    subject_name = {"mathematics_prosanatolismoy": "Μαθηματικά Προσανατολισμού",
+                    "mathematics": "Μαθηματικά Προσανατολισμού",
                     "informatics": "Πληροφορική",
                     "fysiki_prosanatolismoy": "Φυσική Προσανατολισμού"}.get(args.subject, args.subject)
 

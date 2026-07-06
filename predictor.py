@@ -13,7 +13,7 @@ from collections import defaultdict
 
 CURRENT_YEAR = 2026
 
-DATA_DIR = os.path.join(os.path.dirname(__file__), "data", "trapeza_data_1_3_218")
+DATA_DIR = os.path.join(os.path.dirname(__file__), "data", "subjects", "informatics")
 QUESTIONS_FILE = os.path.join(DATA_DIR, "questions.json")
 
 

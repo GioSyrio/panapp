@@ -14,7 +14,7 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 def validate(subject_id="mathematics"):
     cfg_path = os.path.join(BASE, "subjects", f"{subject_id}.json")
     if not os.path.exists(cfg_path):
-        cfg_path = os.path.join(BASE, "subjects", "informatics.json")
+        cfg_path = os.path.join(BASE, "subjects", "mathematics_prosanatolismoy.json")
     cfg = json.load(open(cfg_path, encoding="utf-8"))
     
     data_dir = os.path.join(BASE, cfg.get("data", {}).get("data_dir", f"data/subjects/{subject_id}"))
@@ -129,6 +129,6 @@ def validate(subject_id="mathematics"):
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
-    p.add_argument("--subject", default="mathematics")
+    p.add_argument("--subject", default="mathematics_prosanatolismoy")
     args = p.parse_args()
     sys.exit(0 if validate(args.subject) else 1)

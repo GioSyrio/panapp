@@ -14,7 +14,7 @@ import json, os, re, sys, argparse
 from docx import Document
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_DIR = os.path.join(BASE_DIR, "data", "subjects", "mathematics")
+DATA_DIR = os.path.join(BASE_DIR, "data", "subjects", "mathematics_prosanatolismoy")
 DOC_DIR = os.path.join(DATA_DIR, "raw", "docx")
 QUESTIONS_FILE = os.path.join(DATA_DIR, "questions_classified.json")
 OUTPUT_FILE = os.path.join(DATA_DIR, "questions_v2.json")
