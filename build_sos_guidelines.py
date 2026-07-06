@@ -120,7 +120,8 @@ def main():
 
     v2 = json.load(open(v2_file, encoding="utf-8"))
     cfg = json.load(open(os.path.join(BASE, "subjects", f"{args.subject}.json"), encoding="utf-8"))
-    is_math = cfg.get("track") == "stem"
+    # is_math = only for subjects that explicitly use LaTeX math (not all stem)
+    is_math = args.subject in ("mathematics", "mathematics_prosanatolismoy")
 
     # Group by chapter — adapted for different subject tag formats
     chapters = defaultdict(list)
