@@ -203,12 +203,13 @@ def main():
             if not data.get("key_concepts") and not data.get("traps") and not data.get("patterns"):
                 print(f"  ⚠️  API returned empty — retrying with simpler prompt...")
                 # Retry once with a simpler prompt (no LaTeX hints, shorter)
+                samples_text = "\n---\n".join(samples)
                 retry_prompt = f"""ΘΕΜΑ: {title} ({len(questions)} θέματα)
 Ανέλυσε τις παρακάτω λύσεις και δώσε 3-5 SOS έννοιες και 2-4 παγίδες. Μίλα σαν φίλος, σε casual Ελληνικά.
 ΟΧΙ LaTeX — χρησιμοποίησε απλό κείμενο.
 
 ΛΥΣΕΙΣ:
-{answers_sample[:3000]}
+{samples_text[:3000]}
 
 ΕΠΙΣΤΡΕΨΕ ΜΟΝΟ JSON: {{"key_concepts": [...], "traps": [...], "patterns": [...], "must_know": "..."}}"""
                 try:
