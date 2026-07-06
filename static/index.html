@@ -363,7 +363,13 @@ function renderEvaluation(ev) {
 function addMsg(role, text) {
     const c = document.getElementById('messages');
     const d = document.createElement('div'); d.className = `msg ${role}`;
-    d.innerHTML = role === 'user' ? E(String(text)).replace(/\n/g,'<br>') : String(text).replace(/\n/g,'<br>');
+    var safeBreaks = function(t) {
+        var parts = t.split(/(\$\$[\s\S]*?\$\$|\$[^$]+\$)/g);
+        return parts.map(function(p) {
+            return (p.startsWith('$') && p.endsWith('$')) ? p : p.replace(/\n/g,'<br>');
+        }).join('');
+    };
+    d.innerHTML = role === 'user' ? E(String(text)).replace(/\n/g,'<br>') : safeBreaks(String(text));
     c.appendChild(d); c.scrollTop = c.scrollHeight;
 }
 
