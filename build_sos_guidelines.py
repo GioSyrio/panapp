@@ -128,19 +128,19 @@ def main():
     for q in v2:
         tags = q.get("conceptual_tags", [])
         if tags:
-            for tag in tags:
-                ch_num, ch_title = extract_chapter(tag)
-                if ch_num:
-                    chapters[(ch_num, ch_title)].append(q)
-                else:
-                    # Plain tag (informatics style) — use tag directly
-                    chapters[("", tag.strip())].append(q)
+            # Use PRIMARY tag only (first tag) — each question goes to one chapter
+            tag = tags[0]
+            ch_num, ch_title = extract_chapter(tag)
+            if ch_num:
+                chapters[(ch_num, ch_title)].append(q)
+            else:
+                chapters[("", tag.strip())].append(q)
         else:
             # No tags (physics) — group by part
             part = q.get("part", "Άλλο")
             chapters[("", part)].append(q)
 
-    # Deduplicate: merge chapters with same title but different keys
+    # Convert (num, title) tuples to merged dict keyed by title
     merged = defaultdict(list)
     for (num, title), questions in chapters.items():
         merged[title].extend(questions)
