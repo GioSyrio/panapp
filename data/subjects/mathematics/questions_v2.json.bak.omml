@@ -2961,21 +2961,29 @@
     "sections": [
       {
         "type": "text",
-        "number": "",
-        "content": "Θ\n  \n  \n    \n      \n      \n    \n    ΕΜΑ\n  \n  \n    \n      \n      \n    \n     2"
+        "content": "ΘΕΜΑ 2"
       },
       {
         "type": "text",
-        "number": "",
-        "content": "Δίνονται οι \n  \n  \n    \n      \n      \n      \n    \n    συναρτήσεις\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n      \n    \n    f\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    και $g$ ,\n  \n  \n    \n      \n      \n    \n     με $f\n    \n    \n      \n        \n      \n      \n        \n        \n        \n      \n      (\n    \n    \n      \n        \n      \n      \n        \n        \n        \n        \n      \n      x\n    \n    \n      \n        \n      \n      \n        \n        \n        \n      \n      )=\n    \n    \\frac{x^{2}\n        \n          \n            \n          \n          \n            \n            \n            \n          \n          -4}{x\n        \n        \n          \n            \n          \n          \n            \n            \n            \n          \n          +2}$ και $g\n    \n    \n      \n        \n      \n      \n        \n        \n        \n      \n      (\n    \n    \n      \n        \n      \n      \n        \n        \n        \n        \n      \n      x\n    \n    \n      \n        \n      \n      \n        \n        \n        \n      \n      )=\n    \n    \n      \n        \n      \n      \n        \n        \n        \n        \n      \n      x\n    \n    \n      \n        \n      \n      \n        \n        \n        \n      \n      -2$ ."
+        "content": "Δίνονται οι συναρτήσεις f και , με    και  ."
+      },
+      {
+        "type": "sub_question",
+        "number": "α)",
+        "content": "Να εξετάσετε αν οι συναρτήσεις  και  είναι ίσες και να δικαιολογήσετε την απάντησή σας.\t(Μονάδες 8)"
+      },
+      {
+        "type": "sub_question",
+        "number": "β)",
+        "content": "Να σχεδιάσετε τις γραφικές παραστάσεις των συναρτήσεων f και h, με h(x) =\t(Μονάδες 7)"
       },
       {
         "type": "sub_question",
         "number": "γ)",
-        "content": "Με τη βοήθεια των γραφικών παραστάσεων των"
+        "content": "Με τη βοήθεια των γραφικών παραστάσεων των συναρτήσεων ή με όποιο άλλο τρόπο θέλετε, να μελετήσετε ως προς τη μονοτονία και τα ακρότατα τις συναρτήσεις fκαι h. (Μονάδες 10)"
       }
     ],
-    "question_html": "<p class=\"text-content\">Θ\n  \n  \n    \n      \n      \n    \n    ΕΜΑ\n  \n  \n    \n      \n      \n    \n     2</p>\n<p class=\"text-content\">Δίνονται οι \n  \n  \n    \n      \n      \n      \n    \n    συναρτήσεις\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n      \n    \n    f\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    και $g$ ,\n  \n  \n    \n      \n      \n    \n     με $f\n    \n    \n      \n        \n      \n      \n        \n        \n        \n      \n      (\n    \n    \n      \n        \n      \n      \n        \n        \n        \n        \n      \n      x\n    \n    \n      \n        \n      \n      \n        \n        \n        \n      \n      )=\n    \n    \\frac{x^{2}\n        \n          \n            \n          \n          \n            \n            \n            \n          \n          -4}{x\n        \n        \n          \n            \n          \n          \n            \n            \n            \n          \n          +2}$ και $g\n    \n    \n      \n        \n      \n      \n        \n        \n        \n      \n      (\n    \n    \n      \n        \n      \n      \n        \n        \n        \n        \n      \n      x\n    \n    \n      \n        \n      \n      \n        \n        \n        \n      \n      )=\n    \n    \n      \n        \n      \n      \n        \n        \n        \n        \n      \n      x\n    \n    \n      \n        \n      \n      \n        \n        \n        \n      \n      -2$ .</p>\n<div class=\"subq\"><span class=\"subq-num\">γ)</span> <span class=\"subq-text\">Με τη βοήθεια των γραφικών παραστάσεων των</span></div>",
+    "question_html": "<p class=\"text-content\">ΘΕΜΑ 2</p>\n<p class=\"text-content\">Δίνονται οι συναρτήσεις f και , με    και  .</p>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Να εξετάσετε αν οι συναρτήσεις  και  είναι ίσες και να δικαιολογήσετε την απάντησή σας.</span></div>\n<div class=\"points-chip\">⭐ 8 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Να σχεδιάσετε τις γραφικές παραστάσεις των συναρτήσεων f και h, με h(x) =</span></div>\n<div class=\"points-chip\">⭐ 7 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">γ)</span> <span class=\"subq-text\">Με τη βοήθεια των γραφικών παραστάσεων των συναρτήσεων ή με όποιο άλλο τρόπο θέλετε, να μελετήσετε ως προς τη μονοτονία και τα ακρότατα τις συναρτήσεις fκαι h.</span></div>\n<div class=\"points-chip\">⭐ 10 μονάδες</div>",
     "answer_html": "<div class=\"sol-step\"><div class=\"sol-step-label\">α)</div><div class=\"sol-step-text\">Για να είναι δύο συναρτήσεις ίσες, πρέπει να έχουν το ίδιο πεδίο ορισμού και για κάθε $x$ στο πεδίο ορισμού τους να ισχύει $f(x)=g(x)$. Η $f$ έχει πεδίο ορισμού $\\mathbb{R}$, ενώ η $g$ έχει πεδίο ορισμού $\\mathbb{R}^*$ (δηλαδή $\\mathbb{R}\\setminus\\{0\\}$). Επομένως, οι συναρτήσεις $f$ και $g$ δεν είναι ίσες, διότι έχουν διαφορετικό πεδίο ορισμού.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">β)</div><div class=\"sol-step-text\">Η γραφική παράσταση της $f(x)=x$ είναι η ευθεία $y=x$ (διχοτόμος πρώτης και τρίτης γωνίας). Η γραφική παράσταση της $h(x)=\\frac{x^2}{x}$ είναι η ίδια ευθεία $y=x$, αλλά με εξαίρεση το σημείο $x=0$, όπου η $h$ δεν ορίζεται (οπότε η γραφική της παράσταση έχει μία \"τρύπα\" στο σημείο $(0,0)$).</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">γ)</div><div class=\"sol-step-text\">Για τη συνάρτηση $f(x)=x$: Είναι γνησίως αύξουσα σε όλο το $\\mathbb{R}$, διότι για $x_1<x_2$ έχουμε $f(x_1)<f(x_2)$. Δεν παρουσιάζει ακρότατα (ούτε τοπικά ούτε ολικά), αφού είναι γνησίως αύξουσα και το πεδίο ορισμού της είναι όλο το $\\mathbb{R}$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">γ) (συνέχεια)</div><div class=\"sol-step-text\">Για τη συνάρτηση $h(x)=\\frac{x^2}{x}=x$, με πεδίο ορισμού $\\mathbb{R}^*$: Είναι γνησίως αύξουσα σε καθένα από τα διαστήματα $(-\\infty,0)$ και $(0,+\\infty)$ ξεχωριστά. Δεν παρουσιάζει ακρότατα, διότι για $x<0$ η $h$ παίρνει αρνητικές τιμές και για $x>0$ θετικές τιμές, χωρίς να υπάρχει κάποιο σημείο όπου η τιμή της είναι μέγιστη ή ελάχιστη (το $0$ δεν ανήκει στο πεδίο ορισμού).</div></div>",
     "answer_text": "ΘΕΜΑ 2\nΔίνονται οι συναρτήσεις f και , με    και  .\nα) Να εξετάσετε αν οι συναρτήσεις  και  είναι ίσες και να δικαιολογήσετε την απάντησή σας.\t(Μονάδες 8)\nβ) Να σχεδιάσετε τις γραφικές παραστάσεις των συναρτήσεων f και h, με h(x) =\t(Μονάδες 7)\nγ) Με τη βοήθεια των γραφικών παραστάσεων των συναρτήσεων ή με όποιο άλλο τρόπο θέλετε, να μελετήσετε ως προς τη μονοτονία και τα ακρότατα τις συναρτήσεις fκαι h.\n(Μονάδες 10)",
     "hints": [
@@ -3058,16 +3066,29 @@
     "sections": [
       {
         "type": "text",
-        "number": "",
-        "content": "ΘΕΜΑ \n  \n  \n    \n      \n      \n    \n    2"
+        "content": "ΘΕΜΑ 2"
       },
       {
         "type": "text",
-        "number": "",
-        "content": "Στο σχήμα δίνεται η γραφική παράσταση μιας συνάρτησης \n  \n  \n    \n      \n      \n      \n    \n    f\n  \n  \n    \n      \n      \n    \n    ."
+        "content": "Στο σχήμα δίνεται η γραφική παράσταση μιας συνάρτησης f."
+      },
+      {
+        "type": "sub_question",
+        "number": "α)",
+        "content": "Nα βρείτε το πεδίο ορισμού και το σύνολο τιμών της συνάρτησης f.\t(Μονάδες 10)"
+      },
+      {
+        "type": "sub_question",
+        "number": "β)",
+        "content": "Να προσδιορίσετε τον τύπο της συνάρτησης f.\t\t(Μονάδες 10)"
+      },
+      {
+        "type": "sub_question",
+        "number": "γ)",
+        "content": "Ποιες είναι οι συντεταγμένες του σημείου Γ;\t\t(Μονάδες 5)"
       }
     ],
-    "question_html": "<p class=\"text-content\">ΘΕΜΑ \n  \n  \n    \n      \n      \n    \n    2</p>\n<p class=\"text-content\">Στο σχήμα δίνεται η γραφική παράσταση μιας συνάρτησης \n  \n  \n    \n      \n      \n      \n    \n    f\n  \n  \n    \n      \n      \n    \n    .</p>",
+    "question_html": "<p class=\"text-content\">ΘΕΜΑ 2</p>\n<p class=\"text-content\">Στο σχήμα δίνεται η γραφική παράσταση μιας συνάρτησης f.</p>\n<div class=\"diagram-section\"><div class=\"diagram-label\">📊 Σχήμα / Διάγραμμα:</div><img src=\"/images/math_diagrams/26603.png\" alt=\"Διάγραμμα\" class=\"question-diagram\" style=\"max-width:100%;max-height:400px;border-radius:10px;border:1px solid var(--border);cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.06);\" onclick=\"openDiagramModal(this.src)\" loading=\"lazy\"><div style=\"margin-top:6px;font-size:0.75rem;color:var(--text2);\">💡 Κάνε κλικ στο σχήμα για μεγέθυνση</div></div>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Nα βρείτε το πεδίο ορισμού και το σύνολο τιμών της συνάρτησης f.</span></div><div class=\"points-chip\">⭐ 10 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Να προσδιορίσετε τον τύπο της συνάρτησης f.</span></div><div class=\"points-chip\">⭐ 10 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">γ)</span> <span class=\"subq-text\">Ποιες είναι οι συντεταγμένες του σημείου Γ;</span></div><div class=\"points-chip\">⭐ 5 μονάδες</div>",
     "answer_html": "<div class=\"sol-step\"><div class=\"sol-step-label\">α)</div><div class=\"sol-step-text\">Από τη γραφική παράσταση, το πεδίο ορισμού της $f$ είναι το διάστημα $[-2, 4]$. Το σύνολο τιμών της $f$ είναι το διάστημα $[-1, 3]$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">β)</div><div class=\"sol-step-text\">Η γραφική παράσταση αποτελείται από δύο ευθύγραμμα τμήματα. Για $x \\in [-2, 1]$, η ευθεία διέρχεται από τα σημεία $(-2, -1)$ και $(1, 3)$. Η κλίση είναι $m = \\frac{3 - (-1)}{1 - (-2)} = \\frac{4}{3}$. Η εξίσωση είναι $y + 1 = \\frac{4}{3}(x + 2) \\Rightarrow y = \\frac{4}{3}x + \\frac{8}{3} - 1 = \\frac{4}{3}x + \\frac{5}{3}$. Για $x \\in [1, 4]$, η ευθεία διέρχεται από τα σημεία $(1, 3)$ και $(4, 1)$. Η κλίση είναι $m = \\frac{1 - 3}{4 - 1} = -\\frac{2}{3}$. Η εξίσωση είναι $y - 3 = -\\frac{2}{3}(x - 1) \\Rightarrow y = -\\frac{2}{3}x + \\frac{2}{3} + 3 = -\\frac{2}{3}x + \\frac{11}{3}$. Επομένως, ο τύπος της συνάρτησης είναι $f(x) = \\begin{cases} \\frac{4}{3}x + \\frac{5}{3}, & -2 \\le x \\le 1 \\\\ -\\frac{2}{3}x + \\frac{11}{3}, & 1 \\le x \\le 4 \\end{cases}$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">γ)</div><div class=\"sol-step-text\">Το σημείο $\\Gamma$ είναι το σημείο τομής της γραφικής παράστασης με τον άξονα $y'y$. Για $x=0$, ανήκουμε στο πρώτο κομμάτι, οπότε $f(0) = \\frac{4}{3} \\cdot 0 + \\frac{5}{3} = \\frac{5}{3}$. Άρα, οι συντεταγμένες του σημείου $\\Gamma$ είναι $\\left(0, \\frac{5}{3}\\right)$.</div></div>",
     "answer_text": "ΘΕΜΑ 2\nΣτο σχήμα δίνεται η γραφική παράσταση μιας συνάρτησης f.\nα) Nα βρείτε το πεδίο ορισμού και το σύνολο τιμών της συνάρτησης f.\t(Μονάδες 10)\nβ) Να προσδιορίσετε τον τύπο της συνάρτησης f.\t\t(Μονάδες 10)\nγ) Ποιες είναι οι συντεταγμένες του σημείου Γ;\t\t(Μονάδες 5)",
     "hints": [
@@ -3464,31 +3485,29 @@
     "sections": [
       {
         "type": "text",
-        "number": "",
-        "content": "ΘΕΜΑ \n  \n  \n    \n      \n      \n    \n    2"
+        "content": "ΘΕΜΑ 2"
       },
       {
         "type": "text",
-        "number": "",
-        "content": "Στο \n  \n  \n    \n      \n      \n      \n      \n      \n    \n    παρακάτω \n  \n  \n    \n      \n      \n      \n      \n      \n    \n    σχήμα δ\n  \n  \n    \n      \n      \n      \n      \n      \n    \n    ίν\n  \n  \n    \n      \n      \n      \n      \n      \n    \n    ον\n  \n  \n    \n      \n      \n      \n      \n      \n    \n    ται \n  \n  \n    \n      \n      \n      \n      \n      \n    \n    οι\n  \n  \n    \n      \n      \n      \n      \n      \n    \n     \n  \n  \n    \n      \n      \n      \n      \n      \n    \n    γραφικ\n  \n  \n    \n      \n      \n      \n      \n      \n    \n    ές\n  \n  \n    \n      \n      \n      \n      \n      \n    \n     \n  \n  \n    \n      \n      \n      \n      \n      \n    \n    παραστάσεις μιας \n  \n  \n    \n      \n      \n      \n      \n      \n    \n    πολυωνυμικής \n  \n  \n    \n      \n      \n      \n      \n      \n    \n    συνάρτηση\n  \n  \n    \n      \n      \n      \n      \n      \n    \n    ς $f$ τρίτου βαθμού\n  \n  \n    \n      \n      \n      \n      \n    \n    ,\n  \n  \n    \n      \n      \n      \n      \n      \n    \n     \n  \n  \n    \n      \n      \n      \n      \n      \n    \n    η οποία είναι \n  \n  \n    \n      \n      \n      \n      \n      \n    \n    ορισμένη στο κλειστό διάστημα $[0,4]$ , και \n  \n  \n    \n      \n      \n      \n      \n      \n    \n    της παραγώγου\n  \n  \n    \n      \n      \n      \n      \n      \n    \n     \n  \n  \n    \n      \n      \n      \n      \n      \n    \n    της, $f\n    \n    \n      \n        \n        \n        \n        \n      \n      ΄$ ."
+        "content": "Στο παρακάτω σχήμα δίνονται οι γραφικές παραστάσεις μιας πολυωνυμικής συνάρτησης  τρίτου βαθμού, η οποία είναι ορισμένη στο κλειστό διάστημα , και της παραγώγου της, ."
       },
       {
         "type": "sub_question",
         "number": "α)",
-        "content": "Να βρείτε την κλίση της συνάρτησης $f$ στο $x_{ο}"
+        "content": "Να βρείτε την κλίση της συνάρτησης  στο . (Μονάδες 06)"
       },
       {
         "type": "sub_question",
         "number": "β)",
-        "content": "Να"
+        "content": "Να βρείτε την εξίσωση της εφαπτομένης () της γραφικής παράστασης της  στο . (Μονάδες 10)"
       },
       {
         "type": "sub_question",
         "number": "γ)",
-        "content": "Να"
+        "content": "Να υπολογίσετε τη γωνία που σχηματίζει η ευθεία () με τον άξονα . (Μονάδες 09)"
       }
     ],
-    "question_html": "<p class=\"text-content\">ΘΕΜΑ \n  \n  \n    \n      \n      \n    \n    2</p>\n<p class=\"text-content\">Στο \n  \n  \n    \n      \n      \n      \n      \n      \n    \n    παρακάτω \n  \n  \n    \n      \n      \n      \n      \n      \n    \n    σχήμα δ\n  \n  \n    \n      \n      \n      \n      \n      \n    \n    ίν\n  \n  \n    \n      \n      \n      \n      \n      \n    \n    ον\n  \n  \n    \n      \n      \n      \n      \n      \n    \n    ται \n  \n  \n    \n      \n      \n      \n      \n      \n    \n    οι\n  \n  \n    \n      \n      \n      \n      \n      \n    \n     \n  \n  \n    \n      \n      \n      \n      \n      \n    \n    γραφικ\n  \n  \n    \n      \n      \n      \n      \n      \n    \n    ές\n  \n  \n    \n      \n      \n      \n      \n      \n    \n     \n  \n  \n    \n      \n      \n      \n      \n      \n    \n    παραστάσεις μιας \n  \n  \n    \n      \n      \n      \n      \n      \n    \n    πολυωνυμικής \n  \n  \n    \n      \n      \n      \n      \n      \n    \n    συνάρτηση\n  \n  \n    \n      \n      \n      \n      \n      \n    \n    ς $f$ τρίτου βαθμού\n  \n  \n    \n      \n      \n      \n      \n    \n    ,\n  \n  \n    \n      \n      \n      \n      \n      \n    \n     \n  \n  \n    \n      \n      \n      \n      \n      \n    \n    η οποία είναι \n  \n  \n    \n      \n      \n      \n      \n      \n    \n    ορισμένη στο κλειστό διάστημα $[0,4]$ , και \n  \n  \n    \n      \n      \n      \n      \n      \n    \n    της παραγώγου\n  \n  \n    \n      \n      \n      \n      \n      \n    \n     \n  \n  \n    \n      \n      \n      \n      \n      \n    \n    της, $f\n    \n    \n      \n        \n        \n        \n        \n      \n      ΄$ .</p>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Να βρείτε την κλίση της συνάρτησης $f$ στο $x_{ο}</span></div>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Να</span></div>\n<div class=\"subq\"><span class=\"subq-num\">γ)</span> <span class=\"subq-text\">Να</span></div>",
+    "question_html": "<p class=\"text-content\">ΘΕΜΑ 2</p>\n<p class=\"text-content\">Στο παρακάτω σχήμα δίνονται οι γραφικές παραστάσεις μιας πολυωνυμικής συνάρτησης τρίτου βαθμού, η οποία είναι ορισμένη στο κλειστό διάστημα, και της παραγώγου της.</p>\n<div class=\"diagram-section\"><div class=\"diagram-label\">📊 Σχήμα / Διάγραμμα:</div><img src=\"/images/math_diagrams/26712.png\" alt=\"Διάγραμμα\" class=\"question-diagram\" style=\"max-width:100%;max-height:400px;border-radius:10px;border:1px solid var(--border);cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.06);\" onclick=\"openDiagramModal(this.src)\" loading=\"lazy\"><div style=\"margin-top:6px;font-size:0.75rem;color:var(--text2);\">💡 Κάνε κλικ στο σχήμα για μεγέθυνση</div></div>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Να βρείτε την κλίση της συνάρτησης στο σημείο.</span></div>\n<div class=\"points-chip\">⭐ 6 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Να βρείτε την εξίσωση της εφαπτομένης της γραφικής παράστασης της στο σημείο.</span></div>\n<div class=\"points-chip\">⭐ 10 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">γ)</span> <span class=\"subq-text\">Να υπολογίσετε τη γωνία που σχηματίζει η ευθεία με τον άξονα.</span></div>\n<div class=\"points-chip\">⭐ 9 μονάδες</div>",
     "answer_html": "<div class=\"sol-step\"><div class=\"sol-step-label\">α)</div><div class=\"sol-step-text\">Η κλίση της συνάρτησης $f$ στο σημείο $x_0 = -1$ ισούται με την τιμή της παραγώγου $f'$ στο σημείο αυτό, δηλαδή $f'(-1)$. Από τη γραφική παράσταση της $f'$, παρατηρούμε ότι στο $x = -1$ η τιμή της είναι $f'(-1) = 2$. Επομένως, η κλίση της $f$ στο $x_0 = -1$ είναι $2$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">β)</div><div class=\"sol-step-text\">Η εξίσωση της εφαπτομένης $(\\varepsilon)$ της $C_f$ στο σημείο $A(-1, f(-1))$ δίνεται από τον τύπο: $y - f(-1) = f'(-1)(x + 1)$. Από τη γραφική παράσταση της $f$, βρίσκουμε ότι $f(-1) = 1$. Από το (α) ερώτημα, $f'(-1) = 2$. Άρα, η εξίσωση γίνεται: $y - 1 = 2(x + 1) \\Rightarrow y - 1 = 2x + 2 \\Rightarrow y = 2x + 3$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">γ)</div><div class=\"sol-step-text\">Η γωνία $\\omega$ που σχηματίζει η ευθεία $(\\varepsilon)$ με τον άξονα $x'x$ υπολογίζεται από τη σχέση $\\tan \\omega = \\lambda$, όπου $\\lambda$ είναι ο συντελεστής διεύθυνσης της ευθείας. Από το (β) ερώτημα, η εφαπτομένη έχει εξίσωση $y = 2x + 3$, οπότε $\\lambda = 2$. Επομένως, $\\tan \\omega = 2 \\Rightarrow \\omega = \\arctan 2$.</div></div>",
     "answer_text": "ΘΕΜΑ 2\nΣτο παρακάτω σχήμα δίνονται οι γραφικές παραστάσεις μιας πολυωνυμικής συνάρτησης  τρίτου βαθμού, η οποία είναι ορισμένη στο κλειστό διάστημα , και της παραγώγου της, .\nα) Να βρείτε την κλίση της συνάρτησης  στο .\n(Μονάδες 06)\nβ) Να βρείτε την εξίσωση της εφαπτομένης () της γραφικής παράστασης της  στο .\n(Μονάδες 10)\nγ) Να υπολογίσετε τη γωνία που σχηματίζει η ευθεία () με τον άξονα .\n(Μονάδες 09)",
     "hints": [
@@ -3898,16 +3917,29 @@
     "sections": [
       {
         "type": "text",
-        "number": "",
         "content": "ΘΕΜΑ 2"
       },
       {
         "type": "text",
-        "number": "",
-        "content": "Στο παρακάτω σχήμα φαίνεται η γραφική παράσταση της αντίστροφης μιας  συνάρτησης \n  \n  \n    \n      \n      \n      \n    \n    f\n  \n  \n    \n      \n      \n    \n    . Με τη βοήθεια του σχήματος να απαντήσετε στα παρακάτω ερωτήματα, δικαιολογώντας τις απαντήσεις σας."
+        "content": "Στο παρακάτω σχήμα φαίνεται η γραφική παράσταση της αντίστροφης μιας  συνάρτησης f. Με τη βοήθεια του σχήματος να απαντήσετε στα παρακάτω ερωτήματα, δικαιολογώντας τις απαντήσεις σας."
+      },
+      {
+        "type": "sub_question",
+        "number": "α)",
+        "content": "Να βρείτε το πεδίο ορισμού και το σύνολο τιμών της συνάρτησης f. (Μονάδες 10)"
+      },
+      {
+        "type": "sub_question",
+        "number": "β)",
+        "content": "Να βρείτε τις τιμές f(2) και f-1(f(6)).\t(Μονάδες 8)"
+      },
+      {
+        "type": "sub_question",
+        "number": "γ)",
+        "content": "Στο σύστημα αξόνων που ακολουθεί να χαράξετε την γραφική παράσταση της f.\t                                                                                                                   (Μονάδες 7)"
       }
     ],
-    "question_html": "<p class=\"text-content\">ΘΕΜΑ 2</p>\n<p class=\"text-content\">Στο παρακάτω σχήμα φαίνεται η γραφική παράσταση της αντίστροφης μιας  συνάρτησης \n  \n  \n    \n      \n      \n      \n    \n    f\n  \n  \n    \n      \n      \n    \n    . Με τη βοήθεια του σχήματος να απαντήσετε στα παρακάτω ερωτήματα, δικαιολογώντας τις απαντήσεις σας.</p>",
+    "question_html": "<p class=\"text-content\">ΘΕΜΑ 2</p>\n<p class=\"text-content\">Στο παρακάτω σχήμα φαίνεται η γραφική παράσταση της αντίστροφης μιας  συνάρτησης f. Με τη βοήθεια του σχήματος να απαντήσετε στα παρακάτω ερωτήματα, δικαιολογώντας τις απαντήσεις σας.</p>\n<div class=\"diagram-section\"><div class=\"diagram-label\">📊 Σχήμα / Διάγραμμα:</div><img src=\"/images/math_diagrams/27277.png\" alt=\"Διάγραμμα\" class=\"question-diagram\" style=\"max-width:100%;max-height:400px;border-radius:10px;border:1px solid var(--border);cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.06);\" onclick=\"openDiagramModal(this.src)\" loading=\"lazy\"><div style=\"margin-top:6px;font-size:0.75rem;color:var(--text2);\">💡 Κάνε κλικ στο σχήμα για μεγέθυνση</div></div>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Να βρείτε το πεδίο ορισμού και το σύνολο τιμών της συνάρτησης f.</span></div><div class=\"points-chip\">⭐ 10 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Να βρείτε τις τιμές f(2) και f-1(f(6)).</span></div><div class=\"points-chip\">⭐ 8 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">γ)</span> <span class=\"subq-text\">Στο σύστημα αξόνων που ακολουθεί να χαράξετε την γραφική παράσταση της f.</span></div><div class=\"points-chip\">⭐ 7 μονάδες</div>",
     "answer_html": "<div class=\"sol-step\"><div class=\"sol-step-label\">α)</div><div class=\"sol-step-text\">Από το σχήμα, η γραφική παράσταση της $f^{-1}$ είναι μια ευθεία γραμμή που διέρχεται από τα σημεία $(0,2)$ και $(4,6)$. Επομένως, το πεδίο ορισμού της $f^{-1}$ είναι το $[0,4]$ και το σύνολο τιμών της $f^{-1}$ είναι το $[2,6]$. Αφού η $f^{-1}$ είναι η αντίστροφη της $f$, το πεδίο ορισμού της $f$ είναι το σύνολο τιμών της $f^{-1}$, δηλαδή $D_f = [2,6]$, και το σύνολο τιμών της $f$ είναι το πεδίο ορισμού της $f^{-1}$, δηλαδή $R_f = [0,4]$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">β)</div><div class=\"sol-step-text\">Για να βρούμε το $f(2)$, παρατηρούμε ότι από την ιδιότητα της αντίστροφης συνάρτησης, αν $f^{-1}(x) = y$, τότε $f(y) = x$. Από το σχήμα, η $f^{-1}$ διέρχεται από το σημείο $(0,2)$, οπότε $f^{-1}(0) = 2$. Επομένως, $f(2) = 0$. Για το $f^{-1}(f(6))$, χρησιμοποιούμε την ιδιότητα $f^{-1}(f(x)) = x$ για κάθε $x$ στο πεδίο ορισμού της $f$. Αφού $6 \\in D_f$, έχουμε $f^{-1}(f(6)) = 6$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">γ)</div><div class=\"sol-step-text\">Η γραφική παράσταση της $f$ είναι η συμμετρική της γραφικής παράστασης της $f^{-1}$ ως προς την ευθεία $y = x$. Αφού η $f^{-1}$ είναι ευθεία γραμμή που διέρχεται από τα $(0,2)$ και $(4,6)$, η $f$ θα είναι ευθεία γραμμή που διέρχεται από τα συμμετρικά σημεία $(2,0)$ και $(6,4)$. Σχεδιάζουμε την ευθεία που ενώνει αυτά τα δύο σημεία στο σύστημα αξόνων.</div></div>",
     "answer_text": "ΘΕΜΑ 2\nΣτο παρακάτω σχήμα φαίνεται η γραφική παράσταση της αντίστροφης μιας  συνάρτησης f. Με τη βοήθεια του σχήματος να απαντήσετε στα παρακάτω ερωτήματα, δικαιολογώντας τις απαντήσεις σας.\nα) Να βρείτε το πεδίο ορισμού και το σύνολο τιμών της συνάρτησης f. (Μονάδες 10)\nβ) Να βρείτε τις τιμές f(2) και f-1(f(6)).\t(Μονάδες 8)\nγ) Στο σύστημα αξόνων που ακολουθεί να χαράξετε την γραφική παράσταση της f.\t                                                                                                                   (Μονάδες 7)",
     "hints": [
@@ -4096,21 +4128,24 @@
     "sections": [
       {
         "type": "text",
-        "number": "",
         "content": "ΘΕΜΑ 2"
       },
       {
         "type": "text",
-        "number": "",
-        "content": "Δίνεται η \n  \n  \n    \n      \n      \n    \n    συνάρτηση $f$ με , \n  \n  \n    \n      \n      \n      \n    \n    x\n  \n  \n    \n      \n      \n      \n      \n    \n    \n  \n  \n    \n      \n      \n    \n    [0,2]"
+        "content": "Δίνεται η συνάρτηση  με , x[0,2]"
+      },
+      {
+        "type": "sub_question",
+        "number": "α)",
+        "content": "Να μελετήσετε την  ως προς τη μονοτονία στο [0,2]\t(Μονάδες 10)"
       },
       {
         "type": "sub_question",
         "number": "β)",
-        "content": "Να αποδείξετε ότι"
+        "content": "Να αποδείξετε ότι: Το σύνολο τιμών της  είναι το [0, 2]. \t(Μονάδες 05) Ορίζεται η αντίστροφη συνάρτηση  της  . \t(Μονάδες 03) Οι συναρτήσεις  και είναι ίσες.\t(Μονάδες 07)"
       }
     ],
-    "question_html": "<p class=\"text-content\">ΘΕΜΑ 2</p>\n<p class=\"text-content\">Δίνεται η \n  \n  \n    \n      \n      \n    \n    συνάρτηση $f$ με , \n  \n  \n    \n      \n      \n      \n    \n    x\n  \n  \n    \n      \n      \n      \n      \n    \n    \n  \n  \n    \n      \n      \n    \n    [0,2]</p>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Να αποδείξετε ότι</span></div>",
+    "question_html": "<p class=\"text-content\">ΘΕΜΑ 2</p>\n<p class=\"text-content\">Δίνεται η συνάρτηση  με , x[0,2]</p>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Να μελετήσετε την  ως προς τη μονοτονία στο [0,2]</span></div>\n<div class=\"points-chip\">⭐ 10 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Να αποδείξετε ότι:</span></div>\n<p class=\"text-content\">Το σύνολο τιμών της  είναι το [0, 2].</p>\n<div class=\"points-chip\">⭐ 5 μονάδες</div>\n<p class=\"text-content\">Ορίζεται η αντίστροφη συνάρτηση  της  .</p>\n<div class=\"points-chip\">⭐ 3 μονάδες</div>\n<p class=\"text-content\">Οι συναρτήσεις  και είναι ίσες.</p>\n<div class=\"points-chip\">⭐ 7 μονάδες</div>",
     "answer_html": "<div class=\"sol-step\"><div class=\"sol-step-label\">α)</div><div class=\"sol-step-text\">Η συνάρτηση $f$ είναι συνεχής και παραγωγίσιμη στο $[0,2]$ με $f'(x)=2x-2=2(x-1)$. Για $x \\in [0,1)$ έχουμε $f'(x)<0$, άρα η $f$ είναι γνησίως φθίνουσα στο $[0,1]$. Για $x \\in (1,2]$ έχουμε $f'(x)>0$, άρα η $f$ είναι γνησίως αύξουσα στο $[1,2]$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">β)</div><div class=\"sol-step-text\">Υπολογίζουμε $f(0)=0$, $f(1)=-1$, $f(2)=0$. Από τη μονοτονία, η $f$ παρουσιάζει ολικό ελάχιστο στο $x=1$ με τιμή $f(1)=-1$ και ολικό μέγιστο στα άκρα $x=0$ και $x=2$ με τιμή $0$. Επομένως, το σύνολο τιμών της $f$ είναι $[-1,0]$, όχι $[0,2]$. Η άσκηση όμως ζητά να αποδειχθεί ότι το σύνολο τιμών είναι $[0,2]$, το οποίο είναι λάθος βάσει των δεδομένων. Πιθανότατα η συνάρτηση είναι $f(x)=x^2-2x+2$ ή παρόμοια. Αν $f(x)=x^2-2x+2$, τότε $f'(x)=2x-2$, $f(0)=2$, $f(1)=1$, $f(2)=2$, οπότε το σύνολο τιμών είναι $[1,2]$, πάλι όχι $[0,2]$. Για να προκύψει $[0,2]$, θα πρέπει $f(x)=x^2-2x$ ή $f(x)=2x-x^2$. Αν $f(x)=2x-x^2$, τότε $f'(x)=2-2x$, $f(0)=0$, $f(1)=1$, $f(2)=0$, οπότε το σύνολο τιμών είναι $[0,1]$. Μόνο αν $f(x)=x^2$ ή $f(x)=2x$ προκύπτει $[0,4]$ ή $[0,4]$ αντίστοιχα. Επομένως, υπάρχει λάθος στην εκφώνηση. Για την απόδειξη, αν υποθέσουμε ότι η $f$ είναι γνησίως μονότονη και συνεχής, τότε το σύνολο τιμών είναι $[f(0), f(2)]$ ή $[f(2), f(0)]$ ανάλογα. Αν $f(0)=0$ και $f(2)=2$, τότε το σύνολο τιμών είναι $[0,2]$. Η αντίστροφη συνάρτηση $f^{-1}$ ορίζεται αν η $f$ είναι 1-1, δηλαδή γνησίως μονότονη. Αν η $f$ είναι γνησίως αύξουσα στο $[0,2]$, τότε $f^{-1}$ υπάρχει. Οι συναρτήσεις $f$ και $f^{-1}$ είναι ίσες αν $f(x)=x$ για κάθε $x$ στο πεδίο ορισμού, δηλαδή αν $f$ είναι η ταυτοτική συνάρτηση.</div></div>",
     "answer_text": "ΘΕΜΑ 2\nΔίνεται η συνάρτηση  με , x[0,2]\nα) Να μελετήσετε την  ως προς τη μονοτονία στο [0,2]\t(Μονάδες 10)\nβ) Να αποδείξετε ότι:\nΤο σύνολο τιμών της  είναι το [0, 2]. \t(Μονάδες 05)\nΟρίζεται η αντίστροφη συνάρτηση  της  . \t(Μονάδες 03)\nΟι συναρτήσεις  και είναι ίσες.\t(Μονάδες 07)",
     "hints": [
@@ -4288,16 +4323,29 @@
     "sections": [
       {
         "type": "text",
-        "number": "",
-        "content": "ΘΕΜΑ \n  \n  \n    \n      \n      \n      \n    \n    2"
+        "content": "ΘΕΜΑ 2"
       },
       {
         "type": "text",
-        "number": "",
-        "content": "Έστω μια συνάρτηση $f$ με πεδίο ορισμού\n  \n  \n    \n      \n      \n      \n    \n     το $Α=\n    \n    \n      \n        \n        \n        \n          \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n          \n          \n            \n            \n            \n          \n          -1 , 4$ και \n  \n  \n    \n      \n      \n      \n    \n    με \n  \n  \n    \n      \n      \n      \n    \n    γραφική\n  \n  \n    \n      \n      \n      \n    \n     παράσταση $C_{f}$ που φαίνεται στο παρακάτω σχήμα. \n  \n  \n    \n      \n      \n      \n    \n    Μελετώντας\n  \n  \n    \n      \n      \n      \n    \n     τη $C_{f}$ :"
+        "content": "Έστω μια συνάρτηση  με πεδίο ορισμού το  και με γραφική παράσταση  που φαίνεται στο παρακάτω σχήμα. Μελετώντας τη  :"
+      },
+      {
+        "type": "sub_question",
+        "number": "α)",
+        "content": "να δικαιολογήσετε ότι ορίζεται η αντίστροφη συνάρτηση    της   ,               (Μονάδες 8)"
+      },
+      {
+        "type": "sub_question",
+        "number": "β)",
+        "content": "να βρείτε τα σημεία τομής της  με την ευθεία ,                                          (Μονάδες 8)"
+      },
+      {
+        "type": "sub_question",
+        "number": "γ)",
+        "content": "να σχεδιάσετε τη γραφική παράσταση της .                                                        (Μονάδες 9)"
       }
     ],
-    "question_html": "<p class=\"text-content\">ΘΕΜΑ \n  \n  \n    \n      \n      \n      \n    \n    2</p>\n<p class=\"text-content\">Έστω μια συνάρτηση $f$ με πεδίο ορισμού\n  \n  \n    \n      \n      \n      \n    \n     το $Α=\n    \n    \n      \n        \n        \n        \n          \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n          \n          \n            \n            \n            \n          \n          -1 , 4$ και \n  \n  \n    \n      \n      \n      \n    \n    με \n  \n  \n    \n      \n      \n      \n    \n    γραφική\n  \n  \n    \n      \n      \n      \n    \n     παράσταση $C_{f}$ που φαίνεται στο παρακάτω σχήμα. \n  \n  \n    \n      \n      \n      \n    \n    Μελετώντας\n  \n  \n    \n      \n      \n      \n    \n     τη $C_{f}$ :</p>",
+    "question_html": "<p class=\"text-content\">ΘΕΜΑ 2</p>\n<p class=\"text-content\">Έστω μια συνάρτηση  με πεδίο ορισμού το  και με γραφική παράσταση  που φαίνεται στο παρακάτω σχήμα. Μελετώντας τη  :</p>\n<div class=\"diagram-section\"><div class=\"diagram-label\">📊 Σχήμα / Διάγραμμα:</div><img src=\"/images/math_diagrams/28299.png\" alt=\"Διάγραμμα\" class=\"question-diagram\" style=\"max-width:100%;max-height:400px;border-radius:10px;border:1px solid var(--border);cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.06);\" onclick=\"openDiagramModal(this.src)\" loading=\"lazy\"><div style=\"margin-top:6px;font-size:0.75rem;color:var(--text2);\">💡 Κάνε κλικ στο σχήμα για μεγέθυνση</div></div>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">να δικαιολογήσετε ότι ορίζεται η αντίστροφη συνάρτηση    της   ,</span></div><div class=\"points-chip\">⭐ 8 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">να βρείτε τα σημεία τομής της  με την ευθεία ,</span></div><div class=\"points-chip\">⭐ 8 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">γ)</span> <span class=\"subq-text\">να σχεδιάσετε τη γραφική παράσταση της .</span></div><div class=\"points-chip\">⭐ 9 μονάδες</div>",
     "answer_html": "<div class=\"sol-step\"><div class=\"sol-step-label\">α)</div><div class=\"sol-step-text\">Από τη γραφική παράσταση της $f$ παρατηρούμε ότι η $f$ είναι γνησίως μονότονη (γνησίως αύξουσα) στο πεδίο ορισμού της $\\mathbb{R}$. Επομένως, η $f$ είναι \"1-1\" (ένα προς ένα) και άρα ορίζεται η αντίστροφη συνάρτηση $f^{-1}$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">β)</div><div class=\"sol-step-text\">Τα σημεία τομής της $C_f$ με την ευθεία $y=x$ είναι τα σημεία όπου $f(x)=x$. Από τη γραφική παράσταση, η $C_f$ τέμνει την ευθεία $y=x$ σε δύο σημεία: $A(0,0)$ και $B(2,2)$. Επομένως, τα σημεία τομής είναι $(0,0)$ και $(2,2)$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">γ)</div><div class=\"sol-step-text\">Η γραφική παράσταση της $f^{-1}$ είναι συμμετρική της $C_f$ ως προς την ευθεία $y=x$. Επομένως, σχεδιάζουμε την καμπύλη που προκύπτει από την ανακλαστική συμμετρία της $C_f$ ως προς τη διχοτόμο $y=x$. Η $C_{f^{-1}}$ θα διέρχεται από τα σημεία $(0,0)$ και $(2,2)$ (που είναι σταθερά) και θα είναι γνησίως αύξουσα.</div></div>",
     "answer_text": "ΘΕΜΑ 2\nΈστω μια συνάρτηση  με πεδίο ορισμού το  και με γραφική παράσταση  που φαίνεται στο παρακάτω σχήμα. Μελετώντας τη  :\nα) να δικαιολογήσετε ότι ορίζεται η αντίστροφη συνάρτηση    της   ,               (Μονάδες 8)\nβ) να βρείτε τα σημεία τομής της  με την ευθεία ,                                          (Μονάδες 8)\nγ) να σχεδιάσετε τη γραφική παράσταση της .                                                        (Μονάδες 9)",
     "hints": [
@@ -4379,16 +4427,34 @@
     "sections": [
       {
         "type": "text",
-        "number": "",
-        "content": "ΘΕΜΑ \n  \n  \n    \n      \n      \n    \n    2"
+        "content": "ΘΕΜΑ 2"
       },
       {
         "type": "text",
-        "number": "",
-        "content": "Έστω μια \n  \n  \n    \n      \n      \n      \n    \n    συνάρτηση $f$ της οποίας η\n  \n  \n    \n      \n      \n      \n    \n     γραφική\n  \n  \n    \n      \n      \n      \n    \n     παράσταση\n  \n  \n    \n      \n      \n      \n    \n     φαίνεται στο παρακάτω σχήμα. \n  \n  \n    \n      \n      \n      \n    \n    Μελετώντας\n  \n  \n    \n      \n      \n      \n    \n     τη γραφική παράσταση της $f$ να βρείτε:"
+        "content": "Έστω μια συνάρτηση  της οποίας η γραφική παράσταση φαίνεται στο παρακάτω σχήμα. Μελετώντας τη γραφική παράσταση της  να βρείτε:"
+      },
+      {
+        "type": "sub_question",
+        "number": "α)",
+        "content": "το πεδίο ορισμού και το σύνολο τιμών της ,\t                (Μονάδες 6)"
+      },
+      {
+        "type": "sub_question",
+        "number": "β)",
+        "content": "τις τιμές  ,  και ,\t                (Μονάδες 6)"
+      },
+      {
+        "type": "sub_question",
+        "number": "γ)",
+        "content": "το ολικό μέγιστο και το ολικό ελάχιστο της , εφόσον υπάρχουν,                         (Μονάδες 7)"
+      },
+      {
+        "type": "sub_question",
+        "number": "δ)",
+        "content": "την τιμή της σύνθεσης  στο .                                                                              (Μονάδες 6)"
       }
     ],
-    "question_html": "<p class=\"text-content\">ΘΕΜΑ \n  \n  \n    \n      \n      \n    \n    2</p>\n<p class=\"text-content\">Έστω μια \n  \n  \n    \n      \n      \n      \n    \n    συνάρτηση $f$ της οποίας η\n  \n  \n    \n      \n      \n      \n    \n     γραφική\n  \n  \n    \n      \n      \n      \n    \n     παράσταση\n  \n  \n    \n      \n      \n      \n    \n     φαίνεται στο παρακάτω σχήμα. \n  \n  \n    \n      \n      \n      \n    \n    Μελετώντας\n  \n  \n    \n      \n      \n      \n    \n     τη γραφική παράσταση της $f$ να βρείτε:</p>",
+    "question_html": "<p class=\"text-content\">ΘΕΜΑ 2</p>\n<p class=\"text-content\">Έστω μια συνάρτηση  της οποίας η γραφική παράσταση φαίνεται στο παρακάτω σχήμα. Μελετώντας τη γραφική παράσταση της  να βρείτε:</p>\n<div class=\"diagram-section\"><div class=\"diagram-label\">📊 Σχήμα / Διάγραμμα:</div><img src=\"/images/math_diagrams/28300.png\" alt=\"Διάγραμμα\" class=\"question-diagram\" style=\"max-width:100%;max-height:400px;border-radius:10px;border:1px solid var(--border);cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.06);\" onclick=\"openDiagramModal(this.src)\" loading=\"lazy\"><div style=\"margin-top:6px;font-size:0.75rem;color:var(--text2);\">💡 Κάνε κλικ στο σχήμα για μεγέθυνση</div></div>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">το πεδίο ορισμού και το σύνολο τιμών της ,</span></div><div class=\"points-chip\">⭐ 6 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">τις τιμές  ,  και ,</span></div><div class=\"points-chip\">⭐ 6 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">γ)</span> <span class=\"subq-text\">το ολικό μέγιστο και το ολικό ελάχιστο της , εφόσον υπάρχουν,</span></div><div class=\"points-chip\">⭐ 7 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">δ)</span> <span class=\"subq-text\">την τιμή της σύνθεσης  στο .</span></div><div class=\"points-chip\">⭐ 6 μονάδες</div>",
     "answer_html": "<div class=\"sol-step\"><div class=\"sol-step-label\">α)</div><div class=\"sol-step-text\">Από τη γραφική παράσταση, το πεδίο ορισμού της $f$ είναι το διάστημα $[-2, 5]$ και το σύνολο τιμών της είναι το διάστημα $[-1, 3]$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">β)</div><div class=\"sol-step-text\">Από τη γραφική παράσταση, έχουμε: $f(-2) = 1$, $f(0) = 2$ και $f(4) = -1$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">γ)</div><div class=\"sol-step-text\">Η συνάρτηση $f$ παρουσιάζει ολικό μέγιστο στο $x=2$ με τιμή $f(2)=3$ και ολικό ελάχιστο στο $x=4$ με τιμή $f(4)=-1$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">δ)</div><div class=\"sol-step-text\">Η σύνθεση $(f \\circ f)(x) = f(f(x))$. Για $x=0$, έχουμε $f(0)=2$, οπότε $(f \\circ f)(0) = f(f(0)) = f(2) = 3$.</div></div>",
     "answer_text": "ΘΕΜΑ 2\nΈστω μια συνάρτηση  της οποίας η γραφική παράσταση φαίνεται στο παρακάτω σχήμα. Μελετώντας τη γραφική παράσταση της  να βρείτε:\nα) το πεδίο ορισμού και το σύνολο τιμών της ,\t                (Μονάδες 6)\nβ) τις τιμές  ,  και ,\t                (Μονάδες 6)\nγ) το ολικό μέγιστο και το ολικό ελάχιστο της , εφόσον υπάρχουν,                         (Μονάδες 7)\nδ) την τιμή της σύνθεσης  στο .                                                                              (Μονάδες 6)",
     "hints": [
@@ -4615,16 +4681,29 @@
     "sections": [
       {
         "type": "text",
-        "number": "",
-        "content": "ΘΕΜΑ \n  \n  \n    \n      \n      \n    \n    2"
+        "content": "ΘΕΜΑ 2"
       },
       {
         "type": "text",
-        "number": "",
-        "content": "Η γραφική παράσταση μιας \n  \n  \n    \n      \n      \n    \n    πολυωνυμική\n  \n  \n    \n      \n      \n    \n    ς\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    συνάρτησης $f :\n    \n    \n      \n        \n        \n      \n      \n        \n        \n        \n      \n      R→R$ ,\n  \n  \n    \n      \n      \n    \n     διέρχεται από τα σημεία $Α(2 , 2)$ , $Β(-2 , 2)$ και $Γ(0 ,-2)$ . Έστω επίσης η συνάρτηση \n  \n  \n    \n      \n      \n      \n    \n    g $:R→R$ με $g\n    \n    \n      \n        \n          \n            \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n          \n          \n            \n            \n            \n            \n          \n          x\n        \n      \n    \n    \n      \n        \n      \n      \n        \n        \n        \n      \n      =|\n    \n    \n      \n        \n      \n      \n        \n        \n        \n        \n      \n      x\n    \n    \n      \n        \n      \n      \n        \n        \n        \n      \n      |$ ."
+        "content": "Η γραφική παράσταση μιας πολυωνυμικής συνάρτησης , διέρχεται από τα σημεία ,  και . Έστω επίσης η συνάρτηση g με ."
+      },
+      {
+        "type": "sub_question",
+        "number": "α)",
+        "content": "Να βρείτε τις τιμές ,   και .                                                                   (Μονάδες 8)"
+      },
+      {
+        "type": "sub_question",
+        "number": "β)",
+        "content": "Να βρείτε τις τιμές ,  και .                                      (Μονάδες 8)"
+      },
+      {
+        "type": "sub_question",
+        "number": "γ)",
+        "content": "Η γραφική παράσταση της συνάρτησης  φαίνεται παρακάτω. Να σχεδιάσετε τη γραφική παράσταση της συνάρτησης  .\t                                                                              (Μονάδες 9)"
       }
     ],
-    "question_html": "<p class=\"text-content\">ΘΕΜΑ \n  \n  \n    \n      \n      \n    \n    2</p>\n<p class=\"text-content\">Η γραφική παράσταση μιας \n  \n  \n    \n      \n      \n    \n    πολυωνυμική\n  \n  \n    \n      \n      \n    \n    ς\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    συνάρτησης $f :\n    \n    \n      \n        \n        \n      \n      \n        \n        \n        \n      \n      R→R$ ,\n  \n  \n    \n      \n      \n    \n     διέρχεται από τα σημεία $Α(2 , 2)$ , $Β(-2 , 2)$ και $Γ(0 ,-2)$ . Έστω επίσης η συνάρτηση \n  \n  \n    \n      \n      \n      \n    \n    g $:R→R$ με $g\n    \n    \n      \n        \n          \n            \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n          \n          \n            \n            \n            \n            \n          \n          x\n        \n      \n    \n    \n      \n        \n      \n      \n        \n        \n        \n      \n      =|\n    \n    \n      \n        \n      \n      \n        \n        \n        \n        \n      \n      x\n    \n    \n      \n        \n      \n      \n        \n        \n        \n      \n      |$ .</p>",
+    "question_html": "<p class=\"text-content\">ΘΕΜΑ 2</p>\n<p class=\"text-content\">Η γραφική παράσταση μιας πολυωνυμικής συνάρτησης , διέρχεται από τα σημεία ,  και . Έστω επίσης η συνάρτηση g με .</p>\n<div class=\"diagram-section\"><div class=\"diagram-label\">📊 Σχήμα / Διάγραμμα:</div><img src=\"/images/math_diagrams/28304.png\" alt=\"Διάγραμμα\" class=\"question-diagram\" style=\"max-width:100%;max-height:400px;border-radius:10px;border:1px solid var(--border);cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.06);\" onclick=\"openDiagramModal(this.src)\" loading=\"lazy\"><div style=\"margin-top:6px;font-size:0.75rem;color:var(--text2);\">💡 Κάνε κλικ στο σχήμα για μεγέθυνση</div></div>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Να βρείτε τις τιμές ,   και .</span></div><div class=\"points-chip\">⭐ 8 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Να βρείτε τις τιμές ,  και .</span></div><div class=\"points-chip\">⭐ 8 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">γ)</span> <span class=\"subq-text\">Η γραφική παράσταση της συνάρτησης  φαίνεται παρακάτω. Να σχεδιάσετε τη γραφική παράσταση της συνάρτησης  .</span></div><div class=\"points-chip\">⭐ 9 μονάδες</div>",
     "answer_html": "<div class=\"sol-step\"><div class=\"sol-step-label\">α)</div><div class=\"sol-step-text\">Αφού η γραφική παράσταση της $f$ διέρχεται από τα σημεία $A(1,2)$, $B(2,3)$ και $\\Gamma(3,1)$, έχουμε:</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\"> </div><div class=\"sol-step-text\">$f(1)=2$, $f(2)=3$, $f(3)=1$.</div></div>\n\n<div class=\"sol-step\"><div class=\"sol-step-label\">β)</div><div class=\"sol-step-text\">Για τη συνάρτηση $g(x)=f(x-1)+2$, υπολογίζουμε:</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\"> </div><div class=\"sol-step-text\">$g(2)=f(2-1)+2=f(1)+2=2+2=4$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\"> </div><div class=\"sol-step-text\">$g(3)=f(3-1)+2=f(2)+2=3+2=5$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\"> </div><div class=\"sol-step-text\">$g(4)=f(4-1)+2=f(3)+2=1+2=3$.</div></div>\n\n<div class=\"sol-step\"><div class=\"sol-step-label\">γ)</div><div class=\"sol-step-text\">Η γραφική παράσταση της $g$ προκύπτει από αυτήν της $f$ με οριζόντια μετατόπιση κατά $1$ μονάδα προς τα δεξιά και κατακόρυφη μετατόπιση κατά $2$ μονάδες προς τα πάνω. Επομένως, τα σημεία $A(1,2)$, $B(2,3)$, $\\Gamma(3,1)$ της $f$ μεταφέρονται στα σημεία $A'(2,4)$, $B'(3,5)$, $\\Gamma'(4,3)$ της $g$.</div></div>",
     "answer_text": "ΘΕΜΑ 2\nΗ γραφική παράσταση μιας πολυωνυμικής συνάρτησης , διέρχεται από τα σημεία ,  και . Έστω επίσης η συνάρτηση g με .\nα) Να βρείτε τις τιμές ,   και .                                                                   (Μονάδες 8)\nβ) Να βρείτε τις τιμές ,  και .                                      (Μονάδες 8)\nγ) Η γραφική παράσταση της συνάρτησης  φαίνεται παρακάτω. Να σχεδιάσετε τη γραφική παράσταση της συνάρτησης  .\t                                                                              (Μονάδες 9)",
     "hints": [
@@ -4816,41 +4895,29 @@
     "sections": [
       {
         "type": "text",
-        "number": "",
         "content": "ΘΕΜΑ 2"
       },
       {
         "type": "text",
-        "number": "",
-        "content": "Δίνεται η συνάρτηση $f, \n    \n    \n      \n        \n      \n      \n        \n        \n      \n      με\n    \n    \n      \n        \n        \n      \n       \n    \n    \n      \n        \n        \n        \n      \n      f\n    \n    \n      \n        \n          \n            \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n            \n            \n          \n          x\n        \n      \n    \n    \n      \n        \n        \n      \n      =1-\n    \n    \\frac{1}{x^{2}}\n    \n      \n        \n        \n      \n       ,  x&lt;0$ ."
+        "content": "Δίνεται η συνάρτηση ."
       },
       {
         "type": "sub_question",
         "number": "α)",
-        "content": "Να αποδείξετε ότι η συνάρτηση $f$ είναι γνησίως φθίνουσα στο πεδίο ορισμού της."
+        "content": "Να αποδείξετε ότι η συνάρτηση  είναι γνησίως φθίνουσα στο πεδίο ορισμού της. (Μονάδες 05)"
       },
       {
         "type": "sub_question",
         "number": "β)",
-        "content": "Να βρείτε το σύνολο τιμών της $f$ ."
+        "content": "Να βρείτε το σύνολο τιμών της . (Μονάδες 08)"
       },
       {
         "type": "sub_question",
         "number": "γ)",
-        "content": "γ\n  \n  \n    \n      \n    \n    )"
-      },
-      {
-        "type": "text",
-        "number": "",
-        "content": "Να αποδείξετε ότι η $f$ είναι “1 – 1”."
-      },
-      {
-        "type": "text",
-        "number": "",
-        "content": "Να βρείτε την αντίστροφη της συνάρτησης $f$ , την $f^{-\n        \n        \n          \n            \n            \n            \n          \n          1}$ ."
+        "content": " Να αποδείξετε ότι η  είναι “1 – 1”. (Μονάδες 05) Να βρείτε την αντίστροφη της συνάρτησης , την . (Μονάδες 07)"
       }
     ],
-    "question_html": "<p class=\"text-content\">ΘΕΜΑ 2</p>\n<p class=\"text-content\">Δίνεται η συνάρτηση $f, \n    \n    \n      \n        \n      \n      \n        \n        \n      \n      με\n    \n    \n      \n        \n        \n      \n       \n    \n    \n      \n        \n        \n        \n      \n      f\n    \n    \n      \n        \n          \n            \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n            \n            \n          \n          x\n        \n      \n    \n    \n      \n        \n        \n      \n      =1-\n    \n    \\frac{1}{x^{2}}\n    \n      \n        \n        \n      \n       ,  x&amp;lt;0$ .</p>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Να αποδείξετε ότι η συνάρτηση $f$ είναι γνησίως φθίνουσα στο πεδίο ορισμού της.</span></div>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Να βρείτε το σύνολο τιμών της $f$ .</span></div>\n<div class=\"subq\"><span class=\"subq-num\">γ)</span> <span class=\"subq-text\">γ\n  \n  \n    \n      \n    \n    )</span></div>\n<p class=\"text-content\">Να αποδείξετε ότι η $f$ είναι “1 – 1”.</p>\n<p class=\"text-content\">Να βρείτε την αντίστροφη της συνάρτησης $f$ , την $f^{-\n        \n        \n          \n            \n            \n            \n          \n          1}$ .</p>",
+    "question_html": "<p class=\"text-content\">ΘΕΜΑ 2</p>\n<p class=\"text-content\">Δίνεται η συνάρτηση .</p>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Να αποδείξετε ότι η συνάρτηση  είναι γνησίως φθίνουσα στο πεδίο ορισμού της.</span></div>\n<div class=\"points-chip\">⭐ 5 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Να βρείτε το σύνολο τιμών της .</span></div>\n<div class=\"points-chip\">⭐ 8 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">γ)</span> <span class=\"subq-text\">Να αποδείξετε ότι η  είναι “1 – 1”.</span></div>\n<div class=\"points-chip\">⭐ 5 μονάδες</div>\n<p class=\"text-content\">Να βρείτε την αντίστροφη της συνάρτησης , την .</p>\n<div class=\"points-chip\">⭐ 7 μονάδες</div>",
     "answer_html": "<div class=\"sol-step\"><div class=\"sol-step-label\">α)</div><div class=\"sol-step-text\">Η συνάρτηση $f$ έχει πεδίο ορισμού $A = \\mathbb{R}$. Η παράγωγος της $f$ είναι $f'(x) = -2e^{-2x} - 1$. Επειδή $e^{-2x} > 0$ για κάθε $x \\in \\mathbb{R}$, έχουμε $-2e^{-2x} < 0$, οπότε $f'(x) = -2e^{-2x} - 1 < 0$ για κάθε $x \\in \\mathbb{R}$. Επομένως, η $f$ είναι γνησίως φθίνουσα στο $\\mathbb{R}$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">β)</div><div class=\"sol-step-text\">Η $f$ είναι συνεχής και γνησίως φθίνουσα στο $\\mathbb{R}$, οπότε το σύνολο τιμών της είναι $f(\\mathbb{R}) = \\left( \\lim_{x \\to +\\infty} f(x), \\lim_{x \\to -\\infty} f(x) \\right)$. Υπολογίζουμε: $\\lim_{x \\to +\\infty} f(x) = \\lim_{x \\to +\\infty} (e^{-2x} - x) = 0 - (+\\infty) = -\\infty$ και $\\lim_{x \\to -\\infty} f(x) = \\lim_{x \\to -\\infty} (e^{-2x} - x) = +\\infty - (-\\infty) = +\\infty$. Άρα, $f(\\mathbb{R}) = \\mathbb{R}$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">γ)</div><div class=\"sol-step-text\">Από το (α) ερώτημα, η $f$ είναι γνησίως φθίνουσα στο $\\mathbb{R}$, οπότε είναι και \"1 – 1\". Για να βρούμε την αντίστροφη, θέτουμε $y = f(x) = e^{-2x} - x$. Λύνουμε ως προς $x$: $y = e^{-2x} - x \\Rightarrow x + y = e^{-2x} \\Rightarrow e^{2x}(x + y) = 1$. Αυτή η εξίσωση δεν λύνεται αλγεβρικά με στοιχειώδεις συναρτήσεις. Παρατηρούμε όμως ότι η $f$ είναι γνησίως φθίνουσα και επί του $\\mathbb{R}$, οπότε η αντίστροφη $f^{-1}: \\mathbb{R} \\to \\mathbb{R}$ ορίζεται από τη σχέση $f^{-1}(y) = x$, όπου $x$ η μοναδική λύση της $e^{-2x} - x = y$. Δεν μπορεί να εκφραστεί με κλειστό τύπο.</div></div>",
     "answer_text": "ΘΕΜΑ 2\nΔίνεται η συνάρτηση .\nα) Να αποδείξετε ότι η συνάρτηση  είναι γνησίως φθίνουσα στο πεδίο ορισμού της.\n(Μονάδες 05)\nβ) Να βρείτε το σύνολο τιμών της .\n(Μονάδες 08)\nγ)\nΝα αποδείξετε ότι η  είναι “1 – 1”.\n(Μονάδες 05)\nΝα βρείτε την αντίστροφη της συνάρτησης , την .\n(Μονάδες 07)",
     "hints": [
@@ -5659,51 +5726,33 @@
     "sections": [
       {
         "type": "text",
-        "number": "",
         "content": "ΘΕΜΑ 4"
       },
       {
         "type": "text",
-        "number": "",
-        "content": "Δίνεται η συνάρτηση $g$ με και η συνεχής συνάρτηση $f$ , ορισμένη στο $0,π$ , με $f\n    \n    \n      \n        \n          \n            \n            \n          \n        \n      \n      \n        \\frac{π}{2}\n        \n          \n            \n            \n            \n          \n        \n      \n    \n    \n      \n        \n      \n      =1$ , τέτοιες ώστε:"
+        "content": "Δίνεται η συνάρτηση  με  και η συνεχής συνάρτηση , ορισμένη στο , με , τέτοιες ώστε:"
       },
       {
         "type": "text",
-        "number": "",
-        "content": "$gof\n        \n      \n    \n    \n      \n        \n          \n            \n            \n          \n        \n      \n      \n        \n          \n            \n          \n          x\n        \n      \n    \n    \n      \n        \n      \n      =\n    \n    \n      \n        \n        \n        \n          \n            \n            \n          \n        \n      \n      \n        \n          \n            \n          \n          συν\n        \n        \n          \n            \n            \n          \n          x$ , \n  \n  \n    \n      \n    \n    για κάθε $x\n    \n    \n      \n        \n      \n      ∈\n    \n    \n      \n        \n        \n        \n          \n            \n            \n          \n        \n      \n      \n        \n          \n            \n          \n          0,π$ ."
+        "content": ", για κάθε ."
       },
       {
         "type": "sub_question",
         "number": "α)",
-        "content": "α)"
-      },
-      {
-        "type": "text",
-        "number": "",
-        "content": "Να αποδείξετε ότι $f\n        \n        \n          \n            \n            \n            \n          \n          (\n        \n        \n          \n            \n            \n            \n            \n          \n          x\n        \n        \n          \n            \n            \n            \n          \n          )\n        \n      \n    \n    \n      \n        \n        \n        \n      \n      =\n    \n    \n      \n        \n        \n        \n          \n            \n            \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n            \n            \n          \n          ημ\n        \n        \n          \n            \n            \n            \n            \n          \n          x$ ."
-      },
-      {
-        "type": "text",
-        "number": "",
-        "content": "Να βρείτε τις ρίζες της εξίσωσης $f\n    \n    \n      \n        \n          \n            \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n            \n            \n            \n          \n          x\n        \n        \n          \n            \n            \n            \n            \n            \n          \n        \n      \n    \n    \n      \n        \n        \n        \n      \n      =0$ ."
+        "content": " Να αποδείξετε ότι . (Μονάδες 06) Να βρείτε τις ρίζες της εξίσωσης . (Μονάδες 03)"
       },
       {
         "type": "sub_question",
         "number": "β)",
-        "content": "Να βρείτε την συνάρτηση $f$ ."
+        "content": "Να βρείτε την συνάρτηση . (Μονάδες 09)"
       },
       {
         "type": "sub_question",
         "number": "γ)",
-        "content": "Δίνεται η συνάρτηση $h:(0,"
-      },
-      {
-        "type": "text",
-        "number": "",
-        "content": "${h(x)}$"
+        "content": "Δίνεται η συνάρτηση  με , όπου  είναι η συνάρτηση του προηγούμενου ερωτήματος. Να υπολογίσετε το παρακάτω όριο: (Μονάδες 07)"
       }
     ],
-    "question_html": "<p class=\"text-content\">ΘΕΜΑ 4</p>\n<p class=\"text-content\">Δίνεται η συνάρτηση $g$ με και η συνεχής συνάρτηση $f$ , ορισμένη στο $0,π$ , με $f\n    \n    \n      \n        \n          \n            \n            \n          \n        \n      \n      \n        \\frac{π}{2}\n        \n          \n            \n            \n            \n          \n        \n      \n    \n    \n      \n        \n      \n      =1$ , τέτοιες ώστε:</p>\n<p class=\"text-content\">$gof\n        \n      \n    \n    \n      \n        \n          \n            \n            \n          \n        \n      \n      \n        \n          \n            \n          \n          x\n        \n      \n    \n    \n      \n        \n      \n      =\n    \n    \n      \n        \n        \n        \n          \n            \n            \n          \n        \n      \n      \n        \n          \n            \n          \n          συν\n        \n        \n          \n            \n            \n          \n          x$ , \n  \n  \n    \n      \n    \n    για κάθε $x\n    \n    \n      \n        \n      \n      ∈\n    \n    \n      \n        \n        \n        \n          \n            \n            \n          \n        \n      \n      \n        \n          \n            \n          \n          0,π$ .</p>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">α)</span></div>\n<p class=\"text-content\">Να αποδείξετε ότι $f\n        \n        \n          \n            \n            \n            \n          \n          (\n        \n        \n          \n            \n            \n            \n            \n          \n          x\n        \n        \n          \n            \n            \n            \n          \n          )\n        \n      \n    \n    \n      \n        \n        \n        \n      \n      =\n    \n    \n      \n        \n        \n        \n          \n            \n            \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n            \n            \n          \n          ημ\n        \n        \n          \n            \n            \n            \n            \n          \n          x$ .</p>\n<p class=\"text-content\">Να βρείτε τις ρίζες της εξίσωσης $f\n    \n    \n      \n        \n          \n            \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n            \n            \n            \n          \n          x\n        \n        \n          \n            \n            \n            \n            \n            \n          \n        \n      \n    \n    \n      \n        \n        \n        \n      \n      =0$ .</p>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Να βρείτε την συνάρτηση $f$ .</span></div>\n<div class=\"subq\"><span class=\"subq-num\">γ)</span> <span class=\"subq-text\">Δίνεται η συνάρτηση $h:(0,</span></div>\n<p class=\"text-content\">${h(x)}$</p>",
+    "question_html": "<p class=\"text-content\">ΘΕΜΑ 4</p>\n<p class=\"text-content\">Δίνεται η συνάρτηση με και η συνεχής συνάρτηση , ορισμένη στο , με , τέτοιες ώστε: , για κάθε .</p>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Να αποδείξετε ότι .</span></div>\n<div class=\"points-chip\">⭐ 6 μονάδες</div>\n<p class=\"text-content\">Να βρείτε τις ρίζες της εξίσωσης .</p>\n<div class=\"points-chip\">⭐ 3 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Να βρείτε την συνάρτηση .</span></div>\n<div class=\"points-chip\">⭐ 9 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">γ)</span> <span class=\"subq-text\">Δίνεται η συνάρτηση με , όπου είναι η συνάρτηση του προηγούμενου ερωτήματος. Να υπολογίσετε το παρακάτω όριο:</span></div>\n<div class=\"points-chip\">⭐ 7 μονάδες</div>",
     "answer_html": "<div class=\"sol-step\"><div class=\"sol-step-label\">α) 1ο μέρος</div><div class=\"sol-step-text\">Από τη δοθείσα σχέση $f(x) \\cdot g(x) = x^2 - 1$, για κάθε $x \\in \\mathbb{R}$, και επειδή $f(x) = x^2 - 1$, έχουμε:\n$$(x^2 - 1) \\cdot g(x) = x^2 - 1$$\nΓια $x \\neq \\pm 1$, διαιρούμε με $x^2 - 1 \\neq 0$ και προκύπτει $g(x) = 1$.\nΕπειδή η $g$ είναι συνεχής στο $\\mathbb{R}$, θα είναι συνεχής και στα σημεία $x = -1$ και $x = 1$. Επομένως:\n$$g(-1) = \\lim_{x \\to -1} g(x) = 1 \\quad \\text{και} \\quad g(1) = \\lim_{x \\to 1} g(x) = 1$$\nΆρα, για κάθε $x \\in \\mathbb{R}$, ισχύει $g(x) = 1$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">α) 2ο μέρος</div><div class=\"sol-step-text\">Η εξίσωση $f(x) = 0$ γράφεται $x^2 - 1 = 0$, οπότε οι ρίζες της είναι $x = -1$ και $x = 1$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">β)</div><div class=\"sol-step-text\">Από το προηγούμενο ερώτημα, βρήκαμε ότι $g(x) = 1$ για κάθε $x \\in \\mathbb{R}$. Επομένως, η συνάρτηση $g$ είναι η σταθερή συνάρτηση $g(x) = 1$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">γ)</div><div class=\"sol-step-text\">Δίνεται $h(x) = \\frac{f(x)}{g(x)}$, με $g(x) = 1$. Άρα $h(x) = \\frac{x^2 - 1}{1} = x^2 - 1$.\nΤο ζητούμενο όριο είναι:\n$$\\lim_{x \\to 1} \\frac{h(x)}{x - 1} = \\lim_{x \\to 1} \\frac{x^2 - 1}{x - 1} = \\lim_{x \\to 1} \\frac{(x - 1)(x + 1)}{x - 1} = \\lim_{x \\to 1} (x + 1) = 1 + 1 = 2$$</div></div>",
     "answer_text": "ΘΕΜΑ 4\nΔίνεται η συνάρτηση  με  και η συνεχής συνάρτηση , ορισμένη στο , με , τέτοιες ώστε:\n, για κάθε .\nα)\nΝα αποδείξετε ότι .\n(Μονάδες 06)\nΝα βρείτε τις ρίζες της εξίσωσης .\n(Μονάδες 03)\nβ) Να βρείτε την συνάρτηση .\n(Μονάδες 09)\nγ) Δίνεται η συνάρτηση  με , όπου  είναι η συνάρτηση του προηγούμενου ερωτήματος. Να υπολογίσετε το παρακάτω όριο:\n(Μονάδες 07)",
     "hints": [
@@ -6655,46 +6704,32 @@
     "sections": [
       {
         "type": "text",
-        "number": "",
         "content": "ΘΕΜΑ 4"
       },
       {
         "type": "text",
-        "number": "",
-        "content": "Δίνε\n  \n  \n    \n      \n      \n      \n      \n    \n    ται η συνάρτηση $f$ ορισμένη στο $[-2, 2]$ τέτοια ώστε:"
+        "content": "Δίνεται η συνάρτηση  ορισμένη στο   τέτοια ώστε:"
       },
       {
         "type": "text",
-        "number": "",
-        "content": "$f$ συνεχής στο $[-2, 2]$ , \n  \n  \n    \n      \n      \n      \n      \n    \n    δύο φορές \n  \n  \n  \n    \n      \n      \n      \n      \n    \n    παραγωγίσιμη\n  \n  \n  \n    \n      \n      \n      \n      \n    \n     στο $(-2, 2)$ και"
+        "content": "συνεχής στο  , δύο φορές παραγωγίσιμη στο  και"
       },
       {
         "type": "text",
-        "number": "",
-        "content": "$f^{2}\n    \n      \n        \n          \n            \n            \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n            \n            \n            \n          \n          x\n        \n      \n    \n    \n      \n        \n        \n        \n      \n      -2\n    \n    \n      \n        \n        \n        \n        \n      \n      f\n    \n    \n      \n        \n          \n            \n            \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n            \n            \n            \n          \n          x\n        \n      \n    \n    \n      \n        \n        \n        \n      \n      +\n    \n    x^{2}\n    \n      \n        \n        \n        \n      \n      -3=0$ , για κάθε $x\n    \n    \n      \n        \n        \n        \n        \n        \n        \n      \n      \n    \n    \n      \n        \n        \n        \n      \n      [-2, 2]$ ."
+        "content": ", για κάθε ."
       },
       {
         "type": "sub_question",
         "number": "α)",
-        "content": "Να αποδείξετε ότι η συνάρτηση $f$ δεν έχει ση"
+        "content": "Να αποδείξετε ότι η συνάρτηση  δεν έχει σημεία καμπής. (Μονάδες 08)"
       },
       {
         "type": "sub_question",
         "number": "β)",
-        "content": "Αν $f"
-      },
-      {
-        "type": "text",
-        "number": "",
-        "content": "i\n  \n  \n    \n      \n      \n      \n      \n    \n    .\n  \n  \n    \n      \n      \n      \n      \n    \n      \n  \n  \n    \n      \n      \n      \n      \n      \n    \n    N\n  \n  \n    \n      \n      \n      \n      \n    \n    α αποδείξετε ότι $f\n            \n            \n              \n                \n                  \n                    \n                    \n                    \n                    \n                    \n                  \n                \n              \n              \n                \n                  \n                    \n                    \n                    \n                    \n                  \n                  x^{2}\n    \n      \n        \n        \n        \n      \n      =4-\n    \n    x^{2}$ , \n  \n  \n    \n      \n      \n      \n      \n    \n    για κάθε $x\n    \n    \n      \n        \n        \n        \n        \n        \n        \n      \n      \n    \n    \n      \n        \n        \n        \n      \n      [-2, 2]$ και κατόπιν ότι , $x\n    \n    \n      \n        \n        \n        \n        \n        \n        \n      \n      \n    \n    \n      \n        \n        \n        \n      \n      [-2, 2]$ ."
-      },
-      {
-        "type": "text",
-        "number": "",
-        "content": "ii\n  \n  \n    \n      \n      \n      \n      \n    \n    .  \n  \n  \n    \n      \n      \n      \n      \n    \n    Να βρείτε τα \n  \n  \n    \n      \n      \n      \n      \n    \n    ολικά \n  \n  \n    \n      \n      \n      \n      \n    \n    ακρότατα της $f$ και στη\n  \n  \n    \n      \n      \n      \n      \n    \n     συνέχεια να λύσετε την εξίσωση $f\n    \n    \n      \n        \n          \n            \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n            \n            \n          \n          x\n        \n      \n    \n    \n      \n        \n        \n        \n      \n      =συνx$ ."
+        "content": "Αν , i.  Nα αποδείξετε ότι , για κάθε  και κατόπιν ότι  ,  . (Μονάδες 09) ii.  Να βρείτε τα ολικά ακρότατα της  και στη συνέχεια να λύσετε την εξίσωση  . (Μονάδες 08)"
       }
     ],
-    "question_html": "<p class=\"text-content\">ΘΕΜΑ 4</p>\n<p class=\"text-content\">Δίνε\n  \n  \n    \n      \n      \n      \n      \n    \n    ται η συνάρτηση $f$ ορισμένη στο $[-2, 2]$ τέτοια ώστε:</p>\n<p class=\"text-content\">$f$ συνεχής στο $[-2, 2]$ , \n  \n  \n    \n      \n      \n      \n      \n    \n    δύο φορές \n  \n  \n  \n    \n      \n      \n      \n      \n    \n    παραγωγίσιμη\n  \n  \n  \n    \n      \n      \n      \n      \n    \n     στο $(-2, 2)$ και</p>\n<p class=\"text-content\">$f^{2}\n    \n      \n        \n          \n            \n            \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n            \n            \n            \n          \n          x\n        \n      \n    \n    \n      \n        \n        \n        \n      \n      -2\n    \n    \n      \n        \n        \n        \n        \n      \n      f\n    \n    \n      \n        \n          \n            \n            \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n            \n            \n            \n          \n          x\n        \n      \n    \n    \n      \n        \n        \n        \n      \n      +\n    \n    x^{2}\n    \n      \n        \n        \n        \n      \n      -3=0$ , για κάθε $x\n    \n    \n      \n        \n        \n        \n        \n        \n        \n      \n      \n    \n    \n      \n        \n        \n        \n      \n      [-2, 2]$ .</p>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Να αποδείξετε ότι η συνάρτηση $f$ δεν έχει ση</span></div>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Αν $f</span></div>\n<p class=\"text-content\">i\n  \n  \n    \n      \n      \n      \n      \n    \n    .\n  \n  \n    \n      \n      \n      \n      \n    \n      \n  \n  \n    \n      \n      \n      \n      \n      \n    \n    N\n  \n  \n    \n      \n      \n      \n      \n    \n    α αποδείξετε ότι $f\n            \n            \n              \n                \n                  \n                    \n                    \n                    \n                    \n                    \n                  \n                \n              \n              \n                \n                  \n                    \n                    \n                    \n                    \n                  \n                  x^{2}\n    \n      \n        \n        \n        \n      \n      =4-\n    \n    x^{2}$ , \n  \n  \n    \n      \n      \n      \n      \n    \n    για κάθε $x\n    \n    \n      \n        \n        \n        \n        \n        \n        \n      \n      \n    \n    \n      \n        \n        \n        \n      \n      [-2, 2]$ και κατόπιν ότι , $x\n    \n    \n      \n        \n        \n        \n        \n        \n        \n      \n      \n    \n    \n      \n        \n        \n        \n      \n      [-2, 2]$ .</p>\n<p class=\"text-content\">ii\n  \n  \n    \n      \n      \n      \n      \n    \n    .  \n  \n  \n    \n      \n      \n      \n      \n    \n    Να βρείτε τα \n  \n  \n    \n      \n      \n      \n      \n    \n    ολικά \n  \n  \n    \n      \n      \n      \n      \n    \n    ακρότατα της $f$ και στη\n  \n  \n    \n      \n      \n      \n      \n    \n     συνέχεια να λύσετε την εξίσωση $f\n    \n    \n      \n        \n          \n            \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n            \n            \n          \n          x\n        \n      \n    \n    \n      \n        \n        \n        \n      \n      =συνx$ .</p>",
+    "question_html": "<p class=\"text-content\">ΘΕΜΑ 4</p>\n<p class=\"text-content\">Δίνεται η συνάρτηση ορισμένη στο τέτοια ώστε: συνεχής στο , δύο φορές παραγωγίσιμη στο και</p>\n<p class=\"text-content\">, για κάθε .</p>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Να αποδείξετε ότι η συνάρτηση δεν έχει σημεία καμπής.</span></div>\n<div class=\"points-chip\">⭐ 8 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Αν ,</span></div>\n<div class=\"points-chip\">⭐ 9 μονάδες</div>\n<p class=\"text-content\">i. Nα αποδείξετε ότι , για κάθε και κατόπιν ότι , .</p>\n<p class=\"text-content\">ii. Να βρείτε τα ολικά ακρότατα της και στη συνέχεια να λύσετε την εξίσωση .</p>\n<div class=\"points-chip\">⭐ 8 μονάδες</div>",
     "answer_html": "<div class=\"sol-step\"><div class=\"sol-step-label\">α)</div><div class=\"sol-step-text\">Για να έχει η $f$ σημείο καμπής, πρέπει να υπάρχει $x_0 \\in \\mathbb{R}$ τέτοιο ώστε $f''(x_0)=0$ και η $f''$ να αλλάζει πρόσημο εκατέρωθεν του $x_0$. Από τη δοθείσα σχέση $f''(x) \\neq 0$ για κάθε $x \\in \\mathbb{R}$, συμπεραίνουμε ότι η $f''$ δεν μηδενίζεται πουθενά. Επομένως, δεν υπάρχει σημείο καμπής.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">β) i.</div><div class=\"sol-step-text\">Από τη σχέση $f''(x) \\neq 0$ για κάθε $x \\in \\mathbb{R}$ και την υπόθεση ότι η $f$ είναι δύο φορές παραγωγίσιμη, η $f''$ είναι συνεχής. Επομένως, η $f''$ διατηρεί σταθερό πρόσημο στο $\\mathbb{R}$. Αν $f''(x) > 0$ για κάθε $x$, τότε η $f'$ είναι γνησίως αύξουσα. Αν $f''(x) < 0$, τότε η $f'$ είναι γνησίως φθίνουσα. Δίνεται ότι $f'(0)=0$. Αν $f''(x) > 0$, τότε για $x < 0$ έχουμε $f'(x) < f'(0)=0$ και για $x > 0$ έχουμε $f'(x) > f'(0)=0$. Αν $f''(x) < 0$, τότε για $x < 0$ έχουμε $f'(x) > f'(0)=0$ και για $x > 0$ έχουμε $f'(x) < f'(0)=0$. Σε κάθε περίπτωση, η $f'$ μηδενίζεται μόνο στο $x=0$. Επομένως, $f'(x) \\neq 0$ για κάθε $x \\neq 0$. Επιπλέον, από το θεώρημα Rolle, αν η $f'$ είχε δύο ρίζες, θα υπήρχε σημείο όπου $f''=0$, άτοπο. Άρα $f'(x)=0 \\Leftrightarrow x=0$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">β) ii.</div><div class=\"sol-step-text\">Από το προηγούμενο ερώτημα, η $f'$ μηδενίζεται μόνο στο $x=0$. Επομένως, η $f$ έχει ένα κρίσιμο σημείο στο $x=0$. Αν $f''(x) > 0$ για κάθε $x$, τότε η $f$ είναι κυρτή και το $x=0$ είναι ολικό ελάχιστο. Αν $f''(x) < 0$, τότε η $f$ είναι κοίλη και το $x=0$ είναι ολικό μέγιστο. Δίνεται ότι $f(0)=1$. Επομένως, η $f$ έχει ολικό ελάχιστο ή ολικό μέγιστο στο $x=0$ με τιμή $1$. Για την εξίσωση $f(x)=1$, παρατηρούμε ότι $f(0)=1$. Αφού η $f'$ μηδενίζεται μόνο στο $0$, η $f$ είναι γνησίως μονότονη εκατέρωθεν του $0$. Επομένως, η εξίσωση $f(x)=1$ έχει μοναδική λύση την $x=0$.</div></div>",
     "answer_text": "ΘΕΜΑ 4\nΔίνεται η συνάρτηση  ορισμένη στο   τέτοια ώστε:\nσυνεχής στο  , δύο φορές παραγωγίσιμη στο  και\n, για κάθε .\nα) Να αποδείξετε ότι η συνάρτηση  δεν έχει σημεία καμπής.\n(Μονάδες 08)\nβ) Αν ,\ni.  Nα αποδείξετε ότι , για κάθε  και κατόπιν ότι  ,  .\n(Μονάδες 09)\nii.  Να βρείτε τα ολικά ακρότατα της  και στη συνέχεια να λύσετε την εξίσωση  .\n(Μονάδες 08)",
     "hints": [
@@ -9943,21 +9978,34 @@
     "sections": [
       {
         "type": "text",
-        "number": "",
-        "content": "ΘΕΜΑ \n  \n  \n    \n      \n      \n    \n    4"
+        "content": "ΘΕΜΑ 4"
       },
       {
         "type": "text",
-        "number": "",
-        "content": "Δυο εταιρείες\n  \n  \n    \n      \n      \n    \n     Ε1 και Ε2 δραστηριοποιούνται στο χώρο της γεώτρησης νερού. Η πολιτική των χρεώσεων προς τους πελάτες τους είναι διαφορετική. Η \n  \n  \n    \n      \n      \n    \n    εταιρεία \n  \n  \n    \n      \n      \n    \n    Ε1 χρεώνει 1500 ευρώ για την ε\n  \n  \n    \n      \n      \n    \n    κπόνηση της αρχικής μελέτης και\n  \n  \n    \n      \n      \n    \n     200 ευρώ\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    για κάθε μέτρο βάθους μέχρι τα 15 πρώτα μέτρα.\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    Α\n  \n  \n    \n      \n      \n    \n    ν δεν \n  \n  \n    \n      \n      \n    \n    βρεθεί \n  \n  \n    \n      \n      \n    \n    νερό\n  \n  \n    \n      \n      \n    \n     μέχρι τα 15 μέτρα\n  \n  \n    \n      \n      \n    \n    ,\n  \n  \n    \n      \n      \n    \n     τότε\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    αλλάζει \n  \n  \n    \n      \n      \n    \n    τ\n  \n  \n    \n      \n      \n    \n    η χρέω\n  \n  \n    \n      \n      \n    \n    ση από 200 σε 250 ευρώ για κάθε \n  \n  \n    \n      \n      \n    \n    μέτρο βάθους\n  \n  \n    \n      \n      \n    \n     μετά\n  \n  \n  \n  \n    \n      \n      \n    \n     τα 15 πρώτα\n  \n  \n    \n      \n      \n    \n    . Η Ε2 χρεώνει 300 ευρώ για κάθε μέτρο βάθο\n  \n  \n    \n      \n      \n    \n    υ\n  \n  \n    \n      \n      \n    \n    ς."
+        "content": "Δυο εταιρείες Ε1 και Ε2 δραστηριοποιούνται στο χώρο της γεώτρησης νερού. Η πολιτική των χρεώσεων προς τους πελάτες τους είναι διαφορετική. Η εταιρεία Ε1 χρεώνει 1500 ευρώ για την εκπόνηση της αρχικής μελέτης και 200 ευρώ για κάθε μέτρο βάθους μέχρι τα 15 πρώτα μέτρα. Αν δεν βρεθεί νερό μέχρι τα 15 μέτρα, τότε αλλάζει τη χρέωση από 200 σε 250 ευρώ για κάθε μέτρο βάθους μετά τα 15 πρώτα. Η Ε2 χρεώνει 300 ευρώ για κάθε μέτρο βάθους."
       },
       {
         "type": "sub_question",
         "number": "α)",
-        "content": "Αν"
+        "content": "Αν f(x) είναι το ποσό που χρεώνει η εταιρεία Ε1 για γεώτρηση x μέτρων βάθους, να βρείτε: Τον τύπο της συνάρτησης f.\t(Μονάδες 6) Το ποσό που θα χρεώσει η εταιρεία Ε1 σε πελάτη που χρειάστηκε να φτάσει σε βάθος 12 μέτρων μέχρι να βρει νερό.\t(Μονάδες 2) Αν κάποιος πελάτης ξόδεψε για τη γεώτρησή του 5050 ευρώ, σε ποιο βάθος έφτασε;\t(Μονάδες 2)"
+      },
+      {
+        "type": "sub_question",
+        "number": "β)",
+        "content": "Αν g(x) είναι το ποσό που χρεώνει η εταιρεία Ε2 για γεώτρηση x μέτρων βάθους, να βρείτε τον τύπο της συνάρτησης g.\t(Μονάδες 3)"
+      },
+      {
+        "type": "sub_question",
+        "number": "γ)",
+        "content": "Σε ποιο βάθος σταμάτησαν τη γεώτρησή τους δυο γείτονες  που συνεργάστηκαν με διαφορετική εταιρεία ο καθένας τους, βρήκαν νερό στο ίδιο βάθος και  πλήρωσαν ακριβώς το ίδιο ποσό;\t(Μονάδες 6)"
+      },
+      {
+        "type": "sub_question",
+        "number": "δ)",
+        "content": "Να βρείτε για ποιες τιμές της μεταβλητής x (μέτρα βάθους) συμφέρει η επιλογή της εταιρείας Ε1;\t(Μονάδες 6)"
       }
     ],
-    "question_html": "<p class=\"text-content\">ΘΕΜΑ \n  \n  \n    \n      \n      \n    \n    4</p>\n<p class=\"text-content\">Δυο εταιρείες\n  \n  \n    \n      \n      \n    \n     Ε1 και Ε2 δραστηριοποιούνται στο χώρο της γεώτρησης νερού. Η πολιτική των χρεώσεων προς τους πελάτες τους είναι διαφορετική. Η \n  \n  \n    \n      \n      \n    \n    εταιρεία \n  \n  \n    \n      \n      \n    \n    Ε1 χρεώνει 1500 ευρώ για την ε\n  \n  \n    \n      \n      \n    \n    κπόνηση της αρχικής μελέτης και\n  \n  \n    \n      \n      \n    \n     200 ευρώ\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    για κάθε μέτρο βάθους μέχρι τα 15 πρώτα μέτρα.\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    Α\n  \n  \n    \n      \n      \n    \n    ν δεν \n  \n  \n    \n      \n      \n    \n    βρεθεί \n  \n  \n    \n      \n      \n    \n    νερό\n  \n  \n    \n      \n      \n    \n     μέχρι τα 15 μέτρα\n  \n  \n    \n      \n      \n    \n    ,\n  \n  \n    \n      \n      \n    \n     τότε\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    αλλάζει \n  \n  \n    \n      \n      \n    \n    τ\n  \n  \n    \n      \n      \n    \n    η χρέω\n  \n  \n    \n      \n      \n    \n    ση από 200 σε 250 ευρώ για κάθε \n  \n  \n    \n      \n      \n    \n    μέτρο βάθους\n  \n  \n    \n      \n      \n    \n     μετά\n  \n  \n  \n  \n    \n      \n      \n    \n     τα 15 πρώτα\n  \n  \n    \n      \n      \n    \n    . Η Ε2 χρεώνει 300 ευρώ για κάθε μέτρο βάθο\n  \n  \n    \n      \n      \n    \n    υ\n  \n  \n    \n      \n      \n    \n    ς.</p>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Αν</span></div>",
+    "question_html": "<p class=\"text-content\">ΘΕΜΑ 4</p>\n<p class=\"text-content\">Δυο εταιρείες Ε1 και Ε2 δραστηριοποιούνται στο χώρο της γεώτρησης νερού. Η πολιτική των χρεώσεων προς τους πελάτες τους είναι διαφορετική. Η εταιρεία Ε1 χρεώνει 1500 ευρώ για την εκπόνηση της αρχικής μελέτης και 200 ευρώ για κάθε μέτρο βάθους μέχρι τα 15 πρώτα μέτρα. Αν δεν βρεθεί νερό μέχρι τα 15 μέτρα, τότε αλλάζει τη χρέωση από 200 σε 250 ευρώ για κάθε μέτρο βάθους μετά τα 15 πρώτα. Η Ε2 χρεώνει 300 ευρώ για κάθε μέτρο βάθους.</p>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Αν f(x) είναι το ποσό που χρεώνει η εταιρεία Ε1 για γεώτρηση x μέτρων βάθους, να βρείτε:</span></div>\n<p class=\"text-content\">Τον τύπο της συνάρτησης f.</p>\n<div class=\"points-chip\">⭐ 6 μονάδες</div>\n<p class=\"text-content\">Το ποσό που θα χρεώσει η εταιρεία Ε1 σε πελάτη που χρειάστηκε να φτάσει σε βάθος 12 μέτρων μέχρι να βρει νερό.</p>\n<div class=\"points-chip\">⭐ 2 μονάδες</div>\n<p class=\"text-content\">Αν κάποιος πελάτης ξόδεψε για τη γεώτρησή του 5050 ευρώ, σε ποιο βάθος έφτασε;</p>\n<div class=\"points-chip\">⭐ 2 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Αν g(x) είναι το ποσό που χρεώνει η εταιρεία Ε2 για γεώτρηση x μέτρων βάθους, να βρείτε τον τύπο της συνάρτησης g.</span></div>\n<div class=\"points-chip\">⭐ 3 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">γ)</span> <span class=\"subq-text\">Σε ποιο βάθος σταμάτησαν τη γεώτρησή τους δυο γείτονες που συνεργάστηκαν με διαφορετική εταιρεία ο καθένας τους, βρήκαν νερό στο ίδιο βάθος και πλήρωσαν ακριβώς το ίδιο ποσό;</span></div>\n<div class=\"points-chip\">⭐ 6 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">δ)</span> <span class=\"subq-text\">Να βρείτε για ποιες τιμές της μεταβλητής x (μέτρα βάθους) συμφέρει η επιλογή της εταιρείας Ε1;</span></div>\n<div class=\"points-chip\">⭐ 6 μονάδες</div>",
     "answer_html": "<div class=\"sol-step\"><div class=\"sol-step-label\">α)</div><div class=\"sol-step-text\">Για $0 \\le x \\le 15$, η χρέωση είναι $1500 + 200x$. Για $x > 15$, η χρέωση είναι $1500 + 200 \\cdot 15 + 250(x-15) = 1500 + 3000 + 250x - 3750 = 250x + 750$. Άρα ο τύπος της $f$ είναι:\n$$f(x) = \\begin{cases} 1500 + 200x, & 0 \\le x \\le 15 \\\\ 250x + 750, & x > 15 \\end{cases}$$</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">β)</div><div class=\"sol-step-text\">Για $x=12$ (που είναι $\\le 15$), έχουμε $f(12) = 1500 + 200 \\cdot 12 = 1500 + 2400 = 3900$ ευρώ.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">γ)</div><div class=\"sol-step-text\">Αν ο πελάτης ξόδεψε $5050$ ευρώ, τότε $f(x)=5050$. Ελέγχουμε αν $x \\le 15$: $1500+200x=5050 \\Rightarrow 200x=3550 \\Rightarrow x=17.75$, που δεν ισχύει ($17.75 > 15$). Άρα $x > 15$, οπότε $250x+750=5050 \\Rightarrow 250x=4300 \\Rightarrow x=17.2$ μέτρα.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">β) (συνέχεια)</div><div class=\"sol-step-text\">Η εταιρεία Ε2 χρεώνει $300$ ευρώ για κάθε μέτρο βάθους, άρα $g(x)=300x$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">γ) (συνέχεια)</div><div class=\"sol-step-text\">Έστω $x$ το βάθος που βρήκαν νερό. Πλήρωσαν το ίδιο ποσό, οπότε $f(x)=g(x)$. Για $0 \\le x \\le 15$: $1500+200x=300x \\Rightarrow 1500=100x \\Rightarrow x=15$. Για $x > 15$: $250x+750=300x \\Rightarrow 750=50x \\Rightarrow x=15$. Και στις δύο περιπτώσεις προκύπτει $x=15$ μέτρα.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">δ)</div><div class=\"sol-step-text\">Η Ε1 συμφέρει όταν $f(x) < g(x)$. Για $0 \\le x \\le 15$: $1500+200x < 300x \\Rightarrow 1500 < 100x \\Rightarrow x > 15$, που δεν ισχύει στο διάστημα αυτό. Για $x > 15$: $250x+750 < 300x \\Rightarrow 750 < 50x \\Rightarrow x > 15$. Άρα για $x > 15$ η Ε1 συμφέρει. Επίσης, για $x=15$ τα ποσά είναι ίσα ($f(15)=g(15)=4500$), οπότε δεν υπάρχει διαφορά. Συμπέρασμα: Η Ε1 συμφέρει για $x > 15$ μέτρα.</div></div>",
     "answer_text": "ΘΕΜΑ 4\nΔυο εταιρείες Ε1 και Ε2 δραστηριοποιούνται στο χώρο της γεώτρησης νερού. Η πολιτική των χρεώσεων προς τους πελάτες τους είναι διαφορετική. Η εταιρεία Ε1 χρεώνει 1500 ευρώ για την εκπόνηση της αρχικής μελέτης και 200 ευρώ για κάθε μέτρο βάθους μέχρι τα 15 πρώτα μέτρα. Αν δεν βρεθεί νερό μέχρι τα 15 μέτρα, τότε αλλάζει τη χρέωση από 200 σε 250 ευρώ για κάθε μέτρο βάθους μετά τα 15 πρώτα. Η Ε2 χρεώνει 300 ευρώ για κάθε μέτρο βάθους.\nα) Αν f(x) είναι το ποσό που χρεώνει η εταιρεία Ε1 για γεώτρηση x μέτρων βάθους, να βρείτε:\nΤον τύπο της συνάρτησης f.\t(Μονάδες 6)\nΤο ποσό που θα χρεώσει η εταιρεία Ε1 σε πελάτη που χρειάστηκε να φτάσει σε βάθος 12 μέτρων μέχρι να βρει νερό.\t(Μονάδες 2)\nΑν κάποιος πελάτης ξόδεψε για τη γεώτρησή του 5050 ευρώ, σε ποιο βάθος έφτασε;\t(Μονάδες 2)\nβ) Αν g(x) είναι το ποσό που χρεώνει η εταιρεία Ε2 για γεώτρηση x μέτρων βάθους, να βρείτε τον τύπο της συνάρτησης g.\t(Μονάδες 3)\nγ) Σε ποιο βάθος σταμάτησαν τη γεώτρησή τους δυο γείτονες  που συνεργάστηκαν με διαφορετική εταιρεία ο καθένας τους, βρήκαν νερό στο ίδιο βάθος και  πλήρωσαν ακριβώς το ίδιο ποσό;\t(Μονάδες 6)\nδ) Να βρείτε για ποιες τιμές της μεταβλητής x (μέτρα βάθους) συμφέρει η επιλογή της εταιρείας Ε1;\t(Μονάδες 6)",
     "hints": [
@@ -10877,36 +10925,29 @@
     "sections": [
       {
         "type": "text",
-        "number": "",
-        "content": "ΘΕΜΑ \n  \n  \n    \n      \n      \n    \n    4"
+        "content": "ΘΕΜΑ 4"
       },
       {
         "type": "text",
-        "number": "",
-        "content": "Στο παρακάτω σχήμα δίνεται \n  \n  \n    \n      \n      \n    \n    στο (0,+ $∞$ ) \n  \n  \n    \n      \n      \n    \n    η γραφική παράσταση της παραγώγου $f'$ μιας συνάρτησης $f$ με πεδίο ορισμού\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    το \n  \n  \n    \n      \n      \n    \n    (0,+ $∞$ ).\n  \n  \n    \n      \n      \n    \n     Δίνεται επίσης ότι\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    η $f^{'}$ είναι συνεχής και γνησίως αύξουσα συνάρτηση στο (0,+ $∞$ ) με ${f^{'}\n        \n          \n            \n              \n                \n                \n                \n                \n              \n            \n          \n          \n            \n              \n                \n                \n                \n              \n              x}$ ."
+        "content": "Στο παρακάτω σχήμα δίνεται στο (0,+) η γραφική παράσταση της παραγώγου  μιας συνάρτησης  με πεδίο ορισμού το (0,+). Δίνεται επίσης ότι η  είναι συνεχής και γνησίως αύξουσα συνάρτηση στο (0,+) με  ."
       },
       {
         "type": "sub_question",
         "number": "α)",
-        "content": "Να βρείτε τα διαστήματα μονοτονίας και τα τοπικά ακρότατα της συνάρτησης $f$ ."
+        "content": "Να βρείτε τα διαστήματα μονοτονίας και τα τοπικά ακρότατα της συνάρτησης . (Μονάδες 09)"
       },
       {
         "type": "sub_question",
         "number": "β)",
-        "content": "Ένας μαθητής ισχυρίζεται ότι:"
+        "content": "Ένας μαθητής ισχυρίζεται ότι: 1ον: «Η γραφική παράσταση της  δέχεται οριζόντια εφαπτομένη στο σημείο με τετμημένη 1». 2ον: «Υπάρχει μοναδικό κ(0,+) τέτοιο, ώστε ο συντελεστής διεύθυνσης της εφαπτομένης της  στο σημείο Μ(κ, να ισούται με 2». Ποιοί από τους παραπάνω ισχυρισμούς του μαθητή είναι σωστοί; Να δικαιολογήσετε τις απαντήσεις σας. \t(Μονάδες 10)"
       },
       {
-        "type": "text",
-        "number": "",
-        "content": "1\n  \n  \n    \n      \n      \n      \n    \n    ον\n  \n  \n    \n      \n      \n    \n    : «Η γραφική παράσταση της $f$ δέχεται οριζόντια εφαπτομένη στο σημείο με τετμημένη 1»."
-      },
-      {
-        "type": "text",
-        "number": "",
-        "content": "2\n  \n  \n    \n      \n      \n      \n    \n    ον\n  \n  \n    \n      \n      \n    \n    : «Υπάρχει \n  \n  \n    \n      \n      \n    \n    μοναδικό \n  \n  \n    \n      \n      \n    \n    κ\n  \n  \n    \n      \n      \n    \n    \n  \n  \n    \n      \n      \n    \n    (0,+ $∞$ ) τέτοιο\n  \n  \n    \n      \n      \n    \n    ,\n  \n  \n    \n      \n      \n    \n     ώστε \n  \n  \n    \n      \n      \n    \n    ο συντελεστής διεύθυνσης τ\n  \n  \n    \n      \n      \n    \n    η\n  \n  \n    \n      \n      \n    \n    ς\n  \n  \n    \n      \n      \n    \n     εφαπτομένη\n  \n  \n    \n      \n      \n    \n    ς\n  \n  \n    \n      \n      \n    \n     της $C_{f}$ στο \n  \n  \n    \n      \n      \n    \n    σημείο \n  \n  \n  \n    \n      \n      \n    \n    Μ\n  \n  \n    \n      \n      \n    \n    (κ\n  \n  \n  \n    \n      \n      \n    \n    , $f(κ))$ να ισούται με 2»."
+        "type": "sub_question",
+        "number": "γ)",
+        "content": "Τι μπορούμε να πούμε για την κυρτότητα της   στο πεδίο ορισμού της; Να δικαιολογήσετε την όποια απάντησή σας.\t(Μονάδες 06)"
       }
     ],
-    "question_html": "<p class=\"text-content\">ΘΕΜΑ \n  \n  \n    \n      \n      \n    \n    4</p>\n<p class=\"text-content\">Στο παρακάτω σχήμα δίνεται \n  \n  \n    \n      \n      \n    \n    στο (0,+ $∞$ ) \n  \n  \n    \n      \n      \n    \n    η γραφική παράσταση της παραγώγου $f'$ μιας συνάρτησης $f$ με πεδίο ορισμού\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    το \n  \n  \n    \n      \n      \n    \n    (0,+ $∞$ ).\n  \n  \n    \n      \n      \n    \n     Δίνεται επίσης ότι\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    η $f^{'}$ είναι συνεχής και γνησίως αύξουσα συνάρτηση στο (0,+ $∞$ ) με ${f^{'}\n        \n          \n            \n              \n                \n                \n                \n                \n              \n            \n          \n          \n            \n              \n                \n                \n                \n              \n              x}$ .</p>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Να βρείτε τα διαστήματα μονοτονίας και τα τοπικά ακρότατα της συνάρτησης $f$ .</span></div>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Ένας μαθητής ισχυρίζεται ότι:</span></div>\n<p class=\"text-content\">1\n  \n  \n    \n      \n      \n      \n    \n    ον\n  \n  \n    \n      \n      \n    \n    : «Η γραφική παράσταση της $f$ δέχεται οριζόντια εφαπτομένη στο σημείο με τετμημένη 1».</p>\n<p class=\"text-content\">2\n  \n  \n    \n      \n      \n      \n    \n    ον\n  \n  \n    \n      \n      \n    \n    : «Υπάρχει \n  \n  \n    \n      \n      \n    \n    μοναδικό \n  \n  \n    \n      \n      \n    \n    κ\n  \n  \n    \n      \n      \n    \n    \n  \n  \n    \n      \n      \n    \n    (0,+ $∞$ ) τέτοιο\n  \n  \n    \n      \n      \n    \n    ,\n  \n  \n    \n      \n      \n    \n     ώστε \n  \n  \n    \n      \n      \n    \n    ο συντελεστής διεύθυνσης τ\n  \n  \n    \n      \n      \n    \n    η\n  \n  \n    \n      \n      \n    \n    ς\n  \n  \n    \n      \n      \n    \n     εφαπτομένη\n  \n  \n    \n      \n      \n    \n    ς\n  \n  \n    \n      \n      \n    \n     της $C_{f}$ στο \n  \n  \n    \n      \n      \n    \n    σημείο \n  \n  \n  \n    \n      \n      \n    \n    Μ\n  \n  \n    \n      \n      \n    \n    (κ\n  \n  \n  \n    \n      \n      \n    \n    , $f(κ))$ να ισούται με 2».</p>",
+    "question_html": "<p class=\"text-content\">ΘΕΜΑ 4</p>\n<p class=\"text-content\">Στο παρακάτω σχήμα δίνεται στο (0,+) η γραφική παράσταση της παραγώγου μιας συνάρτησης με πεδίο ορισμού το (0,+). Δίνεται επίσης ότι η είναι συνεχής και γνησίως αύξουσα συνάρτηση στο (0,+) με .</p>\n<div class=\"diagram-section\"><div class=\"diagram-label\">📊 Σχήμα / Διάγραμμα:</div><img src=\"/images/math_diagrams/27320.png\" alt=\"Διάγραμμα\" class=\"question-diagram\" style=\"max-width:100%;max-height:400px;border-radius:10px;border:1px solid var(--border);cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.06);\" onclick=\"openDiagramModal(this.src)\" loading=\"lazy\"><div style=\"margin-top:6px;font-size:0.75rem;color:var(--text2);\">💡 Κάνε κλικ στο σχήμα για μεγέθυνση</div></div>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Να βρείτε τα διαστήματα μονοτονίας και τα τοπικά ακρότατα της συνάρτησης .</span></div>\n<div class=\"points-chip\">⭐ 9 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Ένας μαθητής ισχυρίζεται ότι:</span></div>\n<p class=\"text-content\">1ον: «Η γραφική παράσταση της δέχεται οριζόντια εφαπτομένη στο σημείο με τετμημένη 1».</p>\n<p class=\"text-content\">2ον: «Υπάρχει μοναδικό κ(0,+) τέτοιο, ώστε ο συντελεστής διεύθυνσης της εφαπτομένης της στο σημείο Μ(κ, να ισούται με 2».</p>\n<div class=\"subq\"><span class=\"subq-num\">γ)</span> <span class=\"subq-text\">Τι μπορούμε να πούμε για την κυρτότητα της στο πεδίο ορισμού της; Να δικαιολογήσετε την όποια απάντησή σας.</span></div>\n<div class=\"points-chip\">⭐ 6 μονάδες</div>",
     "answer_html": "<div class=\"sol-step\"><div class=\"sol-step-label\">α)</div><div class=\"sol-step-text\">Από τη γραφική παράσταση της $f'$ στο $(0,+\\infty)$ παρατηρούμε ότι $f'(x) > 0$ για $x \\in (0,1)$ και $f'(x) < 0$ για $x \\in (1,+\\infty)$. Επειδή η $f$ είναι συνεχής, η μονοτονία της καθορίζεται από το πρόσημο της $f'$. Επομένως, η $f$ είναι γνησίως αύξουσα στο $(0,1]$ και γνησίως φθίνουσα στο $[1,+\\infty)$. Στο $x=1$ η $f$ παρουσιάζει τοπικό μέγιστο, αφού η $f'$ αλλάζει πρόσημο από θετικό σε αρνητικό.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">β)</div><div class=\"sol-step-text\">1ος ισχυρισμός: «Η γραφική παράσταση της $f$ δέχεται οριζόντια εφαπτομένη στο σημείο με τετμημένη 1». Ο ισχυρισμός είναι σωστός, διότι $f'(1)=0$ (από τη γραφική παράσταση της $f'$), οπότε η εφαπτομένη στο $x=1$ έχει συντελεστή διεύθυνσης $0$, δηλαδή είναι οριζόντια.<br><br>2ος ισχυρισμός: «Υπάρχει μοναδικό $k \\in (0,+\\infty)$ τέτοιο, ώστε ο συντελεστής διεύθυνσης της εφαπτομένης της $f$ στο σημείο $M(k, f(k))$ να ισούται με $2$». Ο συντελεστής διεύθυνσης είναι $f'(k)$. Από τη γραφική παράσταση της $f'$, η $f'$ είναι γνησίως φθίνουσα στο $(0,+\\infty)$ (αφού η κλίση της είναι αρνητική) και παίρνει τιμές από $+\\infty$ (καθώς $x \\to 0^+$) έως $-\\infty$ (καθώς $x \\to +\\infty$). Επομένως, η εξίσωση $f'(k)=2$ έχει μοναδική λύση, αφού η $f'$ είναι συνεχής και γνησίως φθίνουσα. Ο ισχυρισμός είναι σωστός.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">γ)</div><div class=\"sol-step-text\">Η κυρτότητα της $f$ καθορίζεται από το πρόσημο της $f''(x)$. Από τη γραφική παράσταση της $f'$, παρατηρούμε ότι η $f'$ είναι γνησίως φθίνουσα στο $(0,+\\infty)$, οπότε $f''(x) < 0$ για κάθε $x \\in (0,+\\infty)$. Επομένως, η $f$ είναι κοίλη (ή κυρτή προς τα κάτω) σε όλο το πεδίο ορισμού της.</div></div>",
     "answer_text": "ΘΕΜΑ 4\nΣτο παρακάτω σχήμα δίνεται στο (0,+) η γραφική παράσταση της παραγώγου  μιας συνάρτησης  με πεδίο ορισμού το (0,+). Δίνεται επίσης ότι η  είναι συνεχής και γνησίως αύξουσα συνάρτηση στο (0,+) με  .\nα) Να βρείτε τα διαστήματα μονοτονίας και τα τοπικά ακρότατα της συνάρτησης .\n(Μονάδες 09)\nβ) Ένας μαθητής ισχυρίζεται ότι:\n1ον: «Η γραφική παράσταση της  δέχεται οριζόντια εφαπτομένη στο σημείο με τετμημένη 1».\n2ον: «Υπάρχει μοναδικό κ(0,+) τέτοιο, ώστε ο συντελεστής διεύθυνσης της εφαπτομένης της  στο σημείο Μ(κ, να ισούται με 2».\nΠοιοί από τους παραπάνω ισχυρισμούς του μαθητή είναι σωστοί; Να δικαιολογήσετε τις απαντήσεις σας. \t(Μονάδες 10)\nγ) Τι μπορούμε να πούμε για την κυρτότητα της   στο πεδίο ορισμού της; Να δικαιολογήσετε την όποια απάντησή σας.\t(Μονάδες 06)",
     "hints": [
@@ -11892,16 +11933,34 @@
     "sections": [
       {
         "type": "text",
-        "number": "",
-        "content": "ΘΕΜΑ \n  \n  \n    \n      \n      \n      \n    \n    4"
+        "content": "ΘΕΜΑ 4"
       },
       {
         "type": "text",
-        "number": "",
-        "content": "Έστω $f :\n    \n    \n      \n        \n        \n      \n      \n        \n        \n        \n      \n      R→R$ μία παραγωγίσιμη συνάρτηση.\n  \n  \n    \n      \n      \n      \n    \n     Η\n  \n  \n    \n      \n      \n      \n    \n     γραφική παράσταση $C$ της παραγώγου $f '$ ,\n  \n  \n    \n      \n      \n      \n    \n     \n  \n  \n    \n      \n      \n      \n    \n    είναι οι \n  \n  \n    \n      \n      \n      \n    \n    δύο ημιευθείες \n  \n  \n    \n      \n      \n      \n    \n    που φαίνονται στο \n  \n  \n    \n      \n      \n      \n    \n    παρακάτω σχήμα\n  \n  \n    \n      \n      \n      \n    \n    . Αυτές\n  \n  \n    \n      \n      \n      \n    \n     έχουν\n  \n  \n    \n      \n      \n      \n    \n     κοινή αρχή το σημείο $Α(0 , -2)$ και \n  \n  \n    \n      \n      \n      \n    \n    διέρχ\n  \n  \n    \n      \n      \n      \n    \n    ον\n  \n  \n    \n      \n      \n      \n    \n    ται\n  \n  \n    \n      \n      \n      \n    \n     \n  \n  \n    \n      \n      \n      \n    \n    η μία \n  \n  \n    \n      \n      \n      \n    \n    από τ\n  \n  \n    \n      \n      \n      \n    \n    ο\n  \n  \n    \n      \n      \n      \n    \n     σημεί\n  \n  \n    \n      \n      \n      \n    \n    ο $Β(1 , 2)$ και \n  \n  \n    \n      \n      \n      \n    \n    η άλλη από το $Γ(-1 , 2)$ ."
+        "content": "Έστω  μία παραγωγίσιμη συνάρτηση. Η γραφική παράσταση  της παραγώγου, είναι οι δύο ημιευθείες που φαίνονται στο παρακάτω σχήμα. Αυτές έχουν κοινή αρχή το σημείο  και διέρχονται η μία από το σημείο  και η άλλη από το ."
+      },
+      {
+        "type": "sub_question",
+        "number": "α)",
+        "content": "Να βρείτε τα σημεία τομής της  με τον άξονα .                                                (Μονάδες 6)"
+      },
+      {
+        "type": "sub_question",
+        "number": "β)",
+        "content": "Να μελετήσετε τη συνάρτηση  ως προς τη μονοτονία.                                          (Μονάδες 6)"
+      },
+      {
+        "type": "sub_question",
+        "number": "γ)",
+        "content": "Να προσδιορίσετε τις θέσεις και το είδος των τοπικών ακροτάτων της .           (Μονάδες 6)"
+      },
+      {
+        "type": "sub_question",
+        "number": "δ)",
+        "content": "Έστω ότι η γραφική παράσταση της  διέρχεται από το σημείο . Να αποδείξετε ότι η ευθεία   εφάπτεται της γραφικής παράστασης της .                                              (Μονάδες 7)"
       }
     ],
-    "question_html": "<p class=\"text-content\">ΘΕΜΑ \n  \n  \n    \n      \n      \n      \n    \n    4</p>\n<p class=\"text-content\">Έστω $f :\n    \n    \n      \n        \n        \n      \n      \n        \n        \n        \n      \n      R→R$ μία παραγωγίσιμη συνάρτηση.\n  \n  \n    \n      \n      \n      \n    \n     Η\n  \n  \n    \n      \n      \n      \n    \n     γραφική παράσταση $C$ της παραγώγου $f '$ ,\n  \n  \n    \n      \n      \n      \n    \n     \n  \n  \n    \n      \n      \n      \n    \n    είναι οι \n  \n  \n    \n      \n      \n      \n    \n    δύο ημιευθείες \n  \n  \n    \n      \n      \n      \n    \n    που φαίνονται στο \n  \n  \n    \n      \n      \n      \n    \n    παρακάτω σχήμα\n  \n  \n    \n      \n      \n      \n    \n    . Αυτές\n  \n  \n    \n      \n      \n      \n    \n     έχουν\n  \n  \n    \n      \n      \n      \n    \n     κοινή αρχή το σημείο $Α(0 , -2)$ και \n  \n  \n    \n      \n      \n      \n    \n    διέρχ\n  \n  \n    \n      \n      \n      \n    \n    ον\n  \n  \n    \n      \n      \n      \n    \n    ται\n  \n  \n    \n      \n      \n      \n    \n     \n  \n  \n    \n      \n      \n      \n    \n    η μία \n  \n  \n    \n      \n      \n      \n    \n    από τ\n  \n  \n    \n      \n      \n      \n    \n    ο\n  \n  \n    \n      \n      \n      \n    \n     σημεί\n  \n  \n    \n      \n      \n      \n    \n    ο $Β(1 , 2)$ και \n  \n  \n    \n      \n      \n      \n    \n    η άλλη από το $Γ(-1 , 2)$ .</p>",
+    "question_html": "<p class=\"text-content\">ΘΕΜΑ 4</p>\n<p class=\"text-content\">Έστω  μία παραγωγίσιμη συνάρτηση. Η γραφική παράσταση  της παραγώγου, είναι οι δύο ημιευθείες που φαίνονται στο παρακάτω σχήμα. Αυτές έχουν κοινή αρχή το σημείο  και διέρχονται η μία από το σημείο  και η άλλη από το .</p>\n<div class=\"diagram-section\"><div class=\"diagram-label\">📊 Σχήμα / Διάγραμμα:</div><img src=\"/images/math_diagrams/28337.png\" alt=\"Διάγραμμα\" class=\"question-diagram\" style=\"max-width:100%;max-height:400px;border-radius:10px;border:1px solid var(--border);cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.06);\" onclick=\"openDiagramModal(this.src)\" loading=\"lazy\"><div style=\"margin-top:6px;font-size:0.75rem;color:var(--text2);\">💡 Κάνε κλικ στο σχήμα για μεγέθυνση</div></div>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Να βρείτε τα σημεία τομής της  με τον άξονα .</span></div><div class=\"points-chip\">⭐ 6 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Να μελετήσετε τη συνάρτηση  ως προς τη μονοτονία.</span></div><div class=\"points-chip\">⭐ 6 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">γ)</span> <span class=\"subq-text\">Να προσδιορίσετε τις θέσεις και το είδος των τοπικών ακροτάτων της .</span></div><div class=\"points-chip\">⭐ 6 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">δ)</span> <span class=\"subq-text\">Έστω ότι η γραφική παράσταση της  διέρχεται από το σημείο . Να αποδείξετε ότι η ευθεία   εφάπτεται της γραφικής παράστασης της .</span></div><div class=\"points-chip\">⭐ 7 μονάδες</div>",
     "answer_html": "<div class=\"sol-step\"><div class=\"sol-step-label\">α)</div><div class=\"sol-step-text\">Η γραφική παράσταση της $f'$ αποτελείται από δύο ημιευθείες με κοινή αρχή το σημείο $(1,0)$. Η μία διέρχεται από το $(0,2)$ και η άλλη από το $(2,2)$. Επομένως, η $f'$ τέμνει τον άξονα $x'x$ στο σημείο $(1,0)$, άρα $f'(1)=0$. Επίσης, από το σχήμα προκύπτει ότι $f'(x)=0$ μόνο για $x=1$. Τα σημεία τομής της $f'$ με τον άξονα $x'x$ είναι ένα: το $(1,0)$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">β)</div><div class=\"sol-step-text\">Για $x<1$, η $f'$ είναι θετική (αφού η ημιευθεία βρίσκεται πάνω από τον άξονα $x'x$), οπότε $f'(x)>0$, άρα η $f$ είναι γνησίως αύξουσα στο $(-\\infty,1]$. Για $x>1$, η $f'$ είναι αρνητική (αφού η ημιευθεία βρίσκεται κάτω από τον άξονα $x'x$), οπότε $f'(x)<0$, άρα η $f$ είναι γνησίως φθίνουσα στο $[1,+\\infty)$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">γ)</div><div class=\"sol-step-text\">Από το προηγούμενο ερώτημα, η $f$ παρουσιάζει τοπικό μέγιστο στο $x=1$, αφού $f'(1)=0$ και η $f'$ αλλάζει πρόσημο από θετικό σε αρνητικό. Δεν υπάρχουν άλλα τοπικά ακρότατα.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">δ)</div><div class=\"sol-step-text\">Η γραφική παράσταση της $f$ διέρχεται από το σημείο $A(1,2)$, οπότε $f(1)=2$. Η εξίσωση της εφαπτομένης της $C_f$ στο σημείο $A(1,2)$ είναι $y-f(1)=f'(1)(x-1)$. Αφού $f'(1)=0$, έχουμε $y-2=0 \\cdot (x-1) \\Rightarrow y=2$. Άρα η ευθεία $y=2$ εφάπτεται της $C_f$ στο σημείο $A(1,2)$.</div></div>",
     "answer_text": "ΘΕΜΑ 4\nΈστω  μία παραγωγίσιμη συνάρτηση. Η γραφική παράσταση  της παραγώγου, είναι οι δύο ημιευθείες που φαίνονται στο παρακάτω σχήμα. Αυτές έχουν κοινή αρχή το σημείο  και διέρχονται η μία από το σημείο  και η άλλη από το .\nα) Να βρείτε τα σημεία τομής της  με τον άξονα .                                                (Μονάδες 6)\nβ) Να μελετήσετε τη συνάρτηση  ως προς τη μονοτονία.                                          (Μονάδες 6)\nγ) Να προσδιορίσετε τις θέσεις και το είδος των τοπικών ακροτάτων της .           (Μονάδες 6)\nδ) Έστω ότι η γραφική παράσταση της  διέρχεται από το σημείο . Να αποδείξετε ότι η ευθεία   εφάπτεται της γραφικής παράστασης της .                                              (Μονάδες 7)",
     "hints": [
@@ -12006,26 +12065,24 @@
     "sections": [
       {
         "type": "text",
-        "number": "",
-        "content": "ΘΕΜΑ \n  \n  \n    \n      \n      \n      \n    \n    4"
+        "content": "ΘΕΜΑ 4"
       },
       {
         "type": "text",
-        "number": "",
-        "content": "Έστω $f :\n    \n    \n      \n        \n        \n      \n      \n        \n        \n        \n      \n      R→R$ μια \n  \n  \n    \n      \n      \n      \n    \n    παραγωγίσιμη συνάρτηση\n  \n  \n    \n      \n      \n      \n    \n     η οποία\n  \n  \n    \n      \n      \n      \n    \n     \n  \n  \n    \n      \n      \n      \n    \n    έχει\n  \n  \n    \n      \n      \n      \n    \n     τοπικό ελάχιστο το $f(2)=-32$ .\n  \n  \n    \n      \n      \n      \n    \n     \n  \n  \n    \n      \n      \n      \n    \n    Οι\n  \n  \n    \n      \n      \n      \n    \n     \n  \n  \n    \n      \n      \n      \n    \n     γραφικ\n  \n  \n    \n      \n      \n      \n    \n    ές\n  \n  \n    \n      \n      \n      \n    \n     \n  \n  \n    \n      \n      \n      \n    \n    παραστάσεις\n  \n  \n    \n      \n      \n      \n    \n     \n  \n  \n    \n      \n      \n      \n    \n    της $f$ και της \n  \n  \n    \n      \n      \n      \n    \n    παραγώγου $f '$ τέμνονται \n  \n  \n    \n      \n      \n      \n    \n    στο σημείο $Α(-2 , 0)$ ."
+        "content": "Έστω  μια παραγωγίσιμη συνάρτηση η οποία έχει τοπικό ελάχιστο το . Οι  γραφικές παραστάσεις της  και της παραγώγου  τέμνονται στο σημείο ."
       },
       {
         "type": "sub_question",
         "number": "α)",
-        "content": "Να βρείτε"
+        "content": "Να βρείτε τις εξισώσεις των εφαπτομένων της  στα σημεία με τετμημένες: ,                                                                                                                      (Μονάδες 5) .                                                                                                                    (Μονάδες 5)"
       },
       {
         "type": "sub_question",
         "number": "β)",
-        "content": "Δίνεται επιπλέον ότι η $f '$ είναι"
+        "content": "Δίνεται επιπλέον ότι η είναι πολυωνυμική συνάρτηση 2ου βαθμού και η γραφική παράσταση της διέρχεται από το σημείο . Να αποδείξετε ότι: ,                                                                                                   (Μονάδες 4) ,                                                                                           (Μονάδες 5) η εξίσωση  έχει τρεις διαφορετικές πραγματικές ρίζες.             (Μονάδες 6)"
       }
     ],
-    "question_html": "<p class=\"text-content\">ΘΕΜΑ \n  \n  \n    \n      \n      \n      \n    \n    4</p>\n<p class=\"text-content\">Έστω $f :\n    \n    \n      \n        \n        \n      \n      \n        \n        \n        \n      \n      R→R$ μια \n  \n  \n    \n      \n      \n      \n    \n    παραγωγίσιμη συνάρτηση\n  \n  \n    \n      \n      \n      \n    \n     η οποία\n  \n  \n    \n      \n      \n      \n    \n     \n  \n  \n    \n      \n      \n      \n    \n    έχει\n  \n  \n    \n      \n      \n      \n    \n     τοπικό ελάχιστο το $f(2)=-32$ .\n  \n  \n    \n      \n      \n      \n    \n     \n  \n  \n    \n      \n      \n      \n    \n    Οι\n  \n  \n    \n      \n      \n      \n    \n     \n  \n  \n    \n      \n      \n      \n    \n     γραφικ\n  \n  \n    \n      \n      \n      \n    \n    ές\n  \n  \n    \n      \n      \n      \n    \n     \n  \n  \n    \n      \n      \n      \n    \n    παραστάσεις\n  \n  \n    \n      \n      \n      \n    \n     \n  \n  \n    \n      \n      \n      \n    \n    της $f$ και της \n  \n  \n    \n      \n      \n      \n    \n    παραγώγου $f '$ τέμνονται \n  \n  \n    \n      \n      \n      \n    \n    στο σημείο $Α(-2 , 0)$ .</p>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Να βρείτε</span></div>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Δίνεται επιπλέον ότι η $f '$ είναι</span></div>",
+    "question_html": "<p class=\"text-content\">ΘΕΜΑ 4</p>\n<p class=\"text-content\">Έστω μια παραγωγίσιμη συνάρτηση η οποία έχει τοπικό ελάχιστο το . Οι γραφικές παραστάσεις της και της παραγώγου τέμνονται στο σημείο .</p>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Να βρείτε τις εξισώσεις των εφαπτομένων της στα σημεία με τετμημένες:</span></div>\n<div class=\"points-chip\">⭐ 5 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Δίνεται επιπλέον ότι η είναι πολυωνυμική συνάρτηση 2ου βαθμού και η γραφική παράσταση της διέρχεται από το σημείο . Να αποδείξετε ότι:</span></div>\n<div class=\"points-chip\">⭐ 4 μονάδες</div>\n<p class=\"text-content\">η εξίσωση έχει τρεις διαφορετικές πραγματικές ρίζες.</p>\n<div class=\"points-chip\">⭐ 6 μονάδες</div>",
     "answer_html": "<div class=\"sol-step\"><div class=\"sol-step-label\">α)</div><div class=\"sol-step-text\">Η $C_f$ και η $C_{f'}$ τέμνονται στο σημείο $A(1,2)$, οπότε $f(1)=2$ και $f'(1)=2$. Επίσης, η $f$ έχει τοπικό ελάχιστο στο $x_0=2$, οπότε $f'(2)=0$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">Εφαπτομένη στο $x=1$:</div><div class=\"sol-step-text\">Η εξίσωση της εφαπτομένης είναι $y-f(1)=f'(1)(x-1) \\Rightarrow y-2=2(x-1) \\Rightarrow y=2x$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">Εφαπτομένη στο $x=2$:</div><div class=\"sol-step-text\">Η εξίσωση της εφαπτομένης είναι $y-f(2)=f'(2)(x-2) \\Rightarrow y-f(2)=0 \\Rightarrow y=f(2)$. Από την $f(1)=2$ και $f'(1)=2$ θα υπολογίσουμε το $f(2)$ παρακάτω.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">β)</div><div class=\"sol-step-text\">Η $f$ είναι πολυωνυμική 2ου βαθμού, οπότε $f(x)=ax^2+bx+c$, $a\\neq0$. Τότε $f'(x)=2ax+b$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">Από τα δεδομένα:</div><div class=\"sol-step-text\">$f(1)=2 \\Rightarrow a+b+c=2$ (1)<br>$f'(1)=2 \\Rightarrow 2a+b=2$ (2)<br>$f'(2)=0 \\Rightarrow 4a+b=0$ (3)</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">Λύση συστήματος:</div><div class=\"sol-step-text\">Από (3): $b=-4a$. Από (2): $2a-4a=2 \\Rightarrow -2a=2 \\Rightarrow a=-1$. Οπότε $b=-4(-1)=4$. Από (1): $-1+4+c=2 \\Rightarrow c=-1$. Άρα $f(x)=-x^2+4x-1$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">Εύρεση $f(2)$:</div><div class=\"sol-step-text\">$f(2)=-4+8-1=3$. Οπότε η εφαπτομένη στο $x=2$ είναι $y=3$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">Εξίσωση $f(x)=f'(x)$:</div><div class=\"sol-step-text\">$f(x)=f'(x) \\Rightarrow -x^2+4x-1=-2x+4 \\Rightarrow -x^2+6x-5=0 \\Rightarrow x^2-6x+5=0$. Διακρίνουσα: $\\Delta=36-20=16$, ρίζες: $x=\\frac{6\\pm4}{2}=1$ ή $5$. Οπότε $f(x)=f'(x)$ για $x=1$ (το σημείο τομής) και $x=5$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">Εξίσωση $f(x)=0$:</div><div class=\"sol-step-text\">$-x^2+4x-1=0 \\Rightarrow x^2-4x+1=0$. Διακρίνουσα: $\\Delta=16-4=12>0$, ρίζες: $x=\\frac{4\\pm2\\sqrt{3}}{2}=2\\pm\\sqrt{3}$. Δύο πραγματικές ρίζες.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">Εξίσωση $f(x)=f'(x)+1$:</div><div class=\"sol-step-text\">$f(x)=f'(x)+1 \\Rightarrow -x^2$",
     "answer_text": "ΘΕΜΑ 4\nΈστω  μια παραγωγίσιμη συνάρτηση η οποία έχει τοπικό ελάχιστο το . Οι  γραφικές παραστάσεις της  και της παραγώγου  τέμνονται στο σημείο .\nα) Να βρείτε τις εξισώσεις των εφαπτομένων της  στα σημεία με τετμημένες:\n,                                                                                                                      (Μονάδες 5)\n.                                                                                                                    (Μονάδες 5)\nβ) Δίνεται επιπλέον ότι η είναι πολυωνυμική συνάρτηση 2ου βαθμού και η γραφική παράσταση της διέρχεται από το σημείο . Να αποδείξετε ότι:\n,                                                                                                   (Μονάδες 4)\n,                                                                                           (Μονάδες 5)\nη εξίσωση  έχει τρεις διαφορετικές πραγματικές ρίζες.             (Μονάδες 6)",
     "hints": [
@@ -12198,21 +12255,29 @@
     "sections": [
       {
         "type": "text",
-        "number": "",
-        "content": "ΘΕΜΑ \n  \n  \n    \n      \n      \n    \n    4"
+        "content": "ΘΕΜΑ 4"
       },
       {
         "type": "text",
-        "number": "",
-        "content": "Στο\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    παρακάτω σχήμα\n  \n  \n    \n      \n      \n      \n    \n     το ορθογώνιο $ΑΒΓΔ$ έχει\n  \n  \n    \n      \n      \n      \n    \n     τις κορυφές $Α$ και $Δ$ πάνω στον άξονα $x'x$ και τις κορυφές $Β$ και $Γ$ πάνω\n  \n  \n    \n      \n      \n      \n    \n     \n  \n  \n    \n      \n      \n      \n    \n    στις\n  \n  \n    \n      \n      \n      \n    \n     γραφικ\n  \n  \n    \n      \n      \n      \n    \n    ές\n  \n  \n    \n      \n      \n      \n    \n     παραστάσε\n  \n  \n    \n      \n      \n      \n    \n    ις\n  \n  \n    \n      \n      \n      \n    \n     των συναρτήσεων $f\n    \n    \n      \n        \n          \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n          \n          \n            \n            \n            \n          \n          x\n        \n      \n    \n    \n      \n        \n      \n      \n        \n        \n        \n      \n      =\n    \n    e^{x}$ , $x&lt;1$ και $g\n    \n    \n      \n        \n          \n            \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n          \n          \n            \n            \n            \n            \n          \n          x\n        \n      \n    \n    \n      \n        \n      \n      \n        \n        \n        \n      \n      =\n    \n    \\frac{e}{x}$ , $x\n    \n    \n      \n        \n      \n      \n        \n        \n        \n      \n      &gt;1$ , \n  \n  \n    \n      \n      \n      \n    \n    αντίστοιχα.\n  \n  \n    \n      \n      \n      \n    \n     Έστω $Α(α , 0)$ με $α&lt;1$ ."
+        "content": "Στο παρακάτω σχήμα το ορθογώνιο  έχει τις κορυφές  και  πάνω στον άξονα  και τις κορυφές  και  πάνω στις γραφικές παραστάσεις των συναρτήσεων  ,  και   , , αντίστοιχα. Έστω  με ."
       },
       {
         "type": "sub_question",
         "number": "α)",
-        "content": "Να αποδείξετε ότι:"
+        "content": "Να αποδείξετε ότι: η τετμημένη της κορυφής  είναι  ,                                                  (Μονάδες 6) το εμβαδόν του ορθογωνίου  είναι , .\t            (Μονάδες 6)"
+      },
+      {
+        "type": "sub_question",
+        "number": "β)",
+        "content": "Να βρείτε τη μέγιστη τιμή του εμβαδού του ορθογωνίου  .                        (Μονάδες 7)"
+      },
+      {
+        "type": "sub_question",
+        "number": "γ)",
+        "content": "Να εξετάσετε αν υπάρχουν και πόσες τιμές του , για τις οποίες το εμβαδόν του ορθογωνίου  γίνεται ίσο με .                                                                                 (Μονάδες 6)"
       }
     ],
-    "question_html": "<p class=\"text-content\">ΘΕΜΑ \n  \n  \n    \n      \n      \n    \n    4</p>\n<p class=\"text-content\">Στο\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    παρακάτω σχήμα\n  \n  \n    \n      \n      \n      \n    \n     το ορθογώνιο $ΑΒΓΔ$ έχει\n  \n  \n    \n      \n      \n      \n    \n     τις κορυφές $Α$ και $Δ$ πάνω στον άξονα $x'x$ και τις κορυφές $Β$ και $Γ$ πάνω\n  \n  \n    \n      \n      \n      \n    \n     \n  \n  \n    \n      \n      \n      \n    \n    στις\n  \n  \n    \n      \n      \n      \n    \n     γραφικ\n  \n  \n    \n      \n      \n      \n    \n    ές\n  \n  \n    \n      \n      \n      \n    \n     παραστάσε\n  \n  \n    \n      \n      \n      \n    \n    ις\n  \n  \n    \n      \n      \n      \n    \n     των συναρτήσεων $f\n    \n    \n      \n        \n          \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n          \n          \n            \n            \n            \n          \n          x\n        \n      \n    \n    \n      \n        \n      \n      \n        \n        \n        \n      \n      =\n    \n    e^{x}$ , $x&amp;lt;1$ και $g\n    \n    \n      \n        \n          \n            \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n          \n          \n            \n            \n            \n            \n          \n          x\n        \n      \n    \n    \n      \n        \n      \n      \n        \n        \n        \n      \n      =\n    \n    \\frac{e}{x}$ , $x\n    \n    \n      \n        \n      \n      \n        \n        \n        \n      \n      &amp;gt;1$ , \n  \n  \n    \n      \n      \n      \n    \n    αντίστοιχα.\n  \n  \n    \n      \n      \n      \n    \n     Έστω $Α(α , 0)$ με $α&amp;lt;1$ .</p>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Να αποδείξετε ότι:</span></div>",
+    "question_html": "<p class=\"text-content\">ΘΕΜΑ 4</p>\n<p class=\"text-content\">Στο παρακάτω σχήμα το ορθογώνιο έχει τις κορυφές και πάνω στον άξονα και τις κορυφές και πάνω στις γραφικές παραστάσεις των συναρτήσεων , και , , αντίστοιχα. Έστω με .</p>\n<div class=\"diagram-section\"><div class=\"diagram-label\">📊 Σχήμα / Διάγραμμα:</div><img src=\"/images/math_diagrams/28342.png\" alt=\"Διάγραμμα\" class=\"question-diagram\" style=\"max-width:100%;max-height:400px;border-radius:10px;border:1px solid var(--border);cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.06);\" onclick=\"openDiagramModal(this.src)\" loading=\"lazy\"><div style=\"margin-top:6px;font-size:0.75rem;color:var(--text2);\">💡 Κάνε κλικ στο σχήμα για μεγέθυνση</div></div>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Να αποδείξετε ότι: η τετμημένη της κορυφής είναι , το εμβαδόν του ορθογωνίου είναι , .</span></div>\n<div class=\"points-chip\">⭐ 6 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Να βρείτε τη μέγιστη τιμή του εμβαδού του ορθογωνίου .</span></div>\n<div class=\"points-chip\">⭐ 7 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">γ)</span> <span class=\"subq-text\">Να εξετάσετε αν υπάρχουν και πόσες τιμές του , για τις οποίες το εμβαδόν του ορθογωνίου γίνεται ίσο με .</span></div>\n<div class=\"points-chip\">⭐ 6 μονάδες</div>",
     "answer_html": "<div class=\"sol-step\"><div class=\"sol-step-label\">α)</div><div class=\"sol-step-text\">Από το σχήμα, η κορυφή $A$ βρίσκεται στη γραφική παράσταση της $f(x)=\\ln x$ και η κορυφή $D$ στη γραφική παράσταση της $g(x)=e^x$, με $x>0$. Η τετμημένη της $A$ είναι $x_A = t$, οπότε $A(t, \\ln t)$. Η τετμημένη της $D$ είναι $x_D = \\ln t$, αφού $g(\\ln t)=e^{\\ln t}=t$, οπότε $D(\\ln t, t)$. Επομένως, η τετμημένη της κορυφής $B$ είναι $x_B = \\ln t$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">α) συνέχεια</div><div class=\"sol-step-text\">Το ορθογώνιο $ABCD$ έχει μήκος $AB = t - \\ln t$ και ύψος $BC = \\ln t - 0 = \\ln t$ (αφού η $B$ έχει τεταγμένη $0$ και η $C$ έχει τεταγμένη $\\ln t$). Το εμβαδόν του είναι $E(t) = (t - \\ln t) \\cdot \\ln t = t\\ln t - (\\ln t)^2$, για $t>0$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">β)</div><div class=\"sol-step-text\">Για να βρούμε τη μέγιστη τιμή του $E(t)$, παραγωγίζουμε: $E'(t) = \\ln t + t \\cdot \\frac{1}{t} - 2\\ln t \\cdot \\frac{1}{t} = \\ln t + 1 - \\frac{2\\ln t}{t}$. Θέτουμε $E'(t)=0$: $\\ln t + 1 - \\frac{2\\ln t}{t}=0 \\Rightarrow t\\ln t + t - 2\\ln t = 0 \\Rightarrow \\ln t (t-2) + t = 0$. Δοκιμάζοντας $t=1$: $0 \\cdot (-1) + 1 = 1 \\neq 0$. Δοκιμάζοντας $t=e$: $1 \\cdot (e-2) + e = e-2+e = 2e-2 \\neq 0$. Δοκιμάζοντας $t=2$: $\\ln 2 \\cdot 0 + 2 = 2 \\neq 0$. Η εξίσωση λύνεται αριθμητικά ή με παρατήρηση ότι $t=1$ δεν είναι λύση. Ελέγχουμε τη μονοτονία: Για $t \\to 0^+$, $E(t) \\to 0$ (αφού $\\ln t \\to -\\infty$, $t\\ln t \\to 0$, $(\\ln t)^2 \\to +\\infty$, αλλά το γινόμενο τείνει στο $0$). Για $t \\to +\\infty$, $E(t) \\to +\\infty$. Η $E'(t)$ μηδενίζεται σε ένα σημείο $t_0$ όπου η $E(t)$ παρουσιάζει τοπικό ακρότατο. Υπολογίζοντας αριθμητικά, βρίσκουμε $t_0 \\approx 1.763$. Η μέγιστη τιμή είναι $E(t_0) \\approx 1.763 \\cdot \\ln(1.763) - (\\ln(1.763))^2 \\approx 1.763 \\cdot 0.567 - (0.567)^2 \\approx 1.000 - 0.321 \\approx 0.679$. Ακριβέστερα, η μέγιστη τιμή είναι $E_{\\max} = 1$ (από γνωστή ιδιότητα ή με ακριβή υπολογισμό).</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">γ)</div><div class=\"sol-step-text\">Θέτουμε $E(t) = \\frac{1}{2}$, δηλαδή $t\\ln t$",
     "answer_text": "ΘΕΜΑ 4\nΣτο παρακάτω σχήμα το ορθογώνιο  έχει τις κορυφές  και  πάνω στον άξονα  και τις κορυφές  και  πάνω στις γραφικές παραστάσεις των συναρτήσεων  ,  και   , , αντίστοιχα. Έστω  με .\nα) Να αποδείξετε ότι:\nη τετμημένη της κορυφής  είναι  ,                                                  (Μονάδες 6)\nτο εμβαδόν του ορθογωνίου  είναι , .\t            (Μονάδες 6)\nβ) Να βρείτε τη μέγιστη τιμή του εμβαδού του ορθογωνίου  .                        (Μονάδες 7)\nγ) Να εξετάσετε αν υπάρχουν και πόσες τιμές του , για τις οποίες το εμβαδόν του ορθογωνίου  γίνεται ίσο με .                                                                                 (Μονάδες 6)",
     "hints": [
@@ -12750,21 +12815,29 @@
     "sections": [
       {
         "type": "text",
-        "number": "",
-        "content": "ΘΕΜΑ \n  \n  \n    \n      \n      \n    \n    4"
+        "content": "ΘΕΜΑ 4"
       },
       {
         "type": "text",
-        "number": "",
-        "content": "Δίνεται μία συνεχής συνάρτηση $f$ στο  διάστημα [-3,2]\n  \n  \n    \n      \n      \n    \n    , \n  \n  \n    \n      \n      \n    \n    η οποία δεν είναι \n  \n  \n    \n      \n      \n    \n    παραγωγίσιμη στο -1\n  \n  \n    \n      \n      \n    \n    . \n  \n  \n    \n      \n      \n    \n    Στο παρακάτω σχήμα δίνεται η γραφική παράσταση \n  \n  \n    \n      \n      \n    \n    της παραγώγου\n  \n  \n    \n      \n      \n    \n     της $f$ ,η $C_{f'}$ που στο διάστημα (-1,2] είναι ευθύγραμμο τμήμα."
+        "content": "Δίνεται μία συνεχής συνάρτηση  στο  διάστημα [-3,2], η οποία δεν είναι παραγωγίσιμη στο -1. Στο παρακάτω σχήμα δίνεται η γραφική παράσταση της παραγώγου της ,η  που στο διάστημα (-1,2] είναι ευθύγραμμο τμήμα."
+      },
+      {
+        "type": "sub_question",
+        "number": "α)",
+        "content": "Να μελετήσετε τη συνάρτηση   ως προς τη μονοτονία της.\t(Μονάδες 08)"
       },
       {
         "type": "sub_question",
         "number": "β)",
-        "content": "Να βρείτε:"
+        "content": "Να βρείτε: Τα κρίσιμα σημεία της , αν υπάρχουν, δικαιολογώντας την απάντησή σας.\t(Μονάδες 06) Τις θέσεις τοπικών ακροτάτων και το είδος τους.\t(Μονάδες 05)"
+      },
+      {
+        "type": "sub_question",
+        "number": "γ)",
+        "content": "Αν η  είναι συνεχής στο [0,2] και ισχύει ότι  , να υπολογίσετε την τιμή .\t(Μονάδες 06)"
       }
     ],
-    "question_html": "<p class=\"text-content\">ΘΕΜΑ \n  \n  \n    \n      \n      \n    \n    4</p>\n<p class=\"text-content\">Δίνεται μία συνεχής συνάρτηση $f$ στο  διάστημα [-3,2]\n  \n  \n    \n      \n      \n    \n    , \n  \n  \n    \n      \n      \n    \n    η οποία δεν είναι \n  \n  \n    \n      \n      \n    \n    παραγωγίσιμη στο -1\n  \n  \n    \n      \n      \n    \n    . \n  \n  \n    \n      \n      \n    \n    Στο παρακάτω σχήμα δίνεται η γραφική παράσταση \n  \n  \n    \n      \n      \n    \n    της παραγώγου\n  \n  \n    \n      \n      \n    \n     της $f$ ,η $C_{f'}$ που στο διάστημα (-1,2] είναι ευθύγραμμο τμήμα.</p>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Να βρείτε:</span></div>",
+    "question_html": "<p class=\"text-content\">ΘΕΜΑ 4</p>\n<p class=\"text-content\">Δίνεται μία συνεχής συνάρτηση  στο  διάστημα [-3,2], η οποία δεν είναι παραγωγίσιμη στο -1. Στο παρακάτω σχήμα δίνεται η γραφική παράσταση της παραγώγου της ,η  που στο διάστημα (-1,2] είναι ευθύγραμμο τμήμα.</p>\n<div class=\"diagram-section\"><div class=\"diagram-label\">📊 Σχήμα / Διάγραμμα:</div><img src=\"/images/math_diagrams/28870.png\" alt=\"Διάγραμμα\" class=\"question-diagram\" style=\"max-width:100%;max-height:400px;border-radius:10px;border:1px solid var(--border);cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.06);\" onclick=\"openDiagramModal(this.src)\" loading=\"lazy\"><div style=\"margin-top:6px;font-size:0.75rem;color:var(--text2);\">💡 Κάνε κλικ στο σχήμα για μεγέθυνση</div></div>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Να μελετήσετε τη συνάρτηση   ως προς τη μονοτονία της.</span></div><div class=\"points-chip\">⭐ 8 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Να βρείτε:</span></div>\n<p class=\"text-content\">Τα κρίσιμα σημεία της , αν υπάρχουν, δικαιολογώντας την απάντησή σας.</p><div class=\"points-chip\">⭐ 6 μονάδες</div>\n<p class=\"text-content\">Τις θέσεις τοπικών ακροτάτων και το είδος τους.</p><div class=\"points-chip\">⭐ 5 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">γ)</span> <span class=\"subq-text\">Αν η  είναι συνεχής στο [0,2] και ισχύει ότι  , να υπολογίσετε την τιμή .</span></div><div class=\"points-chip\">⭐ 6 μονάδες</div>",
     "answer_html": "<div class=\"sol-step\"><div class=\"sol-step-label\">α)</div><div class=\"sol-step-text\">Από τη γραφική παράσταση της $f'$ παρατηρούμε ότι:\n<ul>\n<li>$f'(x) > 0$ στο $(-3,-1)$ και στο $(-1,0)$, οπότε η $f$ είναι γνησίως αύξουσα σε καθένα από τα διαστήματα $[-3,-1)$ και $(-1,0]$.</li>\n<li>$f'(x) < 0$ στο $(0,2]$, οπότε η $f$ είναι γνησίως φθίνουσα στο $[0,2]$.</li>\n<li>Στο $x=-1$ η $f$ δεν είναι παραγωγίσιμη, οπότε η μονοτονία εξετάζεται χωριστά.</li>\n</ul>\nΕπομένως, η $f$ είναι γνησίως αύξουσα στο $[-3,0]$ και γνησίως φθίνουσα στο $[0,2]$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">β)</div><div class=\"sol-step-text\">Κρίσιμα σημεία της $f$ είναι τα σημεία όπου $f'(x)=0$ ή η $f$ δεν είναι παραγωγίσιμη. Από τη γραφική παράσταση:\n<ul>\n<li>$f'(x)=0$ στο $x=0$.</li>\n<li>Η $f$ δεν είναι παραγωγίσιμη στο $x=-1$ (δίνεται).</li>\n</ul>\nΆρα κρίσιμα σημεία: $x=-1$ και $x=0$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">γ)</div><div class=\"sol-step-text\">Για τις θέσεις τοπικών ακροτάτων:\n<ul>\n<li>Στο $x=-1$: Η $f$ είναι συνεχής στο $[-3,2]$ και αλλάζει πρόσημο η $f'$ από θετική σε θετική (δεν αλλάζει), οπότε δεν έχουμε τοπικό ακρότατο στο $-1$.</li>\n<li>Στο $x=0$: Η $f'$ αλλάζει πρόσημο από θετικό σε αρνητικό, οπότε η $f$ παρουσιάζει τοπικό μέγιστο στο $x=0$.</li>\n</ul>\nΕπομένως, θέση τοπικού μεγίστου: $x=0$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">δ)</div><div class=\"sol-step-text\">Η $f$ είναι συνεχής στο $[0,2]$ και ισχύει $f(0)=3$. Από τη γραφική παράσταση της $f'$, το εμβαδόν μεταξύ $f'$ και άξονα $x'x$ από $0$ έως $2$ είναι το ολοκλήρωμα $\\int_0^2 f'(x)\\,dx = f(2)-f(0)$. Η $f'$ στο $[0,2]$ είναι ευθύγραμμο τμήμα από $(0,2)$ σε $(2,-2)$, οπότε το εμβαδόν είναι το ολοκλήρωμα της $f'$ που ισούται με το εμβαδόν του τριγώνου (με πρόσημο). Υπολογίζουμε: $\\int_0^2 f'(x)\\,dx = \\frac{1}{2} \\cdot 2 \\cdot 2 - \\frac{1}{2} \\cdot 2 \\cdot 2 = 0$ (το θετικό και αρνητικό εμβαδόν αλληλοαναιρούνται). Άρα $f(2)-f(0)=0 \\Rightarrow f(2)=f(0)=3$.</div></div>",
     "answer_text": "ΘΕΜΑ 4\nΔίνεται μία συνεχής συνάρτηση  στο  διάστημα [-3,2], η οποία δεν είναι παραγωγίσιμη στο -1. Στο παρακάτω σχήμα δίνεται η γραφική παράσταση της παραγώγου της ,η  που στο διάστημα (-1,2] είναι ευθύγραμμο τμήμα.\nα) Να μελετήσετε τη συνάρτηση   ως προς τη μονοτονία της.\t(Μονάδες 08)\nβ) Να βρείτε:\nΤα κρίσιμα σημεία της , αν υπάρχουν, δικαιολογώντας την απάντησή σας.\t(Μονάδες 06)\nΤις θέσεις τοπικών ακροτάτων και το είδος τους.\t(Μονάδες 05)\nγ) Αν η  είναι συνεχής στο [0,2] και ισχύει ότι  , να υπολογίσετε την τιμή .\t(Μονάδες 06)",
     "hints": [
@@ -13264,21 +13337,24 @@
     "sections": [
       {
         "type": "text",
-        "number": "",
-        "content": "ΘΕΜΑ \n  \n  \n    \n      \n      \n    \n    4"
+        "content": "ΘΕΜΑ 4"
       },
       {
         "type": "text",
-        "number": "",
-        "content": "Στο παρακάτω σχήμα δίνεται η γραφική παράσταση μιας συνεχούς συνάρτησης $f$ στο  διάστημα [-3,2]\n  \n  \n    \n      \n      \n    \n     η οποία παρουσιάζει μέγιστο στο 0\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    το 3 \n  \n  \n    \n      \n      \n    \n    και τέμνει τον άξονα \n  \n  \n    \n      \n      \n      \n    \n    x\n  \n  \n    \n      \n      \n    \n    ’\n  \n  \n    \n      \n      \n      \n    \n    x\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    στα σημεία Α και Β. \n  \n  \n    \n      \n      \n    \n    Έστω $g$ η \n  \n  \n    \n      \n      \n    \n    συνάρτηση \n  \n  \n    \n      \n      \n    \n    με $g\n    \n    \n      \n        \n          \n            \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n            \n            \n            \n          \n          x\n        \n        \n          \n            \n            \n            \n            \n            \n          \n        \n      \n    \n    \n      \n        \n        \n        \n      \n      =f\n    \n    \n      \n        \n          \n            \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n            \n            \n          \n          x\n        \n      \n    \n    \n      \n        \n        \n        \n      \n      +x$ , $x∈[-3,2]$ ."
+        "content": "Στο παρακάτω σχήμα δίνεται η γραφική παράσταση μιας συνεχούς συνάρτησης  στο  διάστημα [-3,2] η οποία παρουσιάζει μέγιστο στο 0 το 3 και τέμνει τον άξονα x’x στα σημεία Α και Β. Έστω  η συνάρτηση με , ."
       },
       {
         "type": "sub_question",
         "number": "α)",
-        "content": "Να αποδείξετε ότι:"
+        "content": "Να αποδείξετε ότι: Η συνάρτηση  είναι συνεχής στο [-3,2].\t(Μονάδες 05) Η εξίσωση  έχει μία τουλάχιστον ρίζα.\t(Μονάδες 10)"
+      },
+      {
+        "type": "sub_question",
+        "number": "β)",
+        "content": "Αν η συνάρτηση  είναι παραγωγίσιμη στο (-1,2), να αποδείξετε ότι η εφαπτομένη ευθεία της γραφικής παράστασης της συνάρτησης , στο σημείο που η  παρουσιάζει μέγιστο, έχει εξίσωση  .\t(Μονάδες 10)"
       }
     ],
-    "question_html": "<p class=\"text-content\">ΘΕΜΑ \n  \n  \n    \n      \n      \n    \n    4</p>\n<p class=\"text-content\">Στο παρακάτω σχήμα δίνεται η γραφική παράσταση μιας συνεχούς συνάρτησης $f$ στο  διάστημα [-3,2]\n  \n  \n    \n      \n      \n    \n     η οποία παρουσιάζει μέγιστο στο 0\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    το 3 \n  \n  \n    \n      \n      \n    \n    και τέμνει τον άξονα \n  \n  \n    \n      \n      \n      \n    \n    x\n  \n  \n    \n      \n      \n    \n    ’\n  \n  \n    \n      \n      \n      \n    \n    x\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    στα σημεία Α και Β. \n  \n  \n    \n      \n      \n    \n    Έστω $g$ η \n  \n  \n    \n      \n      \n    \n    συνάρτηση \n  \n  \n    \n      \n      \n    \n    με $g\n    \n    \n      \n        \n          \n            \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n            \n            \n            \n          \n          x\n        \n        \n          \n            \n            \n            \n            \n            \n          \n        \n      \n    \n    \n      \n        \n        \n        \n      \n      =f\n    \n    \n      \n        \n          \n            \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n            \n            \n          \n          x\n        \n      \n    \n    \n      \n        \n        \n        \n      \n      +x$ , $x∈[-3,2]$ .</p>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Να αποδείξετε ότι:</span></div>",
+    "question_html": "<p class=\"text-content\">ΘΕΜΑ 4</p>\n<p class=\"text-content\">Στο παρακάτω σχήμα δίνεται η γραφική παράσταση μιας συνεχούς συνάρτησης  στο  διάστημα [-3,2] η οποία παρουσιάζει μέγιστο στο 0 το 3 και τέμνει τον άξονα x’x στα σημεία Α και Β. Έστω  η συνάρτηση με , .</p>\n<div class=\"diagram-section\"><div class=\"diagram-label\">📊 Σχήμα / Διάγραμμα:</div><img src=\"/images/math_diagrams/29644.png\" alt=\"Διάγραμμα\" class=\"question-diagram\" style=\"max-width:100%;max-height:400px;border-radius:10px;border:1px solid var(--border);cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.06);\" onclick=\"openDiagramModal(this.src)\" loading=\"lazy\"><div style=\"margin-top:6px;font-size:0.75rem;color:var(--text2);\">💡 Κάνε κλικ στο σχήμα για μεγέθυνση</div></div>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Να αποδείξετε ότι:</span></div>\n<p class=\"text-content\">Η συνάρτηση  είναι συνεχής στο [-3,2].\t(Μονάδες 05)</p>\n<p class=\"text-content\">Η εξίσωση  έχει μία τουλάχιστον ρίζα.\t(Μονάδες 10)</p>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Αν η συνάρτηση  είναι παραγωγίσιμη στο (-1,2), να αποδείξετε ότι η εφαπτομένη ευθεία της γραφικής παράστασης της συνάρτησης , στο σημείο που η  παρουσιάζει μέγιστο, έχει εξίσωση  .\t(Μονάδες 10)</span></div>",
     "answer_html": "<div class=\"sol-step\"><div class=\"sol-step-label\">α)</div><div class=\"sol-step-text\">Η συνάρτηση $f$ είναι συνεχής στο $[-3,2]$ (από υπόθεση). Η συνάρτηση $g$ ορίζεται ως $g(x)=\\int_{-3}^{x} f(t)\\,dt$. Επειδή η $f$ είναι συνεχής στο $[-3,2]$, η $g$ είναι παραγωγίσιμη (άρα και συνεχής) στο $[-3,2]$. Επομένως, η $g$ είναι συνεχής στο $[-3,2]$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">β)</div><div class=\"sol-step-text\">Η εξίσωση $g(x)=0$ έχει μία τουλάχιστον ρίζα. Παρατηρούμε ότι $g(-3)=\\int_{-3}^{-3} f(t)\\,dt=0$. Επίσης, από το σχήμα, η $f$ τέμνει τον άξονα $x'x$ στα σημεία $A$ και $B$. Έστω ότι το $B$ είναι στο $x=2$ (αφού το διάστημα τελειώνει στο $2$). Τότε $g(2)=\\int_{-3}^{2} f(t)\\,dt$ είναι το εμβαδόν με πρόσημο. Από το σχήμα, το εμβαδόν πάνω από τον άξονα είναι μεγαλύτερο από το εμβαδόν κάτω από τον άξονα, οπότε $g(2)>0$. Επομένως, $g(-3)=0$ και $g(2)>0$, οπότε η $g$ έχει ρίζα το $-3$. Για να δείξουμε ότι έχει μία τουλάχιστον ρίζα, αρκεί να παρατηρήσουμε ότι $g(-3)=0$, άρα η $x=-3$ είναι μία ρίζα.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">γ)</div><div class=\"sol-step-text\">Αν η $g$ είναι παραγωγίσιμη στο $(-1,2)$, να αποδείξετε ότι η εφαπτομένη ευθεία της γραφικής παράστασης της $g$, στο σημείο που η $g$ παρουσιάζει μέγιστο, έχει εξίσωση $y=3x+9$. Η $g$ παρουσιάζει μέγιστο στο $0$ (από το σχήμα, η $f$ έχει μέγιστο στο $0$ το $3$, οπότε η $g$ έχει μέγιστο στο ίδιο σημείο, αφού $g'(x)=f(x)$). Επομένως, $g'(0)=f(0)=3$. Η εφαπτομένη στο σημείο $(0,g(0))$ έχει εξίσωση $y-g(0)=g'(0)(x-0)$. Υπολογίζουμε $g(0)=\\int_{-3}^{0} f(t)\\,dt$. Από το σχήμα, το εμβαδόν από $-3$ έως $0$ είναι το τρίγωνο με βάση $3$ και ύψος $3$, οπότε $g(0)=\\frac{1}{2}\\cdot3\\cdot3=4.5$. Αλλά η εξίσωση που ζητείται είναι $y=3x+9$, οπότε πρέπει $g(0)=9$. Αυτό σημαίνει ότι το εμβαδόν από $-3$ έως $0$ είναι $9$, που αντιστοιχεί σε τρίγωνο με βάση $3$ και ύψος $6$, το οποίο δεν συμφωνεί με το σχήμα. Πιθανώς το σχήμα δίνει $f(0)=3$ και το εμβαδόν υπολογίζεται διαφορετικά. Αν υποθέσουμε ότι η $f$ είναι γραμμική από $-3$ έως $0$, τότε $f(x)=x+3$, οπότε $g(0)=\\int_{-3}^{0} (x+3)\\,dx=\\left[\\frac{x$",
     "answer_text": "ΘΕΜΑ 4\nΣτο παρακάτω σχήμα δίνεται η γραφική παράσταση μιας συνεχούς συνάρτησης  στο  διάστημα [-3,2] η οποία παρουσιάζει μέγιστο στο 0 το 3 και τέμνει τον άξονα x’x στα σημεία Α και Β. Έστω  η συνάρτηση με , .\nα) Να αποδείξετε ότι:\nΗ συνάρτηση  είναι συνεχής στο [-3,2].\t(Μονάδες 05)\nΗ εξίσωση  έχει μία τουλάχιστον ρίζα.\t(Μονάδες 10)\nβ) Αν η συνάρτηση  είναι παραγωγίσιμη στο (-1,2), να αποδείξετε ότι η εφαπτομένη ευθεία της γραφικής παράστασης της συνάρτησης , στο σημείο που η  παρουσιάζει μέγιστο, έχει εξίσωση  .\t(Μονάδες 10)",
     "hints": [
@@ -13346,31 +13422,29 @@
     "sections": [
       {
         "type": "text",
-        "number": "",
-        "content": "ΘΕΜΑ \n  \n  \n    \n      \n      \n    \n    4"
+        "content": "ΘΕΜΑ 4"
       },
       {
         "type": "text",
-        "number": "",
-        "content": "Έστω η συνάρτηση $f$ με $f\n    \n    \n      \n        \n          \n            \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n            \n            \n          \n          x\n        \n      \n    \n    \n      \n        \n        \n        \n      \n      =\n    \n    \n      \n        \n        \n        \n          \n            \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n              \n                \n                \n                \n                \n              \n            \n          \n          \n            \n              \n                \n                \n                \n              \n              -3\n            \n            x^{2}\n            \n              \n                \n                \n                \n              \n              +1,x&lt;0\n            \n          \n          \n            \n              \n                \n                \n                \n              \n              -\n            \n            x^{3}\n            \n              \n                \n                \n                \n              \n              +3\n            \n            x^{2}\n            \n              \n                \n                \n                \n              \n              +1,x≥0$ ."
+        "content": "Έστω η συνάρτηση  με ."
       },
       {
         "type": "sub_question",
         "number": "α)",
-        "content": "Να αποδείξετε ότι η $f$ έχει δύο ακριβώς ρίζες"
+        "content": "Να αποδείξετε ότι η  έχει δύο ακριβώς ρίζες τις   με  και . (Μονάδες 12)"
       },
       {
         "type": "sub_question",
         "number": "β)",
-        "content": "β)"
+        "content": " Να εξετάσετε αν η συνάρτηση  ικανοποιεί καθεμία από τις προϋποθέσεις του θεωρήματος Rolle στο διάστημα  με   οι ρίζες της  του ερωτήματος α).\t(Μονάδες 04) Να βρείτε όλα τα   για τα οποία ισχύει . (Μονάδες 04)"
       },
       {
-        "type": "text",
-        "number": "",
-        "content": "Να \n  \n  \n    \n      \n      \n    \n    βρείτε όλα\n  \n  \n    \n      \n      \n    \n     τα $ξ∈\n    \n    \n      \n        \n          \n            \n            \n            \n            \n          \n        \n      \n      \n        x_{1}\n        \n          \n            \n            \n            \n          \n          , \n        \n        x_{2}$ για τα οποία ισχύει $f^{'}\n    \n      \n        \n          \n            \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n            \n            \n          \n          ξ\n        \n      \n    \n    \n      \n        \n        \n        \n      \n      =0$ ."
+        "type": "sub_question",
+        "number": "γ)",
+        "content": "Αν ε η εφαπτομένη της γραφικής παράστασης της  στο σημείο με τετμημένη 2, να υπολογίσετε το εμβαδόν του χωρίου που περικλείεται από τη γραφική παράσταση της   , την ευθεία ε και την ευθεία x=0.\t(Μονάδες 05)"
       }
     ],
-    "question_html": "<p class=\"text-content\">ΘΕΜΑ \n  \n  \n    \n      \n      \n    \n    4</p>\n<p class=\"text-content\">Έστω η συνάρτηση $f$ με $f\n    \n    \n      \n        \n          \n            \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n            \n            \n          \n          x\n        \n      \n    \n    \n      \n        \n        \n        \n      \n      =\n    \n    \n      \n        \n        \n        \n          \n            \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n              \n                \n                \n                \n                \n              \n            \n          \n          \n            \n              \n                \n                \n                \n              \n              -3\n            \n            x^{2}\n            \n              \n                \n                \n                \n              \n              +1,x&amp;lt;0\n            \n          \n          \n            \n              \n                \n                \n                \n              \n              -\n            \n            x^{3}\n            \n              \n                \n                \n                \n              \n              +3\n            \n            x^{2}\n            \n              \n                \n                \n                \n              \n              +1,x≥0$ .</p>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Να αποδείξετε ότι η $f$ έχει δύο ακριβώς ρίζες</span></div>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">β)</span></div>\n<p class=\"text-content\">Να \n  \n  \n    \n      \n      \n    \n    βρείτε όλα\n  \n  \n    \n      \n      \n    \n     τα $ξ∈\n    \n    \n      \n        \n          \n            \n            \n            \n            \n          \n        \n      \n      \n        x_{1}\n        \n          \n            \n            \n            \n          \n          , \n        \n        x_{2}$ για τα οποία ισχύει $f^{'}\n    \n      \n        \n          \n            \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n            \n            \n          \n          ξ\n        \n      \n    \n    \n      \n        \n        \n        \n      \n      =0$ .</p>",
+    "question_html": "<p class=\"text-content\">ΘΕΜΑ 4</p>\n<p class=\"text-content\">Έστω η συνάρτηση  με .</p>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Να αποδείξετε ότι η  έχει δύο ακριβώς ρίζες τις   με  και .</span></div>\n<div class=\"points-chip\">⭐ 12 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Να εξετάσετε αν η συνάρτηση  ικανοποιεί καθεμία από τις προϋποθέσεις του θεωρήματος Rolle στο διάστημα  με   οι ρίζες της  του ερωτήματος α).</span></div>\n<div class=\"points-chip\">⭐ 4 μονάδες</div>\n<p class=\"text-content\">Να βρείτε όλα τα   για τα οποία ισχύει .</p>\n<div class=\"subq\"><span class=\"subq-num\">γ)</span> <span class=\"subq-text\">Αν ε η εφαπτομένη της γραφικής παράστασης της  στο σημείο με τετμημένη 2, να υπολογίσετε το εμβαδόν του χωρίου που περικλείεται από τη γραφική παράσταση της   , την ευθεία ε και την ευθεία x=0.</span></div>\n<div class=\"points-chip\">⭐ 5 μονάδες</div>",
     "answer_html": "<div class=\"sol-step\"><div class=\"sol-step-label\">α)</div><div class=\"sol-step-text\">Η συνάρτηση $f$ είναι συνεχής και παραγωγίσιμη στο $\\mathbb{R}$ με $f'(x)=3x^2-2x = x(3x-2)$. Οπότε $f'(x)=0 \\Rightarrow x=0$ ή $x=\\frac{2}{3}$. Η $f$ παρουσιάζει τοπικό μέγιστο στο $x=0$ με $f(0)=1$ και τοπικό ελάχιστο στο $x=\\frac{2}{3}$ με $f\\left(\\frac{2}{3}\\right)=\\frac{23}{27}$. Επειδή $\\lim_{x\\to -\\infty}f(x)=-\\infty$ και $\\lim_{x\\to +\\infty}f(x)=+\\infty$, η $f$ έχει δύο ακριβώς ρίζες, τις $x_1<0$ και $x_2>0$ με $x_1<x_2$. Από το θεώρημα Bolzano στα διαστήματα $(-\\infty,0)$ και $(0,+\\infty)$ προκύπτει η ύπαρξή τους. Επιπλέον, $f(0)=1>0$ και $f\\left(\\frac{2}{3}\\right)=\\frac{23}{27}>0$, οπότε $x_1<0$ και $x_2>\\frac{2}{3}$. Υπολογίζουμε $f(-1)=-1-1+1=-1<0$, άρα $x_1\\in(-1,0)$. Επίσης $f(1)=1-1+1=1>0$, $f(2)=8-4+1=5>0$, $f(3)=27-9+1=19>0$, οπότε $x_2\\in(1,2)$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">β)</div><div class=\"sol-step-text\">Η $f$ είναι συνεχής στο $[x_1,x_2]$ και παραγωγίσιμη στο $(x_1,x_2)$ με $f(x_1)=f(x_2)=0$, άρα ικανοποιεί τις προϋποθέσεις του θεωρήματος Rolle. Επομένως υπάρχει $\\xi\\in(x_1,x_2)$ τέτοιο ώστε $f'(\\xi)=0$. Λύνουμε την $f'(x)=0$: $3x^2-2x=0 \\Rightarrow x(3x-2)=0 \\Rightarrow x=0$ ή $x=\\frac{2}{3}$. Αφού $x_1<0$ και $x_2>\\frac{2}{3}$, και τα δύο σημεία $0$ και $\\frac{2}{3}$ ανήκουν στο $(x_1,x_2)$. Άρα τα $\\xi$ για τα οποία ισχύει $f'(\\xi)=0$ είναι $\\xi=0$ και $\\xi=\\frac{2}{3}$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">γ)</div><div class=\"sol-step-text\">Η εφαπτομένη της $C_f$ στο σημείο με τετμημένη $2$ έχει εξίσωση $y-f(2)=f'(2)(x-2)$. $f(2)=2^3-2^2+1=8-4+1=5$, $f'(2)=3\\cdot2^2-2\\cdot2=12-4=8$. Οπότε $y-5=8(x-2) \\Rightarrow y=8x-11$. Το ζητούμενο εμβαδόν είναι $E=\\int_{0}^{x_2}\\left|f(x)-(8x-11)\\right|\\,dx$, όπου $x_2$ η ρίζα της $f$ με $x_2>0$. Από το ερώτημα α), $x_2\\in(1,2)$. Υπολογίζουμε $f(x)-(8x-11)=x^3-x^2+1-8x+11=x^3-x^2-8x+12$. Παραγοντοποιούμε: $x^3-x^2-8x+12=(x-2)^2(x+3)$. Για $x\\in[$",
     "answer_text": "ΘΕΜΑ 4\nΈστω η συνάρτηση  με .\nα) Να αποδείξετε ότι η  έχει δύο ακριβώς ρίζες τις   με  και .\n(Μονάδες 12)\nβ)\nΝα εξετάσετε αν η συνάρτηση  ικανοποιεί καθεμία από τις προϋποθέσεις του θεωρήματος Rolle στο διάστημα  με   οι ρίζες της  του ερωτήματος α).\t(Μονάδες 04)\nΝα βρείτε όλα τα   για τα οποία ισχύει .\n(Μονάδες 04)\nγ) Αν ε η εφαπτομένη της γραφικής παράστασης της  στο σημείο με τετμημένη 2, να υπολογίσετε το εμβαδόν του χωρίου που περικλείεται από τη γραφική παράσταση της   , την ευθεία ε και την ευθεία x=0.\t(Μονάδες 05)",
     "hints": [
@@ -13456,26 +13530,29 @@
     "sections": [
       {
         "type": "text",
-        "number": "",
-        "content": "ΘΕΜΑ \n  \n  \n    \n      \n      \n    \n    4"
+        "content": "ΘΕΜΑ 4"
       },
       {
         "type": "text",
-        "number": "",
-        "content": "Έστω η συνάρτηση $f$ με $f\n    \n    \n      \n        \n          \n            \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n            \n            \n          \n          x\n        \n      \n    \n    \n      \n        \n        \n        \n      \n      =-\n    \n    x^{3}\n    \n      \n        \n        \n        \n      \n      +3\n    \n    x^{2}\n    \n      \n        \n        \n        \n      \n      +1,x≥0$ ."
+        "content": "Έστω η συνάρτηση  με ."
       },
       {
         "type": "sub_question",
         "number": "α)",
-        "content": "Να αποδείξετε ότι:"
+        "content": "Να αποδείξετε ότι: Η  παρουσιάζει στο   τοπικό ελάχιστο, στο  μέγιστο και το σημείο   είναι σημείο  καμπής της . (Μονάδες 09) Tα σημεία,  και   είναι συνευθειακά και το σημείο Γ είναι το μέσο του τμήματος ΑΒ.\t(Μονάδες 03)"
       },
       {
-        "type": "text",
-        "number": "",
-        "content": "Η $f$ παρουσιάζει \n  \n  \n    \n      \n      \n    \n    στο $x_{1}\n    \n      \n        \n        \n        \n      \n      =0$ τοπικό ελάχιστο\n  \n  \n    \n      \n      \n    \n    , \n  \n  \n    \n      \n      \n    \n    στο $x_{2}\n    \n      \n        \n        \n        \n      \n      =2$ μέγιστο \n  \n  \n    \n      \n      \n    \n    και \n  \n  \n    \n      \n      \n    \n    το σημείο $Γ\n    \n    \n      \n        \n        \n        \n      \n      (1,\n    \n    \n      \n        \n        \n        \n        \n      \n      f\n    \n    \n      \n        \n          \n            \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n            \n            \n          \n          1\n        \n      \n    \n    \n      \n        \n        \n        \n      \n      )$ είναι σημείο \n  \n  \n    \n      \n      \n    \n     καμπής\n  \n  \n    \n      \n      \n    \n     της $C_{f}$ ."
+        "type": "sub_question",
+        "number": "β)",
+        "content": "Να αποδείξετε ότι η ευθεία ΑΒ ορίζει με τη γραφική παράσταση της  δύο ισεμβαδικά χωρία.\t(Μονάδες 08)"
+      },
+      {
+        "type": "sub_question",
+        "number": "γ)",
+        "content": "Έστω ε η εφαπτομένη της   στο σημείο της Β, η οποία τέμνει τον άξονα y’y στο Δ. Να αποδείξετε ότι το εμβαδόν του τριγώνου ΑΒΔ ισούται με το εμβαδόν του χωρίου που περικλείεται μεταξύ της  , της ευθείας ε και του άξονα y’y.\t(Μονάδες 05)"
       }
     ],
-    "question_html": "<p class=\"text-content\">ΘΕΜΑ \n  \n  \n    \n      \n      \n    \n    4</p>\n<p class=\"text-content\">Έστω η συνάρτηση $f$ με $f\n    \n    \n      \n        \n          \n            \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n            \n            \n          \n          x\n        \n      \n    \n    \n      \n        \n        \n        \n      \n      =-\n    \n    x^{3}\n    \n      \n        \n        \n        \n      \n      +3\n    \n    x^{2}\n    \n      \n        \n        \n        \n      \n      +1,x≥0$ .</p>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Να αποδείξετε ότι:</span></div>\n<p class=\"text-content\">Η $f$ παρουσιάζει \n  \n  \n    \n      \n      \n    \n    στο $x_{1}\n    \n      \n        \n        \n        \n      \n      =0$ τοπικό ελάχιστο\n  \n  \n    \n      \n      \n    \n    , \n  \n  \n    \n      \n      \n    \n    στο $x_{2}\n    \n      \n        \n        \n        \n      \n      =2$ μέγιστο \n  \n  \n    \n      \n      \n    \n    και \n  \n  \n    \n      \n      \n    \n    το σημείο $Γ\n    \n    \n      \n        \n        \n        \n      \n      (1,\n    \n    \n      \n        \n        \n        \n        \n      \n      f\n    \n    \n      \n        \n          \n            \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n            \n            \n          \n          1\n        \n      \n    \n    \n      \n        \n        \n        \n      \n      )$ είναι σημείο \n  \n  \n    \n      \n      \n    \n     καμπής\n  \n  \n    \n      \n      \n    \n     της $C_{f}$ .</p>",
+    "question_html": "<p class=\"text-content\">ΘΕΜΑ 4</p>\n<p class=\"text-content\">Έστω η συνάρτηση  με .</p>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Να αποδείξετε ότι: Η  παρουσιάζει στο   τοπικό ελάχιστο, στο  μέγιστο και το σημείο   είναι σημείο  καμπής της .</span></div>\n<div class=\"points-chip\">⭐ 9 μονάδες</div>\n<p class=\"text-content\">Tα σημεία,  και   είναι συνευθειακά και το σημείο Γ είναι το μέσο του τμήματος ΑΒ. (Μονάδες 03)</p>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Να αποδείξετε ότι η ευθεία ΑΒ ορίζει με τη γραφική παράσταση της  δύο ισεμβαδικά χωρία. (Μονάδες 08)</span></div>\n<div class=\"subq\"><span class=\"subq-num\">γ)</span> <span class=\"subq-text\">Έστω ε η εφαπτομένη της   στο σημείο της Β, η οποία τέμνει τον άξονα y’y στο Δ. Να αποδείξετε ότι το εμβαδόν του τριγώνου ΑΒΔ ισούται με το εμβαδόν του χωρίου που περικλείεται μεταξύ της  , της ευθείας ε και του άξονα y’y. (Μονάδες 05)</span></div>",
     "answer_html": "<div class=\"sol-step\"><div class=\"sol-step-label\">α)</div><div class=\"sol-step-text\">Έστω η συνάρτηση $f(x)=x^3-3x^2+2$. Η $f$ είναι πολυωνυμική, οπότε παραγωγίσιμη στο $\\mathbb{R}$ με $f'(x)=3x^2-6x=3x(x-2)$. Θέτουμε $f'(x)=0 \\Rightarrow 3x(x-2)=0 \\Rightarrow x=0$ ή $x=2$. Η δεύτερη παράγωγος είναι $f''(x)=6x-6=6(x-1)$. Για $x=0$: $f''(0)=-6<0$, άρα τοπικό μέγιστο. Για $x=2$: $f''(2)=6>0$, άρα τοπικό ελάχιστο. Για σημείο καμπής: $f''(x)=0 \\Rightarrow 6(x-1)=0 \\Rightarrow x=1$. Ελέγχουμε ότι η $f''$ αλλάζει πρόσημο εκατέρωθεν του $1$, οπότε το σημείο $(1,f(1))=(1,0)$ είναι σημείο καμπής.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">β)</div><div class=\"sol-step-text\">Υπολογίζουμε $f(0)=2$, $f(2)=2^3-3\\cdot2^2+2=8-12+2=-2$, $f(1)=0$. Οπότε $A(0,2)$, $B(2,-2)$, $\\Gamma(1,0)$. Η κλίση της $AB$ είναι $\\frac{-2-2}{2-0}=\\frac{-4}{2}=-2$. Η εξίσωση της $AB$: $y-2=-2(x-0) \\Rightarrow y=-2x+2$. Το σημείο $\\Gamma(1,0)$ επαληθεύει: $0=-2\\cdot1+2=0$, άρα τα $A,B,\\Gamma$ είναι συνευθειακά. Επίσης, το μέσο του $AB$ είναι $\\left(\\frac{0+2}{2},\\frac{2+(-2)}{2}\\right)=(1,0)=\\Gamma$, οπότε το $\\Gamma$ είναι το μέσο του $AB$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">γ)</div><div class=\"sol-step-text\">Η ευθεία $AB$ έχει εξίσωση $y=-2x+2$. Η $f$ και η $AB$ τέμνονται στα σημεία $A$, $B$ και $\\Gamma$. Το εμβαδόν του χωρίου που ορίζεται από την $f$ και την $AB$ στο διάστημα $[0,2]$ είναι $E=\\int_0^2 |f(x)-(-2x+2)|\\,dx$. Αφού η $f$ είναι πάνω από την $AB$ στο $[0,1]$ και κάτω στο $[1,2]$, έχουμε $E=\\int_0^1 (f(x)+2x-2)\\,dx + \\int_1^2 (-f(x)-2x+2)\\,dx$. Υπολογίζουμε $f(x)+2x-2=x^3-3x^2+2+2x-2=x^3-3x^2+2x$. Οπότε $\\int_0^1 (x^3-3x^2+2x)\\,dx = \\left[\\frac{x^4}{4}-x^3+x^2\\right]_0^1 = \\frac{1}{4}-1+1=\\frac{1}{4}$. Ομοίως, $-f(x)-2x+2=-x^3+3x^2-2-2x+2=-x^3+3x^2-2x$. Οπότε $\\int_1^2 (-x^3+3x^2-2x)\\,dx = \\left[-\\frac{x^4}{4}+x^3-x^2\\right]_1^2 = \\left(-\\frac{16}{4}+8-4\\right)-\\left(-\\frac{1}{4}+1-1\\right)=(-4+8-4)-\\left(-\\frac{1}{4}\\right)=0+\\frac{$",
     "answer_text": "ΘΕΜΑ 4\nΈστω η συνάρτηση  με .\nα) Να αποδείξετε ότι:\nΗ  παρουσιάζει στο   τοπικό ελάχιστο, στο  μέγιστο και το σημείο   είναι σημείο  καμπής της .\n(Μονάδες 09)\nTα σημεία,  και   είναι συνευθειακά και το σημείο Γ είναι το μέσο του τμήματος ΑΒ.\t(Μονάδες 03)\nβ) Να αποδείξετε ότι η ευθεία ΑΒ ορίζει με τη γραφική παράσταση της  δύο ισεμβαδικά χωρία.\t(Μονάδες 08)\nγ) Έστω ε η εφαπτομένη της   στο σημείο της Β, η οποία τέμνει τον άξονα y’y στο Δ. Να αποδείξετε ότι το εμβαδόν του τριγώνου ΑΒΔ ισούται με το εμβαδόν του χωρίου που περικλείεται μεταξύ της  , της ευθείας ε και του άξονα y’y.\t(Μονάδες 05)",
     "hints": [
@@ -14461,26 +14538,24 @@
     "sections": [
       {
         "type": "text",
-        "number": "",
         "content": "ΘΕΜΑ 2"
       },
       {
         "type": "text",
-        "number": "",
-        "content": "Δίνεται η συνάρτηση $f\n    \n    \n      \n        \n          \n            \n            \n          \n        \n      \n      \n        \n          \n            \n          \n          x\n        \n      \n    \n    \n      \n        \n      \n      =\n    \n    x^{4}\n    \n      \n        \n      \n      -4x+2,  x∈\n    \n    \n      \n        \n        \n        \n          \n            \n            \n          \n        \n      \n      \n        \n          \n            \n          \n          0,2$ ."
+        "content": "Δίνεται η συνάρτηση ."
       },
       {
         "type": "sub_question",
         "number": "α)",
-        "content": "Να βρείτε τα κρίσιμα σημεία της συνάρτησης."
+        "content": "Να βρείτε τα κρίσιμα σημεία της συνάρτησης. (Μονάδες 12)"
       },
       {
         "type": "sub_question",
         "number": "β)",
-        "content": "Να βρείτε τα ολικά ακρότατα της συνάρτησης."
+        "content": "Να βρείτε τα ολικά ακρότατα της συνάρτησης. (Μονάδες 13)"
       }
     ],
-    "question_html": "<p class=\"text-content\">ΘΕΜΑ 2</p>\n<p class=\"text-content\">Δίνεται η συνάρτηση $f\n    \n    \n      \n        \n          \n            \n            \n          \n        \n      \n      \n        \n          \n            \n          \n          x\n        \n      \n    \n    \n      \n        \n      \n      =\n    \n    x^{4}\n    \n      \n        \n      \n      -4x+2,  x∈\n    \n    \n      \n        \n        \n        \n          \n            \n            \n          \n        \n      \n      \n        \n          \n            \n          \n          0,2$ .</p>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Να βρείτε τα κρίσιμα σημεία της συνάρτησης.</span></div>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Να βρείτε τα ολικά ακρότατα της συνάρτησης.</span></div>",
+    "question_html": "<p class=\"text-content\">ΘΕΜΑ 2</p>\n<p class=\"text-content\">Δίνεται η συνάρτηση .</p>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Να βρείτε τα κρίσιμα σημεία της συνάρτησης.</span></div>\n<div class=\"points-chip\">⭐ 12 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Να βρείτε τα ολικά ακρότατα της συνάρτησης.</span></div>\n<div class=\"points-chip\">⭐ 13 μονάδες</div>",
     "answer_html": "<div class=\"sol-step\"><div class=\"sol-step-label\">α)</div><div class=\"sol-step-text\">Η συνάρτηση είναι $f(x)=x^3-3x^2+2$. Υπολογίζουμε την πρώτη παράγωγο: $f'(x)=3x^2-6x$. Θέτουμε $f'(x)=0 \\Rightarrow 3x^2-6x=0 \\Rightarrow 3x(x-2)=0 \\Rightarrow x=0$ ή $x=2$. Επομένως, τα κρίσιμα σημεία της συνάρτησης είναι $x=0$ και $x=2$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">β)</div><div class=\"sol-step-text\">Για να βρούμε τα ολικά ακρότατα, εξετάζουμε τη μονοτονία της $f$. Από $f'(x)=3x(x-2)$, έχουμε:\n<ul>\n<li>Για $x<0$, $f'(x)>0$ (γινόμενο θετικών), άρα $f$ γν. αύξουσα.</li>\n<li>Για $0<x<2$, $f'(x)<0$ (θετικό επί αρνητικό), άρα $f$ γν. φθίνουσα.</li>\n<li>Για $x>2$, $f'(x)>0$ (γινόμενο θετικών), άρα $f$ γν. αύξουσα.</li>\n</ul>\nΕπομένως, στο $x=0$ έχουμε τοπικό μέγιστο με τιμή $f(0)=0^3-3\\cdot0^2+2=2$, και στο $x=2$ έχουμε τοπικό ελάχιστο με τιμή $f(2)=2^3-3\\cdot2^2+2=8-12+2=-2$. Επειδή η συνάρτηση είναι πολυωνυμική και το πεδίο ορισμού της είναι όλο το $\\mathbb{R}$, τα ολικά ακρότατα δεν υπάρχουν, καθώς $\\lim_{x\\to -\\infty}f(x)=-\\infty$ και $\\lim_{x\\to +\\infty}f(x)=+\\infty$. Άρα, η $f$ δεν έχει ολικά ακρότατα.</div></div>",
     "answer_text": "ΘΕΜΑ 2\nΔίνεται η συνάρτηση .\nα) Να βρείτε τα κρίσιμα σημεία της συνάρτησης.\n(Μονάδες 12)\nβ) Να βρείτε τα ολικά ακρότατα της συνάρτησης.\n(Μονάδες 13)",
     "hints": [
@@ -16569,36 +16644,29 @@
     "sections": [
       {
         "type": "text",
-        "number": "",
         "content": "ΘΕΜΑ 2"
       },
       {
         "type": "text",
-        "number": "",
-        "content": "Θεωρούμε τις συναρτήσεις $f\n    \n    \n      \n        \n          \n            \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n            \n            \n          \n          x\n        \n      \n    \n    \n      \n        \n        \n        \n      \n      =lnx,  \n    \n    \n      \n        \n        \n        \n        \n      \n      x\n    \n    \n      \n        \n        \n        \n      \n      &gt;0$ και $g\n    \n    \n      \n        \n          \n            \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n            \n            \n          \n          x\n        \n      \n    \n    \n      \n        \n        \n        \n      \n      =\n    \n    e^{-x}\n    \n      \n        \n        \n        \n      \n      ,  x∈R$ ."
+        "content": "Θεωρούμε τις συναρτήσεις  και ."
       },
       {
         "type": "sub_question",
         "number": "α)",
-        "content": "Να"
+        "content": "Να δικαιολογήσετε ότι η συνάρτηση  έχει αντίστροφη και να αποδείξετε ότι . (Μονάδες 9)"
       },
       {
         "type": "sub_question",
         "number": "β)",
-        "content": "Να αποδείξετε ότι $g"
+        "content": "Να αποδείξετε ότι  , . (Μονάδες 8)"
       },
       {
         "type": "sub_question",
         "number": "γ)",
-        "content": "Έστω $h"
-      },
-      {
-        "type": "text",
-        "number": "",
-        "content": "Να βρείτε τον μοναδικό αριθμό $ξ$ ο οποίος ικανοποιεί το συμπέρασμα του Θεωρήματος Μέσης Τιμής για την συνάρτηση $h$ στο διάστημα $2\n        \n        \n          \n            \n            \n            \n          \n          ,\n        \n        \n          \n            \n            \n            \n          \n           8$ ."
+        "content": "Έστω . Να βρείτε τον μοναδικό αριθμό  ο οποίος ικανοποιεί το συμπέρασμα του Θεωρήματος Μέσης Τιμής για την συνάρτηση  στο διάστημα . (Μονάδες 8)"
       }
     ],
-    "question_html": "<p class=\"text-content\">ΘΕΜΑ 2</p>\n<p class=\"text-content\">Θεωρούμε τις συναρτήσεις $f\n    \n    \n      \n        \n          \n            \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n            \n            \n          \n          x\n        \n      \n    \n    \n      \n        \n        \n        \n      \n      =lnx,  \n    \n    \n      \n        \n        \n        \n        \n      \n      x\n    \n    \n      \n        \n        \n        \n      \n      &amp;gt;0$ και $g\n    \n    \n      \n        \n          \n            \n            \n            \n            \n          \n        \n      \n      \n        \n          \n            \n            \n            \n          \n          x\n        \n      \n    \n    \n      \n        \n        \n        \n      \n      =\n    \n    e^{-x}\n    \n      \n        \n        \n        \n      \n      ,  x∈R$ .</p>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Να</span></div>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Να αποδείξετε ότι $g</span></div>\n<div class=\"subq\"><span class=\"subq-num\">γ)</span> <span class=\"subq-text\">Έστω $h</span></div>\n<p class=\"text-content\">Να βρείτε τον μοναδικό αριθμό $ξ$ ο οποίος ικανοποιεί το συμπέρασμα του Θεωρήματος Μέσης Τιμής για την συνάρτηση $h$ στο διάστημα $2\n        \n        \n          \n            \n            \n            \n          \n          ,\n        \n        \n          \n            \n            \n            \n          \n           8$ .</p>",
+    "question_html": "<p class=\"text-content\">ΘΕΜΑ 2</p>\n<p class=\"text-content\">Θεωρούμε τις συναρτήσεις  και .</p>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Να δικαιολογήσετε ότι η συνάρτηση  έχει αντίστροφη και να αποδείξετε ότι .</span></div>\n<div class=\"points-chip\">⭐ 9 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Να αποδείξετε ότι  , .</span></div>\n<div class=\"points-chip\">⭐ 8 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">γ)</span> <span class=\"subq-text\">Έστω . Να βρείτε τον μοναδικό αριθμό  ο οποίος ικανοποιεί το συμπέρασμα του Θεωρήματος Μέσης Τιμής για την συνάρτηση  στο διάστημα .</span></div>\n<div class=\"points-chip\">⭐ 8 μονάδες</div>",
     "answer_html": "<div class=\"sol-step\"><div class=\"sol-step-label\">α)</div><div class=\"sol-step-text\">Η συνάρτηση $f$ είναι γνησίως μονότονη (π.χ. γνησίως αύξουσα) στο πεδίο ορισμού της, οπότε είναι \"1-1\" και άρα αντιστρέφεται. Για την αντίστροφη, ισχύει $f^{-1}(x) = \\dots$ (ανάλογα με τη δοθείσα $f$). Αποδεικνύουμε ότι $f^{-1}(x) = \\dots$ λύνοντας την $y = f(x)$ ως προς $x$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">β)</div><div class=\"sol-step-text\">Για κάθε $x \\in \\mathbb{R}$, ισχύει $f(f^{-1}(x)) = x$ και $f^{-1}(f(x)) = x$. Από την προηγούμενη σχέση προκύπτει η ζητούμενη ισότητα.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">γ)</div><div class=\"sol-step-text\">Έστω $g(x) = f(x) - x$. Η $g$ είναι συνεχής στο $[0,1]$ και παραγωγίσιμη στο $(0,1)$. Από το Θεώρημα Μέσης Τιμής, υπάρχει $\\xi \\in (0,1)$ τέτοιο ώστε $g'(\\xi) = \\frac{g(1)-g(0)}{1-0}$. Υπολογίζουμε $g(1) = f(1)-1$, $g(0) = f(0)-0$, οπότε $g'(\\xi) = f'(\\xi)-1$. Λύνουμε την εξίσωση $f'(\\xi)-1 = \\dots$ και βρίσκουμε τον μοναδικό αριθμό $\\xi$.</div></div>",
     "answer_text": "ΘΕΜΑ 2\nΘεωρούμε τις συναρτήσεις  και .\nα) Να δικαιολογήσετε ότι η συνάρτηση  έχει αντίστροφη και να αποδείξετε ότι .\n(Μονάδες 9)\nβ) Να αποδείξετε ότι  , .\n(Μονάδες 8)\nγ) Έστω .\nΝα βρείτε τον μοναδικό αριθμό  ο οποίος ικανοποιεί το συμπέρασμα του Θεωρήματος Μέσης Τιμής για την συνάρτηση  στο διάστημα .\n(Μονάδες 8)",
     "hints": [
@@ -16849,31 +16917,24 @@
     "sections": [
       {
         "type": "text",
-        "number": "",
-        "content": "ΘΕΜΑ \n  \n  \n    \n      \n      \n    \n    2"
+        "content": "ΘΕΜΑ 2"
       },
       {
         "type": "text",
-        "number": "",
-        "content": "Στο παρακάτω σχήμα δίνονται οι γραφικές παραστάσεις \n  \n  \n    \n      \n      \n    \n    2\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    συνεχών \n  \n  \n    \n      \n      \n    \n    συναρτήσεων των $f$ και $h$ , \n  \n  \n    \n      \n      \n    \n    οι οποίες \n  \n  \n    \n      \n      \n    \n    εφάπτονται\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    του\n  \n  \n    \n      \n      \n    \n     άξονα $x\n    \n    \n      \n        \n        \n        \n      \n      ’\n    \n    \n      \n        \n        \n        \n        \n      \n      x$ σ\n  \n  \n    \n      \n      \n    \n    το\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    σημείο\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    του \n  \n  \n    \n      \n      \n    \n    Α(6,0)."
+        "content": "Στο παρακάτω σχήμα δίνονται οι γραφικές παραστάσεις 2 συνεχών συναρτήσεων των  και , οι οποίες εφάπτονται του άξονα  στο σημείο του Α(6,0)."
+      },
+      {
+        "type": "sub_question",
+        "number": "α)",
+        "content": "Να βρείτε το πεδίο ορισμού κάθε μίας από τις συναρτήσεις και .\t(Μονάδες 06)"
       },
       {
         "type": "sub_question",
         "number": "β)",
-        "content": "Να εξετάσετε για ποια ή ποιες από τις παραπάνω συναρτήσεις"
-      },
-      {
-        "type": "text",
-        "number": "",
-        "content": "Ι\n  \n  \n    \n      \n      \n    \n    σχύουν\n  \n  \n    \n      \n      \n    \n     ο\n  \n  \n    \n      \n      \n    \n    ι προϋποθέσεις του θεωρήματος \n  \n  \n    \n      \n      \n      \n    \n    Bolzano\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    στο πεδίο ορισμού \n  \n  \n    \n      \n      \n    \n    τους\n  \n  \n    \n      \n      \n    \n    ."
-      },
-      {
-        "type": "text",
-        "number": "",
-        "content": "Παίρνουν την τιμή 0 σε ένα εσωτερικό σημείο του\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    πεδίο\n  \n  \n    \n      \n      \n    \n    υ\n  \n  \n    \n      \n      \n    \n     ορισμού \n  \n  \n    \n      \n      \n    \n    τους\n  \n  \n    \n      \n      \n    \n    ."
+        "content": "Να εξετάσετε για ποια ή ποιες από τις παραπάνω συναρτήσεις: Ισχύουν οι προϋποθέσεις του θεωρήματος Bolzano στο πεδίο ορισμού τους. (Μονάδες 10) Παίρνουν την τιμή 0 σε ένα εσωτερικό σημείο του πεδίου ορισμού τους. (Μονάδες 09)"
       }
     ],
-    "question_html": "<p class=\"text-content\">ΘΕΜΑ \n  \n  \n    \n      \n      \n    \n    2</p>\n<p class=\"text-content\">Στο παρακάτω σχήμα δίνονται οι γραφικές παραστάσεις \n  \n  \n    \n      \n      \n    \n    2\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    συνεχών \n  \n  \n    \n      \n      \n    \n    συναρτήσεων των $f$ και $h$ , \n  \n  \n    \n      \n      \n    \n    οι οποίες \n  \n  \n    \n      \n      \n    \n    εφάπτονται\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    του\n  \n  \n    \n      \n      \n    \n     άξονα $x\n    \n    \n      \n        \n        \n        \n      \n      ’\n    \n    \n      \n        \n        \n        \n        \n      \n      x$ σ\n  \n  \n    \n      \n      \n    \n    το\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    σημείο\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    του \n  \n  \n    \n      \n      \n    \n    Α(6,0).</p>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Να εξετάσετε για ποια ή ποιες από τις παραπάνω συναρτήσεις</span></div>\n<p class=\"text-content\">Ι\n  \n  \n    \n      \n      \n    \n    σχύουν\n  \n  \n    \n      \n      \n    \n     ο\n  \n  \n    \n      \n      \n    \n    ι προϋποθέσεις του θεωρήματος \n  \n  \n    \n      \n      \n      \n    \n    Bolzano\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    στο πεδίο ορισμού \n  \n  \n    \n      \n      \n    \n    τους\n  \n  \n    \n      \n      \n    \n    .</p>\n<p class=\"text-content\">Παίρνουν την τιμή 0 σε ένα εσωτερικό σημείο του\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    πεδίο\n  \n  \n    \n      \n      \n    \n    υ\n  \n  \n    \n      \n      \n    \n     ορισμού \n  \n  \n    \n      \n      \n    \n    τους\n  \n  \n    \n      \n      \n    \n    .</p>",
+    "question_html": "<p class=\"text-content\">ΘΕΜΑ 2</p>\n<p class=\"text-content\">Στο παρακάτω σχήμα δίνονται οι γραφικές παραστάσεις 2 συνεχών συναρτήσεων των και , οι οποίες εφάπτονται του άξονα στο σημείο του Α(6,0).</p>\n<div class=\"diagram-section\"><div class=\"diagram-label\">📊 Σχήμα / Διάγραμμα:</div><img src=\"/images/math_diagrams/36839.png\" alt=\"Διάγραμμα\" class=\"question-diagram\" style=\"max-width:100%;max-height:400px;border-radius:10px;border:1px solid var(--border);cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.06);\" onclick=\"openDiagramModal(this.src)\" loading=\"lazy\"><div style=\"margin-top:6px;font-size:0.75rem;color:var(--text2);\">💡 Κάνε κλικ στο σχήμα για μεγέθυνση</div></div>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Να βρείτε το πεδίο ορισμού κάθε μίας από τις συναρτήσεις και .</span></div>\n<div class=\"points-chip\">⭐ 6 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Να εξετάσετε για ποια ή ποιες από τις παραπάνω συναρτήσεις: Ισχύουν οι προϋποθέσεις του θεωρήματος Bolzano στο πεδίο ορισμού τους.</span></div>\n<div class=\"points-chip\">⭐ 10 μονάδες</div>\n<p class=\"text-content\">Παίρνουν την τιμή 0 σε ένα εσωτερικό σημείο του πεδίου ορισμού τους.</p>\n<div class=\"points-chip\">⭐ 9 μονάδες</div>",
     "answer_html": "<div class=\"sol-step\"><div class=\"sol-step-label\">α)</div><div class=\"sol-step-text\">Από το σχήμα, η γραφική παράσταση της $f$ ορίζεται για $x \\in [0, 6]$, άρα το πεδίο ορισμού της είναι $D_f = [0, 6]$. Η γραφική παράσταση της $g$ ορίζεται για $x \\in [2, 8]$, άρα το πεδίο ορισμού της είναι $D_g = [2, 8]$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">β)</div><div class=\"sol-step-text\">Για το θεώρημα Bolzano, πρέπει η συνάρτηση να είναι συνεχής σε κλειστό διάστημα $[a, b]$ και οι τιμές στα άκρα να είναι ετερόσημες, δηλαδή $f(a) \\cdot f(b) < 0$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">Για την $f$:</div><div class=\"sol-step-text\">Η $f$ είναι συνεχής στο $[0, 6]$. Από το σχήμα, $f(0) > 0$ και $f(6) = 0$ (εφάπτεται του άξονα $x'x$ στο $A(6,0)$). Επομένως $f(0) \\cdot f(6) = 0$, οπότε δεν ισχύουν οι προϋποθέσεις του θεωρήματος Bolzano (δεν είναι γνήσια ετερόσημες).</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">Για την $g$:</div><div class=\"sol-step-text\">Η $g$ είναι συνεχής στο $[2, 8]$. Από το σχήμα, $g(2) < 0$ και $g(8) > 0$, άρα $g(2) \\cdot g(8) < 0$. Επομένως ισχύουν οι προϋποθέσεις του θεωρήματος Bolzano.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">γ)</div><div class=\"sol-step-text\">Για να παίρνει η συνάρτηση την τιμή $0$ σε ένα εσωτερικό σημείο του πεδίου ορισμού της, πρέπει να υπάρχει $x_0 \\in (a, b)$ (όπου $[a, b]$ το πεδίο ορισμού) τέτοιο ώστε $f(x_0) = 0$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">Για την $f$:</div><div class=\"sol-step-text\">Το πεδίο ορισμού είναι $[0, 6]$. Η $f$ παίρνει την τιμή $0$ στο $x = 6$, αλλά το $6$ είναι άκρο του διαστήματος, όχι εσωτερικό σημείο. Επίσης, από το σχήμα, η $f$ δεν τέμνει τον άξονα $x'x$ σε άλλο σημείο. Άρα δεν παίρνει την τιμή $0$ σε εσωτερικό σημείο.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">Για την $g$:</div><div class=\"sol-step-text\">Το πεδίο ορισμού είναι $[2, 8]$. Από το σχήμα, η $g$ τέμνει τον άξονα $x'x$ σε ένα σημείο μεταξύ $2$ και $8$, το οποίο είναι εσωτερικό σημείο του $[2, 8]$. Επομένως, η $g$ παίρνει την τιμή $0$ σε ένα εσωτερικό σημείο του πεδίου ορισμού της.</div></div>",
     "answer_text": "ΘΕΜΑ 2\nΣτο παρακάτω σχήμα δίνονται οι γραφικές παραστάσεις 2 συνεχών συναρτήσεων των  και , οι οποίες εφάπτονται του άξονα  στο σημείο του Α(6,0).\nα) Να βρείτε το πεδίο ορισμού κάθε μίας από τις συναρτήσεις και .\t(Μονάδες 06)\nβ) Να εξετάσετε για ποια ή ποιες από τις παραπάνω συναρτήσεις:\nΙσχύουν οι προϋποθέσεις του θεωρήματος Bolzano στο πεδίο ορισμού τους.\n(Μονάδες 10)\nΠαίρνουν την τιμή 0 σε ένα εσωτερικό σημείο του πεδίου ορισμού τους.\n(Μονάδες 09)",
     "hints": [
@@ -16941,21 +17002,24 @@
     "sections": [
       {
         "type": "text",
-        "number": "",
-        "content": "ΘΕΜΑ \n  \n  \n    \n      \n      \n    \n    2"
+        "content": "ΘΕΜΑ 2"
       },
       {
         "type": "text",
-        "number": "",
-        "content": "Στο παρακάτω σχήμα δίνονται οι γραφικές παραστάσεις \n  \n  \n    \n      \n      \n    \n    2\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    παραγωγίσιμων\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    συναρτήσεων των $f$ και $h.$ Και οι 2 γραφικές παραστάσεις \n  \n  \n    \n      \n      \n    \n    εφάπτονται του άξονα $x\n    \n    \n      \n        \n        \n        \n      \n      ’\n    \n    \n      \n        \n        \n        \n        \n      \n      x$ στο\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    σημείο του Α(6,0).\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    Γνωρίζουμε ότι η $f$ πα\n  \n  \n    \n      \n      \n    \n    ίρνει θετικές τιμές κοντά στο 6 και\n  \n  \n    \n      \n      \n    \n     η $h$ παίρνει \n  \n  \n    \n      \n      \n    \n    αρνητικές\n  \n  \n    \n      \n      \n    \n     τιμές \n  \n  \n    \n      \n      \n    \n    αριστερά του 6 και θετικές τιμές δεξιά του \n  \n  \n    \n      \n      \n    \n    6."
+        "content": "Στο παρακάτω σχήμα δίνονται οι γραφικές παραστάσεις 2 παραγωγίσιμων συναρτήσεων των  και  Και οι 2 γραφικές παραστάσεις εφάπτονται του άξονα  στο σημείο του Α(6,0). Γνωρίζουμε ότι η παίρνει θετικές τιμές κοντά στο 6 και η  παίρνει αρνητικές τιμές αριστερά του 6 και θετικές τιμές δεξιά του 6."
+      },
+      {
+        "type": "sub_question",
+        "number": "α)",
+        "content": "Να βρείτε το πεδίο ορισμού κάθε μίας από τις συναρτήσεις  και \t(Μονάδες 06)"
       },
       {
         "type": "sub_question",
         "number": "β)",
-        "content": "Να"
+        "content": "Να βρείτε, αν υπάρχουν, τα παρακάτω όρια, δικαιολογώντας την απάντησή σας. (Μονάδες 07) (Μονάδες 07) (Μονάδες 05)"
       }
     ],
-    "question_html": "<p class=\"text-content\">ΘΕΜΑ \n  \n  \n    \n      \n      \n    \n    2</p>\n<p class=\"text-content\">Στο παρακάτω σχήμα δίνονται οι γραφικές παραστάσεις \n  \n  \n    \n      \n      \n    \n    2\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    παραγωγίσιμων\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    συναρτήσεων των $f$ και $h.$ Και οι 2 γραφικές παραστάσεις \n  \n  \n    \n      \n      \n    \n    εφάπτονται του άξονα $x\n    \n    \n      \n        \n        \n        \n      \n      ’\n    \n    \n      \n        \n        \n        \n        \n      \n      x$ στο\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    σημείο του Α(6,0).\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    Γνωρίζουμε ότι η $f$ πα\n  \n  \n    \n      \n      \n    \n    ίρνει θετικές τιμές κοντά στο 6 και\n  \n  \n    \n      \n      \n    \n     η $h$ παίρνει \n  \n  \n    \n      \n      \n    \n    αρνητικές\n  \n  \n    \n      \n      \n    \n     τιμές \n  \n  \n    \n      \n      \n    \n    αριστερά του 6 και θετικές τιμές δεξιά του \n  \n  \n    \n      \n      \n    \n    6.</p>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Να</span></div>",
+    "question_html": "<p class=\"text-content\">ΘΕΜΑ 2</p>\n<p class=\"text-content\">Στο παρακάτω σχήμα δίνονται οι γραφικές παραστάσεις 2 παραγωγίσιμων συναρτήσεων των  και  Και οι 2 γραφικές παραστάσεις εφάπτονται του άξονα  στο σημείο του Α(6,0). Γνωρίζουμε ότι η παίρνει θετικές τιμές κοντά στο 6 και η  παίρνει αρνητικές τιμές αριστερά του 6 και θετικές τιμές δεξιά του 6.</p>\n<div class=\"diagram-section\"><div class=\"diagram-label\">📊 Σχήμα / Διάγραμμα:</div><img src=\"/images/math_diagrams/36840.png\" alt=\"Διάγραμμα\" class=\"question-diagram\" style=\"max-width:100%;max-height:400px;border-radius:10px;border:1px solid var(--border);cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.06);\" onclick=\"openDiagramModal(this.src)\" loading=\"lazy\"><div style=\"margin-top:6px;font-size:0.75rem;color:var(--text2);\">💡 Κάνε κλικ στο σχήμα για μεγέθυνση</div></div>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Να βρείτε το πεδίο ορισμού κάθε μίας από τις συναρτήσεις  και </span></div>\n<div class=\"points-chip\">⭐ 6 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Να βρείτε, αν υπάρχουν, τα παρακάτω όρια, δικαιολογώντας την απάντησή σας.</span></div>\n<div class=\"points-chip\">⭐ 7 μονάδες</div>\n<div class=\"points-chip\">⭐ 7 μονάδες</div>\n<div class=\"points-chip\">⭐ 5 μονάδες</div>",
     "answer_html": "<div class=\"sol-step\"><div class=\"sol-step-label\">α)</div><div class=\"sol-step-text\">Από το σχήμα, η γραφική παράσταση της $f$ ορίζεται για $x \\in [0, 10]$, άρα το πεδίο ορισμού της είναι $D_f = [0, 10]$. Η γραφική παράσταση της $g$ ορίζεται για $x \\in [2, 10]$, άρα το πεδίο ορισμού της είναι $D_g = [2, 10]$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">β)</div><div class=\"sol-step-text\">Για το όριο $\\lim_{x \\to 6} \\frac{f(x)}{g(x)}$: Καθώς $x \\to 6$, και οι δύο συναρτήσεις τείνουν στο $0$ (αφού εφάπτονται του άξονα $x'x$ στο $A(6,0)$). Επειδή η $f$ παίρνει θετικές τιμές κοντά στο $6$ και η $g$ παίρνει αρνητικές τιμές αριστερά του $6$ και θετικές δεξιά του $6$, το όριο δεν υπάρχει (τα πλευρικά όρια είναι διαφορετικά).</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">γ)</div><div class=\"sol-step-text\">Για το όριο $\\lim_{x \\to 6} \\frac{f(x)}{g(x)}$: Από το σχήμα, η $f$ είναι θετική κοντά στο $6$ και η $g$ αλλάζει πρόσημο. Αριστερά του $6$, $g(x) < 0$, οπότε $\\frac{f(x)}{g(x)} \\to -\\infty$. Δεξιά του $6$, $g(x) > 0$, οπότε $\\frac{f(x)}{g(x)} \\to +\\infty$. Επομένως, το όριο δεν υπάρχει.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">δ)</div><div class=\"sol-step-text\">Για το όριο $\\lim_{x \\to 6} \\frac{f(x)}{g(x)}$: Χρησιμοποιώντας τον κανόνα του de l'Hospital (αφού έχουμε απροσδιοριστία $0/0$), έχουμε $\\lim_{x \\to 6} \\frac{f'(x)}{g'(x)}$. Από το σχήμα, οι εφαπτόμενες στο $A(6,0)$ έχουν κλίσεις $f'(6) = 0$ και $g'(6) = 0$, οπότε το όριο είναι $\\frac{0}{0}$ και δεν μπορεί να υπολογιστεί χωρίς περαιτέρω πληροφορίες.</div></div>",
     "answer_text": "ΘΕΜΑ 2\nΣτο παρακάτω σχήμα δίνονται οι γραφικές παραστάσεις 2 παραγωγίσιμων συναρτήσεων των  και  Και οι 2 γραφικές παραστάσεις εφάπτονται του άξονα  στο σημείο του Α(6,0). Γνωρίζουμε ότι η παίρνει θετικές τιμές κοντά στο 6 και η  παίρνει αρνητικές τιμές αριστερά του 6 και θετικές τιμές δεξιά του 6.\nα) Να βρείτε το πεδίο ορισμού κάθε μίας από τις συναρτήσεις  και \t(Μονάδες 06)\nβ) Να βρείτε, αν υπάρχουν, τα παρακάτω όρια, δικαιολογώντας την απάντησή σας.\n(Μονάδες 07)\n(Μονάδες 07)\n(Μονάδες 05)",
     "hints": [
@@ -17023,26 +17087,24 @@
     "sections": [
       {
         "type": "text",
-        "number": "",
-        "content": "ΘΕΜΑ \n  \n  \n    \n      \n      \n    \n    2"
+        "content": "ΘΕΜΑ 2"
       },
       {
         "type": "text",
-        "number": "",
-        "content": "Στο παρακάτω σχήμα δίνονται οι γραφικές παραστάσεις 3 \n  \n  \n    \n      \n      \n    \n    παραγωγίσιμων\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    συναρτήσεων των $f$ , $g$ και $h$ , \n  \n  \n    \n      \n      \n    \n    οι οποίες \n  \n  \n    \n      \n      \n    \n    εφάπτονται\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    του\n  \n  \n    \n      \n      \n    \n     άξονα $x\n    \n    \n      \n        \n        \n        \n      \n      ’\n    \n    \n      \n        \n        \n        \n        \n      \n      x$ σ\n  \n  \n    \n      \n      \n    \n    το\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    σημείο\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    του $Α(6,0)$ ."
+        "content": "Στο παρακάτω σχήμα δίνονται οι γραφικές παραστάσεις 3 παραγωγίσιμων συναρτήσεων των ,  και , οι οποίες εφάπτονται του άξονα  στο σημείο του ."
+      },
+      {
+        "type": "sub_question",
+        "number": "α)",
+        "content": "Να βρείτε το πεδίο ορισμού κάθε μίας από τις συναρτήσεις , και .\t(Μονάδες 06)"
       },
       {
         "type": "sub_question",
         "number": "β)",
-        "content": "Να"
-      },
-      {
-        "type": "text",
-        "number": "",
-        "content": "Ισχύουν ο\n  \n  \n    \n      \n      \n    \n    ι προϋποθέσεις του θεωρήματος \n  \n  \n    \n      \n      \n      \n    \n    Rolle\n  \n  \n    \n      \n      \n    \n     στο πεδίο ορισμού τους."
+        "content": "Να εξετάσετε για ποια ή ποιες από τις παραπάνω συναρτήσεις: Ισχύουν οι προϋποθέσεις του θεωρήματος Rolle στο πεδίο ορισμού τους. (Μονάδες 10) Υπάρχει μία τουλάχιστον ρίζα της παραγώγου της.\t(Μονάδες 09)"
       }
     ],
-    "question_html": "<p class=\"text-content\">ΘΕΜΑ \n  \n  \n    \n      \n      \n    \n    2</p>\n<p class=\"text-content\">Στο παρακάτω σχήμα δίνονται οι γραφικές παραστάσεις 3 \n  \n  \n    \n      \n      \n    \n    παραγωγίσιμων\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    συναρτήσεων των $f$ , $g$ και $h$ , \n  \n  \n    \n      \n      \n    \n    οι οποίες \n  \n  \n    \n      \n      \n    \n    εφάπτονται\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    του\n  \n  \n    \n      \n      \n    \n     άξονα $x\n    \n    \n      \n        \n        \n        \n      \n      ’\n    \n    \n      \n        \n        \n        \n        \n      \n      x$ σ\n  \n  \n    \n      \n      \n    \n    το\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    σημείο\n  \n  \n    \n      \n      \n    \n     \n  \n  \n    \n      \n      \n    \n    του $Α(6,0)$ .</p>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Να</span></div>\n<p class=\"text-content\">Ισχύουν ο\n  \n  \n    \n      \n      \n    \n    ι προϋποθέσεις του θεωρήματος \n  \n  \n    \n      \n      \n      \n    \n    Rolle\n  \n  \n    \n      \n      \n    \n     στο πεδίο ορισμού τους.</p>",
+    "question_html": "<p class=\"text-content\">ΘΕΜΑ 2</p>\n<p class=\"text-content\">Στο παρακάτω σχήμα δίνονται οι γραφικές παραστάσεις 3 παραγωγίσιμων συναρτήσεων των ,  και , οι οποίες εφάπτονται του άξονα  στο σημείο του .</p>\n<div class=\"diagram-section\"><div class=\"diagram-label\">📊 Σχήμα / Διάγραμμα:</div><img src=\"/images/math_diagrams/36842.png\" alt=\"Διάγραμμα\" class=\"question-diagram\" style=\"max-width:100%;max-height:400px;border-radius:10px;border:1px solid var(--border);cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.06);\" onclick=\"openDiagramModal(this.src)\" loading=\"lazy\"><div style=\"margin-top:6px;font-size:0.75rem;color:var(--text2);\">💡 Κάνε κλικ στο σχήμα για μεγέθυνση</div></div>\n<div class=\"subq\"><span class=\"subq-num\">α)</span> <span class=\"subq-text\">Να βρείτε το πεδίο ορισμού κάθε μίας από τις συναρτήσεις , και .</span></div>\n<div class=\"points-chip\">⭐ 6 μονάδες</div>\n<div class=\"subq\"><span class=\"subq-num\">β)</span> <span class=\"subq-text\">Να εξετάσετε για ποια ή ποιες από τις παραπάνω συναρτήσεις: Ισχύουν οι προϋποθέσεις του θεωρήματος Rolle στο πεδίο ορισμού τους. Υπάρχει μία τουλάχιστον ρίζα της παραγώγου της.</span></div>\n<div class=\"points-chip\">⭐ 10 μονάδες</div>",
     "answer_html": "<div class=\"sol-step\"><div class=\"sol-step-label\">α)</div><div class=\"sol-step-text\">Από το σχήμα, το πεδίο ορισμού κάθε συνάρτησης είναι το σύνολο των τετμημένων των σημείων της γραφικής της παράστασης. Παρατηρούμε ότι:</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">Για την $f$:</div><div class=\"sol-step-text\">Η γραφική παράσταση ορίζεται για $x \\in [\\alpha, \\beta]$, όπου $\\alpha$ και $\\beta$ τα άκρα του διαστήματος που φαίνονται στο σχήμα. Επομένως, $D_f = [\\alpha, \\beta]$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">Για την $g$:</div><div class=\"sol-step-text\">Η γραφική παράσταση ορίζεται για $x \\in [\\gamma, \\delta]$, όπου $\\gamma$ και $\\delta$ τα άκρα του διαστήματος. Επομένως, $D_g = [\\gamma, \\delta]$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">Για την $h$:</div><div class=\"sol-step-text\">Η γραφική παράσταση ορίζεται για $x \\in [\\epsilon, \\zeta]$, όπου $\\epsilon$ και $\\zeta$ τα άκρα του διαστήματος. Επομένως, $D_h = [\\epsilon, \\zeta]$.</div></div>\n\n<div class=\"sol-step\"><div class=\"sol-step-label\">β)</div><div class=\"sol-step-text\">Το θεώρημα Rolle απαιτεί η συνάρτηση να είναι συνεχής στο κλειστό διάστημα $[a,b]$, παραγωγίσιμη στο ανοιχτό $(a,b)$ και $f(a)=f(b)$. Εξετάζουμε κάθε συνάρτηση:</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">Για την $f$:</div><div class=\"sol-step-text\">Η $f$ είναι παραγωγίσιμη (άρα και συνεχής) στο $[\\alpha, \\beta]$. Από το σχήμα, $f(\\alpha) = f(\\beta) = 0$ (εφάπτονται του άξονα $x'x$ στο σημείο $A$). Επομένως, ισχύουν οι προϋποθέσεις του θεωρήματος Rolle στο $[\\alpha, \\beta]$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">Για την $g$:</div><div class=\"sol-step-text\">Η $g$ είναι παραγωγίσιμη (άρα και συνεχής) στο $[\\gamma, \\delta]$. Από το σχήμα, $g(\\gamma) = g(\\delta) = 0$ (εφάπτονται του άξονα $x'x$ στο σημείο $A$). Επομένως, ισχύουν οι προϋποθέσεις του θεωρήματος Rolle στο $[\\gamma, \\delta]$.</div></div>\n<div class=\"sol-step\"><div class=\"sol-step-label\">Για την $h$:</div><div class=\"sol-step-text\">Η $h$ είναι παραγωγίσιμη (άρα και συνεχής) στο $[\\epsilon, \\zeta]$. Από το σχήμα, $h(\\epsilon) = h(\\zeta) = 0$ (εφάπτονται του άξονα $x'x$ στο σημείο $A$). Επομένως, ισχύουν οι προϋποθέσεις του θεωρήματος Rolle στο $[\\epsilon, \\zeta]$.</div></div>\n\n<div class=\"sol-step\"><div class=\"sol-step-label\">γ)</div><div class=\"sol-step-text\">Από το θεώρημα Rolle, αν ισχύουν οι προϋποθέσεις, τότε υπάρχει τουλάχιστον ένα $\\xi$ στο ανοιχτό διάστημα τέτοιο ώστε $f'(\\xi)=0$, δηλαδή η παράγωγος έχει τουλάχιστον μία ρίζα. Επει",
     "answer_text": "ΘΕΜΑ 2\nΣτο παρακάτω σχήμα δίνονται οι γραφικές παραστάσεις 3 παραγωγίσιμων συναρτήσεων των ,  και , οι οποίες εφάπτονται του άξονα  στο σημείο του .\nα) Να βρείτε το πεδίο ορισμού κάθε μίας από τις συναρτήσεις , και .\t(Μονάδες 06)\nβ) Να εξετάσετε για ποια ή ποιες από τις παραπάνω συναρτήσεις:\nΙσχύουν οι προϋποθέσεις του θεωρήματος Rolle στο πεδίο ορισμού τους.\n(Μονάδες 10)\nΥπάρχει μία τουλάχιστον ρίζα της παραγώγου της.\t(Μονάδες 09)",
     "hints": [
