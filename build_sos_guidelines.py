@@ -198,6 +198,33 @@ def main():
             )
             raw = resp.choices[0].message.content or "{}"
             data = safe_json_parse(raw)
+            
+            # Skip chapters where API returned empty content
+            if not data.get("key_concepts") and not data.get("traps") and not data.get("patterns"):
+                print(f"  ⚠️  API returned empty — retrying with simpler prompt...")
+                # Retry once with a simpler prompt (no LaTeX hints, shorter)
+                retry_prompt = f"""ΘΕΜΑ: {title} ({len(questions)} θέματα)
+Ανέλυσε τις παρακάτω λύσεις και δώσε 3-5 SOS έννοιες και 2-4 παγίδες. Μίλα σαν φίλος, σε casual Ελληνικά.
+ΟΧΙ LaTeX — χρησιμοποίησε απλό κείμενο.
+
+ΛΥΣΕΙΣ:
+{answers_sample[:3000]}
+
+ΕΠΙΣΤΡΕΨΕ ΜΟΝΟ JSON: {{"key_concepts": [...], "traps": [...], "patterns": [...], "must_know": "..."}}"""
+                try:
+                    resp2 = client.chat.completions.create(
+                        model="deepseek-chat",
+                        messages=[
+                            {"role": "system", "content": "Είσαι φίλος-προπονητής Πανελληνίων. Casual Ελληνικά, μικρές προτάσεις. ΜΟΝΟ JSON."},
+                            {"role": "user", "content": retry_prompt}
+                        ],
+                        temperature=0.3, max_tokens=600,
+                        response_format={"type": "json_object"}
+                    )
+                    raw2 = resp2.choices[0].message.content or "{}"
+                    data = safe_json_parse(raw2)
+                except Exception as e2:
+                    print(f"    Retry also failed: {e2}")
 
             chapter_data = {
                 "id": title[:4] if title[0].isdigit() else "",
@@ -211,7 +238,10 @@ def main():
                 "thema_cd_tools": data.get("thema_cd_tools", ""),
             }
             guidelines["chapters"].append(chapter_data)
-            print(f"  ✅ {len(chapter_data['key_concepts'])} concepts, {len(chapter_data['traps'])} traps")
+            if data.get("key_concepts"):
+                print(f"  ✅ {len(chapter_data['key_concepts'])} concepts, {len(chapter_data['traps'])} traps")
+            else:
+                print(f"  ⚠️  Still empty after retry — saved placeholder")
 
         except Exception as e:
             print(f"  ❌ Error: {e}")

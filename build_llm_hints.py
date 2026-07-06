@@ -179,14 +179,25 @@ def main():
             if si >= len(hints):
                 hints.append({"subq_idx": si, "number": sub["number"], "hints": []})
             
+            # Clear old hints to force regeneration
+            hints[si]["hints"] = []
             subq_hints = hints[si]["hints"]
+            
+            # Build sub-question context — combine with parent if text is too short
+            subq_content = sub["content"]
+            if len(subq_content) < 30 and si > 0:
+                # Prepend parent sub-question description (e.g. "2.1." → "2.1.Α.")
+                parent_text = subs[si-1]["content"] if si > 0 else ""
+                if parent_text:
+                    subq_content = parent_text + "\n\n" + subq_content
+            
             for level in [1, 2, 3]:
                 if any(h.get("level") == level for h in subq_hints):
                     continue
 
                 prompt = hint_prompt.format(
                     level=level, subq_num=sub["number"],
-                    subq_text=sub["content"][:2000],
+                    subq_text=subq_content[:2000],
                     answer_text=q.get("answer_text","")[:1500]
                 )
                 try:
