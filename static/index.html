@@ -91,6 +91,8 @@
         .quick-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; justify-content: center; }
         .qbtn { padding: 5px 12px; border-radius: 18px; border: 1px solid var(--border); background: var(--surface); color: var(--text2); font-size: 0.74rem; font-weight: 600; cursor: pointer; }
         .qbtn:hover { border-color: var(--accent); color: var(--accent); }
+        .qid-search { background: transparent !important; border: none !important; color: var(--text) !important; font-weight: 700; width: 65px; font-size: 0.8rem; text-align: center; outline: none; font-family: inherit; caret-color: var(--accent); }
+        .qid-search::selection { background: var(--accent); color: #fff; }
         .start { text-align: center; padding: 60px 20px; }
         .start .icon { font-size: 3.5rem; margin-bottom: 12px; }
         .start h2 { font-size: 1.4rem; margin-bottom: 8px; }
@@ -201,7 +203,7 @@
     <div id="session" style="display:none">
         <div class="stats-bar">
             <div class="stat" id="st-ai"></div>
-            <div class="stat">🆔 <span id="st-qid">—</span> <span style="cursor:pointer;font-size:0.7rem;" onclick="copyQid()" title="Αντιγραφή κωδικού">📋</span></div>
+            <div class="stat" style="position:relative;">🆔 <input id="st-qid-input" type="text" value="—" class="qid-search" onfocus="this.select()" oninput="filterQidList()" onkeydown="if(event.key==='Enter')jumpToQid()" onblur="setTimeout(function(){jumpToQid()},150)" autocomplete="off"><datalist id="qid-list"></datalist><div id="qid-dropdown" style="display:none;position:absolute;top:100%;left:0;background:var(--surface);border:1px solid var(--border);border-radius:8px;max-height:200px;overflow-y:auto;z-index:100;min-width:280px;font-size:0.78rem;"></div> <span style="cursor:pointer;font-size:0.7rem;" onclick="copyQid()" title="Αντιγραφή κωδικού">📋</span></div>
             <div class="stat">✅ <span class="val" id="st-done">0</span></div>
             <div class="stat">📚 <span class="val" id="st-left">155</span></div>
             <div class="stat">⭐ <span class="val" id="st-pts">0</span></div>
@@ -292,6 +294,8 @@ async function start() {
         renderQuestion(q);
         updateStats({completed:0, total_points:0, remaining: d.total_questions || 0});
         addMsg('system', '📝 Γράψε την απάντησή σου ή ξεκίνα με ερωτήσεις.');
+        currentQid = q.id;
+        loadQidList();
     } catch(e) { alert('Σφάλμα: ' + e.message); document.getElementById('btn-start').disabled = false; }
 }
 
@@ -302,7 +306,7 @@ function renderQuestion(qq) {
          <span class="badge badge-pts">${qq.points} μονάδες</span>
          <span class="badge badge-t">${qq.type || 'άσκηση'}</span>`;
     document.getElementById('q-body').innerHTML = qq.question_html || `<div class="text-content">${E(qq.question_text || '')}</div>`;
-    document.getElementById('st-qid').textContent = qq.id || '—';
+    document.getElementById('st-qid-input').value = qq.id || '—';
     document.getElementById('input').focus();
     setTimeout(buildSubquestionTracker, 100);
     setTimeout(renderMath, 200);
@@ -550,15 +554,89 @@ function end() {
     }, 2500);
 }
 
+// Question ID autocomplete
+var allQids = [];
+var currentQid = null;
+
+async function loadQidList() {
+    try {
+        var r = await fetch('/api/questions/list?subject=' + currentSubject);
+        var d = await r.json();
+        allQids = (d.ids || []).sort(function(a,b) { return a.id - b.id; });
+        // Populate datalist
+        var dl = document.getElementById('qid-list');
+        dl.innerHTML = '';
+        allQids.forEach(function(item) {
+            var opt = document.createElement('option');
+            opt.value = String(item.id);
+            opt.textContent = item.id + ' — ' + item.part + ' ' + item.year + ' (' + item.points + 'pts)';
+            dl.appendChild(opt);
+        });
+    } catch(e) {}
+}
+
+function filterQidList() {
+    var inp = document.getElementById('st-qid-input');
+    var val = inp.value.trim();
+    var dd = document.getElementById('qid-dropdown');
+    if (!val || val.length < 1 || val === String(currentQid)) {
+        dd.style.display = 'none';
+        return;
+    }
+    var matches = allQids.filter(function(item) {
+        return String(item.id).indexOf(val) === 0;
+    }).slice(0, 15);
+    if (matches.length === 0) {
+        dd.style.display = 'none';
+        return;
+    }
+    var html = '';
+    matches.forEach(function(item, i) {
+        var bg = i === 0 ? 'background:var(--accent);color:#fff;' : '';
+        html += '<div onclick="selectQid(' + item.id + ')" style="padding:6px 12px;cursor:pointer;' + bg + '">' + item.id + ' — ' + item.part + ' ' + item.year + ' — ' + item.points + ' μονάδες</div>';
+    });
+    dd.innerHTML = html;
+    dd.style.display = 'block';
+}
+
+function selectQid(qid) {
+    document.getElementById('st-qid-input').value = qid;
+    document.getElementById('qid-dropdown').style.display = 'none';
+    jumpToQid();
+}
+
+async function jumpToQid() {
+    var inp = document.getElementById('st-qid-input');
+    var val = parseInt(inp.value.trim());
+    if (!val || val === currentQid) return;
+    document.getElementById('qid-dropdown').style.display = 'none';
+    if (!allQids.some(function(item) { return item.id === val; })) {
+        inp.value = currentQid || '—';
+        return;
+    }
+    try {
+        var d = await api('/api/session/jump', {session_id: sid, question_id: val});
+        if (d.error) { addMsg('system', '⚠ ' + d.error); inp.value = currentQid || '—'; return; }
+        q = d.question;
+        currentQid = q.id;
+        inp.value = q.id;
+        renderQuestion(q);
+        // Reset messages for new question
+        document.getElementById('messages').innerHTML = '';
+        addMsg('system', '📌 ' + q.part + ' (' + q.year + ') — ' + q.points + ' μονάδες');
+    } catch(e) {
+        inp.value = currentQid || '—';
+    }
+}
+
 // Copy question ID to clipboard
 function copyQid() {
-    var qid = document.getElementById('st-qid').textContent;
+    var inp = document.getElementById('st-qid-input');
+    var qid = inp.value;
     if (qid && qid !== '—') {
         navigator.clipboard.writeText(qid).then(function() {
-            var el = document.getElementById('st-qid');
-            var orig = el.textContent;
-            el.textContent = '✓ Αντιγράφηκε!';
-            setTimeout(function() { el.textContent = orig; }, 1500);
+            inp.style.color = 'var(--green)';
+            setTimeout(function() { inp.style.color = ''; }, 1200);
         }).catch(function() {});
     }
 }

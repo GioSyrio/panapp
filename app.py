@@ -497,6 +497,49 @@ def topics():
     return jsonify({"topics": [{"topic": t, "priority": round(s, 2)} for t, s in ranked[:10]],
                     "total_topics": len(ranked)})
 
+@app.route("/api/questions/list")
+def questions_list():
+    """Return all question IDs with metadata for autocomplete."""
+    subject_id = request.args.get("subject", "informatics")
+    cfg = load_subject_config(subject_id)
+    ddir = cfg.get("data", {}).get("data_dir", "data/trapeza_data_1_3_218")
+    src = cfg.get("data", {}).get("source_file", "questions_classified.json")
+    qf = os.path.join(BASE_DIR, ddir, src)
+    if not os.path.exists(qf):
+        return jsonify({"ids": []})
+    with open(qf, encoding="utf-8") as f:
+        qs = json.load(f)
+    return jsonify({"ids": [{"id": q["id"], "year": q.get("year",""), "part": q.get("part",""), "points": q.get("points",0), "tags": q.get("conceptual_tags", [])[:2]} for q in qs]})
+
+@app.route("/api/session/jump", methods=["POST"])
+def jump_question():
+    """Jump to a specific question by ID."""
+    body = request.get_json(force=True) or {}
+    sid = body.get("session_id", "")
+    tid = body.get("question_id")
+    if not sid or sid not in sessions:
+        return jsonify({"error": "Session ended"}), 400
+    if not tid:
+        return jsonify({"error": "No ID"}), 400
+    s = sessions[sid]
+    sj = s.get("subject_id", "informatics")
+    q = next((x for x in exam_data if x["id"] == tid), None)
+    if not q:
+        return jsonify({"error": "ID not found"}), 404
+    s["seen_ids"].add(q["id"])
+    s["current_question"] = q
+    pr = get_prompts(sj)
+    s["eval_prompt"] = pr.EVALUATION_SYSTEM_PROMPT
+    qv = _load_v2_data(sj).get(str(q["id"]), {})
+    qh = qv.get("question_html", q.get("question_text", ""))
+    qt = re.sub(r'<[^>]+>', ' ', qh)[:3000].strip()
+    qt = re.sub(r'\s+', ' ', qt)
+    sp = pr.GREEK_TUTOR_SYSTEM_PROMPT + "\n\n" + qt + "\n\n" + trend_context
+    s["messages"] = [{"role": "system", "content": sp}]
+    s["hint_state"] = {"subqIdx": 0, "hintCount": 0, "totalSubqs": len(_get_subquestions(str(q["id"]), sj)) or 1}
+    logger.info(f"Jump: {sid[:8]} -> Q{tid}")
+    return jsonify({"question": format_exam_question(q, subject_id=sj)})
+
 @app.route("/api/guidelines")
 def guidelines():
     subject_id = request.args.get("subject", "mathematics")
