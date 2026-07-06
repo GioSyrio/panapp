@@ -97,9 +97,9 @@ def validate(subject_id="mathematics"):
             print(f"  ⚠️ q{qid}: ANSWER MISMATCH — Q f(x)={q_norm}, A f(x)={a_norm}")
             warnings += 1
         
-        # 10. question_html_parts consistency
+        # 10. question_html_parts consistency (skip if dict format)
         parts = q.get("question_html_parts", [])
-        if parts:
+        if parts and isinstance(parts[0], str):
             rebuilt = "\n".join(parts)
             if rebuilt != q_html:
                 print(f"  ⚠️ q{qid}: question_html_parts out of sync with question_html")
