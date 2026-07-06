@@ -22,9 +22,8 @@ from openai import OpenAI
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 
-SYSTEM_PROMPT = """Είσαι ένας καθηγητής Πανελληνίων που μιλάει σαν φίλος/κολλητός σε μαθητή Λυκείου.
-ΟΧΙ επίσημη γλώσσα, ΟΧΙ σαν πανεπιστημιακό σύγγραμμα. Χρησιμοποίησε καθημερινά Ελληνικά,
-σαν να στέλνεις μήνυμα σε φίλο που προετοιμάζεται για Πανελλαδικές.
+SYSTEM_PROMPT_MATH = """Είσαι ένας καθηγητής Πανελληνίων που μιλάει σαν φίλος/κολλητός σε μαθητή Λυκείου.
+ΟΧΙ επίσημη γλώσσα, ΟΧΙ σαν πανεπιστημιακό σύγγραμμα. Χρησιμοποίησε καθημερινά Ελληνικά.
 
 Για το παρακάτω θέμα/ενότητα, ανέλυσες πραγματικές λύσεις και δίνεις:
 
@@ -37,19 +36,30 @@ SYSTEM_PROMPT = """Είσαι ένας καθηγητής Πανελληνίων
 Απόφυγε λέξεις όπως "απαιτείται", "επιβάλλεται", "συνιστάται" — πες "πρέπει", "θες", "χρειάζεσαι".
 
 ΕΠΙΣΤΡΕΨΕ ΜΟΝΟ JSON:
-{
-  "key_concepts": ["πρόταση 1 με παράδειγμα", ...],
-  "traps": ["παγίδα 1 με σενάριο", ...],
-  "patterns": ["μοτίβο 1 με βήματα", ...],
-  "must_know": "η μία πρόταση",
-  "thema_b_tools": "εργαλεία για Θέμα Β",
-  "thema_cd_tools": "εργαλεία για Θέμα Γ/Δ"
-}"""
+{{"key_concepts": [...], "traps": [...], "patterns": [...], "must_know": "...", "thema_b_tools": "...", "thema_cd_tools": "..."}}"""
+
+SYSTEM_PROMPT_PHYSICS = """Είσαι φίλος-προπονητής Φυσικής για μαθητές Λυκείου που προετοιμάζονται για Πανελλήνιες.
+Μίλα σαν φίλος σε φίλο, με απλά καθημερινά λόγια. ΟΧΙ σαν σχολικό βιβλίο.
+ΟΧΙ LaTeX — χρησιμοποίησε απλό κείμενο ή ASCII (π.χ. F=ma, p=mv, E=1/2*m*v^2).
+
+Για το παρακάτω θέμα/ενότητα, ανέλυσες πραγματικές λύσεις και δίνεις:
+1. 🔑 SOS Έννοιες (3-5): Τι εμφανίζεται ΣΧΕΔΟΝ ΠΑΝΤΑ + ΠΑΡΑΔΕΙΓΜΑ
+2. ⚠️ Παγίδες που ΠΟΝΑΝΕ (2-4): Συγκεκριμένο σενάριο που χάνεις μονάδες
+3. 📝 SOS Μοτίβο (1-2): Το βήμα-βήμα που λύνει τα περισσότερα
+4. 💡 Το απόλυτο takeaway (1 πρόταση)
+
+ΕΠΙΣΤΡΕΨΕ ΜΟΝΟ JSON:
+{{"key_concepts": [...], "traps": [...], "patterns": [...], "must_know": "...", "thema_b_tools": "...", "thema_cd_tools": "..."}}"""
 
 def build_prompt(chapter_title, answers_sample, part_distribution, question_count, is_math):
     parts_str = ", ".join(f"{v} Θέμα {k}" for k, v in sorted(part_distribution.items()))
-    math_hint = "\nΧρησιμοποίησε LaTeX $...$ για μαθηματικά." if is_math else ""
-    return f"""ΘΕΜΑ/ΕΝΟΤΗΤΑ: {chapter_title} ({question_count} θέματα)
+    if is_math:
+        system = SYSTEM_PROMPT_MATH
+        math_hint = "\nΧρησιμοποίησε LaTeX $...$ για μαθηματικά."
+    else:
+        system = SYSTEM_PROMPT_PHYSICS
+        math_hint = ""
+    return system, f"""ΘΕΜΑ/ΕΝΟΤΗΤΑ: {chapter_title} ({question_count} θέματα)
 Κατανομή: {parts_str}
 {math_hint}
 
@@ -183,14 +193,14 @@ def main():
             print("  ⚠️ No answer samples, skipping")
             continue
 
-        prompt = build_prompt(title, "\n---\n".join(samples), parts, len(questions), is_math)
+        system_prompt, user_prompt = build_prompt(title, "\n---\n".join(samples), parts, len(questions), is_math)
 
         try:
             resp = client.chat.completions.create(
                 model="deepseek-chat",
                 messages=[
-                    {"role": "system", "content": SYSTEM_PROMPT},
-                    {"role": "user", "content": prompt}
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_prompt}
                 ],
                 temperature=0.2,
                 max_tokens=800,
