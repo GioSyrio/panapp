@@ -5,11 +5,12 @@ No API cost — uses keyword matching from question_text.
 
 Usage:
     python3 classify_physics_tags.py
+    python3 classify_physics_tags.py --subject fysiki_prosanatolismoy
 """
-import json, os, re
+import json, os, re, argparse, shutil
+from datetime import datetime
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-V2_FILE = os.path.join(BASE, "data", "subjects", "fysiki_prosanatolismoy", "questions_v2.json")
 
 # Topic definitions: (tag_name, regex_patterns)
 TOPICS = [
@@ -63,23 +64,49 @@ def classify_question(q):
                 break
     return tags if tags else ["Γενική Φυσική"]
 
+def load_subject_config(subject_id):
+    cfg_path = os.path.join(BASE, "subjects", f"{subject_id}.json")
+    with open(cfg_path, encoding="utf-8") as f:
+        return json.load(f)
+
 # ── Main ─────────────────────────────────────────────────────────────────────
-v2 = json.load(open(V2_FILE, encoding="utf-8"))
-classified = 0
-distribution = {}
+def main():
+    p = argparse.ArgumentParser()
+    p.add_argument("--subject", default="fysiki_prosanatolismoy", help="Subject ID")
+    args = p.parse_args()
 
-for q in v2:
-    tags = classify_question(q)
-    q["conceptual_tags"] = tags
-    for t in tags:
-        distribution[t] = distribution.get(t, 0) + 1
-    if tags:
-        classified += 1
+    cfg = load_subject_config(args.subject)
+    data_dir = os.path.join(BASE, cfg.get("data", {}).get("data_dir", f"data/subjects/{args.subject}"))
+    v2_file = os.path.join(data_dir, "questions_v2.json")
 
-with open(V2_FILE, "w", encoding="utf-8") as f:
-    json.dump(v2, f, ensure_ascii=False, indent=2)
+    if not os.path.exists(v2_file):
+        print(f"ERROR: {v2_file} not found")
+        return
 
-print(f"✅ Classified: {classified}/{len(v2)} questions")
-print(f"\n📊 Topic distribution:")
-for t, c in sorted(distribution.items(), key=lambda x: -x[1]):
-    print(f"  {t}: {c} questions")
+    # ── Backup before modification ──
+    backup = f"{v2_file}.bak.{datetime.now().strftime('%Y%m%d-%H%M%S')}"
+    shutil.copy2(v2_file, backup)
+    print(f"📦 Backup: {os.path.basename(backup)}")
+
+    v2 = json.load(open(v2_file, encoding="utf-8"))
+    classified = 0
+    distribution = {}
+
+    for q in v2:
+        tags = classify_question(q)
+        q["conceptual_tags"] = tags
+        for t in tags:
+            distribution[t] = distribution.get(t, 0) + 1
+        if tags:
+            classified += 1
+
+    with open(v2_file, "w", encoding="utf-8") as f:
+        json.dump(v2, f, ensure_ascii=False, indent=2)
+
+    print(f"✅ Classified: {classified}/{len(v2)} questions [{args.subject}]")
+    print(f"\n📊 Topic distribution:")
+    for t, c in sorted(distribution.items(), key=lambda x: -x[1]):
+        print(f"  {t}: {c} questions")
+
+if __name__ == "__main__":
+    main()

@@ -7,7 +7,8 @@ Usage:
     python3 build_llm_hints.py --subject mathematics --limit 5
 """
 
-import json, os, sys, argparse, time
+import json, os, sys, argparse, time, shutil
+from datetime import datetime
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -159,6 +160,19 @@ def main():
         data = [q for q in data if q["id"] == args.id]
     elif args.limit > 0:
         data = data[:args.limit]
+
+    # ── Safety: check subject status ──
+    if cfg.get("_status") == "draft":
+        print(f"⚠️  Subject '{subject_id}' has _status='draft' — {len(data)} questions will be modified.")
+        print("   This incurs DeepSeek API costs. Continue? [y/N] ", end="")
+        if input().strip().lower() != "y":
+            print("   Aborted.")
+            return
+
+    # ── Backup before modification ──
+    backup = f"{v2_file}.bak.{datetime.now().strftime('%Y%m%d-%H%M%S')}"
+    shutil.copy2(v2_file, backup)
+    print(f"📦 Backup: {os.path.basename(backup)}")
 
     print(f"🎯 Hint Generator [{subject_id}]")
     print(f"   Questions: {len(data)}")
