@@ -48,9 +48,6 @@ data/subjects/*/raw.zip
 data/subjects/*/items_raw.json
 data/subjects/*/tree_data.json
 
-# Math diagram PNGs (extracted from PDFs — local only)
-static/images/math_diagrams/
-
 # Scraper output folders
 trapeza_data_1_3_17/
 
