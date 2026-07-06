@@ -14,7 +14,7 @@ from collections import defaultdict
 CURRENT_YEAR = 2026
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "data", "subjects", "informatics")
-QUESTIONS_FILE = os.path.join(DATA_DIR, "questions.json")
+QUESTIONS_FILE = os.path.join(DATA_DIR, "questions_classified.json")
 
 
 def clean_tag(tag):
