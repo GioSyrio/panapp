@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Panhellenic AI Tutor — Flask Backend
-Multi-subject support: informatics, mathematics
+Multi-subject support: mathematics_prosanatolismoy, informatics, fysiki_prosanatolismoy
 """
 import json, os, sys, re, uuid, hashlib, time, logging
 from datetime import datetime, timezone
@@ -59,6 +59,10 @@ MATH_ANSWER_KW = ['lim', 'int', 'frac', 'sqrt', 'sum', 'prod', 'infty',
 CODE_ANSWER_KW = ['←','<-','τότε','επανάλαβε','διάβασε','γράψε','εμφάνισε',
                   'mod','div','τέλος_επανάληψης','τέλος_αν','μέχρις_ότου',
                   'περίπτωση','επίλεξε','αρχή_επανάληψης']
+PHYSICS_ANSWER_KW = ['δύναμη','ταχύτητα','επιτάχυνση','ενέργεια','ορμή',
+                     'κρούση','κύμα','ηλεκτρικό','μαγνητικό','πεδίο',
+                     'νεύτων','ελατήριο','συχνότητα','περίοδο',
+                     'φ','Φ','θερμότητα','ροπή','ισορροπία','τάση']
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -218,7 +222,9 @@ def call_deepseek_with_retry(fn, *args, max_retries=1, **kwargs):
             raise APIError(HELPFUL_ERRORS.get(category, HELPFUL_ERRORS["default"]))
 
 def _is_student_answer(msg, subject_id):
-    """Detect if the message is a student answer submission."""
+    """Detect if the message is a student answer submission.
+    Driven by subject config `answer_detection`: 'math' | 'code' | 'physics' | 'none'.
+    """
     # Question marks → conversational, not answer
     if '?' in msg or ';' in msg:
         return False
@@ -227,15 +233,22 @@ def _is_student_answer(msg, subject_id):
         return False
     if len(msg) > 100 and '\n' in msg:
         return True
-    if subject_id in ("mathematics_prosanatolismoy", "mathematics"):
+    # ── Config-driven detection mode ──
+    cfg = load_subject_config(subject_id)
+    mode = cfg.get("answer_detection", "code")
+    if mode == "math":
         if any(k in msg.lower() for k in MATH_ANSWER_KW):
             return True
         stripped = msg.strip().replace(' ', '')
         if len(stripped) <= 50 and re.search(r'[\+\-\*/^=√∫∑∏]|\\frac|\\lim|\\int|\\sum|\\\\sqrt|[0-9]+[xXyYzZ]|[xXyYzZ]\^|[xXyYzZ]\d', stripped):
             return True
         return False
-    else:
+    elif mode == "code":
         return any(k in msg.lower() for k in CODE_ANSWER_KW)
+    elif mode == "physics":
+        return any(k in msg.lower() for k in PHYSICS_ANSWER_KW)
+    else:
+        return False
 
 # ── Routes
 @app.route("/")
@@ -258,7 +271,7 @@ def start_session():
     subject_id = body.get("subject", "informatics")
     subject_cfg = load_subject_config(subject_id)
     parts = subject_cfg.get("parts", ["Θέμα 2"])
-    data_dir = os.path.join(BASE_DIR, subject_cfg.get("data", {}).get("data_dir", "data/trapeza_data_1_3_218"))
+    data_dir = os.path.join(BASE_DIR, subject_cfg.get("data", {}).get("data_dir", "data/subjects/informatics"))
     qfile = os.path.join(data_dir, subject_cfg.get("data", {}).get("source_file", "questions_classified.json"))
     if os.path.exists(qfile):
         with open(qfile, encoding="utf-8") as f:
@@ -366,7 +379,8 @@ def chat():
             ms = sess["messages"].copy()
             # Inject fact-check context if student looks like they gave a math answer
             fact_check = ""
-            if subj_id in ("mathematics_prosanatolismoy", "mathematics") and _is_student_answer(msg, subj_id):
+            cfg = load_subject_config(subj_id)
+            if cfg.get("answer_detection") == "math" and _is_student_answer(msg, subj_id):
                 # The message was flagged as conversational but looks like math — add guardrail
                 qhtml = _load_v2_data(subj_id).get(str(sess["current_question"]["id"]), {}).get("answer_html", "")
                 if qhtml:
@@ -502,7 +516,7 @@ def questions_list():
     """Return all question IDs with metadata for autocomplete."""
     subject_id = request.args.get("subject", "informatics")
     cfg = load_subject_config(subject_id)
-    ddir = cfg.get("data", {}).get("data_dir", "data/trapeza_data_1_3_218")
+    ddir = cfg.get("data", {}).get("data_dir", "data/subjects/informatics")
     src = cfg.get("data", {}).get("source_file", "questions_classified.json")
     qf = os.path.join(BASE_DIR, ddir, src)
     if not os.path.exists(qf):

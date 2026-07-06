@@ -22,5 +22,6 @@
     "data_dir": "data/subjects/mathematics_prosanatolismoy"
   },
 
+  "answer_detection": "math",
   "_status": "production"
 }

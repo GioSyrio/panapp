@@ -22,5 +22,6 @@
     "data_dir": "data/subjects/fysiki_prosanatolismoy"
   },
 
+  "answer_detection": "physics",
   "_status": "onboarded"
 }

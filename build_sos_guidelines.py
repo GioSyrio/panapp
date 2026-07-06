@@ -119,7 +119,8 @@ def main():
         print(f"ERROR: {v2_file} not found"); return
 
     v2 = json.load(open(v2_file, encoding="utf-8"))
-    is_math = args.subject in ("mathematics_prosanatolismoy", "mathematics")
+    cfg = json.load(open(os.path.join(BASE, "subjects", f"{args.subject}.json"), encoding="utf-8"))
+    is_math = cfg.get("track") == "stem"
 
     # Group by chapter — adapted for different subject tag formats
     chapters = defaultdict(list)

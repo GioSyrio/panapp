@@ -22,5 +22,6 @@
     "data_dir": "data/subjects/informatics"
   },
 
+  "answer_detection": "code",
   "_status": "production"
 }
