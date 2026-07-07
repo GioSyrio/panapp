@@ -61,3 +61,4 @@ data/subjects/*/formula_fill_log.txt
 # WMF formula files — keep PNGs only
 static/images/math_formulas/**/*.wmf
 static/images/math_formulas/**/*.emf
+sessions.db*
