@@ -81,33 +81,100 @@ BIOLOGY_GROUPS = [
     ("κυκλοφορ|καρδι|αγγεί|αιμοσφαίρ|αιμοπετ|πλάσμ|αναπνευστ|πνεύμ|κυψελ|απέκκρι|νεφρ|νεφρώ|ομοιοστ", "Συστήματα Σώματος — Κυκλοφορικό, Αναπνευστικό, Απεκκριτικό"),
 ]
 
-def merge_chapters(client, guidelines, group_keywords):
-    """Post-process: merge many granular chapters into broader parent topics."""
+def merge_chapters(client, guidelines, group_keywords=None):
+    """Post-process: merge many granular chapters into broader parent topics.
+    Uses LLM-based semantic grouping — sends all chapter titles to the AI for classification.
+    Falls back to regex keyword matching if group_keywords are provided.
+    """
     chapters = guidelines["chapters"]
     if len(chapters) <= 20:
         return  # Only merge if >20 chapters
     
     print(f"\n🔀 {len(chapters)} chapters → merging into broader topics...")
     
-    # Assign each chapter to a group
-    groups = defaultdict(list)
-    unassigned = []
+    # ── Step 1: Use LLM to group chapters (one API call) ──
+    chapter_list = [{"title": ch["title"], "count": ch["question_count"]} for ch in chapters]
     
+    classify_prompt = f"""Έχουμε {len(chapters)} μικρές ενότητες Βιολογίας που θέλουμε να ομαδοποιήσουμε σε ~12-15 ευρύτερες γονικές ενότητες.
+
+ΟΜΑΔΟΠΟΙΗΣΕ τις παρακάτω ενότητες με βάση το νόημα (semantic similarity). Κάθε ενότητα μπαίνει σε ΜΙΑ ομάδα. Μην αφήσεις καμία αταξινόμητη.
+
+Για κάθε ομάδα, διάλεξε ένα σύντομο, περιγραφικό όνομα (π.χ. 'Γενετικό Υλικό — DNA/RNA', 'Κυτταρική Διαίρεση', κλπ).
+
+ΕΝΟΤΗΤΕΣ:
+{chr(10).join(f'- {c["title"]} ({c["count"]} θέματα)' for c in chapter_list)}
+
+ΕΠΙΣΤΡΕΨΕ ΜΟΝΟ JSON — μια λίστα με τις ομάδες και τα ονόματα των ενοτήτων που ανήκουν σε κάθε μία:
+{{
+  "groups": [
+    {{
+      "group_name": "Γενετικό Υλικό — DNA/RNA",
+      "members": ["τίτλος ενότητας 1", "τίτλος ενότητας 2", ...]
+    }},
+    ...
+  ]
+}}"""
+
+    try:
+        print("  🤖 LLM classifying chapters into groups...")
+        resp = client.chat.completions.create(
+            model="deepseek-chat",
+            messages=[
+                {"role": "system", "content": "Είσαι βοηθός ομαδοποίησης επιστημονικών εννοιών. Ομαδοποίησε με βάση το νόημα. ΜΟΝΟ JSON. Όλες οι ενότητες πρέπει να ανήκουν σε κάποια ομάδα."},
+                {"role": "user", "content": classify_prompt}
+            ],
+            temperature=0.1, max_tokens=2000,
+            response_format={"type": "json_object"}
+        )
+        raw = resp.choices[0].message.content or "{}"
+        classification = safe_json_parse(raw)
+        llm_groups = classification.get("groups", [])
+        print(f"  ✅ LLM created {len(llm_groups)} groups")
+    except Exception as e:
+        print(f"  ❌ LLM classification failed: {e}")
+        llm_groups = []
+    
+    # ── Step 2: Build groups dict from LLM response ──
+    title_to_chapter = {}
     for ch in chapters:
-        title_lower = ch["title"].lower()
-        assigned = False
-        for pattern, group_name in group_keywords:
-            if re.search(pattern, title_lower):
-                groups[group_name].append(ch)
-                assigned = True
-                break
-        if not assigned:
-            unassigned.append(ch)
+        title_to_chapter[ch["title"].strip()] = ch
     
-    # Keep unassigned chapters as-is
+    groups = defaultdict(list)
+    classified_titles = set()
+    
+    for g in llm_groups:
+        group_name = g.get("group_name", "Άλλο")
+        members = g.get("members", [])
+        for member_title in members:
+            member_title = member_title.strip()
+            if member_title in title_to_chapter and member_title not in classified_titles:
+                groups[group_name].append(title_to_chapter[member_title])
+                classified_titles.add(member_title)
+    
+    # ── Step 3: Handle any chapters LLM missed (unclassified) ──
+    unclassified = [ch for ch in chapters if ch["title"].strip() not in classified_titles]
+    if unclassified:
+        # Try keyword-based fallback if group_keywords provided
+        if group_keywords:
+            for ch in unclassified:
+                title_lower = ch["title"].lower()
+                assigned = False
+                for pattern, group_name in group_keywords:
+                    if re.search(pattern, title_lower):
+                        groups[group_name].append(ch)
+                        assigned = True
+                        break
+                if not assigned:
+                    groups["Άλλα Θέματα"].append(ch)
+        else:
+            groups["Άλλα Θέματα"].extend(unclassified)
+    
+    if unclassified:
+        print(f"  ⚠️  {len(unclassified)} unclassified chapters → Άλλα Θέματα")
+    
+    # ── Step 4: Merge each group into one chapter via LLM ──
     merged = []
     
-    # Merge each group into one chapter via LLM
     for group_name, group_chapters in sorted(groups.items()):
         if len(group_chapters) <= 1:
             merged.extend(group_chapters)
@@ -116,7 +183,6 @@ def merge_chapters(client, guidelines, group_keywords):
         total_qs = sum(c["question_count"] for c in group_chapters)
         print(f"  Merging: {group_name} ({len(group_chapters)} chapters → 1, {total_qs} Qs)")
         
-        # Collect all concepts, traps, patterns from the group
         all_concepts = []
         all_traps = []
         all_patterns = []
@@ -125,29 +191,26 @@ def merge_chapters(client, guidelines, group_keywords):
             all_traps.extend(ch.get("traps", []))
             all_patterns.extend(ch.get("patterns", []))
         
-        # Deduplicate
         all_concepts = list(dict.fromkeys(all_concepts))[:15]
         all_traps = list(dict.fromkeys(all_traps))[:10]
         all_patterns = list(dict.fromkeys(all_patterns))[:6]
         
-        # Ask LLM to merge into concise version
         merge_prompt = f"""ΕΝΟΤΗΤΑ: {group_name} ({total_qs} θέματα)
 
-Παρακάτω είναι SOS έννοιες, παγίδες και μοτίβα από {len(group_chapters)} υποενότητες. 
-Συνόψισέ τες σε μια ενιαία, συμπαγή παρουσίαση. Κράτησε 3-5 έννοιες, 2-4 παγίδες, 1-2 μοτίβα, 1 must_know.
+SOS έννοιες, παγίδες και μοτίβα από {len(group_chapters)} υποενότητες. 
+Συνόψισέ τες σε μια ενιαία, συμπαγή παρουσίαση. 3-5 έννοιες, 2-4 παγίδες, 1-2 μοτίβα, 1 must_know.
 Μίλα σαν φίλος, casual Ελληνικά. Σύντομες προτάσεις.
 
-ΥΠΑΡΧΟΥΣΕΣ ΕΝΝΟΙΕΣ:
+ΕΝΝΟΙΕΣ:
 {chr(10).join(f'- {c}' for c in all_concepts[:10])}
 
-ΥΠΑΡΧΟΥΣΕΣ ΠΑΓΙΔΕΣ:
+ΠΑΓΙΔΕΣ:
 {chr(10).join(f'- {t}' for t in all_traps[:8])}
 
-ΥΠΑΡΧΟΥΣΑ ΜΟΤΙΒΑ:
+ΜΟΤΙΒΑ:
 {chr(10).join(f'- {p}' for p in all_patterns[:5])}
 
-ΕΠΙΣΤΡΕΨΕ ΜΟΝΟ JSON:
-{{"key_concepts": [...], "traps": [...], "patterns": [...], "must_know": "...", "thema_b_tools": "...", "thema_cd_tools": "..."}}"""
+ΜΟΝΟ JSON: {{"key_concepts": [...], "traps": [...], "patterns": [...], "must_know": "...", "thema_b_tools": "...", "thema_cd_tools": "..."}}"""
         
         try:
             resp = client.chat.completions.create(
@@ -180,10 +243,7 @@ def merge_chapters(client, guidelines, group_keywords):
         
         time.sleep(0.8)
     
-    # Add unassigned chapters
-    merged.extend(unassigned)
     merged.sort(key=lambda x: -x["question_count"])
-    
     print(f"  ✅ {len(chapters)} → {len(merged)} chapters")
     guidelines["chapters"] = merged
 
