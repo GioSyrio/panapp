@@ -163,11 +163,13 @@ def per_chapter_sos(client, v2, subject_name, is_math):
             continue
         
         parts_str = ", ".join(f"{v} Θέμα {k}" for k, v in sorted(parts.items()))
+        math_hint = "Χρησιμοποίησε LaTeX $...$ για μαθηματικά." if is_math else ""
+        sample_block = "\n---\n".join(samples)[:4000]
         prompt = f"""ΘΕΜΑ: {title} ({len(questions)} θέματα) — {parts_str}
-{'Χρησιμοποίησε LaTeX $...$ για μαθηματικά.' if is_math else ''}
+{math_hint}
 
 ΛΥΣΕΙΣ:
-{"\n---\n".join(samples)[:4000]}
+{sample_block}
 
 Δώσε SOS σε JSON."""
 
