@@ -83,7 +83,7 @@ def monolithic_sos(client, v2, subject_name, is_math):
 
 {'Χρησιμοποίησε LaTeX $...$ για μαθηματικά.' if is_math else 'ΟΧΙ LaTeX.'}
 
-{"\n\n".join(sections)}
+{chr(10) + chr(10).join(sections)}
 
 ΕΠΙΣΤΡΕΨΕ ΜΟΝΟ JSON:
 {{
