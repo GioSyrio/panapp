@@ -32,20 +32,22 @@ def extract_images(docx_path, output_dir, qid):
                 try:
                     img = Image.open(io.BytesIO(bytes(data)))
                     w, h = img.size
+                    # Skip tiny placeholders (<30px in any dimension)
+                    if w < 30 or h < 30:
+                        continue
                     # Convert palette/transparent images to RGB on white background
                     if img.mode == 'P':
                         img = img.convert('RGBA')
                     if img.mode == 'RGBA':
                         # Check if mostly transparent — flatten onto white
-                        w_check, h_check = w, h
                         if img.size[0] > 0 and img.size[1] > 0:
-                            corners = [img.getpixel((0,0)), img.getpixel((w_check-1,0)), 
-                                      img.getpixel((0,h_check-1)), img.getpixel((w_check-1,h_check-1))]
+                            corners = [img.getpixel((0,0)), img.getpixel((img.size[0]-1,0)), 
+                                      img.getpixel((0,img.size[1]-1)), img.getpixel((img.size[0]-1,img.size[1]-1))]
                             if all(isinstance(c, tuple) and len(c)==4 and c[3]==0 for c in corners):
                                 white_bg = Image.new('RGB', img.size, (255, 255, 255))
                                 white_bg.paste(img, mask=img.split()[3])
                                 img = white_bg
-                    if ext in ('.emf', '.wmf') and (w < 30 or h < 30): continue
+                    if ext in ('.emf', '.wmf'): img = img.convert('RGB'); ext_out = '.png'
                     if ext in ('.emf', '.wmf'): img = img.convert('RGB'); ext_out = '.png'
                     else: ext_out = ext
                     if max(w, h) > MAX_IMG_DIM:
