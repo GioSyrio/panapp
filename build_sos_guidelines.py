@@ -46,7 +46,8 @@ def safe_json_parse(raw):
 
 def monolithic_sos(client, v2, subject_name, is_math):
     """Build SOS in one LLM pass — for subjects with granular tags."""
-    print(f"\n🧠 Monolithic SOS — sending all {len(v2)} answers to LLM...")
+    total = len(v2)
+    print("\n🧠 Monolithic SOS — sending all " + str(total) + " answers to LLM...")
     
     # Group by tag, collect answer samples
     tag_samples = defaultdict(list)
@@ -65,36 +66,28 @@ def monolithic_sos(client, v2, subject_name, is_math):
     ranked = sorted(tag_samples.items(), key=lambda x: -len(x[1]))
     top_tags = ranked[:15]
     
-    # Build one big prompt with tag summaries
+    # Build sections with proper newline separator
+    NL = chr(10)
+    DNL = NL + NL  # double newline 
     sections = []
     for tag, samples in top_tags:
         parts_str = ", ".join(f"{v} Θέμα {k}" for k, v in sorted(tag_parts[tag].items()))
         sample_text = "\n---\n".join(samples[:5])
-        sections.append(f"""ΕΝΟΤΗΤΑ: {tag} ({len(samples)} θέματα) — {parts_str}
-ΑΠΟΣΠΑΣΜΑΤΑ ΛΥΣΕΩΝ:
-{sample_text[:3000]}""")
+        sections.append("ΕΝΟΤΗΤΑ: " + tag + " (" + str(len(samples)) + " θέματα) — " + parts_str + "\nΑΠΟΣΠΑΣΜΑΤΑ ΛΥΣΕΩΝ:\n" + sample_text[:3000])
     
-    prompt = f"""Θέμα: {subject_name}. Ανέλυσες {len(v2)} πραγματικές λύσεις Πανελληνίων.
-
-Παρακάτω είναι οι 15 πιο συχνές ενότητες με αποσπάσματα λύσεων.
-
-ΓΙΑ ΚΑΘΕ ΕΝΟΤΗΤΑ, δώσε SOS σε JSON: 3-5 έννοιες, 2-4 παγίδες, 1-2 μοτίβα, 1 must_know.
-Μετά, ΔΩΣΕ και 5-6 γενικές συμβουλές + 5-6 top εργαλεία + στρατηγική εξέτασης.
-
-{'Χρησιμοποίησε LaTeX $...$ για μαθηματικά.' if is_math else 'ΟΧΙ LaTeX.'}
-
-{chr(10) + chr(10).join(sections)}
-
-ΕΠΙΣΤΡΕΨΕ ΜΟΝΟ JSON:
-{{
-  "chapters": [
-    {{"title": "Όνομα ενότητας", "question_count": 5,
-      "key_concepts": ["έννοια 1", ...], "traps": [...], "patterns": [...], "must_know": "...",
-      "thema_b_tools": "...", "thema_cd_tools": "..."}},
-    ...
-  ],
-  "general_tips": [...], "top_tools": [...], "exam_strategy": "..."
-}}"""
+    latex_hint = "Χρησιμοποίησε LaTeX $...$ για μαθηματικά." if is_math else "ΟΧΙ LaTeX."
+    
+    prompt = (f"Θέμα: {subject_name}. Ανέλυσες {total} πραγματικές λύσεις Πανελληνίων.\n\n"
+              f"Παρακάτω είναι οι {len(top_tags)} πιο συχνές ενότητες με αποσπάσματα λύσεων.\n\n"
+              f"ΓΙΑ ΚΑΘΕ ΕΝΟΤΗΤΑ, δώσε SOS: 3-5 key_concepts, 2-4 traps, 1-2 patterns, 1 must_know. "
+              f"Μετά ΔΩΣΕ 5-6 general_tips, 5-6 top_tools, exam_strategy.\n\n"
+              f"{latex_hint}\n\n"
+              f"{DNL.join(sections)}\n\n"
+              f"ΕΠΙΣΤΡΕΨΕ ΜΟΝΟ JSON με ΠΕΔΙΑ: "
+              f'{{"chapters": [{{"title": "...", "question_count": N, '
+              f'"key_concepts": ["...",], "traps": ["...",], "patterns": ["...",], '
+              f'"must_know": "...", "thema_b_tools": "...", "thema_cd_tools": "..."}}, ...], '
+              f'"general_tips": ["...",], "top_tools": ["...",], "exam_strategy": "..."}}')
 
     try:
         resp = client.chat.completions.create(
@@ -117,7 +110,7 @@ def monolithic_sos(client, v2, subject_name, is_math):
             "exam_strategy": data.get("exam_strategy", ""),
         }
     except Exception as e:
-        print(f"  ❌ Monolithic SOS failed: {e}")
+        print("  ❌ Monolithic SOS failed: " + str(e))
         return {"subject": "mathimatika", "generated_at": time.strftime("%Y-%m-%d"),
                 "chapters": [], "general_tips": [], "top_tools": [], "exam_strategy": ""}
 
@@ -165,13 +158,10 @@ def per_chapter_sos(client, v2, subject_name, is_math):
         parts_str = ", ".join(f"{v} Θέμα {k}" for k, v in sorted(parts.items()))
         math_hint = "Χρησιμοποίησε LaTeX $...$ για μαθηματικά." if is_math else ""
         sample_block = "\n---\n".join(samples)[:4000]
-        prompt = f"""ΘΕΜΑ: {title} ({len(questions)} θέματα) — {parts_str}
-{math_hint}
-
-ΛΥΣΕΙΣ:
-{sample_block}
-
-Δώσε SOS σε JSON."""
+        prompt = (f"ΘΕΜΑ: {title} ({len(questions)} θέματα) — {parts_str}\n"
+                  f"{math_hint}\n\n"
+                  f"ΛΥΣΕΙΣ:\n{sample_block}\n\n"
+                  f'Δώσε SOS σε JSON: {{"key_concepts":[...],"traps":[...],"patterns":[...],"must_know":"..."}}. ΜΟΝΟ JSON.')
 
         try:
             resp = client.chat.completions.create(
@@ -215,7 +205,7 @@ def per_chapter_sos(client, v2, subject_name, is_math):
             model="deepseek-chat",
             messages=[
                 {"role": "system", "content": "Είσαι καθηγητής Πανελληνίων. Casual Ελληνικά. ΜΟΝΟ JSON."},
-                {"role": "user", "content": f"""Ενότητες:\n{chapter_list}\n\nΔώσε 5-6 γενικές συμβουλές, 5-6 top εργαλεία, στρατηγική εξέτασης. JSON: {{"general_tips": [...], "top_tools": [...], "exam_strategy": "..."}}"""}
+                {"role": "user", "content": f"Ενότητες:\n{chapter_list}\n\nΔώσε 5-6 γενικές συμβουλές, 5-6 top εργαλεία, στρατηγική εξέτασης. JSON: {{\"general_tips\": [...], \"top_tools\": [...], \"exam_strategy\": \"...\"}}"}
             ],
             temperature=0.2, max_tokens=800,
             response_format={"type": "json_object"}
