@@ -80,6 +80,14 @@ BIOLOGY_ANSWER_KW = ['κύτταρο','μιτοχόνδριο','DNA','RNA','πρ
                      'πέψη','ορμόνη','νευρώνας','ανοσοποιητικό',
                      'αντισώματα','εμβόλιο','βακτήριο','ιός',
                      'μετάλλαξη','κληρονομικότητα','φαινότυπος']
+ECONOMICS_ANSWER_KW = ['προσφορά','ζήτηση','ελαστικότητα',
+                       'κόστος','έσοδο','κέρδος','τιμή','αγορά',
+                       'ΑΕΠ','πληθωρισμός','ανεργία','φορολογία',
+                       'μονοπώλιο','ολιγοπώλιο','τέλειος ανταγωνισμός',
+                       'ευημερία','συνολικό προϊόν','οριακό',
+                       'μέσο κόστος','καμπύλη','ισορροπία',
+                       'δημόσιο χρέος','προϋπολογισμός',
+                       'εισόδημα','κατανάλωση','επένδυση']
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -334,6 +342,8 @@ def _is_student_answer(msg, subject_id):
         return any(k in msg.lower() for k in CHEMISTRY_ANSWER_KW)
     elif mode == "biology":
         return any(k in msg.lower() for k in BIOLOGY_ANSWER_KW)
+    elif mode == "economics":
+        return any(k in msg.lower() for k in ECONOMICS_ANSWER_KW)
     else:
         return False
 

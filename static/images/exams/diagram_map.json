@@ -4114,5 +4114,16 @@
       }
     ],
     "source": "mathimatika_docx"
+  },
+  "30235": {
+    "diagrams": [
+      {
+        "filename": "30235_d1.png",
+        "width": 597,
+        "height": 327,
+        "path": "images/exams/30235/30235_d1.png"
+      }
+    ],
+    "source": "oikonomia_docx"
   }
 }
