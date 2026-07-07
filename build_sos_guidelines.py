@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 """
 build_sos_guidelines.py — Generate SOS cheatsheet per subject from exam answers.
-v2: Refined prompts with casual language, concrete examples, part-specific strategies,
-    and extra intelligence (theorems, graph tips, top tools).
+v3: Added auto-merge for granular tag subjects (>20 chapters) to produce concise summaries.
 
 Handles multiple tag formats:
   - mathematics: "1.3 Μονότονες συναρτήσεις" (numbered chapters)
   - informatics: "Δομή Επανάληψης" (plain text tags)
-  - physics: empty tags → groups by part (Θέμα Α, Θέμα Β, ...)
+  - physics/chemistry: granular tags → auto-merged into parent topics
 
 Usage:
     python3 build_sos_guidelines.py --subject mathematics
@@ -50,6 +49,127 @@ SYSTEM_PROMPT_PHYSICS = """Είσαι φίλος-προπονητής Φυσικ
 
 ΕΠΙΣΤΡΕΨΕ ΜΟΝΟ JSON:
 {{"key_concepts": [...], "traps": [...], "patterns": [...], "must_know": "...", "thema_b_tools": "...", "thema_cd_tools": "..."}}"""
+
+# ── Chapter group definitions for granular subjects ─────────────────────────
+# Maps stem keywords → parent topic name. Chapters matching the keyword get merged.
+CHEMISTRY_GROUPS = [
+    ("ηλεκτρονιακ|τροχιακ|κβαντικ|ατομικ|στιβάδ|περιοδικ|δόμηση|κατανομή ηλ", "Ατομική Δομή & Περιοδικός Πίνακας"),
+    ("οξειδοαναγωγ|οξείδωση|αναγωγή|αριθμός οξείδωσης", "Οξειδοαναγωγή"),
+    ("οξέ|βάσ|ιοντισμό|pH|δείκτ|ογκομέτρ|brönsted", "Οξέα — Βάσεις — pH"),
+    ("διαμοριακ|δεσμό|δύναμη|υδρογόν|διπόλ|διασπορά|London", "Διαμοριακές Δυνάμεις & Δεσμοί"),
+    ("χημική ισορροπ|σταθερά|Le Chatelier|παράγοντ", "Χημική Ισορροπία"),
+    ("ταχύτητα αντίδραση|ενέργεια ενεργοπ|καταλύτ", "Χημική Κινητική"),
+    ("ενθαλπ|θερμοχημ|εξώθερμ|ενδόθερμ", "Θερμοχημεία"),
+    ("οργανικ|πολυμερισμ|αλκοόλ|αλδε|κετόν|καρβοξυλ", "Οργανική Χημεία"),
+    ("ώσμω|ωσμωτ|διαλύμ|συγκέντρωσ", "Διαλύματα — Ώσμωση"),
+    ("συντελεστ|στοιχειομετρ", "Στοιχειομετρία"),
+]
+
+def merge_chapters(client, guidelines, group_keywords):
+    """Post-process: merge many granular chapters into broader parent topics."""
+    chapters = guidelines["chapters"]
+    if len(chapters) <= 20:
+        return  # Only merge if >20 chapters
+    
+    print(f"\n🔀 {len(chapters)} chapters → merging into broader topics...")
+    
+    # Assign each chapter to a group
+    groups = defaultdict(list)
+    unassigned = []
+    
+    for ch in chapters:
+        title_lower = ch["title"].lower()
+        assigned = False
+        for pattern, group_name in group_keywords:
+            if re.search(pattern, title_lower):
+                groups[group_name].append(ch)
+                assigned = True
+                break
+        if not assigned:
+            unassigned.append(ch)
+    
+    # Keep unassigned chapters as-is
+    merged = []
+    
+    # Merge each group into one chapter via LLM
+    for group_name, group_chapters in sorted(groups.items()):
+        if len(group_chapters) <= 1:
+            merged.extend(group_chapters)
+            continue
+        
+        total_qs = sum(c["question_count"] for c in group_chapters)
+        print(f"  Merging: {group_name} ({len(group_chapters)} chapters → 1, {total_qs} Qs)")
+        
+        # Collect all concepts, traps, patterns from the group
+        all_concepts = []
+        all_traps = []
+        all_patterns = []
+        for ch in group_chapters:
+            all_concepts.extend(ch.get("key_concepts", []))
+            all_traps.extend(ch.get("traps", []))
+            all_patterns.extend(ch.get("patterns", []))
+        
+        # Deduplicate
+        all_concepts = list(dict.fromkeys(all_concepts))[:15]
+        all_traps = list(dict.fromkeys(all_traps))[:10]
+        all_patterns = list(dict.fromkeys(all_patterns))[:6]
+        
+        # Ask LLM to merge into concise version
+        merge_prompt = f"""ΕΝΟΤΗΤΑ: {group_name} ({total_qs} θέματα)
+
+Παρακάτω είναι SOS έννοιες, παγίδες και μοτίβα από {len(group_chapters)} υποενότητες. 
+Συνόψισέ τες σε μια ενιαία, συμπαγή παρουσίαση. Κράτησε 3-5 έννοιες, 2-4 παγίδες, 1-2 μοτίβα, 1 must_know.
+Μίλα σαν φίλος, casual Ελληνικά. Σύντομες προτάσεις.
+
+ΥΠΑΡΧΟΥΣΕΣ ΕΝΝΟΙΕΣ:
+{chr(10).join(f'- {c}' for c in all_concepts[:10])}
+
+ΥΠΑΡΧΟΥΣΕΣ ΠΑΓΙΔΕΣ:
+{chr(10).join(f'- {t}' for t in all_traps[:8])}
+
+ΥΠΑΡΧΟΥΣΑ ΜΟΤΙΒΑ:
+{chr(10).join(f'- {p}' for p in all_patterns[:5])}
+
+ΕΠΙΣΤΡΕΨΕ ΜΟΝΟ JSON:
+{{"key_concepts": [...], "traps": [...], "patterns": [...], "must_know": "...", "thema_b_tools": "...", "thema_cd_tools": "..."}}"""
+        
+        try:
+            resp = client.chat.completions.create(
+                model="deepseek-chat",
+                messages=[
+                    {"role": "system", "content": "Είσαι φίλος-προπονητής Πανελληνίων. Casual Ελληνικά, σύντομες προτάσεις. ΜΟΝΟ JSON."},
+                    {"role": "user", "content": merge_prompt}
+                ],
+                temperature=0.2, max_tokens=600,
+                response_format={"type": "json_object"}
+            )
+            raw = resp.choices[0].message.content or "{}"
+            data = safe_json_parse(raw)
+            
+            merged.append({
+                "id": group_name[:4],
+                "title": group_name,
+                "question_count": total_qs,
+                "key_concepts": data.get("key_concepts", all_concepts[:5]),
+                "traps": data.get("traps", all_traps[:4]),
+                "patterns": data.get("patterns", all_patterns[:2]),
+                "must_know": data.get("must_know", ""),
+                "thema_b_tools": data.get("thema_b_tools", ""),
+                "thema_cd_tools": data.get("thema_cd_tools", ""),
+            })
+            print(f"    ✅ {len(merged[-1]['key_concepts'])} concepts, {len(merged[-1]['traps'])} traps")
+        except Exception as e:
+            print(f"    ❌ Merge failed: {e}")
+            merged.extend(group_chapters)
+        
+        time.sleep(0.8)
+    
+    # Add unassigned chapters
+    merged.extend(unassigned)
+    merged.sort(key=lambda x: -x["question_count"])
+    
+    print(f"  ✅ {len(chapters)} → {len(merged)} chapters")
+    guidelines["chapters"] = merged
 
 def build_prompt(chapter_title, answers_sample, part_distribution, question_count, is_math):
     parts_str = ", ".join(f"{v} Θέμα {k}" for k, v in sorted(part_distribution.items()))
@@ -117,6 +237,7 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument("--subject", default="mathematics")
     p.add_argument("--limit", type=int, default=0)
+    p.add_argument("--no-merge", action="store_true", help="Skip chapter merging")
     args = p.parse_args()
 
     api_key = os.environ.get("DEEPSEEK_API_KEY")
@@ -161,7 +282,8 @@ def main():
     subject_name = {"mathematics_prosanatolismoy": "Μαθηματικά Προσανατολισμού",
                     "mathematics": "Μαθηματικά Προσανατολισμού",
                     "informatics": "Πληροφορική",
-                    "fysiki_prosanatolismoy": "Φυσική Προσανατολισμού"}.get(args.subject, args.subject)
+                    "fysiki_prosanatolismoy": "Φυσική Προσανατολισμού",
+                    "chimeia": "Χημεία"}.get(args.subject, args.subject)
 
     guidelines = {
         "subject": args.subject,
@@ -209,34 +331,6 @@ def main():
             raw = resp.choices[0].message.content or "{}"
             data = safe_json_parse(raw)
             
-            # Skip chapters where API returned empty content
-            if not data.get("key_concepts") and not data.get("traps") and not data.get("patterns"):
-                print(f"  ⚠️  API returned empty — retrying with simpler prompt...")
-                # Retry once with a simpler prompt (no LaTeX hints, shorter)
-                samples_text = "\n---\n".join(samples)
-                retry_prompt = f"""ΘΕΜΑ: {title} ({len(questions)} θέματα)
-Ανέλυσε τις παρακάτω λύσεις και δώσε 3-5 SOS έννοιες και 2-4 παγίδες. Μίλα σαν φίλος, σε casual Ελληνικά.
-ΟΧΙ LaTeX — χρησιμοποίησε απλό κείμενο.
-
-ΛΥΣΕΙΣ:
-{samples_text[:3000]}
-
-ΕΠΙΣΤΡΕΨΕ ΜΟΝΟ JSON: {{"key_concepts": [...], "traps": [...], "patterns": [...], "must_know": "..."}}"""
-                try:
-                    resp2 = client.chat.completions.create(
-                        model="deepseek-chat",
-                        messages=[
-                            {"role": "system", "content": "Είσαι φίλος-προπονητής Πανελληνίων. Casual Ελληνικά, μικρές προτάσεις. ΜΟΝΟ JSON."},
-                            {"role": "user", "content": retry_prompt}
-                        ],
-                        temperature=0.3, max_tokens=600,
-                        response_format={"type": "json_object"}
-                    )
-                    raw2 = resp2.choices[0].message.content or "{}"
-                    data = safe_json_parse(raw2)
-                except Exception as e2:
-                    print(f"    Retry also failed: {e2}")
-
             chapter_data = {
                 "id": title[:4] if title[0].isdigit() else "",
                 "title": title,
@@ -252,12 +346,17 @@ def main():
             if data.get("key_concepts"):
                 print(f"  ✅ {len(chapter_data['key_concepts'])} concepts, {len(chapter_data['traps'])} traps")
             else:
-                print(f"  ⚠️  Still empty after retry — saved placeholder")
+                print(f"  ⚠️  Empty — saved placeholder")
 
         except Exception as e:
             print(f"  ❌ Error: {e}")
 
         time.sleep(1)
+
+    # ── Post-process: merge granular chapters ──
+    if not args.no_merge:
+        if args.subject == "chimeia":
+            merge_chapters(client, guidelines, CHEMISTRY_GROUPS)
 
     # Global intelligence pass
     print(f"\n🧠 Global intelligence pass...")
