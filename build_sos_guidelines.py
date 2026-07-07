@@ -152,11 +152,31 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument("--subject", default="mathematics")
     p.add_argument("--no-merge", action="store_true")
+    p.add_argument("--merge-only", action="store_true", help="Only run LLM merge on existing SOS file")
     args = p.parse_args()
 
     api_key = os.environ.get("DEEPSEEK_API_KEY")
     if not api_key: print("ERROR: DEEPSEEK_API_KEY not set"); return
     client = OpenAI(api_key=api_key, base_url="https://api.deepseek.com")
+
+    # ── Merge-only mode: read existing SOS, merge, save ──
+    if args.merge_only:
+        sos_file = os.path.join(BASE, "data", "subjects", args.subject, "sos_guidelines.json")
+        if not os.path.exists(sos_file):
+            print("ERROR: " + sos_file + " not found. Run without --merge-only first.")
+            return
+        with open(sos_file, encoding="utf-8") as f:
+            guidelines = json.load(f)
+        chapters = guidelines.get("chapters", [])
+        print("Loaded " + str(len(chapters)) + " chapters from existing SOS")
+        if len(chapters) <= 20:
+            print("Only " + str(len(chapters)) + " chapters — no merge needed. Use --no-merge to skip.")
+            return
+        guidelines["chapters"] = llm_merge(client, chapters, "Μαθηματικά Γενικής")
+        with open(sos_file, "w", encoding="utf-8") as f:
+            json.dump(guidelines, f, ensure_ascii=False, indent=2)
+        print("✅ Merged → " + str(len(guidelines["chapters"])) + " groups saved")
+        return
 
     v2_file = os.path.join(BASE, "data", "subjects", args.subject, "questions_v2.json")
     if not os.path.exists(v2_file): print("ERROR: " + v2_file + " not found"); return
