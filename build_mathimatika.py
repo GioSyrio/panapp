@@ -59,7 +59,14 @@ def build_answer_html(docx_path):
         t = p.text.strip()
         if not t: continue
         if re.match(r'^ΘΕΜΑ\s+[Α-Δ1-4]', t): continue
+        if re.match(r'^ΛΥΣΗ$', t): continue  # Skip ΛΥΣΗ header
+        # Numbered sub-questions: "2.1.", "2.1.Α."
         m = re.match(r'^(\d+\.\d+(?:\.[Α-Ω])?)[\.\s)]*\s*(.*)', t)
+        if m:
+            if current_label or current_text: steps.append((current_label, " ".join(current_text)))
+            current_label = m.group(1); current_text = [m.group(2)] if m.group(2) else []; continue
+        # Greek letter sub-questions: "α)", "β)", "α."
+        m = re.match(r'^([α-ωΑ-Ω])[\s\)\.]+\s*(.*)', t)
         if m:
             if current_label or current_text: steps.append((current_label, " ".join(current_text)))
             current_label = m.group(1); current_text = [m.group(2)] if m.group(2) else []; continue
