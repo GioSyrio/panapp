@@ -3,7 +3,7 @@
 Panhellenic AI Tutor — Flask Backend
 Multi-subject support: mathematics_prosanatolismoy, informatics, fysiki_prosanatolismoy
 """
-import json, os, sys, re, uuid, hashlib, time, logging
+import json, os, sys, re, uuid, hashlib, time, logging, shelve
 from datetime import datetime, timezone
 from collections import OrderedDict
 
@@ -22,9 +22,10 @@ handler.setFormatter(_logging.Formatter('{"ts":"%(asctime)s","level":"%(levelnam
 logger.handlers = [handler]
 logger.setLevel(_logging.INFO)
 
-# ── Session cleanup
+# ── Session persistence
 SESSION_TIMEOUT = 30 * 60
 LAST_CLEANUP = time.time()
+SHELVE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sessions.db")
 
 try:
     from openai import OpenAI
@@ -86,6 +87,9 @@ MAX_CACHE_SIZE = 200
 MAX_V2_CACHE_SIZE = 5
 _v2_cache = OrderedDict()
 
+# ── Per-subject classified data cache ───────────────────────────────────────
+_subject_classified_data = {}
+
 def cleanup_sessions():
     global LAST_CLEANUP
     now = time.time()
@@ -111,6 +115,7 @@ class APIError(AIError): pass
 class ValidationError(AIError): pass
 
 def load_data():
+    """Initialize app — load default informatics data + restore sessions from disk."""
     global exam_data, ranked, details, trend_context
     if not os.path.exists(QUESTIONS_FILE):
         logger.error(f"Questions file not found: {QUESTIONS_FILE}")
@@ -122,6 +127,39 @@ def load_data():
     ranked = [(t, s) for t, s in ranked_priorities if t not in ("ΠΛΗΡΟΦΟΡΙΚΗ:", "ΑΕΠΠ:", "")]
     trend_context = build_trend_context(ranked, details, top_n=5)
     logger.info(f"Loaded {len(exam_data)} questions, {len(ranked)} topics")
+    
+    # ── Restore sessions from disk ──
+    global sessions
+    try:
+        with shelve.open(SHELVE_PATH) as db:
+            restored = dict(db)
+            # Remove any sessions that were already expired when saved
+            now = datetime.now(timezone.utc)
+            for sid, sess in list(restored.items()):
+                started = sess.get("started_at")
+                if started:
+                    try:
+                        age = (now - datetime.fromisoformat(started)).total_seconds()
+                        if age > SESSION_TIMEOUT:
+                            del restored[sid]
+                    except: pass
+            sessions.update(restored)
+        if sessions:
+            logger.info(f"Restored {len(sessions)} sessions from disk")
+    except Exception as e:
+        logger.warning(f"Could not restore sessions: {e}")
+
+def _persist_session(sid):
+    """Persist a single session to shelve."""
+    try:
+        with shelve.open(SHELVE_PATH) as db:
+            if sid in sessions:
+                db[sid] = sessions[sid]
+            else:
+                if sid in db:
+                    del db[sid]
+    except Exception as e:
+        logger.warning(f"Session persist warning: {e}")
 
 def init_deepseek():
     global deepseek_client
@@ -134,6 +172,20 @@ def init_deepseek():
         return
     deepseek_client = OpenAI(api_key=api_key, base_url="https://api.deepseek.com")
     logger.info("DeepSeek client ready")
+
+def _load_classified_data(subject_id):
+    """Load and cache classified data per subject."""
+    if subject_id in _subject_classified_data:
+        return _subject_classified_data[subject_id]
+    cfg = load_subject_config(subject_id)
+    data_dir = os.path.join(BASE_DIR, cfg.get("data", {}).get("data_dir", "data/subjects/informatics"))
+    qfile = os.path.join(data_dir, cfg.get("data", {}).get("source_file", "questions_classified.json"))
+    data = []
+    if os.path.exists(qfile):
+        with open(qfile, encoding="utf-8") as f:
+            data = json.load(f)
+    _subject_classified_data[subject_id] = data
+    return data
 
 def format_exam_question(question, tag=None, subject_id="informatics"):
     result = {
@@ -164,7 +216,6 @@ def format_exam_question(question, tag=None, subject_id="informatics"):
 def _load_v2_data(subject_id="informatics"):
     """Load v2 question data with LRU cache (max 5 subjects)."""
     if subject_id in _v2_cache:
-        # Move to end (most recently used)
         _v2_cache.move_to_end(subject_id)
         return _v2_cache[subject_id]
     
@@ -176,9 +227,8 @@ def _load_v2_data(subject_id="informatics"):
         with open(v2_file, encoding="utf-8") as f:
             result = {str(q["id"]): q for q in json.load(f)}
     
-    # LRU eviction
     if len(_v2_cache) >= MAX_V2_CACHE_SIZE:
-        _v2_cache.popitem(last=False)  # Remove oldest
+        _v2_cache.popitem(last=False)
         
     _v2_cache[subject_id] = result
     return result
@@ -189,12 +239,10 @@ def _load_diagram_map(subject_id="informatics"):
     if subject_id in _diagram_map_cache:
         return _diagram_map_cache[subject_id]
     
-    # Try per-subject file first, fall back to shared
     subject_cfg = load_subject_config(subject_id)
     data_dir = os.path.join(BASE_DIR, subject_cfg.get("data", {}).get("data_dir", "data/subjects/informatics"))
     mf = os.path.join(data_dir, "diagram_map.json")
     if not os.path.exists(mf):
-        # Fallback: shared diagram map
         mf = os.path.join(STATIC_DIR, "images", "exams", "diagram_map.json")
     
     if os.path.exists(mf):
@@ -291,17 +339,24 @@ def start_session():
     subject_id = body.get("subject", "informatics")
     subject_cfg = load_subject_config(subject_id)
     parts = subject_cfg.get("parts", ["Θέμα 2"])
-    data_dir = os.path.join(BASE_DIR, subject_cfg.get("data", {}).get("data_dir", "data/subjects/informatics"))
-    qfile = os.path.join(data_dir, subject_cfg.get("data", {}).get("source_file", "questions_classified.json"))
-    if os.path.exists(qfile):
-        with open(qfile, encoding="utf-8") as f:
-            global exam_data, ranked, details, trend_context
-            exam_data = _json.load(f)
-            ranked_priorities, details = calculate_topic_priorities(exam_data)
-            ranked = [(t, s) for t, s in ranked_priorities if t not in ("ΠΛΗΡΟΦΟΡΙΚΗ:", "ΑΕΠΠ:", "", "ΜΑΘΗΜΑΤΙΚΑ:", "ΑΛΓΕΒΡΑ:")]
-            trend_context = build_trend_context(ranked, details, top_n=5)
+    
+    # ── Load subject-specific classified data ──
+    classified_data = _load_classified_data(subject_id)
+    if classified_data:
+        global exam_data, ranked, details, trend_context
+        exam_data = classified_data
+        ranked_priorities, details = calculate_topic_priorities(exam_data)
+        noise = set()
+        if subject_id == "informatics":
+            noise = {"ΠΛΗΡΟΦΟΡΙΚΗ:", "ΑΕΠΠ:", ""}
+        elif subject_id in ("mathematics_prosanatolismoy", "mathematics"):
+            noise = {"ΜΑΘΗΜΑΤΙΚΑ:", "ΑΛΓΕΒΡΑ:", ""}
+        ranked = [(t, s) for t, s in ranked_priorities if t not in noise]
+        trend_context = build_trend_context(ranked, details, top_n=5)
+    
     if not exam_data:
         return jsonify({"error": "Δεν φορτώθηκαν τα δεδομένα. Δοκίμασε αργότερα."}), 500
+    
     filter_topic = body.get("topic", "").strip()
     question, tag = None, None
     for tg, _ in ranked[:15]:
@@ -318,6 +373,7 @@ def start_session():
         tag = None
     if not question:
         return jsonify({"error": "Δεν βρέθηκαν ερωτήσεις."}), 500
+
     prompts = get_prompts(subject_id)
     tutor_prompt = prompts.GREEK_TUTOR_SYSTEM_PROMPT
     eval_prompt = prompts.EVALUATION_SYSTEM_PROMPT
@@ -341,6 +397,7 @@ def start_session():
         "subject_id": subject_id,
         "eval_prompt": eval_prompt,
     }
+    _persist_session(sid)
     logger.info(f"Session started: {sid[:8]} [{subject_id}]")
     return jsonify({"session_id": sid, "question": format_exam_question(question, tag, subject_id),
                     "has_ai": deepseek_client is not None, "subject": subject_cfg,
@@ -358,6 +415,8 @@ def chat():
     sess = sessions[sid]
     subj_id = sess.get("subject_id", "informatics")
     sess["messages"].append({"role": "user", "content": msg})
+    _persist_session(sid)
+    
     cmd = msg.lower()
     if cmd in {"exit", "quit", "έξοδος"}:
         return jsonify({"reply": "Η συνεδρία τερματίστηκε. Καλή επιτυχία! 🎓", "end_session": True})
@@ -402,6 +461,7 @@ def chat():
                                             model="deepseek-chat", messages=ms, temperature=0.4, max_tokens=500)
             reply = strip_reasoning(resp.choices[0].message.content or "Συγνώμη, κάτι πήγε στραβά.")
             sess["messages"].append({"role": "assistant", "content": reply})
+            _persist_session(sid)
             return jsonify({"reply": reply, "conversational": True})
         except APIError as e:
             return jsonify({"reply": str(e), "error": True})
@@ -431,6 +491,7 @@ def chat():
             if len(_response_cache) >= MAX_CACHE_SIZE: del _response_cache[next(iter(_response_cache))]
             _response_cache[key] = ev
         sess["messages"].append({"role": "assistant", "content": json.dumps(ev, ensure_ascii=False)})
+        _persist_session(sid)
         return jsonify({"evaluation": ev, "cached": False})
     except APIError as e:
         return jsonify({"evaluation": {"status": "info", "critique": str(e), "hint": "Δοκίμασε ξανά."}})
@@ -479,6 +540,7 @@ def next_question():
         trend_context
     )}]
     s["hint_state"] = {"subqIdx": 0, "hintCount": 0, "totalSubqs": len(_get_subquestions(str(q["id"]), subj_id)) or 1}
+    _persist_session(sid)
     return jsonify({
         "question": format_exam_question(q, subject_id=subj_id),
         "stats": {"completed": s["completed_count"], "total_points": s["total_points"],
@@ -498,6 +560,7 @@ def previous():
     s["current_question"] = pq; s["messages"] = p["messages"]
     s["completed_count"] = max(0, s["completed_count"] - 1)
     s["total_points"] = max(0, s["total_points"] - pq.get("points", 0))
+    _persist_session(sid)
     return jsonify({
         "question": format_exam_question(pq, subject_id=s.get("subject_id", "informatics")),
         "stats": {"completed": s["completed_count"], "total_points": s["total_points"],
@@ -559,6 +622,7 @@ def jump_question():
     sp = pr.GREEK_TUTOR_SYSTEM_PROMPT + "\n\n" + qt + "\n\n" + trend_context
     s["messages"] = [{"role": "system", "content": sp}]
     s["hint_state"] = {"subqIdx": 0, "hintCount": 0, "totalSubqs": len(_get_subquestions(str(q["id"]), sj)) or 1}
+    _persist_session(sid)
     logger.info(f"Jump: {sid[:8]} -> Q{tid}")
     return jsonify({"question": format_exam_question(q, subject_id=sj)})
 
@@ -630,6 +694,7 @@ def _handle_hint(sess):
                         "reply": f"📚 Υποερώτημα {sn} — Πλήρης λύση."})
     return jsonify({"html": f'<div class="hint-box"><b>Υποερώτημα {sn}</b><br><br>{ht}</div>',
                     "hint_state": hs, "subq_num": sn, "level": hc})
+    _persist_session(sess)
 
 @app.route("/api/session/hint", methods=["POST"])
 def hint_route():
@@ -648,6 +713,7 @@ def hint_route():
               "totalSubqs": len(_get_subquestions(qid)) or 1,
               "question_id": qid}
     sess["hint_state"] = sh
+    _persist_session(sid)
     return jsonify(_handle_hint(sess).get_json())
 
 @app.route("/stream_chat", methods=["POST"])
@@ -656,6 +722,7 @@ def stream():
     sid, msg = body.get("session_id", ""), body.get("message", "").strip()
     if sid not in sessions: return jsonify({"error": "Έληξε."}), 400
     sess = sessions[sid]; sess["messages"].append({"role": "user", "content": msg})
+    _persist_session(sid)
     def gen():
         full = ""
         try:
@@ -667,6 +734,7 @@ def stream():
                     yield f"data: {json.dumps({'token': t})}\n\n"
             yield f"data: {json.dumps({'done': True, 'full_reply': full})}\n\n"
             sess["messages"].append({"role": "assistant", "content": full})
+            _persist_session(sid)
         except Exception as e:
             yield f"data: {json.dumps({'error': str(e)})}\n\n"
     return Response(stream_with_context(gen()), mimetype="text/event-stream",
