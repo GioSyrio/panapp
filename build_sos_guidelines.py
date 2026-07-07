@@ -239,8 +239,16 @@ def main():
         parts_str = ", ".join(f"{v} Θέμα {k}" for k, v in sorted(parts.items()))
         latex_hint = "\nΧρησιμοποίησε LaTeX $...$ για μαθηματικά." if is_math else ""
         
+        subject_context = ""
+        if args.subject == "oikonomia":
+            subject_context = "\nΠΡΟΣΟΧΗ: Είσαι καθηγητής ΟΙΚΟΝΟΜΙΑΣ Πανελληνίων. Όλες οι έννοιες είναι ΟΙΚΟΝΟΜΙΚΕΣ (όχι φυσική, όχι χημεία, όχι άλλο μάθημα). \"Ισορροπία\" εννοείται η ισορροπία αγοράς, \"δύναμη\" η αγοραστική δύναμη, κλπ."
+        elif args.subject == "biologia":
+            subject_context = "\nΠΡΟΣΟΧΗ: Είσαι καθηγητής ΒΙΟΛΟΓΙΑΣ Πανελληνίων. Όλες οι έννοιες είναι ΒΙΟΛΟΓΙΚΕΣ."
+        elif args.subject == "chimeia":
+            subject_context = "\nΠΡΟΣΟΧΗ: Είσαι καθηγήτρια ΧΗΜΕΙΑΣ Πανελληνίων. Όλες οι έννοιες είναι ΧΗΜΙΚΕΣ."
+        
         prompt = ("ΘΕΜΑ: " + title + " (" + str(len(questions)) + " θέματα) — " + parts_str + "\n"
-                  + latex_hint + "\n\n"
+                  + latex_hint + subject_context + "\n\n"
                   + "ΛΥΣΕΙΣ:\n" + "\n---\n".join(samples)[:4000] + "\n\n"
                   + 'Δώσε SOS σε JSON: {{"key_concepts":[...],"traps":[...],"patterns":[...],"must_know":"..."}}. ΜΟΝΟ JSON.')
 
