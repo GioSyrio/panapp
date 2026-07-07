@@ -769,16 +769,20 @@ function skipCheatsheet() {
 }
 
 // Restore previous subject and progress on page load
-(function() {
+// Load dynamic subject list on page load
+loadSubjectOptions();
+
+// Restore previous subject from localStorage (after subjects loaded)
+setTimeout(function() {
     try {
         var savedSubj = localStorage.getItem('panapp_subject');
-        if (savedSubj) {
+        if (savedSubj && allSubjects.some(function(s) { return s.id === savedSubj; })) {
             currentSubject = savedSubj;
-            var el = document.querySelector('[data-subject=\"' + savedSubj + '\"]');
+            var el = document.querySelector('[data-subject="' + savedSubj + '"]');
             if (el) selectSubject(savedSubj, el);
         }
     } catch(e) {}
-})();
+}, 500);
 
 // Session timeout warning (25min — 5min before 30min expiry)
 var _sessionStart = Date.now();
