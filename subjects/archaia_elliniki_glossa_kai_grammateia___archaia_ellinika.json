@@ -34,5 +34,6 @@
     "data_dir": "data/subjects/archaia_elliniki_glossa_kai_grammateia___archaia_ellinika",
     "source_file": "items_raw.json"
   },
-  "_status": "draft"
+  "_status": "draft",
+  "answer_detection": "none"
 }

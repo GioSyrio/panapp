@@ -34,5 +34,6 @@
     "data_dir": "data/subjects/neoelliniki_glossa_kai_logotechnia",
     "source_file": "items_raw.json"
   },
-  "_status": "draft"
+  "_status": "draft",
+  "answer_detection": "none"
 }

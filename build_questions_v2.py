@@ -15,7 +15,7 @@ from PIL import Image
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, "data", "subjects", "informatics")
-DOC_DIR = os.path.join(DATA_DIR, "attachments", "docx")
+DOC_DIR = os.path.join(BASE_DIR, "data", "trapeza_data_1_3_218", "attachments", "docx")
 IMAGES_DIR = os.path.join(BASE_DIR, "static", "images", "exams")
 QUESTIONS_FILE = os.path.join(DATA_DIR, "questions_classified.json")
 OUTPUT_FILE = os.path.join(DATA_DIR, "questions_v2.json")

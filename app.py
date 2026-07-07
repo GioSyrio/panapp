@@ -5,6 +5,7 @@ Multi-subject support: mathematics_prosanatolismoy, informatics, fysiki_prosanat
 """
 import json, os, sys, re, uuid, hashlib, time, logging
 from datetime import datetime, timezone
+from collections import OrderedDict
 
 from flask import Flask, request, jsonify, send_from_directory, Response, stream_with_context
 
@@ -81,6 +82,10 @@ sessions = {}
 _response_cache = {}
 MAX_CACHE_SIZE = 200
 
+# ── LRU cache for v2 data (max 5 subjects) ─────────────────────────────────
+MAX_V2_CACHE_SIZE = 5
+_v2_cache = OrderedDict()
+
 def cleanup_sessions():
     global LAST_CLEANUP
     now = time.time()
@@ -142,7 +147,6 @@ def format_exam_question(question, tag=None, subject_id="informatics"):
     if str(question["id"]) in v2_data:
         result["question_html"] = v2_data[str(question["id"])].get("question_html", "")
         result["answer_html"] = v2_data[str(question["id"])].get("answer_html", "")
-        # Include sub-questions for tracker (from sections data)
         result["sub_questions"] = [
             {"number": s["number"], "content": s.get("content", "")}
             for s in v2_data[str(question["id"])].get("sections", [])
@@ -150,17 +154,20 @@ def format_exam_question(question, tag=None, subject_id="informatics"):
         ]
     else:
         result["sub_questions"] = []
-    dm = _load_diagram_map()
+    dm = _load_diagram_map(subject_id)
     if str(question["id"]) in dm:
         result["diagram_urls"] = [{"path": d["path"].replace("static/", "", 1), "width": d.get("width"), "height": d.get("height"), "page": d.get("page", 1)} for d in dm[str(question["id"])].get("diagrams", [])]
     else:
         result["diagram_urls"] = []
     return result
 
-_v2_cache = {}
 def _load_v2_data(subject_id="informatics"):
-    if subject_id in _v2_cache and _v2_cache[subject_id]:
+    """Load v2 question data with LRU cache (max 5 subjects)."""
+    if subject_id in _v2_cache:
+        # Move to end (most recently used)
+        _v2_cache.move_to_end(subject_id)
         return _v2_cache[subject_id]
+    
     subject_cfg = load_subject_config(subject_id)
     data_dir = os.path.join(BASE_DIR, subject_cfg.get("data", {}).get("data_dir", "data/subjects/informatics"))
     v2_file = os.path.join(data_dir, "questions_v2.json")
@@ -168,18 +175,34 @@ def _load_v2_data(subject_id="informatics"):
     if os.path.exists(v2_file):
         with open(v2_file, encoding="utf-8") as f:
             result = {str(q["id"]): q for q in json.load(f)}
+    
+    # LRU eviction
+    if len(_v2_cache) >= MAX_V2_CACHE_SIZE:
+        _v2_cache.popitem(last=False)  # Remove oldest
+        
     _v2_cache[subject_id] = result
     return result
 
-_diagram_map_cache = None
-def _load_diagram_map():
-    global _diagram_map_cache
-    if _diagram_map_cache is not None: return _diagram_map_cache
-    mf = os.path.join(STATIC_DIR, "images", "exams", "diagram_map.json")
+_diagram_map_cache = {}
+def _load_diagram_map(subject_id="informatics"):
+    """Load diagram map per subject (separate files)."""
+    if subject_id in _diagram_map_cache:
+        return _diagram_map_cache[subject_id]
+    
+    # Try per-subject file first, fall back to shared
+    subject_cfg = load_subject_config(subject_id)
+    data_dir = os.path.join(BASE_DIR, subject_cfg.get("data", {}).get("data_dir", "data/subjects/informatics"))
+    mf = os.path.join(data_dir, "diagram_map.json")
+    if not os.path.exists(mf):
+        # Fallback: shared diagram map
+        mf = os.path.join(STATIC_DIR, "images", "exams", "diagram_map.json")
+    
     if os.path.exists(mf):
-        with open(mf, encoding="utf-8") as f: _diagram_map_cache = json.load(f)
-    else: _diagram_map_cache = {}
-    return _diagram_map_cache
+        with open(mf, encoding="utf-8") as f:
+            _diagram_map_cache[subject_id] = json.load(f)
+    else:
+        _diagram_map_cache[subject_id] = {}
+    return _diagram_map_cache[subject_id]
 
 def strip_reasoning(text):
     if not text: return text
@@ -225,15 +248,12 @@ def _is_student_answer(msg, subject_id):
     """Detect if the message is a student answer submission.
     Driven by subject config `answer_detection`: 'math' | 'code' | 'physics' | 'none'.
     """
-    # Question marks → conversational, not answer
     if '?' in msg or ';' in msg:
         return False
-    # Greek question/help words → conversational
     if any(qw in msg.lower() for qw in ['πώς', 'πως', 'τι ', 'γιατί', 'γιατι', 'πότε', 'ποτε', 'μπορείς', 'μπορεις', 'βοήθα', 'βοηθα', 'δεν ξέρω', 'δεν ξερω', 'δεν καταλαβαίν', 'δεν καταλαβαιν', 'εξήγησ', 'εξηγησ']):
         return False
     if len(msg) > 100 and '\n' in msg:
         return True
-    # ── Config-driven detection mode ──
     cfg = load_subject_config(subject_id)
     mode = cfg.get("answer_detection", "code")
     if mode == "math":
@@ -282,7 +302,6 @@ def start_session():
             trend_context = build_trend_context(ranked, details, top_n=5)
     if not exam_data:
         return jsonify({"error": "Δεν φορτώθηκαν τα δεδομένα. Δοκίμασε αργότερα."}), 500
-    # Support topic-based filtering
     filter_topic = body.get("topic", "").strip()
     question, tag = None, None
     for tg, _ in ranked[:15]:
@@ -299,11 +318,9 @@ def start_session():
         tag = None
     if not question:
         return jsonify({"error": "Δεν βρέθηκαν ερωτήσεις."}), 500
-    # ── Load subject-specific prompts ──
     prompts = get_prompts(subject_id)
     tutor_prompt = prompts.GREEK_TUTOR_SYSTEM_PROMPT
     eval_prompt = prompts.EVALUATION_SYSTEM_PROMPT
-    # Get question text (stripped of HTML)
     q_v2 = _load_v2_data(subject_id).get(str(question['id']), {})
     q_html = q_v2.get("question_html", question.get("question_text", ""))
     q_text = re.sub(r'<[^>]+>', ' ', q_html)[:3000].strip()
@@ -322,7 +339,7 @@ def start_session():
         "completed_count": 0, "total_points": 0,
         "started_at": datetime.now(timezone.utc).isoformat(), "history": [],
         "subject_id": subject_id,
-        "eval_prompt": eval_prompt,  # stored for evaluation use
+        "eval_prompt": eval_prompt,
     }
     logger.info(f"Session started: {sid[:8]} [{subject_id}]")
     return jsonify({"session_id": sid, "question": format_exam_question(question, tag, subject_id),
@@ -354,16 +371,13 @@ def chat():
     if not deepseek_client:
         return jsonify({"reply": "Το AI είναι προσωρινά μη διαθέσιμο. Χρησιμοποίησε το Hint ή πήγαινε στο επόμενο θέμα.", "no_ai": True})
 
-    # ── Detect if this is an answer submission ──
     is_answer = _is_student_answer(msg, subj_id)
 
-    # Build sub-question context (shared between both branches)
     subq_ctx = ""
     active_subq = body.get("active_subq", {})
     if active_subq and active_subq.get("number"):
         subq_ctx = f"\n\n[Ενεργό υποερώτημα: {active_subq.get('number')}. {active_subq.get('content', '')}]"
 
-    # ── Inject hint awareness if student recently used hints ──
     hint_ctx = ""
     hs = sess.get("hint_state", {})
     if hs and hs.get("question_id") == str(sess["current_question"]["id"]):
@@ -374,14 +388,11 @@ def chat():
             hint_ctx = f"\n\n[O μαθητής μόλις είδε το hint #{hc} για το υποερώτημα {subq_num}. Αξιοποίησε το στην απάντησή σου.]"
 
     if not is_answer:
-        # ── Conversational mode ──
         try:
             ms = sess["messages"].copy()
-            # Inject fact-check context if student looks like they gave a math answer
             fact_check = ""
             cfg = load_subject_config(subj_id)
             if cfg.get("answer_detection") == "math" and _is_student_answer(msg, subj_id):
-                # The message was flagged as conversational but looks like math — add guardrail
                 qhtml = _load_v2_data(subj_id).get(str(sess["current_question"]["id"]), {}).get("answer_html", "")
                 if qhtml:
                     plain_ans = re.sub(r'<[^>]+>', ' ', qhtml)[:500].strip()
@@ -398,7 +409,6 @@ def chat():
             logger.error(f"Chat error: {e}")
             return jsonify({"reply": "Κάτι πήγε στραβά. Δοκίμασε ξανά σε λίγο.", "error": True})
 
-    # ── Evaluation mode ──
     key = _cache_key(sess)
     if key and key in _response_cache:
         logger.info(f"Cache hit {sid[:8]}")
@@ -451,7 +461,6 @@ def next_question():
         return jsonify({"reply": "Δεν υπάρχουν άλλα θέματα! 🎓", "session_complete": True})
     s["seen_ids"].add(q["id"])
     s["current_question"] = q
-    # ── Load subject-specific prompts for the new question ──
     prompts = get_prompts(subj_id)
     tutor = prompts.GREEK_TUTOR_SYSTEM_PROMPT
     eval_prompt = prompts.EVALUATION_SYSTEM_PROMPT
@@ -469,7 +478,6 @@ def next_question():
         f"Έννοιες: {', '.join(q.get('conceptual_tags', [])[:5])}\n" +
         trend_context
     )}]
-    # Reset hint state for new question
     s["hint_state"] = {"subqIdx": 0, "hintCount": 0, "totalSubqs": len(_get_subquestions(str(q["id"]), subj_id)) or 1}
     return jsonify({
         "question": format_exam_question(q, subject_id=subj_id),
@@ -560,7 +568,6 @@ def guidelines():
     cfg = load_subject_config(subject_id)
     data_dir = os.path.join(BASE_DIR, cfg.get("data", {}).get("data_dir", "data/subjects/mathematics_prosanatolismoy"))
     gfile = os.path.join(data_dir, "sos_guidelines.json")
-    # Fallback: also check subject-specific directory
     if not os.path.exists(gfile):
         gfile2 = os.path.join(BASE_DIR, "data", "subjects", subject_id, "sos_guidelines.json")
         if os.path.exists(gfile2):

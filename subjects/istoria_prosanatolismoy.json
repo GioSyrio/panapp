@@ -34,5 +34,6 @@
     "data_dir": "data/subjects/istoria_prosanatolismoy",
     "source_file": "items_raw.json"
   },
-  "_status": "draft"
+  "_status": "draft",
+  "answer_detection": "none"
 }
