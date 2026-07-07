@@ -32,6 +32,9 @@ def extract_images(docx_path, output_dir, qid):
                 try:
                     img = Image.open(io.BytesIO(bytes(data)))
                     w, h = img.size
+                    # Convert palette-mode to RGBA (prevents dark rendering on dark UI)
+                    if img.mode == 'P':
+                        img = img.convert('RGBA')
                     if ext in ('.emf', '.wmf') and (w < 30 or h < 30): continue
                     if ext in ('.emf', '.wmf'): img = img.convert('RGB'); ext_out = '.png'
                     else: ext_out = ext
