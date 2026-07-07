@@ -71,6 +71,15 @@ CHEMISTRY_ANSWER_KW = ['mol','γραμμομόριο','διάλυμα','συγκ
                        'δεσμός','μοριακό','στοιχειομετρία','καταλύτης',
                        'ισορροπία','συντελεστής','αριθμός οξείδωσης',
                        'ηλεκτραρνητικότητα','περιοδικό','πίνακα']
+BIOLOGY_ANSWER_KW = ['κύτταρο','μιτοχόνδριο','DNA','RNA','πρωτεΐνη',
+                     'ένζυμο','μεμβράνη','χρωμόσωμα','γονίδιο',
+                     'μεταγραφή','μετάφραση','αντιγραφή','μίτωση',
+                     'μείωση','οικολογία','οικοσύστημα','πληθυσμός',
+                     'φωτοσύνθεση','κυτταρική αναπνοή','γλυκόλυση',
+                     'κύκλος του Krebs','βιοτεχνολογία','πλασμίδιο',
+                     'πέψη','ορμόνη','νευρώνας','ανοσοποιητικό',
+                     'αντισώματα','εμβόλιο','βακτήριο','ιός',
+                     'μετάλλαξη','κληρονομικότητα','φαινότυπος']
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -323,6 +332,8 @@ def _is_student_answer(msg, subject_id):
         return any(k in msg.lower() for k in PHYSICS_ANSWER_KW)
     elif mode == "chemistry":
         return any(k in msg.lower() for k in CHEMISTRY_ANSWER_KW)
+    elif mode == "biology":
+        return any(k in msg.lower() for k in BIOLOGY_ANSWER_KW)
     else:
         return False
 

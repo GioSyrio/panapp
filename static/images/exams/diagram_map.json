@@ -2908,5 +2908,704 @@
       }
     ],
     "source": "chimeia_docx"
+  },
+  "25231": {
+    "diagrams": [
+      {
+        "filename": "25231_d1.png",
+        "width": 382,
+        "height": 229,
+        "path": "images/exams/25231/25231_d1.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "25291": {
+    "diagrams": [
+      {
+        "filename": "25291_d1.png",
+        "width": 592,
+        "height": 167,
+        "path": "images/exams/25291/25291_d1.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "25294": {
+    "diagrams": [
+      {
+        "filename": "25294_d2.png",
+        "width": 811,
+        "height": 344,
+        "path": "images/exams/25294/25294_d2.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "25325": {
+    "diagrams": [
+      {
+        "filename": "25325_d2.png",
+        "width": 352,
+        "height": 237,
+        "path": "images/exams/25325/25325_d2.png"
+      },
+      {
+        "filename": "25325_d3.png",
+        "width": 646,
+        "height": 75,
+        "path": "images/exams/25325/25325_d3.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "25358": {
+    "diagrams": [
+      {
+        "filename": "25358_d1.png",
+        "width": 598,
+        "height": 291,
+        "path": "images/exams/25358/25358_d1.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "25368": {
+    "diagrams": [
+      {
+        "filename": "25368_d1.jpg",
+        "width": 541,
+        "height": 296,
+        "path": "images/exams/25368/25368_d1.jpg"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "25383": {
+    "diagrams": [
+      {
+        "filename": "25383_d1.png",
+        "width": 995,
+        "height": 469,
+        "path": "images/exams/25383/25383_d1.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "25384": {
+    "diagrams": [
+      {
+        "filename": "25384_d1.png",
+        "width": 139,
+        "height": 136,
+        "path": "images/exams/25384/25384_d1.png"
+      },
+      {
+        "filename": "25384_d2.jpeg",
+        "width": 1028,
+        "height": 362,
+        "path": "images/exams/25384/25384_d2.jpeg"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "25386": {
+    "diagrams": [
+      {
+        "filename": "25386_d1.png",
+        "width": 1152,
+        "height": 648,
+        "path": "images/exams/25386/25386_d1.png"
+      },
+      {
+        "filename": "25386_d2.png",
+        "width": 1200,
+        "height": 322,
+        "path": "images/exams/25386/25386_d2.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "25387": {
+    "diagrams": [
+      {
+        "filename": "25387_d1.png",
+        "width": 1152,
+        "height": 648,
+        "path": "images/exams/25387/25387_d1.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "25392": {
+    "diagrams": [
+      {
+        "filename": "25392_d1.png",
+        "width": 865,
+        "height": 321,
+        "path": "images/exams/25392/25392_d1.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "25396": {
+    "diagrams": [
+      {
+        "filename": "25396_d1.png",
+        "width": 620,
+        "height": 199,
+        "path": "images/exams/25396/25396_d1.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "25397": {
+    "diagrams": [
+      {
+        "filename": "25397_d1.png",
+        "width": 266,
+        "height": 59,
+        "path": "images/exams/25397/25397_d1.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "25416": {
+    "diagrams": [
+      {
+        "filename": "25416_d1.png",
+        "width": 292,
+        "height": 87,
+        "path": "images/exams/25416/25416_d1.png"
+      },
+      {
+        "filename": "25416_d2.png",
+        "width": 290,
+        "height": 91,
+        "path": "images/exams/25416/25416_d2.png"
+      },
+      {
+        "filename": "25416_d3.png",
+        "width": 256,
+        "height": 85,
+        "path": "images/exams/25416/25416_d3.png"
+      },
+      {
+        "filename": "25416_d4.png",
+        "width": 250,
+        "height": 86,
+        "path": "images/exams/25416/25416_d4.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "25535": {
+    "diagrams": [
+      {
+        "filename": "25535_d1.png",
+        "width": 415,
+        "height": 200,
+        "path": "images/exams/25535/25535_d1.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "25586": {
+    "diagrams": [
+      {
+        "filename": "25586_d1.png",
+        "width": 505,
+        "height": 360,
+        "path": "images/exams/25586/25586_d1.png"
+      },
+      {
+        "filename": "25586_d2.png",
+        "width": 281,
+        "height": 180,
+        "path": "images/exams/25586/25586_d2.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "27011": {
+    "diagrams": [
+      {
+        "filename": "27011_d1.png",
+        "width": 537,
+        "height": 157,
+        "path": "images/exams/27011/27011_d1.png"
+      },
+      {
+        "filename": "27011_d2.png",
+        "width": 605,
+        "height": 149,
+        "path": "images/exams/27011/27011_d2.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "27287": {
+    "diagrams": [
+      {
+        "filename": "27287_d1.png",
+        "width": 986,
+        "height": 276,
+        "path": "images/exams/27287/27287_d1.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "27375": {
+    "diagrams": [
+      {
+        "filename": "27375_d1.png",
+        "width": 332,
+        "height": 237,
+        "path": "images/exams/27375/27375_d1.png"
+      },
+      {
+        "filename": "27375_d2.png",
+        "width": 220,
+        "height": 274,
+        "path": "images/exams/27375/27375_d2.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "27376": {
+    "diagrams": [
+      {
+        "filename": "27376_d1.png",
+        "width": 380,
+        "height": 87,
+        "path": "images/exams/27376/27376_d1.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "27844": {
+    "diagrams": [
+      {
+        "filename": "27844_d1.png",
+        "width": 797,
+        "height": 390,
+        "path": "images/exams/27844/27844_d1.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "27845": {
+    "diagrams": [
+      {
+        "filename": "27845_d1.png",
+        "width": 583,
+        "height": 343,
+        "path": "images/exams/27845/27845_d1.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "27903": {
+    "diagrams": [
+      {
+        "filename": "27903_d1.png",
+        "width": 864,
+        "height": 446,
+        "path": "images/exams/27903/27903_d1.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "28316": {
+    "diagrams": [
+      {
+        "filename": "28316_d1.png",
+        "width": 965,
+        "height": 422,
+        "path": "images/exams/28316/28316_d1.png"
+      },
+      {
+        "filename": "28316_d2.png",
+        "width": 651,
+        "height": 299,
+        "path": "images/exams/28316/28316_d2.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "28509": {
+    "diagrams": [
+      {
+        "filename": "28509_d1.png",
+        "width": 593,
+        "height": 130,
+        "path": "images/exams/28509/28509_d1.png"
+      },
+      {
+        "filename": "28509_d2.png",
+        "width": 104,
+        "height": 43,
+        "path": "images/exams/28509/28509_d2.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "28536": {
+    "diagrams": [
+      {
+        "filename": "28536_d1.png",
+        "width": 805,
+        "height": 296,
+        "path": "images/exams/28536/28536_d1.png"
+      },
+      {
+        "filename": "28536_d2.jpg",
+        "width": 813,
+        "height": 545,
+        "path": "images/exams/28536/28536_d2.jpg"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "28539": {
+    "diagrams": [
+      {
+        "filename": "28539_d1.png",
+        "width": 679,
+        "height": 521,
+        "path": "images/exams/28539/28539_d1.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "28864": {
+    "diagrams": [
+      {
+        "filename": "28864_d1.png",
+        "width": 308,
+        "height": 197,
+        "path": "images/exams/28864/28864_d1.png"
+      },
+      {
+        "filename": "28864_d2.png",
+        "width": 322,
+        "height": 112,
+        "path": "images/exams/28864/28864_d2.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "28897": {
+    "diagrams": [
+      {
+        "filename": "28897_d1.png",
+        "width": 514,
+        "height": 258,
+        "path": "images/exams/28897/28897_d1.png"
+      },
+      {
+        "filename": "28897_d2.png",
+        "width": 1109,
+        "height": 901,
+        "path": "images/exams/28897/28897_d2.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "28898": {
+    "diagrams": [
+      {
+        "filename": "28898_d1.png",
+        "width": 268,
+        "height": 223,
+        "path": "images/exams/28898/28898_d1.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "29184": {
+    "diagrams": [
+      {
+        "filename": "29184_d1.png",
+        "width": 707,
+        "height": 206,
+        "path": "images/exams/29184/29184_d1.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "29325": {
+    "diagrams": [
+      {
+        "filename": "29325_d1.png",
+        "width": 1200,
+        "height": 423,
+        "path": "images/exams/29325/29325_d1.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "29326": {
+    "diagrams": [
+      {
+        "filename": "29326_d1.png",
+        "width": 1152,
+        "height": 648,
+        "path": "images/exams/29326/29326_d1.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "29327": {
+    "diagrams": [
+      {
+        "filename": "29327_d1.png",
+        "width": 1152,
+        "height": 648,
+        "path": "images/exams/29327/29327_d1.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "31425": {
+    "diagrams": [
+      {
+        "filename": "31425_d2.png",
+        "width": 555,
+        "height": 408,
+        "path": "images/exams/31425/31425_d2.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "31631": {
+    "diagrams": [
+      {
+        "filename": "31631_d1.png",
+        "width": 507,
+        "height": 246,
+        "path": "images/exams/31631/31631_d1.png"
+      },
+      {
+        "filename": "31631_d2.png",
+        "width": 603,
+        "height": 247,
+        "path": "images/exams/31631/31631_d2.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "31632": {
+    "diagrams": [
+      {
+        "filename": "31632_d1.png",
+        "width": 336,
+        "height": 55,
+        "path": "images/exams/31632/31632_d1.png"
+      },
+      {
+        "filename": "31632_d2.png",
+        "width": 748,
+        "height": 402,
+        "path": "images/exams/31632/31632_d2.png"
+      },
+      {
+        "filename": "31632_d3.png",
+        "width": 845,
+        "height": 561,
+        "path": "images/exams/31632/31632_d3.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "31662": {
+    "diagrams": [
+      {
+        "filename": "31662_d1.png",
+        "width": 544,
+        "height": 412,
+        "path": "images/exams/31662/31662_d1.png"
+      },
+      {
+        "filename": "31662_d2.png",
+        "width": 865,
+        "height": 580,
+        "path": "images/exams/31662/31662_d2.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "31681": {
+    "diagrams": [
+      {
+        "filename": "31681_d1.png",
+        "width": 890,
+        "height": 125,
+        "path": "images/exams/31681/31681_d1.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "31683": {
+    "diagrams": [
+      {
+        "filename": "31683_d1.png",
+        "width": 993,
+        "height": 353,
+        "path": "images/exams/31683/31683_d1.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "32473": {
+    "diagrams": [
+      {
+        "filename": "32473_d1.png",
+        "width": 487,
+        "height": 116,
+        "path": "images/exams/32473/32473_d1.png"
+      },
+      {
+        "filename": "32473_d2.png",
+        "width": 509,
+        "height": 270,
+        "path": "images/exams/32473/32473_d2.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "33510": {
+    "diagrams": [
+      {
+        "filename": "33510_d1.png",
+        "width": 377,
+        "height": 180,
+        "path": "images/exams/33510/33510_d1.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "33916": {
+    "diagrams": [
+      {
+        "filename": "33916_d1.png",
+        "width": 514,
+        "height": 108,
+        "path": "images/exams/33916/33916_d1.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "33917": {
+    "diagrams": [
+      {
+        "filename": "33917_d1.png",
+        "width": 507,
+        "height": 438,
+        "path": "images/exams/33917/33917_d1.png"
+      },
+      {
+        "filename": "33917_d2.png",
+        "width": 783,
+        "height": 61,
+        "path": "images/exams/33917/33917_d2.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "33918": {
+    "diagrams": [
+      {
+        "filename": "33918_d1.png",
+        "width": 777,
+        "height": 269,
+        "path": "images/exams/33918/33918_d1.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "33991": {
+    "diagrams": [
+      {
+        "filename": "33991_d1.png",
+        "width": 757,
+        "height": 618,
+        "path": "images/exams/33991/33991_d1.png"
+      },
+      {
+        "filename": "33991_d2.png",
+        "width": 472,
+        "height": 272,
+        "path": "images/exams/33991/33991_d2.png"
+      },
+      {
+        "filename": "33991_d3.png",
+        "width": 830,
+        "height": 660,
+        "path": "images/exams/33991/33991_d3.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "35609": {
+    "diagrams": [
+      {
+        "filename": "35609_d1.png",
+        "width": 1089,
+        "height": 594,
+        "path": "images/exams/35609/35609_d1.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "35614": {
+    "diagrams": [
+      {
+        "filename": "35614_d1.png",
+        "width": 1152,
+        "height": 648,
+        "path": "images/exams/35614/35614_d1.png"
+      },
+      {
+        "filename": "35614_d2.png",
+        "width": 1200,
+        "height": 707,
+        "path": "images/exams/35614/35614_d2.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "35652": {
+    "diagrams": [
+      {
+        "filename": "35652_d1.png",
+        "width": 560,
+        "height": 276,
+        "path": "images/exams/35652/35652_d1.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "36402": {
+    "diagrams": [
+      {
+        "filename": "36402_d1.png",
+        "width": 505,
+        "height": 412,
+        "path": "images/exams/36402/36402_d1.png"
+      }
+    ],
+    "source": "biologia_docx"
+  },
+  "36950": {
+    "diagrams": [
+      {
+        "filename": "36950_d1.png",
+        "width": 890,
+        "height": 617,
+        "path": "images/exams/36950/36950_d1.png"
+      }
+    ],
+    "source": "biologia_docx"
   }
 }

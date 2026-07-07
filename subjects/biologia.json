@@ -34,6 +34,6 @@
     "data_dir": "data/subjects/biologia",
     "source_file": "items_raw.json"
   },
-  "_status": "draft",
-  "answer_detection": "none"
+  "_status": "onboarded",
+  "answer_detection": "biology"
 }
