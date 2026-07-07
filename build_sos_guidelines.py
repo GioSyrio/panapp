@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
 build_sos_guidelines.py — Generate SOS cheatsheet per subject from exam answers.
-v3: Added auto-merge for granular tag subjects (>20 chapters) to produce concise summaries.
+v4: LLM-based semantic chapter grouping for granular tag subjects (>20 chapters).
 
 Handles multiple tag formats:
   - mathematics: "1.3 Μονότονες συναρτήσεις" (numbered chapters)
   - informatics: "Δομή Επανάληψης" (plain text tags)
-  - physics/chemistry: granular tags → auto-merged into parent topics
+  - physics/chemistry/biology/economics: granular tags → LLM auto-merged into parent topics
 
 Usage:
     python3 build_sos_guidelines.py --subject mathematics
@@ -50,8 +50,6 @@ SYSTEM_PROMPT_PHYSICS = """Είσαι φίλος-προπονητής Φυσικ
 ΕΠΙΣΤΡΕΨΕ ΜΟΝΟ JSON:
 {{"key_concepts": [...], "traps": [...], "patterns": [...], "must_know": "...", "thema_b_tools": "...", "thema_cd_tools": "..."}}"""
 
-# ── Chapter group definitions for granular subjects ─────────────────────────
-# Maps stem keywords → parent topic name. Chapters matching the keyword get merged.
 CHEMISTRY_GROUPS = [
     ("ηλεκτρονιακ|τροχιακ|κβαντικ|ατομικ|στιβάδ|περιοδικ|δόμηση|κατανομή ηλ", "Ατομική Δομή & Περιοδικός Πίνακας"),
     ("οξειδοαναγωγ|οξείδωση|αναγωγή|αριθμός οξείδωσης", "Οξειδοαναγωγή"),
@@ -80,6 +78,13 @@ BIOLOGY_GROUPS = [
     ("εξέλικ|φυσικ επιλογ|Δαρβίν|προσαρμογ|ειδογέν|απολίθ|φυλογεν|ταξινομ|συνθετικ|εξελιξ", "Εξέλιξη"),
     ("κυκλοφορ|καρδι|αγγεί|αιμοσφαίρ|αιμοπετ|πλάσμ|αναπνευστ|πνεύμ|κυψελ|απέκκρι|νεφρ|νεφρώ|ομοιοστ", "Συστήματα Σώματος — Κυκλοφορικό, Αναπνευστικό, Απεκκριτικό"),
 ]
+ECONOMICS_GROUPS = [
+    ("προσφορά|ζήτηση|ελαστικ|αγορά|τιμή|ισορροπ", "Προσφορά — Ζήτηση — Τιμή"),
+    ("κόστος|έσοδο|κέρδος|παραγωγ|οριακ|μέσο|συνολικ", "Κόστος Παραγωγής — Έσοδα — Κέρδη"),
+    ("ΑΕΠ|πληθωρισμ|ανεργ|φορολ|δημόσιο|προϋπολογ|εισόδημ|κατανάλ|επένδ|χρέο", "Μακροοικονομία — ΑΕΠ, Πληθωρισμός, Ανεργία"),
+    ("μονοπώλ|ολιγοπώλ|τέλει|ανταγων|μορφή αγορ|ανταγωνιστ", "Μορφές Αγοράς — Μονοπώλιο, Ολιγοπώλιο"),
+    ("ευημερ|χρησιμότ|αδιάφορ|οικονομικ|άριστο|καταναλωτ|συμπεριφορ", "Θεωρία Καταναλωτή — Χρησιμότητα, Ευημερία"),
+]
 
 def merge_chapters(client, guidelines, group_keywords=None):
     """Post-process: merge many granular chapters into broader parent topics.
@@ -88,18 +93,17 @@ def merge_chapters(client, guidelines, group_keywords=None):
     """
     chapters = guidelines["chapters"]
     if len(chapters) <= 20:
-        return  # Only merge if >20 chapters
+        return
     
     print(f"\n🔀 {len(chapters)} chapters → merging into broader topics...")
     
-    # ── Step 1: Use LLM to group chapters (one API call) ──
     chapter_list = [{"title": ch["title"], "count": ch["question_count"]} for ch in chapters]
     
-    classify_prompt = f"""Έχουμε {len(chapters)} μικρές ενότητες Βιολογίας που θέλουμε να ομαδοποιήσουμε σε ~12-15 ευρύτερες γονικές ενότητες.
+    classify_prompt = f"""Έχουμε {len(chapters)} μικρές ενότητες που θέλουμε να ομαδοποιήσουμε σε ~10-15 ευρύτερες γονικές ενότητες.
 
 ΟΜΑΔΟΠΟΙΗΣΕ τις παρακάτω ενότητες με βάση το νόημα (semantic similarity). Κάθε ενότητα μπαίνει σε ΜΙΑ ομάδα. Μην αφήσεις καμία αταξινόμητη.
 
-Για κάθε ομάδα, διάλεξε ένα σύντομο, περιγραφικό όνομα (π.χ. 'Γενετικό Υλικό — DNA/RNA', 'Κυτταρική Διαίρεση', κλπ).
+Για κάθε ομάδα, διάλεξε ένα σύντομο, περιγραφικό όνομα.
 
 ΕΝΟΤΗΤΕΣ:
 {chr(10).join(f'- {c["title"]} ({c["count"]} θέματα)' for c in chapter_list)}
@@ -108,7 +112,7 @@ def merge_chapters(client, guidelines, group_keywords=None):
 {{
   "groups": [
     {{
-      "group_name": "Γενετικό Υλικό — DNA/RNA",
+      "group_name": "Όνομα Ομάδας",
       "members": ["τίτλος ενότητας 1", "τίτλος ενότητας 2", ...]
     }},
     ...
@@ -120,7 +124,7 @@ def merge_chapters(client, guidelines, group_keywords=None):
         resp = client.chat.completions.create(
             model="deepseek-chat",
             messages=[
-                {"role": "system", "content": "Είσαι βοηθός ομαδοποίησης επιστημονικών εννοιών. Ομαδοποίησε με βάση το νόημα. ΜΟΝΟ JSON. Όλες οι ενότητες πρέπει να ανήκουν σε κάποια ομάδα."},
+                {"role": "system", "content": "Είσαι βοηθός ομαδοποίησης εννοιών. Ομαδοποίησε με βάση το νόημα. ΜΟΝΟ JSON. Όλες οι ενότητες πρέπει να ανήκουν σε κάποια ομάδα."},
                 {"role": "user", "content": classify_prompt}
             ],
             temperature=0.1, max_tokens=2000,
@@ -134,7 +138,6 @@ def merge_chapters(client, guidelines, group_keywords=None):
         print(f"  ❌ LLM classification failed: {e}")
         llm_groups = []
     
-    # ── Step 2: Build groups dict from LLM response ──
     title_to_chapter = {}
     for ch in chapters:
         title_to_chapter[ch["title"].strip()] = ch
@@ -151,10 +154,8 @@ def merge_chapters(client, guidelines, group_keywords=None):
                 groups[group_name].append(title_to_chapter[member_title])
                 classified_titles.add(member_title)
     
-    # ── Step 3: Handle any chapters LLM missed (unclassified) ──
     unclassified = [ch for ch in chapters if ch["title"].strip() not in classified_titles]
     if unclassified:
-        # Try keyword-based fallback if group_keywords provided
         if group_keywords:
             for ch in unclassified:
                 title_lower = ch["title"].lower()
@@ -172,7 +173,6 @@ def merge_chapters(client, guidelines, group_keywords=None):
     if unclassified:
         print(f"  ⚠️  {len(unclassified)} unclassified chapters → Άλλα Θέματα")
     
-    # ── Step 4: Merge each group into one chapter via LLM ──
     merged = []
     
     for group_name, group_chapters in sorted(groups.items()):
@@ -293,7 +293,6 @@ def build_global_prompt(all_chapter_data, subject_name):
 }}"""
 
 def extract_chapter(tag):
-    """Extract chapter number and title, or return just title as-is."""
     m = re.match(r'^([0-9]+\.[0-9]+)\s+(.+)', tag)
     if m:
         return m.group(1), m.group(2)
@@ -327,28 +326,23 @@ def main():
 
     v2 = json.load(open(v2_file, encoding="utf-8"))
     cfg = json.load(open(os.path.join(BASE, "subjects", f"{args.subject}.json"), encoding="utf-8"))
-    # is_math = only for subjects that explicitly use LaTeX math (not all stem)
     is_math = args.subject in ("mathematics", "mathematics_prosanatolismoy")
 
-    # Group by chapter — adapted for different subject tag formats
     chapters = defaultdict(list)
     
     for q in v2:
         tags = q.get("conceptual_tags", [])
         if tags:
-            # Use PRIMARY tag only (first tag) — each question goes to one chapter
             tag = tags[0]
             ch_num, ch_title = extract_chapter(tag)
             if ch_num:
                 chapters[(ch_num, ch_title)].append(q)
             else:
-                chapters[("", tag.strip())].append(q)
+                chapters[("", tag.strip().lower())].append(q)
         else:
-            # No tags (physics) — group by part
             part = q.get("part", "Άλλο")
             chapters[("", part)].append(q)
 
-    # Convert (num, title) tuples to merged dict keyed by title
     merged = defaultdict(list)
     for (num, title), questions in chapters.items():
         merged[title].extend(questions)
@@ -359,7 +353,9 @@ def main():
                     "mathematics": "Μαθηματικά Προσανατολισμού",
                     "informatics": "Πληροφορική",
                     "fysiki_prosanatolismoy": "Φυσική Προσανατολισμού",
-                    "chimeia": "Χημεία"}.get(args.subject, args.subject)
+                    "chimeia": "Χημεία",
+                    "biologia": "Βιολογία",
+                    "oikonomia": "Οικονομία"}.get(args.subject, args.subject)
 
     guidelines = {
         "subject": args.subject,
@@ -370,7 +366,7 @@ def main():
         "exam_strategy": ""
     }
 
-    group_items = sorted(merged.items(), key=lambda x: -len(x[1]))  # Sort by question count
+    group_items = sorted(merged.items(), key=lambda x: -len(x[1]))
     if args.limit > 0:
         group_items = group_items[:args.limit]
 
@@ -429,14 +425,17 @@ def main():
 
         time.sleep(1)
 
-    # ── Post-process: merge granular chapters ──
     if not args.no_merge:
-        if args.subject == "chimeia":
-            merge_chapters(client, guidelines, CHEMISTRY_GROUPS)
-        elif args.subject == "biologia":
-            merge_chapters(client, guidelines, BIOLOGY_GROUPS)
+        groups_map = {
+            "chimeia": CHEMISTRY_GROUPS,
+            "biologia": BIOLOGY_GROUPS,
+            "oikonomia": ECONOMICS_GROUPS,
+        }
+        if args.subject in groups_map:
+            merge_chapters(client, guidelines, groups_map[args.subject])
+        elif len(guidelines["chapters"]) > 20:
+            merge_chapters(client, guidelines)
 
-    # Global intelligence pass
     print(f"\n🧠 Global intelligence pass...")
     
     global_prompt = build_global_prompt(guidelines["chapters"], subject_name)
