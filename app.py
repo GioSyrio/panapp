@@ -582,6 +582,25 @@ def topics():
     return jsonify({"topics": [{"topic": t, "priority": round(s, 2)} for t, s in ranked[:10]],
                     "total_topics": len(ranked)})
 
+@app.route("/api/subjects")
+def subjects_list():
+    """Return all non-draft subjects for the frontend picker."""
+    subjects = []
+    for fname in sorted(os.listdir(os.path.join(BASE_DIR, "subjects"))):
+        if not fname.endswith(".json"): continue
+        subject_id = fname[:-5]  # strip .json
+        cfg = load_subject_config(subject_id)
+        if cfg.get("_status") == "draft": continue
+        subjects.append({
+            "id": subject_id,
+            "name": cfg.get("name", subject_id),
+            "icon": cfg.get("icon", "📚"),
+            "desc": cfg.get("ui", {}).get("header_subtitle", "").replace(" • Θέματα", ""),
+            "parts": cfg.get("parts", []),
+            "status": cfg.get("_status", "draft")
+        })
+    return jsonify({"subjects": subjects})
+
 @app.route("/api/questions/list")
 def questions_list():
     """Return all question IDs with metadata for autocomplete."""
