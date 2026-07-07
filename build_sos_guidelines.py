@@ -81,9 +81,14 @@ def llm_merge(client, chapters, subject_name):
     for g in llm_groups:
         for member in g.get("members", []):
             member = member.strip()
+            # Strip "(NN θέματα)" suffix if present
+            member_clean = re.sub(r'\s*\(\d+\s*θέματα\)\s*$', '', member).strip()
             if member in title_to_ch and member not in classified:
                 groups[g.get("group_name", "Άλλο")].append(title_to_ch[member])
                 classified.add(member)
+            elif member_clean in title_to_ch and member_clean not in classified:
+                groups[g.get("group_name", "Άλλο")].append(title_to_ch[member_clean])
+                classified.add(member_clean)
     
     unclassified = [ch for ch in chapters if ch["title"].strip() not in classified]
     if unclassified:
