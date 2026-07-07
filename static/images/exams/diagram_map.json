@@ -2483,5 +2483,430 @@
       }
     ],
     "source": "physics_docx"
+  },
+  "24150": {
+    "diagrams": [
+      {
+        "filename": "24150_d1.png",
+        "width": 403,
+        "height": 229,
+        "path": "images/exams/24150/24150_d1.png"
+      }
+    ],
+    "source": "chimeia_docx"
+  },
+  "24196": {
+    "diagrams": [
+      {
+        "filename": "24196_d1.png",
+        "width": 532,
+        "height": 288,
+        "path": "images/exams/24196/24196_d1.png"
+      }
+    ],
+    "source": "chimeia_docx"
+  },
+  "24199": {
+    "diagrams": [
+      {
+        "filename": "24199_d1.png",
+        "width": 190,
+        "height": 157,
+        "path": "images/exams/24199/24199_d1.png"
+      }
+    ],
+    "source": "chimeia_docx"
+  },
+  "24207": {
+    "diagrams": [
+      {
+        "filename": "24207_d3.png",
+        "width": 697,
+        "height": 532,
+        "path": "images/exams/24207/24207_d3.png"
+      },
+      {
+        "filename": "24207_d4.png",
+        "width": 635,
+        "height": 557,
+        "path": "images/exams/24207/24207_d4.png"
+      }
+    ],
+    "source": "chimeia_docx"
+  },
+  "24208": {
+    "diagrams": [
+      {
+        "filename": "24208_d3.png",
+        "width": 764,
+        "height": 478,
+        "path": "images/exams/24208/24208_d3.png"
+      },
+      {
+        "filename": "24208_d4.png",
+        "width": 752,
+        "height": 471,
+        "path": "images/exams/24208/24208_d4.png"
+      }
+    ],
+    "source": "chimeia_docx"
+  },
+  "24210": {
+    "diagrams": [
+      {
+        "filename": "24210_d4.png",
+        "width": 435,
+        "height": 442,
+        "path": "images/exams/24210/24210_d4.png"
+      },
+      {
+        "filename": "24210_d5.png",
+        "width": 444,
+        "height": 446,
+        "path": "images/exams/24210/24210_d5.png"
+      },
+      {
+        "filename": "24210_d6.png",
+        "width": 442,
+        "height": 452,
+        "path": "images/exams/24210/24210_d6.png"
+      }
+    ],
+    "source": "chimeia_docx"
+  },
+  "24216": {
+    "diagrams": [
+      {
+        "filename": "24216_d3.png",
+        "width": 881,
+        "height": 641,
+        "path": "images/exams/24216/24216_d3.png"
+      },
+      {
+        "filename": "24216_d4.png",
+        "width": 1200,
+        "height": 536,
+        "path": "images/exams/24216/24216_d4.png"
+      }
+    ],
+    "source": "chimeia_docx"
+  },
+  "24219": {
+    "diagrams": [
+      {
+        "filename": "24219_d2.png",
+        "width": 879,
+        "height": 733,
+        "path": "images/exams/24219/24219_d2.png"
+      },
+      {
+        "filename": "24219_d3.png",
+        "width": 1200,
+        "height": 599,
+        "path": "images/exams/24219/24219_d3.png"
+      }
+    ],
+    "source": "chimeia_docx"
+  },
+  "24339": {
+    "diagrams": [
+      {
+        "filename": "24339_d1.png",
+        "width": 143,
+        "height": 244,
+        "path": "images/exams/24339/24339_d1.png"
+      },
+      {
+        "filename": "24339_d2.png",
+        "width": 185,
+        "height": 236,
+        "path": "images/exams/24339/24339_d2.png"
+      }
+    ],
+    "source": "chimeia_docx"
+  },
+  "25254": {
+    "diagrams": [
+      {
+        "filename": "25254_d1.png",
+        "width": 818,
+        "height": 464,
+        "path": "images/exams/25254/25254_d1.png"
+      }
+    ],
+    "source": "chimeia_docx"
+  },
+  "25292": {
+    "diagrams": [
+      {
+        "filename": "25292_d1.png",
+        "width": 588,
+        "height": 141,
+        "path": "images/exams/25292/25292_d1.png"
+      }
+    ],
+    "source": "chimeia_docx"
+  },
+  "25298": {
+    "diagrams": [
+      {
+        "filename": "25298_d2.png",
+        "width": 973,
+        "height": 765,
+        "path": "images/exams/25298/25298_d2.png"
+      },
+      {
+        "filename": "25298_d3.png",
+        "width": 1200,
+        "height": 633,
+        "path": "images/exams/25298/25298_d3.png"
+      }
+    ],
+    "source": "chimeia_docx"
+  },
+  "25311": {
+    "diagrams": [
+      {
+        "filename": "25311_d1.png",
+        "width": 575,
+        "height": 452,
+        "path": "images/exams/25311/25311_d1.png"
+      }
+    ],
+    "source": "chimeia_docx"
+  },
+  "25451": {
+    "diagrams": [
+      {
+        "filename": "25451_d1.png",
+        "width": 146,
+        "height": 174,
+        "path": "images/exams/25451/25451_d1.png"
+      },
+      {
+        "filename": "25451_d2.png",
+        "width": 101,
+        "height": 37,
+        "path": "images/exams/25451/25451_d2.png"
+      },
+      {
+        "filename": "25451_d3.png",
+        "width": 77,
+        "height": 64,
+        "path": "images/exams/25451/25451_d3.png"
+      }
+    ],
+    "source": "chimeia_docx"
+  },
+  "25519": {
+    "diagrams": [
+      {
+        "filename": "25519_d2.png",
+        "width": 467,
+        "height": 336,
+        "path": "images/exams/25519/25519_d2.png"
+      }
+    ],
+    "source": "chimeia_docx"
+  },
+  "25649": {
+    "diagrams": [
+      {
+        "filename": "25649_d1.png",
+        "width": 335,
+        "height": 463,
+        "path": "images/exams/25649/25649_d1.png"
+      }
+    ],
+    "source": "chimeia_docx"
+  },
+  "25650": {
+    "diagrams": [
+      {
+        "filename": "25650_d1.png",
+        "width": 339,
+        "height": 302,
+        "path": "images/exams/25650/25650_d1.png"
+      }
+    ],
+    "source": "chimeia_docx"
+  },
+  "25672": {
+    "diagrams": [
+      {
+        "filename": "25672_d1.png",
+        "width": 389,
+        "height": 282,
+        "path": "images/exams/25672/25672_d1.png"
+      }
+    ],
+    "source": "chimeia_docx"
+  },
+  "28277": {
+    "diagrams": [
+      {
+        "filename": "28277_d1.png",
+        "width": 183,
+        "height": 83,
+        "path": "images/exams/28277/28277_d1.png"
+      },
+      {
+        "filename": "28277_d2.png",
+        "width": 160,
+        "height": 76,
+        "path": "images/exams/28277/28277_d2.png"
+      }
+    ],
+    "source": "chimeia_docx"
+  },
+  "28278": {
+    "diagrams": [
+      {
+        "filename": "28278_d1.png",
+        "width": 940,
+        "height": 476,
+        "path": "images/exams/28278/28278_d1.png"
+      }
+    ],
+    "source": "chimeia_docx"
+  },
+  "28355": {
+    "diagrams": [
+      {
+        "filename": "28355_d1.png",
+        "width": 126,
+        "height": 142,
+        "path": "images/exams/28355/28355_d1.png"
+      }
+    ],
+    "source": "chimeia_docx"
+  },
+  "28475": {
+    "diagrams": [
+      {
+        "filename": "28475_d1.png",
+        "width": 432,
+        "height": 433,
+        "path": "images/exams/28475/28475_d1.png"
+      }
+    ],
+    "source": "chimeia_docx"
+  },
+  "34459": {
+    "diagrams": [
+      {
+        "filename": "34459_d1.png",
+        "width": 90,
+        "height": 33,
+        "path": "images/exams/34459/34459_d1.png"
+      }
+    ],
+    "source": "chimeia_docx"
+  },
+  "34461": {
+    "diagrams": [
+      {
+        "filename": "34461_d1.tiff",
+        "width": 220,
+        "height": 79,
+        "path": "images/exams/34461/34461_d1.tiff"
+      },
+      {
+        "filename": "34461_d2.tiff",
+        "width": 219,
+        "height": 79,
+        "path": "images/exams/34461/34461_d2.tiff"
+      }
+    ],
+    "source": "chimeia_docx"
+  },
+  "34524": {
+    "diagrams": [
+      {
+        "filename": "34524_d1.png",
+        "width": 295,
+        "height": 427,
+        "path": "images/exams/34524/34524_d1.png"
+      }
+    ],
+    "source": "chimeia_docx"
+  },
+  "34533": {
+    "diagrams": [
+      {
+        "filename": "34533_d1.png",
+        "width": 315,
+        "height": 100,
+        "path": "images/exams/34533/34533_d1.png"
+      },
+      {
+        "filename": "34533_d2.png",
+        "width": 320,
+        "height": 115,
+        "path": "images/exams/34533/34533_d2.png"
+      },
+      {
+        "filename": "34533_d3.png",
+        "width": 423,
+        "height": 140,
+        "path": "images/exams/34533/34533_d3.png"
+      }
+    ],
+    "source": "chimeia_docx"
+  },
+  "34542": {
+    "diagrams": [
+      {
+        "filename": "34542_d1.png",
+        "width": 296,
+        "height": 163,
+        "path": "images/exams/34542/34542_d1.png"
+      }
+    ],
+    "source": "chimeia_docx"
+  },
+  "36138": {
+    "diagrams": [
+      {
+        "filename": "36138_d1.jpeg",
+        "width": 562,
+        "height": 430,
+        "path": "images/exams/36138/36138_d1.jpeg"
+      }
+    ],
+    "source": "chimeia_docx"
+  },
+  "36347": {
+    "diagrams": [
+      {
+        "filename": "36347_d1.gif",
+        "width": 111,
+        "height": 190,
+        "path": "images/exams/36347/36347_d1.gif"
+      }
+    ],
+    "source": "chimeia_docx"
+  },
+  "36352": {
+    "diagrams": [
+      {
+        "filename": "36352_d1.png",
+        "width": 858,
+        "height": 502,
+        "path": "images/exams/36352/36352_d1.png"
+      }
+    ],
+    "source": "chimeia_docx"
+  },
+  "37517": {
+    "diagrams": [
+      {
+        "filename": "37517_d1.png",
+        "width": 660,
+        "height": 289,
+        "path": "images/exams/37517/37517_d1.png"
+      }
+    ],
+    "source": "chimeia_docx"
   }
 }
