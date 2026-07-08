@@ -386,6 +386,14 @@ def main():
             progress = json.load(f)
     progress.setdefault("completed", [])
 
+    # Self-heal: if progress says done but hints are empty, clear progress
+    completed_qids = set(int(k.split("_")[0]) for k in progress["completed"])
+    data_qids = set(q["id"] for q in data)
+    stale = completed_qids - data_qids
+    if stale:
+        print(f"⚠️  Progress has {len(stale)} stale entries (questions no longer in v2). Clearing.")
+        progress["completed"] = [k for k in progress["completed"] if int(k.split("_")[0]) in data_qids]
+
     if args.id:
         data = [q for q in data if q["id"] == args.id]
     elif args.limit > 0:
