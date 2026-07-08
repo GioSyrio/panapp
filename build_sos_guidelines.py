@@ -191,7 +191,13 @@ def main():
                     "biologia": "Βιολογία",
                     "chimeia": "Χημεία",
                     "fysiki_prosanatolismoy": "Φυσική Προσανατολισμού",
-                    "oikonomia": "Οικονομία"}.get(args.subject, args.subject)
+                    "oikonomia": "Οικονομία",
+                    "istoria": "Ιστορία Γενικής",
+                    "istoria_prosanatolismoy": "Ιστορία Προσανατολισμού",
+                    "neoelliniki_glossa_kai_logotechnia": "Νεοελληνική Γλώσσα και Λογοτεχνία",
+                    "latinika": "Λατινικά",
+                    "archaia_elliniki_glossa_kai_grammateia___archaia_ellinika": "Αρχαία Ελληνικά",
+                    }.get(args.subject, args.subject)
 
     # Group by tag
     chapters = defaultdict(list)
@@ -227,9 +233,13 @@ def main():
         
         samples = []
         for q in questions[:12]:
-            plain = re.sub(r'<[^>]+>', ' ', q.get("answer_html", ""))[:500]
-            plain = re.sub(r'\s+', ' ', plain).strip()
-            if plain: samples.append(plain)
+            # Try llm_solution_html first (just generated), then answer_html, then answer_text
+            raw = q.get("llm_solution_html", "") or q.get("answer_html", "") or q.get("answer_text", "")
+            if raw:
+                plain = re.sub(r'<[^>]+>', ' ', raw)[:500]
+                plain = re.sub(r'\s+', ' ', plain).strip()
+                if plain:
+                    samples.append(plain)
         
         if not samples:
             print("  ⚠️ No answers — skipping")

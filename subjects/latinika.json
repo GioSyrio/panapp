@@ -14,7 +14,7 @@
   ],
   "exam_duration_minutes": 180,
   "prompt_file": "prompts/latinika.py",
-  "track": "stem",
+  "track": "humanities",
   "section_types": [
     "section_header",
     "sub_question",
@@ -26,14 +26,14 @@
   "ui": {
     "app_title": "Πανελλαδικές AI Tutor",
     "header_subtitle": "Λατινικά • Θέματα",
-    "input_placeholder": "Γράψε τη σκέψη σου ή ρώτα κάτι...",
+    "input_placeholder": "Γράψε την απάντησή σου ή ρώτα κάτι...",
     "start_title": "Έτοιμος για εξάσκηση;",
-    "start_description": "Θέματα υψηλής πιθανότητας βασισμένα σε στατιστική ανάλυση."
+    "start_description": "Μετάφρασε κείμενα, ανάλυσε γραμματικά και συντακτικά φαινόμενα, και πάρε εξατομικευμένη ανατροφοδότηση."
   },
   "data": {
     "data_dir": "data/subjects/latinika",
     "source_file": "items_raw.json"
   },
   "_status": "draft",
-  "answer_detection": "none"
+  "answer_detection": "narrative"
 }

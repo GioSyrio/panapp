@@ -315,9 +315,25 @@ def call_deepseek_with_retry(fn, *args, max_retries=1, **kwargs):
                 continue
             raise APIError(HELPFUL_ERRORS.get(category, HELPFUL_ERRORS["default"]))
 
+NARRATIVE_ANSWER_KW = [
+    'σύμφωνα με', 'συμφωνα με', 'η άποψή μου', 'η αποψη μου',
+    'πρώτον', 'πρωτον', 'δεύτερον', 'δευτερον', 'κατά τη γνώμη', 'κατα τη γνωμη',
+    'η πηγή', 'η πηγη', 'το κείμενο', 'το κειμενο', 'ο συγγραφέας', 'ο συγγραφεας',
+    'επιχείρημα', 'επιχειρημα', 'συμπερασματικά', 'συμπερασματικα',
+    'εν κατακλείδι', 'εν κατακλειδι', 'από την άποψη', 'απο την αποψη',
+    'το φαινόμενο', 'το φαινομενο', 'η αιτία', 'η αιτια', 'η συνέπεια', 'η συνεπεια',
+    'η μετάφραση', 'η μεταφραση', 'ο ποιητής', 'ο ποιητης',
+    'με λίγα λόγια', 'με λιγα λογια', 'αναλύοντας', 'αναλυοντας',
+    'θεωρώ', 'θεωρω', 'πιστεύω', 'πιστευω', 'κατά τη γνώμη μου', 'κατα τη γνωμη μου',
+    'ο ιστορικός', 'ο ιστορικος', 'η εποχή', 'η εποχη', 'η περίοδος', 'η περιοδος',
+    'ο συγγραφέας αναφέρει', 'ο συγγραφεας αναφερει',
+    'το κείμενο αναφέρεται', 'το κειμενο αναφερεται',
+]
+
 def _is_student_answer(msg, subject_id):
     """Detect if the message is a student answer submission.
-    Driven by subject config `answer_detection`: 'math' | 'code' | 'physics' | 'none'.
+    Driven by subject config `answer_detection`: 'math' | 'code' | 'physics' |
+    'chemistry' | 'biology' | 'economics' | 'narrative' | 'none'.
     """
     if '?' in msg or ';' in msg:
         return False
@@ -344,6 +360,16 @@ def _is_student_answer(msg, subject_id):
         return any(k in msg.lower() for k in BIOLOGY_ANSWER_KW)
     elif mode == "economics":
         return any(k in msg.lower() for k in ECONOMICS_ANSWER_KW)
+    elif mode == "narrative":
+        # Humanities: detect essay-length or structured responses.
+        # Broad acceptance — false positives just trigger evaluation (student can ignore).
+        if len(msg) > 200:
+            return True
+        if '\n' in msg and len(msg) > 80:
+            return True
+        if any(k in msg.lower() for k in NARRATIVE_ANSWER_KW):
+            return True
+        return False
     else:
         return False
 
