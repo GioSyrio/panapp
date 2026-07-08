@@ -368,9 +368,9 @@ def main():
                     sample_with_hints += 1
     if sample_with_hints > 3:
         hints_are_empty = False
-        print(f"⚠️  Hints appear to already exist ({sample_with_hints} hint texts found in first 5 questions)")
-        print("   Skipping to avoid overwriting existing LLM-generated hints.")
-        print("   Delete llm_hints_progress.json if you want to re-generate.")
+        print(f"🛡️  PROTECTED: Hints already exist ({sample_with_hints} non-empty hints in first 5 questions).")
+        print("   Skipping to avoid overwriting expensive LLM-generated data.")
+        print("   To force regeneration: delete llm_hints_progress.json and re-run.")
         return
 
     system_prompt = "You are a Greek tutor. Answer ONLY in Greek. Return valid JSON."
@@ -473,7 +473,7 @@ def main():
                 except Exception as e:
                     print(f"  Q{qid} subq {sub['number']} L{level} ❌ {e}")
                     subq_hints.append({"level": level, "hint_text": f"Σφάλμα: {str(e)[:100]}"})
-                time.sleep(0.8)
+                time.sleep(0.3)
 
             hints[si] = {"subq_idx": si, "number": sub["number"], "hints": subq_hints}
             progress["completed"].append(key)

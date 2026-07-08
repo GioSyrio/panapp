@@ -332,7 +332,7 @@ def main():
             _save_with_merge(v2_file, data)
             print(f"  💾 Saved ({i+1}/{len(data_qs)})")
 
-        time.sleep(1.5)
+        time.sleep(0.5)
 
     # Final save
     _save_with_merge(v2_file, data)

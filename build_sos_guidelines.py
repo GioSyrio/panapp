@@ -142,7 +142,7 @@ def llm_merge(client, chapters, subject_name):
             print("    ❌ Merge failed: " + str(e))
             merged.extend(group_chs)
         
-        time.sleep(0.8)
+        time.sleep(0.4)
     
     merged.sort(key=lambda x: -x["question_count"])
     print("  ✅ " + str(len(chapters)) + " → " + str(len(merged)) + " chapters")

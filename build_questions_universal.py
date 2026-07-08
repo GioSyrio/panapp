@@ -19,7 +19,13 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_PARTS = ["Θέμα Α", "Θέμα Β", "Θέμα Γ", "Θέμα Δ"]
 
 # ── PROTECTED: Never overwrite these — hours of manual work ──────────────────
-PROTECTED_SLUGS = {"mathematics", "informatics", "mathimatika_prosanatolismoy", "pliroforiki"}
+PROTECTED_SLUGS = {
+    "mathematics", "informatics", "mathimatika_prosanatolismoy", "pliroforiki",
+    # Humanities — expensive LLM-generated data
+    "istoria", "istoria_prosanatolismoy",
+    "neoelliniki_glossa_kai_logotechnia",
+    "latinika", "archaia_elliniki_glossa_kai_grammateia___archaia_ellinika",
+}
 
 def esc(s):
     return _html.escape(s) if s else ""
