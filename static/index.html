@@ -29,6 +29,9 @@
         @media (max-width: 800px) { .session-layout { flex-direction: column; } .col-left { position: static; max-height: none; } .col-right { flex: auto; min-width: 0; } }
         :root.light { --bg: #faf9f7; --surface: #ffffff; --surface2: #f0ede8; --border: #e0dcd4; --text: #1a1a2e; --text2: #6b7280; --accent: #0d9488; --code-bg: #f0ede8; --code-text: #1e293b; }
         .header { text-align: center; padding: 20px 0 16px; border-bottom: 1px solid var(--border); margin-bottom: 20px; position: relative; }
+        .back-btn { position: absolute; top: 18px; left: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 6px 14px; font-size: 0.82rem; cursor: pointer; color: var(--text2); display: none; align-items: center; gap: 4px; transition: all 0.15s; }
+        .back-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .back-btn.show { display: inline-flex; }
         .header h1 { font-size: 1.8rem; font-weight: 800; background: linear-gradient(135deg, var(--accent), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .header .sub { color: var(--text2); font-size: 0.85rem; margin-top: 4px; }
         .dark-toggle { position: absolute; top: 16px; right: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 4px 10px; font-size: 0.85rem; cursor: pointer; color: var(--text2); }
@@ -167,6 +170,7 @@
 <div class="app" id="app">
     <div class="header">
         <button class="dark-toggle" onclick="toggleDark()" id="dark-btn">🌙 Σκούρο</button>
+        <button class="back-btn" id="back-btn" onclick="goToLanding()">← Πίσω στα μαθήματα</button>
         <h1>Πανελλαδικές AI Tutor</h1>
         <div class="sub" id="subj-label">Πληροφορική • Θέματα 2 & 4</div>
     </div>
@@ -278,6 +282,21 @@ let currentSubject = 'informatics';
 let subjectTrack = 'stem';
 let allSubjects = [];
 
+function goToLanding() {
+    // Clear session if active
+    if (sid) {
+        sid = null;
+        try { localStorage.removeItem('panapp_progress'); } catch(e) {}
+    }
+    // Hide all screens, show landing
+    document.getElementById('session').style.display = 'none';
+    document.getElementById('cheatsheet').style.display = 'none';
+    document.getElementById('start-screen').style.display = 'block';
+    document.getElementById('back-btn').classList.remove('show');
+    document.getElementById('messages').innerHTML = '';
+    document.getElementById('btn-start').disabled = false;
+}
+
 // ── Pedio definitions ──
 var PEDIO_INFO = {
     1: { name: 'Ανθρωπιστικών, Νομικών & Κοινωνικών Σπουδών', icon: '🏛️', desc: 'Θεωρητικά μαθήματα — Νομική, Ψυχολογία, Φιλολογία, Παιδαγωγικά', color: '#8b5cf6' },
@@ -383,9 +402,10 @@ async function start() {
         subjectTrack = (d.subject && d.subject.track) || 'stem';
         document.getElementById('st-ai').innerHTML = d.has_ai ? '🤖 <span>AI ενεργό</span>' : '📝 <span>Αυτόνομη</span>';
         document.getElementById('st-ai').className = d.has_ai ? 'stat live' : 'stat';
-        document.getElementById('start-screen').style.display = 'none';
-        document.getElementById('session').style.display = 'block';
-        // Hide graph button for humanities
+    document.getElementById('start-screen').style.display = 'none';
+    document.getElementById('session').style.display = 'block';
+    document.getElementById('back-btn').classList.add('show');
+    // Hide graph button for humanities
         var graphBtn = document.querySelector('.qbtn[onclick="openGraph()"]');
         if (graphBtn) graphBtn.style.display = (subjectTrack === 'humanities') ? 'none' : '';
         renderQuestion(q);
@@ -743,6 +763,7 @@ var csData = null;
 async function loadCheatsheet() {
     document.getElementById('start-screen').style.display = 'none';
     document.getElementById('cheatsheet').style.display = 'block';
+    document.getElementById('back-btn').classList.add('show');
     document.getElementById('cs-title').textContent = '📚 Οδηγός SOS — ' + (currentSubject === 'mathematics_prosanatolismoy' ? 'Μαθηματικά Προσανατολισμού' : currentSubject);
     document.getElementById('cs-loading').style.display = 'block';
     document.getElementById('cs-empty').style.display = 'none';
