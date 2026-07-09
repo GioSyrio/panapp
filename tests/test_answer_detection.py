@@ -30,9 +30,32 @@ def test_physics_detection():
     assert _is_student_answer("πώς βρίσκω την ταχύτητα;", "fysiki_prosanatolismoy") == False
 
 def test_none_detection():
-    # Draft subjects with answer_detection="none" should not trigger
-    assert _is_student_answer("η παράγωγος είναι", "biologia") == False
-    assert _is_student_answer("ΔΙΑΒΑΣΕ x", "biologia") == False
+    # Subjects with answer_detection="none" should not trigger
+    assert _is_student_answer("η παράγωγος είναι", "unknown_subject") == False
+    assert _is_student_answer("ΔΙΑΒΑΣΕ x", "unknown_subject") == False
+
+def test_narrative_detection():
+    """Humanities: essay-length or structured responses."""
+    # Long essay (200+ chars) — should detect
+    essay = "Η άποψή μου είναι ότι η αρχή της δεδηλωμένης αποτέλεσε σταθμό στην πολιτική ιστορία της Ελλάδας. Σύμφωνα με το κείμενο Α, ο βασιλιάς Γεώργιος δρούσε μέσα στο συνταγματικό πλαίσιο, όμως αυτό ερχόταν σε αντίφαση με τη δημοκρατική δομή του πολιτεύματος. Η πηγή αναφέρει ότι..."
+    assert _is_student_answer(essay, "istoria") == True
+    
+    # Medium-length with narrative keywords
+    assert _is_student_answer("Σύμφωνα με την πηγή, η λαϊκή κυριαρχία κατοχυρώθηκε σταδιακά μετά το Σύνταγμα του 1864. Πρώτον, διευρύνθηκε το εκλογικό δικαίωμα.", "istoria") == True
+    
+    # Essay with newlines (80+ chars with \n)
+    assert _is_student_answer("Η μετάφραση του κειμένου:\n\nΟ Καίσαρας διέταξε τους στρατιώτες να προχωρήσουν.\n\nΓραμματική ανάλυση:", "latinika") == True
+    
+    # Questions should NOT be detected
+    assert _is_student_answer("πώς αναλύω την πηγή;", "istoria") == False
+    assert _is_student_answer("τι σημαίνει δεδηλωμένη;", "istoria") == False
+    assert _is_student_answer("μπορείς να με βοηθήσεις με τη μετάφραση;", "latinika") == False
+    assert _is_student_answer("δεν καταλαβαίνω το κείμενο", "neoelliniki_glossa_kai_logotechnia") == False
+    
+    # Short conversational — should NOT detect
+    assert _is_student_answer("ok", "istoria") == False
+    assert _is_student_answer("κατάλαβα", "istoria") == False
+    assert _is_student_answer("ευχαριστώ", "istoria") == False
 
 def test_long_message():
     # Messages >100 chars with newlines auto-detect
@@ -40,7 +63,7 @@ def test_long_message():
     assert _is_student_answer(msg, "mathematics_prosanatolismoy") == True
 
 if __name__ == "__main__":
-    tests = [test_math_detection, test_code_detection, test_physics_detection, test_none_detection, test_long_message]
+    tests = [test_math_detection, test_code_detection, test_physics_detection, test_none_detection, test_narrative_detection, test_long_message]
     passed = 0
     for test in tests:
         try:

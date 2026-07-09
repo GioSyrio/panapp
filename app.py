@@ -337,7 +337,10 @@ def _is_student_answer(msg, subject_id):
     """
     if '?' in msg or ';' in msg:
         return False
-    if any(qw in msg.lower() for qw in ['πώς', 'πως', 'τι ', 'γιατί', 'γιατι', 'πότε', 'ποτε', 'μπορείς', 'μπορεις', 'βοήθα', 'βοηθα', 'δεν ξέρω', 'δεν ξερω', 'δεν καταλαβαίν', 'δεν καταλαβαιν', 'εξήγησ', 'εξηγησ']):
+    if any(qw in msg.lower() for qw in ['πώς', 'πως', 'γιατί', 'γιατι', 'πότε', 'ποτε', 'μπορείς', 'μπορεις', 'βοήθα', 'βοηθα', 'δεν ξέρω', 'δεν ξερω', 'δεν καταλαβαίν', 'δεν καταλαβαιν', 'εξήγησ', 'εξηγησ']):
+        return False
+    # Detect standalone "τι" (question word) but NOT "ότι" (conjunction)
+    if re.search(r'(?<!ό)\bτι\b', msg.lower()):
         return False
     if len(msg) > 100 and '\n' in msg:
         return True
@@ -396,9 +399,9 @@ def start_session():
     parts = subject_cfg.get("parts", ["Θέμα 2"])
     
     # ── Load subject-specific classified data ──
+    global exam_data, ranked, details, trend_context
     classified_data = _load_classified_data(subject_id)
-    if classified_data:
-        global exam_data, ranked, details, trend_context
+    if classified_data and len(classified_data) > 0 and "year" in classified_data[0]:
         exam_data = classified_data
         ranked_priorities, details = calculate_topic_priorities(exam_data)
         noise = set()
@@ -408,6 +411,32 @@ def start_session():
             noise = {"ΜΑΘΗΜΑΤΙΚΑ:", "ΑΛΓΕΒΡΑ:", ""}
         ranked = [(t, s) for t, s in ranked_priorities if t not in noise]
         trend_context = build_trend_context(ranked, details, top_n=5)
+    else:
+        # Fallback: load from questions_v2.json for subjects without classified data
+        v2_list = list(_load_v2_data(subject_id).values())
+        if v2_list:
+            # Convert v2 questions to classified-like format for topic priority
+            # Normalize year: convert string to int, skip unknown
+            def _safe_year(y):
+                try: return int(y)
+                except: return None
+            
+            v2_exam = [
+                {
+                    "id": q["id"],
+                    "year": _safe_year(q.get("year", 0)) or 2020,
+                    "part": q.get("part", "?"),
+                    "points": q.get("points", 0),
+                    "conceptual_tags": q.get("conceptual_tags", []),
+                    "question_text": q.get("question_text", ""),
+                    "type": q.get("type", "open_ended_problem"),
+                }
+                for q in v2_list
+            ]
+            exam_data = v2_exam
+            ranked_priorities, details = calculate_topic_priorities(exam_data)
+            ranked = [(t, s) for t, s in ranked_priorities if t]
+            trend_context = build_trend_context(ranked, details, top_n=5)
     
     if not exam_data:
         return jsonify({"error": "Δεν φορτώθηκαν τα δεδομένα. Δοκίμασε αργότερα."}), 500

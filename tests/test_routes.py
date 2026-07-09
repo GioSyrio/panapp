@@ -60,8 +60,43 @@ def test_jump():
     data = resp.get_json()
     assert data["question"]["id"] == 23196
 
+def test_humanities_session():
+    """Test session start for a humanities subject."""
+    resp = client.post("/api/session/start", json={"subject": "istoria"})
+    data = resp.get_json()
+    assert "session_id" in data
+    assert "question" in data
+    assert data["question"]["id"] is not None
+    assert len(data["question"]["question_html"]) > 0
+    # Verify subject config is returned
+    assert data["subject"]["name"] == "Ιστορία"
+
+def test_humanities_chat():
+    """Test chat commands for humanities."""
+    resp = client.post("/api/session/start", json={"subject": "istoria"})
+    sid = resp.get_json()["session_id"]
+    
+    # Solution command
+    resp = client.post("/api/chat", json={"session_id": sid, "message": "λύση"})
+    data = resp.get_json()
+    assert data["is_solution"] == True
+    
+    # Next command
+    resp = client.post("/api/chat", json={"session_id": sid, "message": "επόμενο"})
+    data = resp.get_json()
+    assert data["next_question"] == True
+
+def test_humanities_hint():
+    """Test hint functionality for humanities."""
+    resp = client.post("/api/session/start", json={"subject": "neoelliniki_glossa_kai_logotechnia"})
+    sid = resp.get_json()["session_id"]
+    resp = client.post("/api/session/hint", json={"session_id": sid, "hint_state": {}})
+    data = resp.get_json()
+    assert "html" in data or "reply" in data
+
 if __name__ == "__main__":
-    tests = [test_health, test_subjects, test_session_start, test_chat, test_hint, test_jump]
+    tests = [test_health, test_subjects, test_session_start, test_chat, test_hint, test_jump,
+             test_humanities_session, test_humanities_chat, test_humanities_hint]
     passed = 0
     for test in tests:
         try:
