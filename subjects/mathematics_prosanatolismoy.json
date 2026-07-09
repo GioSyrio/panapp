@@ -3,25 +3,33 @@
   "name": "Μαθηματικά Προσανατολισμού",
   "icon": "📐",
   "track": "stem",
-  "parts": ["Θέμα Α", "Θέμα Β", "Θέμα Γ", "Θέμα Δ"],
-  "points_range": [10, 25],
+  "parts": [
+    "Θέμα Α",
+    "Θέμα Β",
+    "Θέμα Γ",
+    "Θέμα Δ"
+  ],
+  "points_range": [
+    10,
+    25
+  ],
   "exam_duration_minutes": 180,
-
   "prompt_file": "prompts/mathematics_prosanatolismoy.py",
-
   "ui": {
     "header_subtitle": "Μαθηματικά Προσανατολισμού • Θέματα Α-Δ",
     "input_placeholder": "Γράψε τη σκέψη σου ή ρώτα κάτι...",
     "start_title": "Έτοιμος για εξάσκηση;",
     "start_description": "Θέματα υψηλής πιθανότητας βασισμένα σε στατιστική ανάλυση. Γράψε την απάντησή σου, πάρε feedback, και δες τη λύση βήμα-βήμα."
   },
-
   "data": {
     "source_file": "questions_classified.json",
     "built_file": "questions_v2.json",
     "data_dir": "data/subjects/mathematics_prosanatolismoy"
   },
-
   "answer_detection": "math",
-  "_status": "production"
+  "_status": "production",
+  "pedio": [
+    2,
+    4
+  ]
 }

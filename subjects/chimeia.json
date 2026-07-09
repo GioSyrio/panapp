@@ -35,5 +35,9 @@
     "source_file": "questions_v2.json"
   },
   "_status": "onboarded",
-  "answer_detection": "chemistry"
+  "answer_detection": "chemistry",
+  "pedio": [
+    2,
+    3
+  ]
 }

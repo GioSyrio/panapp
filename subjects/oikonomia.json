@@ -35,5 +35,8 @@
     "source_file": "questions_v2.json"
   },
   "_status": "onboarded",
-  "answer_detection": "economics"
+  "answer_detection": "economics",
+  "pedio": [
+    4
+  ]
 }

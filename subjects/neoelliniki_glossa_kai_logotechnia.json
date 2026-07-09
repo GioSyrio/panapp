@@ -35,5 +35,11 @@
     "source_file": "items_raw.json"
   },
   "_status": "onboarded",
-  "answer_detection": "narrative"
+  "answer_detection": "narrative",
+  "pedio": [
+    1,
+    2,
+    3,
+    4
+  ]
 }

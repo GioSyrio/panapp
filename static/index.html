@@ -101,7 +101,24 @@
         .start-btn:hover { transform: scale(1.04); }
         .start-btn:disabled { opacity: 0.4; cursor: not-allowed; }
         .subject-picker { margin-bottom: 28px; }
-        .subject-prompt { color: var(--text2); font-size: 0.9rem; margin-bottom: 14px; }
+        .subject-prompt { color: var(--text2); font-size: 0.9rem; margin-bottom: 14px; text-align: center; }
+        .pedio-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 20px; }
+        @media (max-width: 1000px) { .pedio-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { .pedio-grid { grid-template-columns: 1fr; } }
+        .pedio-col { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; }
+        .pedio-col:hover { border-color: var(--accent); }
+        .pedio-col.active { border-color: var(--accent); background: rgba(20,184,166,0.05); box-shadow: 0 0 20px rgba(20,184,166,0.1); }
+        .pedio-header { font-weight: 800; font-size: 0.8rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
+        .pedio-header .pedio-badge { background: var(--accent); color: #fff; font-size: 0.7rem; padding: 2px 8px; border-radius: 10px; }
+        .pedio-subjects { display: flex; flex-direction: column; gap: 8px; }
+        .pedio-subj { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 10px; border: 1px solid transparent; background: var(--surface2); cursor: pointer; transition: all 0.15s; }
+        .pedio-subj:hover { border-color: var(--accent); background: rgba(20,184,166,0.05); }
+        .pedio-subj.selected { border-color: var(--accent); background: rgba(20,184,166,0.1); }
+        .pedio-subj .subj-icon { font-size: 1.4rem; flex-shrink: 0; }
+        .pedio-subj .subj-info { flex: 1; min-width: 0; }
+        .pedio-subj .subj-name { font-weight: 700; font-size: 0.82rem; color: var(--text); }
+        .pedio-subj .subj-desc { font-size: 0.68rem; color: var(--text2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .pedio-desc { font-size: 0.68rem; color: var(--text2); margin-top: 6px; line-height: 1.4; }
         .subject-options { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
         .subj-opt { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 16px 20px; border-radius: 12px; border: 2px solid var(--border); background: var(--surface); cursor: pointer; min-width: 160px; }
         .subj-opt:hover { border-color: var(--accent); }
@@ -238,27 +255,58 @@ let currentSubject = 'informatics';
 let subjectTrack = 'stem';
 let allSubjects = [];
 
+// ── Pedio definitions ──
+var PEDIO_INFO = {
+    1: { name: 'Ανθρωπιστικών, Νομικών & Κοινωνικών Σπουδών', icon: '🏛️', desc: 'Θεωρητικά μαθήματα — Νομική, Ψυχολογία, Φιλολογία, Παιδαγωγικά', color: '#8b5cf6' },
+    2: { name: 'Θετικών & Τεχνολογικών Σπουδών', icon: '🔬', desc: 'Θετικές επιστήμες — Πολυτεχνεία, Πληροφορική, Στρατιωτικές σχολές', color: '#3b82f6' },
+    3: { name: 'Σπουδών Υγείας & Ζωής', icon: '💚', desc: 'Ιατρική, Φαρμακευτική, Νοσηλευτική, Γεωπονικές σχολές', color: '#22c55e' },
+    4: { name: 'Σπουδών Οικονομίας & Πληροφορικής', icon: '💼', desc: 'Διοίκηση Επιχειρήσεων, Οικονομία, Πληροφορική', color: '#f59e0b' },
+};
+
+function subjectsForPedio(pedioNum) {
+    return allSubjects.filter(function(s) { return (s.pedio || []).indexOf(pedioNum) !== -1; });
+}
+
+function buildSubjectPicker() {
+    var container = document.getElementById('subject-options');
+    var html = '<div class="pedio-grid">';
+    for (var p = 1; p <= 4; p++) {
+        var info = PEDIO_INFO[p];
+        var subs = subjectsForPedio(p);
+        if (subs.length === 0) continue;
+        html += '<div class="pedio-col" id="pedio-col-' + p + '" style="border-left: 3px solid ' + info.color + ';">';
+        html += '<div class="pedio-header"><span class="pedio-badge" style="background:' + info.color + ';">' + info.icon + ' ' + p + 'ο Πεδίο</span></div>';
+        html += '<div style="font-weight:700;font-size:0.78rem;color:var(--text);margin-bottom:4px;">' + info.name + '</div>';
+        html += '<div class="pedio-desc">' + info.desc + '</div>';
+        html += '<div class="pedio-subjects" style="margin-top:10px;">';
+        subs.forEach(function(subj) {
+            var isSelected = subj.id === currentSubject;
+            html += '<div class="pedio-subj' + (isSelected ? ' selected' : '') + '" onclick="selectSubject(\'' + subj.id + '\', this)" data-subject="' + subj.id + '">'
+                + '<span class="subj-icon">' + (subj.icon || '📚') + '</span>'
+                + '<div class="subj-info">'
+                + '<div class="subj-name">' + (subj.name || subj.id) + '</div>'
+                + '<div class="subj-desc">' + (subj.desc || '') + '</div>'
+                + '</div>'
+                + '</div>';
+        });
+        html += '</div></div>';
+    }
+    html += '</div>';
+    container.innerHTML = html;
+}
+
 async function loadSubjectOptions() {
     try {
         var r = await fetch('/api/subjects');
         var d = await r.json();
         allSubjects = d.subjects || [];
-        var container = document.getElementById('subject-options');
-        container.innerHTML = '';
-        allSubjects.forEach(function(subj, i) {
-            var partsHint = subj.parts ? subj.parts.slice(0,2).join(' & ') : '';
-            container.innerHTML += '<button class="subj-opt' + (i===0?' active':'') + '" data-subject="' + subj.id + '" onclick="selectSubject(\'' + subj.id + '\', this)">'
-                + '<span class="subj-icon">' + (subj.icon || '📚') + '</span>'
-                + '<span class="subj-name">' + (subj.name || subj.id) + '</span>'
-                + '<span class="subj-desc">' + (subj.desc || partsHint) + '</span>'
-                + '</button>';
-        });
         if (allSubjects.length > 0) {
             currentSubject = allSubjects[0].id;
             try {
                 var saved = localStorage.getItem('panapp_subject');
                 if (saved && allSubjects.some(function(s){return s.id===saved})) currentSubject = saved;
             } catch(e) {}
+            buildSubjectPicker();
             document.getElementById('subj-label').textContent = allSubjects.find(function(s){return s.id===currentSubject})?.desc || currentSubject;
         }
     } catch(e) {}

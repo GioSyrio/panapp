@@ -3,25 +3,30 @@
   "name": "Πληροφορική",
   "icon": "🧮",
   "track": "stem",
-  "parts": ["Θέμα 2", "Θέμα 4"],
-  "points_range": [10, 25],
+  "parts": [
+    "Θέμα 2",
+    "Θέμα 4"
+  ],
+  "points_range": [
+    10,
+    25
+  ],
   "exam_duration_minutes": 180,
-
   "prompt_file": "prompts/informatics.py",
-
   "ui": {
     "header_subtitle": "Πληροφορική • Θέματα 2 & 4",
     "input_placeholder": "Γράψε τη σκέψη σου ή ρώτα κάτι...",
     "start_title": "Έτοιμος για εξάσκηση;",
     "start_description": "Θέματα υψηλής πιθανότητας βασισμένα σε στατιστική ανάλυση. Γράψε την απάντησή σου, πάρε feedback, και δες τη λύση βήμα-βήμα."
   },
-
   "data": {
     "source_file": "questions_classified.json",
     "built_file": "questions_v2.json",
     "data_dir": "data/subjects/informatics"
   },
-
   "answer_detection": "code",
-  "_status": "production"
+  "_status": "production",
+  "pedio": [
+    4
+  ]
 }

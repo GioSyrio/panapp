@@ -35,5 +35,9 @@
     "source_file": "items_raw.json"
   },
   "_status": "onboarded",
-  "answer_detection": "math"
+  "answer_detection": "math",
+  "pedio": [
+    2,
+    4
+  ]
 }

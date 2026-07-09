@@ -35,5 +35,8 @@
     "source_file": "items_raw.json"
   },
   "_status": "onboarded",
-  "answer_detection": "biology"
+  "answer_detection": "biology",
+  "pedio": [
+    3
+  ]
 }

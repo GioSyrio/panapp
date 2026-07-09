@@ -720,7 +720,8 @@ def subjects_list():
             "icon": cfg.get("icon", "📚"),
             "desc": cfg.get("ui", {}).get("header_subtitle", "").replace(" • Θέματα", ""),
             "parts": cfg.get("parts", []),
-            "status": cfg.get("_status", "draft")
+            "status": cfg.get("_status", "draft"),
+            "pedio": cfg.get("pedio", []),
         })
     return jsonify({"subjects": subjects})
 

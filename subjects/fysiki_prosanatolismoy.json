@@ -3,25 +3,33 @@
   "name": "Φυσική Προσανατολισμού",
   "icon": "⚡",
   "track": "stem",
-  "parts": ["Θέμα Α", "Θέμα Β", "Θέμα Γ", "Θέμα Δ"],
-  "points_range": [10, 25],
+  "parts": [
+    "Θέμα Α",
+    "Θέμα Β",
+    "Θέμα Γ",
+    "Θέμα Δ"
+  ],
+  "points_range": [
+    10,
+    25
+  ],
   "exam_duration_minutes": 180,
-
   "prompt_file": "prompts/fysiki_prosanatolismoy.py",
-
   "ui": {
     "header_subtitle": "Φυσική Προσανατολισμού • Θέματα Α-Δ",
     "input_placeholder": "Γράψε τη σκέψη σου ή ρώτα κάτι...",
     "start_title": "Έτοιμος για εξάσκηση;",
     "start_description": "Θέματα υψηλής πιθανότητας βασισμένα σε στατιστική ανάλυση."
   },
-
   "data": {
     "source_file": "questions_v2.json",
     "built_file": "questions_v2.json",
     "data_dir": "data/subjects/fysiki_prosanatolismoy"
   },
-
   "answer_detection": "physics",
-  "_status": "onboarded"
+  "_status": "onboarded",
+  "pedio": [
+    2,
+    3
+  ]
 }
