@@ -538,6 +538,12 @@ def chat():
     if not deepseek_client:
         return jsonify({"reply": "Το AI είναι προσωρινά μη διαθέσιμο. Χρησιμοποίησε το Hint ή πήγαινε στο επόμενο θέμα.", "no_ai": True})
 
+    # ── Rate limiting + AI call budget ──
+    if rl := _check_rate_limit(sess, "chat", MAX_CHAT_PER_MIN):
+        return jsonify({"reply": rl, "error": True})
+    if cap := _check_ai_call_cap(sess):
+        return jsonify({"reply": cap, "error": True})
+
     is_answer = _is_student_answer(msg, subj_id)
 
     subq_ctx = ""
@@ -565,6 +571,7 @@ def chat():
                     plain_ans = re.sub(r'<[^>]+>', ' ', qhtml)[:500].strip()
                     fact_check = f"\n\n[ΠΡΟΣΟΧΗ: Ο μαθητής έγραψε μια μαθηματική απάντηση. Αν είναι ΛΑΘΟΣ, οδήγησέ τον στη σωστή κατεύθυνση. Μην πεις 'Σωστά!' αν δεν είναι. Σχετική λύση: {plain_ans}]"
             ms[-1] = {"role": "user", "content": msg + subq_ctx + hint_ctx + fact_check}
+            _track_ai_call(sess)
             resp = call_deepseek_with_retry(deepseek_client.chat.completions.create,
                                             model="deepseek-chat", messages=ms, temperature=0.4, max_tokens=500)
             reply = strip_reasoning(resp.choices[0].message.content or "Συγνώμη, κάτι πήγε στραβά.")
@@ -585,6 +592,7 @@ def chat():
         q = sess["current_question"]
         eval_prompt = sess.get("eval_prompt",
             get_prompts(subj_id).EVALUATION_SYSTEM_PROMPT)
+        _track_ai_call(sess)
         em = [{"role": "system", "content": eval_prompt},
               {"role": "user", "content": f"Ερώτηση: {q.get('question_text','')[:2000]}\n\nΑπάντηση μαθητή: {msg}{subq_ctx}{hint_ctx}"}]
         resp = call_deepseek_with_retry(deepseek_client.chat.completions.create,
