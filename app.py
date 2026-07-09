@@ -552,8 +552,8 @@ def chat():
 
     subq_ctx = ""
     active_subq = body.get("active_subq", {})
-    if active_subq and active_subq.get("number"):
-        subq_ctx = f"\n\n[Ενεργό υποερώτημα: {active_subq.get('number')}. {active_subq.get('content', '')}]"
+    if active_subq and active_subq.get("number") and active_subq.get("number") != "?":
+        subq_ctx = f"\n\n[Ο μαθητής δουλεύει στο Υποερώτημα {active_subq.get('number')}: {active_subq.get('content', '')[:200]}. Βοήθησέ τον ΣΥΓΚΕΚΡΙΜΕΝΑ για αυτό το υποερώτημα.]"
 
     hint_ctx = ""
     hs = sess.get("hint_state", {})
