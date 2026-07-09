@@ -395,11 +395,19 @@ def main():
                 if h.get("hint_text", "").strip():
                     sample_with_hints += 1
     if sample_with_hints > 3:
-        hints_are_empty = False
-        print(f"🛡️  PROTECTED: Hints already exist ({sample_with_hints} non-empty hints in first 5 questions).")
-        print("   Skipping to avoid overwriting expensive LLM-generated data.")
-        print("   To force regeneration: delete llm_hints_progress.json and re-run.")
-        return
+        # If progress file exists and has entries, truly protected
+        progress_file_check = os.path.join(data_dir, "llm_hints_progress.json")
+        if os.path.exists(progress_file_check):
+            with open(progress_file_check, encoding="utf-8") as pf:
+                prog_check = json.load(pf)
+            if len(prog_check.get("completed", [])) > 0:
+                hints_are_empty = False
+                print(f"🛡️  PROTECTED: Hints already exist ({sample_with_hints} non-empty hints in first 5 questions).")
+                print("   Skipping to avoid overwriting expensive LLM-generated data.")
+                print("   To force regeneration: delete llm_hints_progress.json and re-run.")
+                return
+        # Progress file missing/empty — hints are present but progress is stale, allow regeneration
+        print(f"⚠️  Hints exist ({sample_with_hints}) but no progress file. Will regenerate.")
 
     system_prompt = "You are a Greek tutor. Answer ONLY in Greek. Return valid JSON."
     hint_prompt = get_hint_prompt(subject_id)
