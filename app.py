@@ -826,7 +826,8 @@ def _handle_hint(sess):
         # No more hints — show full answer for this sub-question
         hs["subqIdx"] = si + 1; hs["hintCount"] = 0; sess["hint_state"] = hs
         fa = v2.get("llm_solution_html") or v2.get("answer_html", "")
-        if fa and deepseek_client:
+        if fa and deepseek_client and not _check_ai_call_cap(sess):
+            _track_ai_call(sess)
             filtered = _filter_answer_for_subq(fa, sn, sqs[si].get("content", ""))
             fa = filtered or fa
         return jsonify({"html": fa, "hint_state": hs, "is_full_answer": True,
@@ -836,7 +837,8 @@ def _handle_hint(sess):
     if hc >= 4:
         hs["subqIdx"] = si + 1; hs["hintCount"] = 0; sess["hint_state"] = hs
         fa = v2.get("llm_solution_html") or v2.get("answer_html", "")
-        if fa and deepseek_client:
+        if fa and deepseek_client and not _check_ai_call_cap(sess):
+            _track_ai_call(sess)
             filtered = _filter_answer_for_subq(fa, sn, sqs[si].get("content", ""))
             fa = filtered or fa
         return jsonify({"html": fa, "hint_state": hs, "is_full_answer": True,
