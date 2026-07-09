@@ -34,6 +34,6 @@
     "data_dir": "data/subjects/istoria",
     "source_file": "items_raw.json"
   },
-  "_status": "draft",
+  "_status": "onboarded",
   "answer_detection": "narrative"
 }
