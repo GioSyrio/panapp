@@ -474,6 +474,10 @@ def start_session():
         "started_at": datetime.now(timezone.utc).isoformat(), "history": [],
         "subject_id": subject_id,
         "eval_prompt": eval_prompt,
+        # Per-session data (thread-safe — no globals)
+        "exam_data": exam_data,
+        "ranked": ranked,
+        "trend_context": trend_context,
     }
     _persist_session(sid)
     logger.info(f"Session started: {sid[:8]} [{subject_id}]")
@@ -632,7 +636,8 @@ def next_question():
     subj_id = s.get("subject_id", "informatics")
     subject_cfg = load_subject_config(subj_id)
     parts = subject_cfg.get("parts", ["Θέμα 2", "Θέμα 4"])
-    candidates = [x for x in exam_data if x["part"] in parts and x["id"] not in s["seen_ids"]]
+    session_exam_data = s.get("exam_data", exam_data)
+    candidates = [x for x in session_exam_data if x["part"] in parts and x["id"] not in s["seen_ids"]]
     q = random.choice(candidates) if candidates else None
     if not q:
         return jsonify({"reply": "Δεν υπάρχουν άλλα θέματα! 🎓", "session_complete": True})
@@ -647,20 +652,21 @@ def next_question():
     q_text = re.sub(r'<[^>]+>', ' ', q_html)[:3000].strip()
     q_text = re.sub(r'\s+', ' ', q_text)
 
+    stc = s.get("trend_context", trend_context)
     s["messages"] = [{"role": "system", "content": (
         tutor + "\n\n" +
         "📋 ΤΡΕΧΟΥΣΑ ΑΣΚΗΣΗ:\n" +
         q_text + "\n\n" +
         f"Θέμα: {q['part']} — {q.get('points', 0)} μονάδες, Έτος: {q.get('year', '')}\n" +
         f"Έννοιες: {', '.join(q.get('conceptual_tags', [])[:5])}\n" +
-        trend_context
+        stc
     )}]
     s["hint_state"] = {"subqIdx": 0, "hintCount": 0, "totalSubqs": len(_get_subquestions(str(q["id"]), subj_id)) or 1}
     _persist_session(sid)
     return jsonify({
         "question": format_exam_question(q, subject_id=subj_id),
         "stats": {"completed": s["completed_count"], "total_points": s["total_points"],
-                  "remaining": len(exam_data) - len(s["seen_ids"])}
+                  "remaining": len(session_exam_data) - len(s["seen_ids"])}
     })
 
 @app.route("/api/session/previous", methods=["POST"])
@@ -671,7 +677,8 @@ def previous():
     s = sessions[sid]; h = s.get("history", [])
     if not h: return jsonify({"error": "Δεν υπάρχει προηγούμενο."}), 400
     p = h.pop()
-    pq = next((x for x in exam_data if x["id"] == p["question"]["id"]), None)
+    session_exam_data = s.get("exam_data", exam_data)
+    pq = next((x for x in session_exam_data if x["id"] == p["question"]["id"]), None)
     if not pq: return jsonify({"error": "Δεν βρέθηκε."}), 500
     s["current_question"] = pq; s["messages"] = p["messages"]
     s["completed_count"] = max(0, s["completed_count"] - 1)
@@ -743,7 +750,8 @@ def jump_question():
         return jsonify({"error": "No ID"}), 400
     s = sessions[sid]
     sj = s.get("subject_id", "informatics")
-    q = next((x for x in exam_data if x["id"] == tid), None)
+    session_exam_data = s.get("exam_data", exam_data)
+    q = next((x for x in session_exam_data if x["id"] == tid), None)
     if not q:
         return jsonify({"error": "ID not found"}), 404
     s["seen_ids"].add(q["id"])
