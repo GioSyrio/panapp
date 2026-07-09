@@ -235,6 +235,7 @@
 <script>
 let sid = null, loading = false, q = null;
 let currentSubject = 'informatics';
+let subjectTrack = 'stem';
 let allSubjects = [];
 
 async function loadSubjectOptions() {
@@ -300,10 +301,14 @@ async function start() {
     try {
         const d = await api('/api/session/start', {subject: currentSubject});
         sid = d.session_id; q = d.question;
+        subjectTrack = (d.subject && d.subject.track) || 'stem';
         document.getElementById('st-ai').innerHTML = d.has_ai ? '🤖 <span>AI ενεργό</span>' : '📝 <span>Αυτόνομη</span>';
         document.getElementById('st-ai').className = d.has_ai ? 'stat live' : 'stat';
         document.getElementById('start-screen').style.display = 'none';
         document.getElementById('session').style.display = 'block';
+        // Hide graph button for humanities
+        var graphBtn = document.querySelector('.qbtn[onclick="openGraph()"]');
+        if (graphBtn) graphBtn.style.display = (subjectTrack === 'humanities') ? 'none' : '';
         renderQuestion(q);
         updateStats({completed:0, total_points:0, remaining: d.total_questions || 0});
         addMsg('system', '📝 Γράψε την απάντησή σου ή ξεκίνα με ερωτήσεις.');

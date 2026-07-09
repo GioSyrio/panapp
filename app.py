@@ -781,19 +781,33 @@ def _handle_hint(sess):
         return jsonify({"all_done": True, "hint_state": hs, "reply": "✅ Ολοκλήρωσες όλα τα υποερωτήματα!"})
     sn = sqs[si]["number"]
     hints = v2.get("hints", [])
-    ht = hints[si]["hints"][hc]["hint_text"] if si < len(hints) and hc < len(hints[si].get("hints", [])) else None
+    
+    # If hints have fewer groups than sub-questions (legacy data), use group 0
+    hint_gi = si if si < len(hints) else 0
+    ht = None
+    if hint_gi < len(hints):
+        hint_group = hints[hint_gi]
+        if hc < len(hint_group.get("hints", [])):
+            ht = hint_group["hints"][hc]["hint_text"]
+    
     if not ht:
+        # No more hints — show full answer for this sub-question
         hs["subqIdx"] = si + 1; hs["hintCount"] = 0; sess["hint_state"] = hs
         fa = v2.get("llm_solution_html") or v2.get("answer_html", "")
-        filtered = _filter_answer_for_subq(fa, sn, sqs[si].get("content", "")) if deepseek_client else fa
-        return jsonify({"html": filtered or fa, "hint_state": hs, "is_full_answer": True,
+        if fa and deepseek_client:
+            filtered = _filter_answer_for_subq(fa, sn, sqs[si].get("content", ""))
+            fa = filtered or fa
+        return jsonify({"html": fa, "hint_state": hs, "is_full_answer": True,
                         "reply": f"📚 Υποερώτημα {sn} — Πλήρης λύση."})
+    
     hc += 1; hs["hintCount"] = hc; sess["hint_state"] = hs
     if hc >= 4:
         hs["subqIdx"] = si + 1; hs["hintCount"] = 0; sess["hint_state"] = hs
         fa = v2.get("llm_solution_html") or v2.get("answer_html", "")
-        filtered = _filter_answer_for_subq(fa, sn, sqs[si].get("content", "")) if deepseek_client else fa
-        return jsonify({"html": filtered or fa, "hint_state": hs, "is_full_answer": True,
+        if fa and deepseek_client:
+            filtered = _filter_answer_for_subq(fa, sn, sqs[si].get("content", ""))
+            fa = filtered or fa
+        return jsonify({"html": fa, "hint_state": hs, "is_full_answer": True,
                         "reply": f"📚 Υποερώτημα {sn} — Πλήρης λύση."})
     return jsonify({"html": f'<div class="hint-box"><b>Υποερώτημα {sn}</b><br><br>{ht}</div>',
                     "hint_state": hs, "subq_num": sn, "level": hc})
