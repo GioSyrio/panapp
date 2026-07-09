@@ -74,7 +74,10 @@
         .diagram-item { margin-bottom: 12px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
         .diagram-item img { display: block; max-width: 100%; height: auto; cursor: pointer; }
         .chat { display: flex; flex-direction: column; gap: var(--gap); }
-        .messages { display: flex; flex-direction: column; gap: 8px; max-height: 35vh; overflow-y: auto; padding-right: 4px; }
+        .messages { display: flex; flex-direction: column; gap: 8px; max-height: 50vh; overflow-y: auto; padding-right: 4px; }
+        .messages .empty-state { text-align: center; color: var(--text2); padding: 40px 20px; font-size: 0.85rem; opacity: 0.7; }
+        .messages .empty-state .empty-icon { font-size: 2rem; margin-bottom: 8px; display: block; }
+        .chip-divider { width: 1px; height: 20px; background: var(--border); margin: 0 4px; align-self: center; }
         .msg { max-width: 85%; padding: 10px 14px; border-radius: var(--radius); font-size: 0.85rem; line-height: 1.55; animation: fade .3s ease; }
         @keyframes fade { from{opacity:0;transform:translateY(4px)} to{opacity:1;transform:translateY(0)} }
         .msg.user { align-self: flex-end; background: var(--accent); color: #fff; }
@@ -261,9 +264,10 @@
                 </div>
                 <div class="quick-actions">
                     <button class="qbtn" onclick="currentHint()">💡 Υπόδειξη</button>
-                    <span class="qbtn" id="chip-help" onclick="quickChip('Δεν ξέρω πώς να ξεκινήσω')">😰 Δάσκαλε βοήθα!</span>
+                    <span class="qbtn" id="chip-help" onclick="quickChip('Δεν ξέρω πώς να ξεκινήσω')">🤔 Κόλλησα</span>
                     <button class="qbtn" onclick="quick('Δείξε μου μια παρόμοια άσκηση')">📋 Παρόμοια</button>
                     <button class="qbtn" onclick="openGraph()">📈 Γράφημα</button>
+                    <span class="chip-divider"></span>
                     <button class="qbtn" id="btn-prev" onclick="back()" disabled>⬅ Πίσω</button>
                     <button class="qbtn" onclick="quick('next')">⏭ Επόμενο</button>
                 </div>
