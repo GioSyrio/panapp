@@ -408,9 +408,6 @@ async function start() {
     document.getElementById('start-screen').style.display = 'none';
     document.getElementById('session').style.display = 'block';
     document.getElementById('back-btn').classList.add('show');
-    // Hide graph button for humanities
-        var graphBtn = document.querySelector('.qbtn[onclick="openGraph()"]');
-        if (graphBtn) graphBtn.style.display = (subjectTrack === 'humanities') ? 'none' : '';
         renderQuestion(q);
         updateStats({completed:0, total_points:0, remaining: d.total_questions || 0});
         addMsg('system', '📝 Γράψε την απάντησή σου ή ξεκίνα με ερωτήσεις.');
