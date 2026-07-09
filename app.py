@@ -784,14 +784,14 @@ def _handle_hint(sess):
     ht = hints[si]["hints"][hc]["hint_text"] if si < len(hints) and hc < len(hints[si].get("hints", [])) else None
     if not ht:
         hs["subqIdx"] = si + 1; hs["hintCount"] = 0; sess["hint_state"] = hs
-        fa = v2.get("answer_html", "")
+        fa = v2.get("llm_solution_html") or v2.get("answer_html", "")
         filtered = _filter_answer_for_subq(fa, sn, sqs[si].get("content", "")) if deepseek_client else fa
         return jsonify({"html": filtered or fa, "hint_state": hs, "is_full_answer": True,
                         "reply": f"📚 Υποερώτημα {sn} — Πλήρης λύση."})
     hc += 1; hs["hintCount"] = hc; sess["hint_state"] = hs
     if hc >= 4:
         hs["subqIdx"] = si + 1; hs["hintCount"] = 0; sess["hint_state"] = hs
-        fa = v2.get("answer_html", "")
+        fa = v2.get("llm_solution_html") or v2.get("answer_html", "")
         filtered = _filter_answer_for_subq(fa, sn, sqs[si].get("content", "")) if deepseek_client else fa
         return jsonify({"html": filtered or fa, "hint_state": hs, "is_full_answer": True,
                         "reply": f"📚 Υποερώτημα {sn} — Πλήρης λύση."})
