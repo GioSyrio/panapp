@@ -3,7 +3,7 @@
 Panhellenic AI Tutor — Flask Backend
 Multi-subject support: mathematics_prosanatolismoy, informatics, fysiki_prosanatolismoy
 """
-import json, os, sys, re, uuid, hashlib, time, logging, shelve
+import json, os, sys, re, uuid, hashlib, time, logging, sqlite3, threading
 from datetime import datetime, timezone
 from collections import OrderedDict
 
@@ -22,10 +22,34 @@ handler.setFormatter(_logging.Formatter('{"ts":"%(asctime)s","level":"%(levelnam
 logger.handlers = [handler]
 logger.setLevel(_logging.INFO)
 
-# ── Session persistence
+# ── Session persistence (SQLite + WAL for thread safety) ─────────────────
 SESSION_TIMEOUT = 30 * 60
 LAST_CLEANUP = time.time()
-SHELVE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sessions.db")
+SESSION_DB = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sessions_v2.db")
+SESSION_LOCK = threading.Lock()
+
+def _get_session_db():
+    """Get a thread-local SQLite connection in WAL mode."""
+    db = sqlite3.connect(SESSION_DB, timeout=10)
+    db.execute("PRAGMA journal_mode=WAL")
+    db.execute("PRAGMA synchronous=NORMAL")
+    db.execute("CREATE TABLE IF NOT EXISTS sessions (sid TEXT PRIMARY KEY, data TEXT, created_at TEXT)")
+    db.execute("CREATE INDEX IF NOT EXISTS idx_created ON sessions(created_at)")
+    return db
+
+def _persist_session(sid):
+    """Persist a single session to SQLite."""
+    if sid not in sessions:
+        return
+    try:
+        db = _get_session_db()
+        data = json.dumps(sessions[sid], ensure_ascii=False)
+        db.execute("INSERT OR REPLACE INTO sessions(sid, data, created_at) VALUES(?, ?, ?)",
+                   (sid, data, datetime.now(timezone.utc).isoformat()))
+        db.commit()
+        db.close()
+    except Exception as e:
+        logger.warning(f"Session persist warning: {e}")
 
 try:
     from openai import OpenAI
@@ -151,38 +175,8 @@ def load_data():
     trend_context = build_trend_context(ranked, details, top_n=5)
     logger.info(f"Loaded {len(exam_data)} questions, {len(ranked)} topics")
     
-    # ── Restore sessions from disk ──
-    global sessions
-    try:
-        with shelve.open(SHELVE_PATH) as db:
-            restored = dict(db)
-            # Remove any sessions that were already expired when saved
-            now = datetime.now(timezone.utc)
-            for sid, sess in list(restored.items()):
-                started = sess.get("started_at")
-                if started:
-                    try:
-                        age = (now - datetime.fromisoformat(started)).total_seconds()
-                        if age > SESSION_TIMEOUT:
-                            del restored[sid]
-                    except: pass
-            sessions.update(restored)
-        if sessions:
-            logger.info(f"Restored {len(sessions)} sessions from disk")
-    except Exception as e:
-        logger.warning(f"Could not restore sessions: {e}")
-
-def _persist_session(sid):
-    """Persist a single session to shelve."""
-    try:
-        with shelve.open(SHELVE_PATH) as db:
-            if sid in sessions:
-                db[sid] = sessions[sid]
-            else:
-                if sid in db:
-                    del db[sid]
-    except Exception as e:
-        logger.warning(f"Session persist warning: {e}")
+    # ── Sessions stored in SQLite (WAL mode, thread-safe) ──
+    logger.info("Session store ready (SQLite WAL)")
 
 def init_deepseek():
     global deepseek_client
@@ -486,6 +480,36 @@ def start_session():
     return jsonify({"session_id": sid, "question": format_exam_question(question, tag, subject_id),
                     "has_ai": deepseek_client is not None, "subject": subject_cfg,
                     "total_questions": len(exam_data)})
+
+# ── Rate limiting ────────────────────────────────────────────────────────
+MAX_CHAT_PER_MIN = 20      # AI evaluations + conversations
+MAX_HINT_PER_MIN = 30      # Hint button clicks
+MAX_AI_CALLS_PER_SESSION = 60  # Total DeepSeek calls per student session
+
+def _check_rate_limit(sess, endpoint, max_per_min):
+    """Simple in-memory rate limiter per session. Returns None if OK, error msg if exceeded."""
+    now = time.time()
+    key = f"rate_{endpoint}"
+    window = sess.setdefault(key, {"calls": [], "blocked_until": 0})
+    if now < window["blocked_until"]:
+        remaining = int(window["blocked_until"] - now)
+        return f"⏳ Περίμενε {remaining}s πριν ξαναδοκιμάσεις. (Όριο: {max_per_min}/λεπτό)"
+    window["calls"] = [t for t in window["calls"] if now - t < 60]
+    if len(window["calls"]) >= max_per_min:
+        window["blocked_until"] = now + 30
+        return f"🚫 Όριο κλήσεων ({max_per_min}/λεπτό). Περίμενε 30 δευτερόλεπτα."
+    window["calls"].append(now)
+    return None
+
+def _check_ai_call_cap(sess):
+    """Check if session exceeded total AI call budget."""
+    count = sess.get("ai_calls", 0)
+    if count >= MAX_AI_CALLS_PER_SESSION:
+        return f"🎓 Έχεις χρησιμοποιήσει όλες τις AI κλήσεις για αυτή τη συνεδρία ({MAX_AI_CALLS_PER_SESSION}). Συνέχισε με hints και προχώρα στο επόμενο θέμα!"
+    return None
+
+def _track_ai_call(sess):
+    sess["ai_calls"] = sess.get("ai_calls", 0) + 1
 
 @app.route("/api/chat", methods=["POST"])
 def chat():
